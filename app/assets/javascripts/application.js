@@ -14,7 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require bignumber/bignumber.js
-//= require 0x-library/packages/0x.js/_bundles/index.js
+//= require 0x-library/packages/0x.js/index.js
 //= require datafeeds/udf/dist/bundle.js
 //= require datafeeds/udf/dist/polyfills.js
 //= require charting_library/charting_library.min.js
