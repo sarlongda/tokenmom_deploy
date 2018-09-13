@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    jQuery(function($) {
+        $(document).ready(function() {            
+            $(document).on('click','.market-status-row',function(){
+                let that = $(this);
+                let token_contract_addr = that.attr("value");
+                let token_decimals = that.attr("token_symbol");
+                let token_name = that.find(":nth-child(1)").find("div").attr("name");
+                let token_symbol = that.find(":nth-child(1)").find("div").attr("symbol");
+                let select_base_token = $(".token-info").attr("base_token");
+                let token_last_price = that.find(":nth-child(2)").find("strong").attr("value");
+                let token_h_price = that.find(":nth-child(3)").find("strong").attr("value");
+                let token_h_volumn = that.find(":nth-child(4)").find("strong").attr("value");
+                localStorage.setItem("select_token",token_symbol);                
+                data = {
+                    token_contract_addr:token_contract_addr,
+                    token_name:token_name,
+                    token_symbol:token_symbol,
+                    token_last_price:token_last_price,
+                    token_h_price:token_h_price,
+                    token_h_volumn:token_h_volumn,
+                    token_decimals:token_decimals
+                };
+                Trade.change_header_info(data);
+                Trade.get_open_orders();
+                Trade.draw_quick_balance();
+                Trade.get_token_amount(token_contract_addr);                
+                //Change tradingview chart
+                window.tvWidget.setSymbol(token_symbol, '1D', function () {
+                    console.log(token_symbol);
+                });
+                history.pushState(null, '', token_symbol + "-" + select_base_token);
+            });
+            $(document).on('click','#market_tab a',function(){
+                console.log("tab click");
+            });
+            
+            function isDecimal(num){
+                return (num ^ 0) !== num;
+            }
+            
+            function decimalPlaces(n){
+                let result = /^-?[0-9]+\.([0-9]+)$/.exec(n);
+                return result === null ? 0 : result[1].length;
+            }
+
+
+        });
+    });
+</script>

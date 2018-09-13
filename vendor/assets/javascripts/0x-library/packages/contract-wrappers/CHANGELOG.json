@@ -1,0 +1,21 @@
+[
+    {
+        "version": "0.0.2",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ],
+        "timestamp": 1527008544
+    },
+    {
+        "timestamp": 1527008270,
+        "version": "0.0.1",
+        "changes": [
+            {
+                "note": "Moved contractWrappers out of 0x.js",
+                "pr": 579
+            }
+        ]
+    }
+]

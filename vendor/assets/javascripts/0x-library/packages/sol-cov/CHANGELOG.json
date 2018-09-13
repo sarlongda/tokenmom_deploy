@@ -1,0 +1,87 @@
+[
+    {
+        "timestamp": 1527009134,
+        "version": "0.1.0",
+        "changes": [
+            {
+                "note": "Add artifact adapter as a parameter for CoverageSubprovider. Export AbstractArtifactAdapter",
+                "pr": 589
+            },
+            {
+                "note": "Implement SolCompilerArtifactAdapter and TruffleArtifactAdapter",
+                "pr": 589
+            },
+            {
+                "note": "Properly parse multi-level traces",
+                "pr": 589
+            },
+            {
+                "note": "Add support for solidity libraries",
+                "pr": 589
+            }
+        ]
+    },
+    {
+        "timestamp": 1527009133,
+        "version": "0.0.11",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1525477860,
+        "version": "0.0.10",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1525428773,
+        "version": "0.0.9",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1524044013,
+        "version": "0.0.8",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1523462196,
+        "version": "0.0.7",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1522673609,
+        "version": "0.0.6",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1522658513,
+        "version": "0.0.5",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    }
+]

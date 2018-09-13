@@ -1,0 +1,171 @@
+%nav.tokenmom-header.navbar.navbar-dark.navbar-expand.is-nightmode
+  #plugins-anchor
+  .container-fluid
+    .navbar-header{:base_token => "ETH"}
+      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      %a.navbar-brand{:onclick => "window.location.reload()"}
+        = image_tag("tmom_logo.png", id: "logo")
+      %ul#nav-tokens
+        %div
+          %li#pairs-dropdown.dropdown
+            %a.selected.dropdown-toggle.token-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "javascript:void(0)", :role => "button"}
+              
+            %ul.dropdown-menu.token-link
+              - @tokenlist.each do |token|
+                %li.token-link-item{:value => token.symbol,:name => token.name,:addr => token.contract_address,:price => token.last_price(token.symbol),:h_price => token.h_price(token.symbol),:h_volumn => token.h_volumn(token.symbol),:decimals => token.token_decimals}
+                  %a{:href => "javascript:void(0)"} #{token["symbol"]}-ETH  
+              
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.token-header.nav.navbar-nav.mr-auto        
+        %li
+          .token-info{:base_token => "ETH"}
+            %span 
+            .contract-address
+              %span{"data-i18n" => "contract_address"} Contract Address:
+              %a
+        %li
+          .trade-info
+            .trade-info-number.last-price
+              %strong
+                %strong                  
+                  %span                                   
+            .trade-info-label
+              %span{"data-i18n" => "last_price"}
+        %li
+          .trade-info
+            .trade-info-number
+              %strong                
+            .trade-info-label
+              %span{"data-i18n" => "24h_price"} 24H Price
+        %li
+          .trade-info
+            .trade-info-number
+              %strong
+            .trade-info-label
+              %span{"data-i18n" => "24h_volumn"} 24H Volumn
+      %button.btn.btn-sm.btn-info.btn-trade-by-addr
+        %span{"data-i18n" => "trade_by_addr"} Trade by Address
+        %i.fas.fa-file-alt
+      %ul.nav.navbar-nav.navbar-right
+        %li.nightmode-item
+          %i#theme_mode.far.fa-sun
+        %li.dropdown.nav-item
+          %a.dropdown-toggle.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true",  :href => "javascript:void(0)", :role => "button"}
+            %img.country-icon{:alt => "", :src => "assets/en.fba4238a.svg"}/
+            %span English
+            %span.caret
+          %ul.dropdown-menu.language
+            %li.lang-switch{:value => "1","data-locale" => "en"}
+              %a{:href => "javascript:void(0)"}
+                %img.country-icon{:alt => "", :src => "assets/en.fba4238a.svg"}>/
+                English
+            %li.lang-switch{:value => "2","data-locale" => "ko"}
+              %a{:href => "javascript:void(0)"}
+                %img.country-icon{:alt => "", :src => "assets/ko.4d71266b.svg"}>/
+                한국어
+            %li.lang-switch{:value => "3","data-locale" => "zh"}
+              %a{:href => "javascript:void(0)"}
+                %img.country-icon{:alt => "", :src => "assets/zh.fee5842f.svg"}>/
+                简体中文
+            %li.lang-switch{:value => "4","data-locale" => "ja"}
+              %a{:href => "javascript:void(0)"}
+                %img.country-icon{:alt => "", :src => "assets/ja.e0b7a3ef.svg"}>/
+                日本語
+            
+        %li
+          %a.nav-link#wallet_btn{:href => "javascript:void(0)"}
+            %strong
+              %span{"data-i18n" => "wallet"} Wallet
+            %span#no_wallet.popuptext{"data-i18n" => "connect_your_wallet"} You have to connect your wallet.
+              
+        %li
+          %a.nav-link#overview_btn{:href => "javascript:void(0)"}
+            %strong
+              %span{"data-i18n" => "orders"} Orders
+        %li
+          %a.nav-link#help_btn.btn-link.has-popover{"data-toggle" => "popover","data-content" => "Hello popover"}
+            %strong
+              %span{"data-i18n" => "help"} Help
+        %li.header-accounts
+          %a.nav-link{:href => "javascript:void(0)"}
+            %span#detect_account
+              .text-wrapper
+                #connected_wallet
+                #connected_info
+              #connection_status.connection-status.not-connected
+                = image_tag("connected.svg")
+.popup
+  #detect_popup.detect-popup
+    %div{ :style => "padding: 25px;" }
+      #sign_in{ :style => "display: block;" }
+        %span{"data-i18n" => "connect_wallet"} Connect a Wallet
+        %input{:placeholder => "Nick Name", :type => "text",:id =>'nick_name'}
+        .btn-success.flex-button
+          .icon-wrapper
+            = image_tag("metamask.svg")
+          %span.flex-button-text#metamask_login{"data-i18n" => "metamask"} METAMASK
+        .btn-success.flex-button
+          .icon-wrapper
+            = image_tag("ledger.svg")
+          %span.flex-button-text#ledger_login{"data-i18n" => "ledger"} LEDGER
+      #metamask_logined{ :style => "display: none;" }
+        %div
+          %span.icon-white
+            = image_tag("metamask.svg")
+        %div{ :style => "margin-top: 10px;" } 
+          %span{"data-i18n" => "metamask_connected"} Metamask Connected
+        %div 
+          .green-circle
+          %span{"data-i18n" => "ethereum_main"} Ethereum Main
+        %a#wallet_address{ :style => "margin-top: 15px;",:rel => "noopener noreferrer",:target => "_blank" }        
+        .flex-button-text#metamask_disconnect{ :style => "margin-top: 15px;","data-i18n" => "disconnect" } DISCONNECT
+      #metamask_install{ :style => "display: none;" }
+        %div{ :style => "margin-top: 10px;" } 
+          %span No Metamask Installed 
+        .btn-success.flex-button
+          .icon-wrapper
+            = image_tag("metamask.svg")
+          %span.flex-button-text#metamask_install_button INSTALL METAMASK
+        .flex-button-text#cancel_metamask_install{ :style => "margin-top: 15px;" } CANCEL
+      #metamask_logoutted{ :style => "display: none;" }
+        %div{ :style => "margin-top: 10px;" } 
+          %span{"data-i18n" => "login_metamask"} Login to MetaMask
+        .flex-button-text#cancel_metamask_login{ :style => "margin-top: 15px;","data-i18n" => "cancel"} CANCEL
+    .grey-back
+      %div{"data-i18n" => "need_help"} NEED HELP?
+      %div{"data-i18n" => "why_do_i_need_a_wallet"} Why do I need a wallet?
+      %div{"data-i18n" => "tokenmom"} TOKENMOM 
+#tradebyAddress.modal.fade{:role => "dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h4.modal-title{"data-i18n" => "trade_notlistedtoken"}
+      .modal-body
+        .item-label
+          %label{:title => "Token address",:style =>"font-size:15px","data-i18n" => "token_address"}
+        .control-wrapper
+          .item-control.has-error
+            %span
+              %input.token-address-input{:name => "address", :placeholder => "0x0", :type => "text", :value => ""}
+            %span.text-danger              
+      .modal-footer      
+        %button.btn.btn-danger.btn-cancel-tradebyaddr{:type => "button","data-dismiss" => "modal"}
+          %span{"data-i18n" => "cancel"}
+        %button.btn.btn-success.trade-by-address.disabled{:type => "button"}
+          %span{"data-i18n" => "submit"}
+#noToken.modal.fade{:role => "dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h4{"data-i18n" => "cannot_find_token_byaddr"} Couldn't find token by address
+      .modal-body
+        %p{"data-i18n" => "no_token_with_address"} There are no deployed ERC20 token with such address.
+        %p{"data-i18n" => "please_check_address"} Please double check the address.
+      .modal-footer
+        %button.btn.btn-info.btn-no-token{:type => "button", "data-dismiss" => "modal"}
+          %span{"data-i18n" => "ok"}
+
+
+
+

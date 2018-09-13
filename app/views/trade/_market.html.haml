@@ -1,0 +1,49 @@
+#market-status.box.box-mb.flex.flex-column.flex-1
+  .box-header
+    %span.mobile-hide.market-status-title{"data-i18n" => "markets"}
+      MARKETS
+    .market-status-search.form-inline.pull-right
+      .form-group  
+        .relative  
+          %input#symbol_input.form-control{:onkeyup => "search_function()", 'data-i18n' => '[placeholder]search..', :title => "Type in a name", :type => "text"}  
+          %i.fa.fa-search{"aria-hidden" => "true"}
+  .box-content.flex.flex-1.flex-column.relative.market-status-content{"style"=>"overflow: hidden;"}
+    %ul.nav.nav-tabs#market_tab
+      %li.nav-item
+        %a.nav-link.active{'data-toggle' => 'tab', 'data-target' => '#market_eth'} ETH
+      %li.nav-item
+        %a.nav-link{'data-toggle' => 'tab', 'data-target' => '#market_tm'} TM
+    .tab-content.eth-tm.flex.flex-column.flex-1{'role' => 'tablelist'}
+      .tab-pane.active.flex-column.d-flex#market_eth{'role' => 'tabpanel'}
+        %table#market_table.table.table-striped.d-flex.flex-column
+          %thead
+            %tr
+              %th#pair_name.text-left
+                %span{"data-i18n" => "pair"} Pair
+              %th#price_name.text-right
+                %span{"data-i18n" => "last_price"} Last Price
+              %th#pricechange_name.text-right
+                %span{"data-i18n" => "24h_price"} 24h Price
+              %th#volum_name.text-right.selected
+                %span{"data-i18n" => "24h_volumn"} 24h Vol(ETH)
+              %th#favorite.text-right
+                %i.fas.fa-star
+          %tbody       
+      .tab-pane#market_tm{'role' => 'tabpanel'}
+        %table#market_table.table.table-dark.table-striped
+          %thead
+            %tr
+              %th#pair_name.text-center
+                %span{"data-i18n" => "pair"} Pair
+              %th#price_name.text-center
+                %span{"data-i18n" => "last_price"} Last Price
+              %th#pricechange_name.text-center
+                %span{"data-i18n" => "24h_price"} 24h Price
+              %th#volum_name.text-center.selected
+                %span{"data-i18n" => "24h_volumn"} 24h Vol(ETH)
+              %th#favorite.text-center
+                %i.fas.fa-star
+
+    
+
+    

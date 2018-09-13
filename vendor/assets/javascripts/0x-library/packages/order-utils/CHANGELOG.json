@@ -1,0 +1,39 @@
+[
+    {
+        "version": "0.0.5",
+        "changes": [
+            {
+                "note":
+                    "Add orderStateUtils, a module for computing order state needed to decide if an order is still valid"
+            }
+        ],
+        "timestamp": 1527008794
+    },
+    {
+        "timestamp": 1525477860,
+        "version": "0.0.4",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1525453812,
+        "version": "0.0.3",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1525428773,
+        "version": "0.0.2",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    }
+]

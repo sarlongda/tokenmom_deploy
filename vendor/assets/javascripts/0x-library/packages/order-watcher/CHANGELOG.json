@@ -1,0 +1,21 @@
+[
+    {
+        "timestamp": 1527008794,
+        "version": "0.0.2",
+        "changes": [
+            {
+                "note": "Dependencies updated"
+            }
+        ]
+    },
+    {
+        "timestamp": 1527008794,
+        "version": "0.0.1",
+        "changes": [
+            {
+                "note": "Moved OrderWatcher out of 0x.js package",
+                "pr": 579
+            }
+        ]
+    }
+]

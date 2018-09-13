@@ -1,0 +1,77 @@
+I".
+(function() {
+  var change_header_info, draw_trade, get_timeformat;
+
+  jQuery(document).on('turbolinks:load', function() {
+    return App.order = App.cable.subscriptions.create({
+      channel: "TradeChannel"
+    }, {
+      connected: function() {},
+      disconnected: function() {},
+      received: function(data) {
+        var symbol, trade;
+        trade = data.trade;
+        symbol = $(".token-info").attr("token_symbol") || "ZRX";
+        Trade.get_tokens_table();
+        if (symbol === trade.token_symbol) {
+          draw_trade(trade);
+          return change_header_info(trade.token_symbol);
+        }
+      },
+      create_trade: function(data) {}
+    });
+  });
+
+  draw_trade = function(trade) {
+    var amount, price, tag, time, time_format, type;
+    tag = $('#trade_history table tbody');
+    time = trade.created_at;
+    price = trade.price;
+    amount = trade.amount;
+    type = trade.type;
+    time_format = get_timeformat(time);
+    trade = '<tr class = \'cover-row\'>' + '<td>' + '<strong class = \'number\'>' + time_format + '</strong>' + '</td>';
+    if (type === 1) {
+      trade += '<td class = \'text-right text-success\'>' + '<strong class = \'number\'>' + price + '</strong>' + '<i aira-hidden = \'true\' class = \'fa fa-caret-up\'>' + '</i>' + '</td>';
+    } else if (type === 0) {
+      trade += '<td class = \'text-right text-danger\'>' + '<strong class = \'number\'>' + price + '</strong>' + '<i aira-hidden = \'true\' class = \'fa fa-caret-down\'>' + '</i>' + '</td>';
+    }
+    trade += '<td class = \'text-right\'>' + '<strong class=\'number\'>' + amount + '</strong>' + '</td>' + '</tr>';
+    tag.prepend(trade);
+  };
+
+  get_timeformat = function(t) {
+    var day, format, time, time_format;
+    time_format = '';
+    format = t.split('T');
+    day = format[0].split('-');
+    time = format[1].split('.')[0].split(':');
+    time_format += day[1] + '-' + day[2] + ' ' + time[0] + ':' + time[1] + ':' + time[2];
+    return time_format;
+  };
+
+  change_header_info = function(symbol) {
+    var base_token;
+    symbol = symbol;
+    base_token = $('.token-header').children('li').children('div').attr('base_token');
+    return $.ajax({
+      url: 'trade/get_token_info',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        base_token: base_token,
+        symbol: symbol
+      },
+      success: function(data) {
+        console.log("change_header_info");
+        console.log(data.token_info);
+        return Trade.change_header_info(data.token_info);
+      },
+      error: function(data) {
+        return console.log('error');
+      }
+    });
+  };
+
+}).call(this);
+:ET

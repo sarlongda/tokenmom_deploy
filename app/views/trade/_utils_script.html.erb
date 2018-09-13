@@ -1,0 +1,1043 @@
+<script type="text/javascript">
+    const gas_limit = 0.02;
+    const DECIMALS = 18;
+    var Unit = {
+        3:"kwei",
+        6:"mwei",
+        9:"gwei",
+        12:"microether",
+        15:"milliether",
+        18:"ether"
+    }
+    var Trade = {
+        get_token_amount:function (token_contract_addr){                         
+            if(currentWalletAddress != "" && currentWalletAddress != null){
+                let get_amount = async() =>{
+                    try{
+                        address = currentWalletAddress    //Wallet Address
+                        var contractAddress = token_contract_addr; // Token Address
+                        var contractABI = human_standard_token_abi;
+                        //Get token balance;
+                        var tokenContract = web3.eth.contract(contractABI).at(contractAddress);
+                        var token_decimals = $(".token-info").attr("decimals");
+                        tokenContract.balanceOf(address,(error,balance) =>{
+                            //token_amount = web3.fromWei(balance.toNumber(), "ether" ); 
+                            token_amount = balance.toNumber() / (Math.pow(10,token_decimals))                           
+                            $(".token-amount").attr("value",token_amount);
+                        });
+                        let token_balance = await zeroEx.token.getBalanceAsync(token_contract_addr,address);
+                        //Get WETH balance;
+                        var wethContract = web3.eth.contract(contractABI).at(wethAddress);
+                        wethContract.balanceOf(address,(error,balance) =>{
+                            weth_balance = web3.fromWei(balance.toNumber(), "ether");
+                            $(".token-amount").attr("weth_balance",weth_balance);
+                        });
+                    }catch(e){
+                        console.log("Error:get token amount");                        
+                    }
+                };
+                get_amount().catch(console.error);                   
+            }else{
+                const accountAsync = async () => {
+                    var account = web3.eth.accounts.length > 0 ? web3.eth.accounts[0] : 0;
+                    currentWalletAddress = account;
+                    if(currentWalletAddress != "" && currentWalletAddress != null){
+                        let get_amount = async() =>{
+                            try{
+                                address = currentWalletAddress    //Wallet Address
+                                var contractAddress = token_contract_addr; // Token Address
+                                var contractABI = human_standard_token_abi;
+                                //Get token balance;
+                                var tokenContract = web3.eth.contract(contractABI).at(contractAddress);
+                                var token_decimals = $(".token-info").attr("decimals");
+                                tokenContract.balanceOf(address,(error,balance) =>{
+                                    //token_amount = web3.fromWei(balance.toNumber(), "ether" ); 
+                                    token_amount = balance.toNumber() / (Math.pow(10,token_decimals))                           
+                                    $(".token-amount").attr("value",token_amount);
+                                });
+                                let token_balance = await zeroEx.token.getBalanceAsync(token_contract_addr,address);
+                                //Get WETH balance;
+                                var wethContract = web3.eth.contract(contractABI).at(wethAddress);
+                                wethContract.balanceOf(address,(error,balance) =>{
+                                    weth_balance = web3.fromWei(balance.toNumber(), "ether");
+                                    $(".token-amount").attr("weth_balance",weth_balance);
+                                });
+                            }catch(e){
+                                console.log("Error:get token amount");                        
+                            }
+                        };
+                        get_amount().catch(console.error);                   
+                    }else{
+                        console.log("wallet is not connected");
+                    }
+                };
+                accountAsync().catch(console.error);
+                
+            }
+        },
+        draw_quick_balance:function (){
+            if(currentWalletAddress != "" && currentWalletAddress != null){
+                let token_addr = $(".contract-address").children("a").attr("value");
+                let token_name = $(".token-info").attr("data-name");
+                let token_symbol = $(".token-info").attr("token_symbol");
+                let tag = $("#quick_balance").children(':nth-child(2)').children('div').children(':nth-child(2)');
+                tag.html("");
+                let balance_tag;
+                balance_tag =                       
+                                "<div class = 'col-sm-2'>" +
+                                    "<span>" + token_symbol + "</span>" +
+                                "</div>" +
+                                "<div class = 'col-sm-4'>" +
+                                    "<span>" + token_name + "</span>" +
+                                "</div>" +
+                                "<div class = 'col-sm-4'>" +
+                                    "<label class='float-right token-balance'>" +
+                                        "<i class='fa fa-spinner fa-spin'></i>" +
+                                        "<span></span>" +
+                                    "</label>" +
+                                "</div>" +
+                                "<div class = 'col-sm-2'>" +
+                                    "<label class='float-right token-allow' data-address='" + token_addr + "'>" +
+                                        "<i class='fa fa-spinner fa-spin'></i>" +
+                                        "<label class='switch' style='display:none'>" +
+                                            "<input type='checkbox' data-toggle='toggle' class='quick-allow'>" +
+                                            "<span class='slider round'></span>" +
+                                        "</label>" +
+                                    "</label>" +
+                                "</div>" ;                        
+                tag.append(balance_tag);
+                let get_balance = async() => {
+                    //get eth balance
+                    web3.eth.getBalance(currentWalletAddress,(error,balance)=>{
+                        let eth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                        $(".eth-balance").children("i").css("display","none");
+                        $(".eth-balance").children("span").text(eth_balance);                                            
+                    });
+                    //get weth balance;
+                    
+                    let contract_abi = human_standard_token_abi;
+                    let weth_contract_addr = wethAddress;  // WETH Address;
+                    let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
+                    weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
+                        let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);                    
+                        $(".weth-balance").children("i").css("display","none");
+                        $(".weth-balance").children("span").text(weth_balance);                          
+                    });
+                    
+                    token_contract_addr = $(".contract-address").children("a").attr("value");    //Token Address
+                    var contractAddress = token_contract_addr; // Token Address
+                    var contractABI = human_standard_token_abi;
+                    //Get token balance;
+                    var tokenContract = web3.eth.contract(contractABI).at(contractAddress);
+                    let token_decimal;                    
+                    tokenContract.decimals((error,decimal)=>{                        
+                        token_decimal = decimal.toNumber();
+                        tokenContract.balanceOf(address,(error,balance) =>{                            
+                            token_balance = (balance.toNumber() / Math.pow(10,token_decimal));                            
+                            $(".token-balance").children("i").css("display","none");
+                            $(".token-balance").children("span").text(parseFloat(token_balance));                                              
+                        });                        
+                    });    
+                                      
+                };
+                get_balance().catch(console.error);
+                //get token allowance;
+                let get_allowance = async () => {                    
+                    try {
+                        let weth_allowed = false;
+                        let token_allowed = false;                            
+                        //get weth allowance;
+                        let weth_status = await zeroEx.token.getProxyAllowanceAsync(wethAddress, currentWalletAddress);
+                        if(weth_status.toNumber() === 0){
+                            weth_allowed = false;
+                        }else{
+                            weth_allowed = true;
+                        }
+                        if(weth_allowed == true){
+                            $('.weth-allow').find('label').find('input').prop('checked',true);
+                            $('.weth-allow').find('i').css('display','none');
+                            $('.weth-allow').find('label').css('display','block');
+                        }else{
+                            $('.weth-allow').find('label').find('input').prop('checked',false);
+                            $('.weth-allow').find('i').css('display','none');
+                            $('.weth-allow').find('label').css('display','block');
+                        }
+                        //get token allowance
+                        let token_status = await zeroEx.token.getProxyAllowanceAsync(token_addr, currentWalletAddress);
+                        if(token_status.toNumber() == 0){
+                            token_allowed = false;
+                        }else{
+                            token_allowed = true;
+                        }
+                        if(token_allowed == true){
+                            $('.token-allow').find('label').find('input').prop('checked',true);
+                            $('.token-allow').find('i').css('display','none');
+                            $('.token-allow').find('label').css('display','block');
+                        }else{
+                            $('.token-allow').find('label').find('input').prop('checked',false);
+                            $('.token-allow').find('i').css('display','none');
+                            $('.token-allow').find('label').css('display','block');
+                        }
+                    }catch(e){
+                 }finally{
+                 }
+                };
+                get_allowance().catch(console.error);
+            }else{
+                let tag = $("#quick_balance");
+                tag.html("");
+                let alert;
+                alert = 
+                    "<div class='no-balance-wrap text-center'>" +
+                        "<h6 class='no-balance-name'>" +
+                            "<span>Wallet is not connected</span>" +
+                        "</h6>" +
+                        "<p class='no-balance-content'>" +
+                            "<span>You need to connect your wallet from the top menu</span>" +
+                        "</p>" +
+                    "</div>";
+                tag.append(alert);
+            }
+
+        },
+        get_orders:function (symbol){
+            let base_token = $(".token-header").children("li").children("div").attr("base_token");
+            data = {
+                symbol:symbol,
+                base_token:base_token
+            };
+            $.ajax({
+                url: 'get_orders',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function(data) {
+                    let buy = "buy";
+                    let sell = "sell";
+                    let total_volume = 0;
+                    $.each(data.sell, function(index, element){
+                        total_volume += element.price * element.amount;
+                    });
+                    $.each(data.buy, function(index, element){
+                        total_volume += element.price * element.amount;
+                    });                    
+                    Trade.draw_orders(data.sell,data.max_amount,sell,total_volume);
+                    Trade.draw_orders(data.buy,data.max_amount,buy,total_volume);
+                    Trade.draw_spread(data.best_asks,data.best_bids);
+                },
+                error: function(error) {
+                    console.log("get orders error");
+                    console.log(error);
+                }
+            });
+
+        },
+        get_open_orders: function(){
+            console.log("get open orders---");
+            if(currentWalletAddress != "" && currentWalletAddress != null){
+                let wallet_addr = currentWalletAddress;
+                let base_token = $(".token-header").children("li").children("div").attr("base_token");
+                let symbol = $(".token-info").attr("token_symbol");
+                let data = {
+                    wallet_addr:wallet_addr,
+                    base_token:base_token,
+                    token_symbol:symbol
+                }
+                $.ajax({
+                    url: 'trade/get_my_open_orders',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: data,
+                    success: function(data) {
+                        if(data.status == "ok"){                            
+                            if(data.orders != ""){                                
+                                Trade.draw_myOrders(data.orders,symbol);
+                                let token_symbol = $(".token-info").attr("token_symbol");  
+                                $(".sell-token-symbol").text(token_symbol); 
+                            }else{ 
+                                $("#open_order_panel").children('div').children('table').children('tbody').empty(); 
+                                let tag = $("#open_order_panel").children('div').children('table').children('tbody');
+                                tag.attr("order-weth-bal",0);
+                                tag.attr("order-token-bal",0);
+                                let get_balance = async() => {                
+                                    //get weth balance;                
+                                    let contract_abi = human_standard_token_abi;
+                                    let weth_contract_addr = wethAddress;  // WETH Address;
+                                    let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
+                                    weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
+                                        let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                                        //let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
+                                        $(".buy-token-balance").text(weth_balance);
+                                        $(".buy-token-available").text(weth_balance);                                         
+                                    });                
+                                    token_contract_addr = $(".contract-address").children("a").attr("value");    //Token Address
+                                    var contractAddress = token_contract_addr; // Token Address
+                                    var contractABI = human_standard_token_abi;
+                                    //Get token balance;
+                                    var tokenContract = web3.eth.contract(contractABI).at(contractAddress);
+                                    let token_decimal = $(".token-info").attr("decimals");      
+                                             
+                                    tokenContract.balanceOf(address,(error,balance) =>{                            
+                                        token_balance = (balance.toNumber() / Math.pow(10,token_decimal));
+                                        let token_used_balance = 0
+                                        let token_available = 0
+                                        if(token_decimal > 8){
+                                            //token_used_balance = order_token_balance.toFixed(6);
+                                            //token_available = (token_balance - token_used_balance).toFixed(6);
+                                            token_balance = token_balance.toFixed(6); 
+                                        }else{
+                                            //token_used_balance = order_token_balance.toFixed(token_decimal);
+                                            //token_available = (token_balance - token_used_balance).toFixed(token_decimal);
+                                            token_balance = token_balance.toFixed(token_decimal);  
+                                        }                                      
+                                        $(".sell-token-balance").text(token_balance);
+                                        $(".sell-token-available").text(token_balance);                           
+
+                                    });                        
+
+
+                                };
+                                get_balance().catch(console.error);                                  
+                            }
+                        }else{
+                            $("#open_order_panel").children('div').children('table').children('tbody').empty();
+                            let tag = $("#open_order_panel").children('div').children('table').children('tbody');
+                            tag.attr("order-weth-bal",0);
+                            tag.attr("order-token-bal",0);
+                            let token_symbol = $(".token-info").attr("token_symbol");  
+                            $(".sell-token-symbol").text(token_symbol);
+                            let get_balance = async() => {                
+                                //get weth balance;                
+                                let contract_abi = human_standard_token_abi;
+                                let weth_contract_addr = wethAddress;  // WETH Address;
+                                let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
+                                weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
+                                    let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                                    //let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
+                                    $(".buy-token-balance").text(weth_balance);
+                                    $(".buy-token-available").text(weth_balance);                                         
+                                });                
+                                token_contract_addr = $(".contract-address").children("a").attr("value");    //Token Address
+                                var contractAddress = token_contract_addr; // Token Address
+                                var contractABI = human_standard_token_abi;
+                                //Get token balance;
+                                var tokenContract = web3.eth.contract(contractABI).at(contractAddress);
+                                let token_decimal = $(".token-info").attr("decimals");      
+                                          
+                                tokenContract.balanceOf(address,(error,balance) =>{                            
+                                    token_balance = (balance.toNumber() / Math.pow(10,token_decimal));
+                                    let token_used_balance = 0
+                                    let token_available = 0
+                                    if(token_decimal > 8){
+                                        //token_used_balance = order_token_balance.toFixed(6);
+                                        //token_available = (token_balance - token_used_balance).toFixed(6);
+                                        token_balance = token_balance.toFixed(6); 
+                                    }else{
+                                        //token_used_balance = order_token_balance.toFixed(token_decimal);
+                                        //token_available = (token_balance - token_used_balance).toFixed(token_decimal);
+                                        token_balance = token_balance.toFixed(token_decimal);  
+                                    }                                      
+                                    $(".sell-token-balance").text(token_balance);
+                                    $(".sell-token-available").text(token_balance);                           
+                                });                        
+                            };
+                            get_balance().catch(console.error); 
+                        }                           
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }else{
+                let token_symbol = $(".token-info").attr("token_symbol");  
+                $(".sell-token-symbol").text(token_symbol);
+                $(".buy-token-balance").text("0.0000");
+                $(".buy-token-available").text("0.0000");
+                $(".sell-token-balance").text("0.0000");
+                $(".sell-token-available").text("0.0000");
+            }
+        },
+        draw_myOrders: function(orders,symbol){
+            let tag = $("#open_order_panel").children('div').children('table').children('tbody');
+            //init table in open order widget
+            tag.html("");
+            //draw tabel header;
+            let thead = "";
+            let order_token_balance = 0;
+            let order_weth_balance = 0;
+            let token_decimal = $(".token-info").attr("decimals")                
+            $.each(orders, function(index, element){
+                if(element.type == 1){
+                    order_weth_balance += (parseFloat(element.amount) * parseFloat(element.price) + parseFloat(element.fee));
+                }
+                if(element.token_symbol == symbol){
+                    let type;
+                    let expire = new Date(null);
+                    let text_color;                                
+                    if(element.type == 1){
+                        type = "Buy";
+                        text_color = "text-success";
+                        //order_weth_balance += (parseFloat(element.amount) * parseFloat(element.price) + parseFloat(element.fee));
+                    }else if(element.type == 0){
+                        type = "Sell";
+                        text_color = "text-danger";
+                        order_token_balance += parseFloat(element.amount);
+                    }
+                    expire.setTime(element.expire * 1000);
+                    let my_order = 
+                        "<tr order_id = '"+ element.id + "'>" +
+                            "<td class='" + text_color + "'>" +
+                                "<span>" + type + "</span>" +
+                            "</td>" +
+                            "<td class=''>" +
+                                "<span>" + element.state + "</span>" +
+                            "</td>" +
+                            "<td class='text-right'>" +
+                                "<span>" + element.amount + "</span>" +
+                            "</td>" +
+                            "<td class='text-right'>" +
+                                "<span>" + element.price + "</span>" +
+                            "</td>" +
+
+                            "<td class='text-right'>" +
+                                "<span class='btn-danger btn-sm cancel-order' data-toggle='confirmation'>" + "Cancel" + "</span>" +
+                            "</td>" +
+                        "</tr>";
+                    thead += my_order;
+                }                                  
+            });
+            let ttail = "</table>";
+            thead += ttail;                     
+            tag.append(thead);
+            let get_balance = async() => {                
+                //get weth balance;                
+                let contract_abi = human_standard_token_abi;
+                let weth_contract_addr = wethAddress;  // WETH Address;
+                let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
+                weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
+                    let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                    let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
+                    if(weth_available < 0) {
+                        weth_available = "0.000000";
+                    }
+                    $(".buy-token-balance").text(weth_balance);
+                    $(".buy-token-available").text(weth_available);                                         
+                });                
+                token_contract_addr = $(".contract-address").children("a").attr("value");    //Token Address
+                var contractAddress = token_contract_addr; // Token Address
+                var contractABI = human_standard_token_abi;
+                //Get token balance;
+                var tokenContract = web3.eth.contract(contractABI).at(contractAddress);
+                let token_decimal = $(".token-info").attr("decimals");      
+                let token_symbol = $(".token-info").attr("token_symbol");  
+                $(".sell-token-symbol").text(token_symbol);          
+                tokenContract.balanceOf(address,(error,balance) =>{                            
+                    token_balance = (balance.toNumber() / Math.pow(10,token_decimal));
+                    let token_used_balance = 0
+                    let token_available = 0
+                    if(token_decimal > 8){
+                        token_used_balance = order_token_balance.toFixed(6);
+                        token_available = (token_balance - token_used_balance).toFixed(6);
+                        token_balance = token_balance.toFixed(6); 
+                    }else{
+                        token_used_balance = order_token_balance.toFixed(token_decimal);
+                        token_available = (token_balance - token_used_balance).toFixed(token_decimal);
+                        token_balance = token_balance.toFixed(token_decimal);  
+                    }
+                    if(token_available < 0){
+                        token_available = "0.00"
+                    }                                      
+                    $(".sell-token-balance").text(token_balance);
+                    $(".sell-token-available").text(token_available);                           
+                                                                  
+                });                        
+                  
+                                      
+            };
+            get_balance().catch(console.error);
+        },
+        draw_spread: function (best_asks,best_bids){            
+            let asks;
+            let bids;
+            if(best_asks == null){
+                asks = 0;
+            }else{
+                asks = best_asks;
+            }
+            if(best_bids == null){
+                bids = 0;
+            }else{
+                bids = best_bids;
+            }
+            let spread = (asks - bids).toFixed(8);
+            //Set values
+            $(".spread").attr("best_asks",asks);
+            $(".spread").attr("best_bids",bids);
+            $(".spread").find(":nth-child(2)").children("strong").text(spread);
+        },
+        volume_pro: function(max,volume){
+            return ((volume / max) * 66.667).toFixed(4);
+        },
+        draw_orders: function(data,max_amount,type,total_volume){
+            let tag;
+            let text_color;
+            $(".orderbook").attr("max_amount",max_amount)
+            if(type === "buy"){
+                tag = $(".orderbook-bids");
+                text_color = "text_success";
+            }else if(type === "sell"){
+                tag = $(".orderbook-asks");
+                text_color = "text_danger";
+            }                
+            tag.html("");
+            let time_now = Date.now()/1000;
+            let tmp_volume = 0;
+            $.each(data, function(index, element){
+                let pro = 0;
+                let depth = 0;
+                let date_pro = (60*24*3600);
+                let amount = element.amount;
+                let price = element.price;
+                //Calculate amount and price decimals               
+                let amount_places = Trade.decimalPlaces(element.amount);
+                let amount_rest_places = 8 - amount_places;
+                let amount_zero_places = "";
+                for(i = 0; i <amount_rest_places; i ++){
+                    amount_zero_places += "0";
+                }
+                if(amount_places == 0){
+                    amount = parseInt(amount).toString() + ".";
+                }else{
+                    amount = amount.toString();
+                }
+                //price decimals
+                let price_places = Trade.decimalPlaces(element.price);
+                let price_rest_places = 8 - price_places;
+                let price_zero_places = "";
+                for(i = 0; i <price_rest_places; i ++){
+                    price_zero_places += "0";
+                }
+                if(price_places == 0){
+                    price = parseInt(price).toString() + ".";
+                }else{
+                    price = price.toString();
+                }
+                tmp_volume += amount * price;              
+                //if(element.expire - time_now < 0 ){
+                //    depth = 0
+                //}else{
+                //    depth = (date_pro-(element.expire - time_now))/date_pro * 100;
+                //}
+                depth = Trade.volume_pro(total_volume,tmp_volume);
+                if(max_amount){
+                    pro = amount_pro(max_amount,element.amount);
+                }else{
+                    pro = 0;
+                }
+                let order = 
+                    "<div class='hover-row'>" + 
+                        "<div class='bar' style='width:" + depth + "%'></div>" +
+                        "<div class='amount-bar' style='width:" + pro + "%'></div>" +
+                        "<div class='col-xs-3 col-xs-offset-2 "+ text_color + " text-right orderbook-price'>" +
+                            "<strong class='number'>" + price + 
+                                "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +                                
+                            "</strong>" +
+                        "</div>" +
+                        "<div class='col-xs-4 text-right orderbook-amount'>" +
+                            "<strong class='number'>" + amount + 
+                                "<span class='p3 opacity-color'>" + amount_zero_places + "</span>" +
+                            "</strong>" +
+                        "</div>" +
+                    "</div>"
+                tag.append(order);
+            });
+
+        },
+        decimalPlaces:function(n){                                 
+            //var numAsStr = n.toFixed(11);
+            var numAsStr = n.toString();
+            numAsStr = numAsStr.replace(/0+$/g,'');
+            var precision = String(numAsStr).replace('.','').length - parseFloat(n).toFixed().length;
+            return precision;
+        },
+        amount_pro: function(max,amount){
+            return ((amount / max)*16.667).toFixed(4);
+        },
+        
+        draw_trade_history: function(){
+            let symbol = "ZRX";
+            let base_token = "ETH";
+            get_trade_histories(base_token,symbol);
+        },
+        get_trade_histories:function(base_token = "ETH",symbol="ZRX"){
+            let data = {
+                symbol:symbol,
+                base_token:base_token
+            };
+            $.ajax({
+                url: 'get_trade_history',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function(result) {                    
+                    Trade.draw_trades(result.data);
+                },
+                error: function(error) {
+                    console.log("get trade history error")
+                    console.log(error);
+                }
+            });
+        },
+        draw_trades:function(data){
+            let tag = $("#trade_history_all table tbody");
+            let my_tag = $("#trade_history_me table tbody");
+            tag.html("");                
+            my_tag.html("");
+            $.each(data, function(index, element){
+                let time = element.created_at;
+                let price = element.price;
+                let amount = element.amount;
+                let type = element.type;
+                let time_format = get_timeformat(time);
+                let mytrade = "";
+                
+                //Calculate price decimals
+                let price_places = Trade.decimalPlaces(element.price);
+                let price_rest_places = 8 - price_places;
+                let price_zero_places = "";
+                for(i = 0; i <price_rest_places; i ++){
+                    price_zero_places += "0";
+                }
+                if(price_places == 0){
+                    price = parseInt(price).toString() + ".";
+                }else{
+                    price = price.toString();
+                }
+                
+
+                let trade = 
+                    "<tr class = 'cover-row'>" +
+                        "<td>" + "<strong class = 'number'>" + time_format + "</strong>" + "</td>";                       
+                if(type === 1){
+                    trade +=        
+                        "<td class = 'text-right text-success'>" +
+                            "<strong class = 'number'>" + price + 
+                                "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +
+                            "</strong>" +
+
+                            "<i aira-hidden = 'true' class = 'fa fa-caret-up'>" + "</i>" +"</td>";
+                }else if(type === 0){
+                    trade +=        
+                        "<td class = 'text-right text-danger'>" +
+                            "<strong class = 'number'>" + price + 
+                                "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +
+                            "</strong>" +
+                            "<i aira-hidden = 'true' class = 'fa fa-caret-down'>" + "</i>" +"</td>";                }                    
+                trade +=            
+                        "<td class = 'text-right'>" + 
+                            "<strong class='number'>" + amount + "</strong>" + "</td>" +
+                    "</tr>";                    
+                tag.append(trade);   
+                if(currentWalletAddress){
+                    if(currentWalletAddress == element.maker_address || currentWalletAddress == element.taker_address){
+                        //my_tag.append(trade);
+                            let my_trade = 
+                                "<tr class = 'cover-row'>";
+
+                            my_trade +=
+                                "<td class='text-left'>" +
+                                    "<a target='_blank' rel='noopener noreferrer' href='" + http_link + "tx/" + element.txHash + "'>" +
+                                        "<i class='fa fa-link' aria-hidden='true'>" +
+                                    "</a>"+
+                                "</td>";    
+                            if(type == 1){
+                                if(currentWalletAddress == element.maker_address.toLowerCase()){
+                                    my_trade +=
+                                        "<td class = 'text-success'>" +
+                                            "<span class = 'number'>" + "Buy" + "</span>" +
+                                        "</td>";
+                                }else if(currentWalletAddress == element.taker_address.toLowerCase()){
+                                    my_trade +=
+                                        "<td class = 'text-danger'>" +
+                                            "<span class = 'number'>" + "Sell" + "</span>" +
+                                        "</td>";
+                                }
+                            }else if(type == 0){
+                                if(currentWalletAddress == element.maker_address.toLowerCase()){
+                                    my_trade +=
+                                        "<td class = 'text-danger'>" +
+                                            "<span class = 'number'>" + "Sell" + "</span>" +
+                                        "</td>";
+                                }else if(currentWalletAddress == element.taker_address.toLowerCase()){
+                                    my_trade +=
+                                        "<td class = 'text-success'>" +
+                                            "<span class = 'number'>" + "Buy" + "</span>" +
+                                        "</td>";
+                                }
+
+                            }    
+                            my_trade +=    
+                                    "<td>" + "<strong class = 'number'>" + time_format + "</strong>" + "</td>";                       
+                            if(type === 1){
+                                my_trade +=        
+                                    "<td class = 'text-right text-success'>" +
+                                        "<strong class = 'number'>" + price + 
+                                            "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +
+                                        "</strong>" +
+                                        "</td>";
+                            }else if(type === 0){
+                                my_trade +=        
+                                    "<td class = 'text-right text-danger'>" +
+                                        "<strong class = 'number'>" + price + 
+                                            "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +
+                                        "</strong>" +
+                                        "</td>";                
+                            }                    
+                            my_trade +=            
+                                    "<td class = 'text-right'>" + 
+                                        "<strong class='number'>" + amount + "</strong>" + "</td>" +
+                                "</tr>";
+                        my_tag.append(my_trade);
+                    }
+                } 
+            });
+        },
+        get_timeformat:function(t){
+            let time_format = "";
+            let time;
+            let format = t.split("T");
+            let day = format[0].split("-");
+            time = format[1].split(".")[0].split(":");
+            time_format += day[1] + "-" + day[2] + " " + time[0] + ":" + time[1] + ":" + time[2];
+            return time_format;
+        },
+        sort_favorite:function(){
+            let table = document.getElementById("market_table");
+            let tbody = table.children[1];
+            let count = tbody.childElementCount;
+            for (i = 0; i < count; i ++){
+                let tag = tbody.children[i].children[4].children[0];
+                let token_id = tag.getAttribute("value");
+                if(localStorage.getItem("token"+token_id) == 1){
+                    tag.setAttribute('fav', 1);
+                    tag.className = "fas fa-star";
+                }else{
+                    tag.setAttribute('fav', 0);
+                    tag.className = "far fa-star";
+                }
+            }
+        },
+        get_tokens_table:function (){
+            let symbol = localStorage.getItem("select_token") || "ZRX";      
+            let token_addr = localStorage.getItem("select_contract") || zrxAddress;     
+            data = {
+                basetoken:"ETH",
+                token_symbol:symbol,
+                token_address:token_addr
+            };
+            $.ajax({
+                url: 'get_init_data',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function(data) {   
+                    console.log("***********************");
+                    console.log(data.balance);                  
+                    Trade.change_header_info(data.select_token);            
+                    Trade.draw_market_table(data.tokens);    
+                    Trade.load_trade();
+                    Trade.get_open_orders();                              
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+
+            });
+        },
+        draw_market_table:function (data){
+            let tag = $("#market_table").children("tbody");
+            tag.html("");
+            $.each(data, function(index, element){
+                let token_row;
+                let price = element.last_price;
+                let price_places = Trade.decimalPlaces(element.last_price);
+                let price_rest_places = 8 - price_places;
+                let price_zero_places = "";
+                if(element.last_price != "--"){
+                    for(i = 0; i <price_rest_places; i ++){
+                        price_zero_places += "0";
+                    }
+                    if(price_places == 0){
+                        price = parseInt(price).toString() + ".";
+                    }else{
+                        price = price.toString();
+                    }
+                }                
+                token_row = 
+                    "<tr class= 'market-status-row' value='" + element.contract_address + "' token_symbol='"+element.decimals+"'>" + 
+                        "<td class='text-left'>" +
+                            "<div class='pair' name='"+element.name+"' symbol = '"+element.symbol+"'>" + element.symbol+"-" + "ETH" + "</div>" +
+                        "</td>" + 
+                        "<td class='text-right'>" +
+                            "<strong value='"+element.last_price+"'>" + 
+                                "<strong>" +
+                                    "<span>" +element.last_price +
+                                    "</span>" +
+                                    "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +
+                                    
+                                "</strong>" +
+                            "</strong>" +
+                        "</td>";
+                        token_row += "<td class='text-right'>";
+                        if(element.h_price != "--"){
+                            if(element.h_price > 0){
+                                token_row += 
+                                    "<strong value='"+element.h_price+"'>" +
+                                        "<strong class='text-success'>"+
+                                            "<i aria-hidden='true' class='fa fa-caret-up'>" +"</i>" +
+                                            "<span>"+element.h_price+"%"+"</span>"+
+                                            
+                                        "</strong>" +
+                                    "</strong>";
+                            }else if(element.h_price == 0){
+                                token_row += 
+                                    "<strong value='"+element.h_price+"'>" +
+                                        "<strong ><span>"+element.h_price+"%"+"</span></strong>" +
+                                    "</strong>";
+                            }else{
+                                token_row += 
+                                    "<strong value='"+element.h_price+"'>" +
+                                        "<strong class='text-danger'>"+
+                                            "<i aria-hidden='true' class='fa fa-caret-down'>" +"</i>" +
+                                            "<span>"+element.h_price+"%"+"</span>"+
+                                            
+                                        "</strong>" +
+                                    "</strong>";
+                            }
+                        }else{
+                            token_row += 
+                                    "<strong value='"+element.h_price+"'>" +
+                                        "<strong ><span>"+element.h_price+"</span></strong>" +
+                                    "</strong>";
+                        }
+                        token_row += "</td>";
+                        token_row += 
+                        "<td class='text-right'>" +
+                            "<strong value='"+element.h_volumn+"'>" + element.h_volumn +                       
+                            "</strong>" +
+                        "</td>";
+                        token_row += 
+                        "<td class='text-right favorite'>" +
+                            "<i class='far fa-star' fav= '0' value='"+element.id+"'>"+"</i>"
+                        "</td>";
+                    "</tr>";
+                tag.append(token_row);
+                //Trade.sort_favorite();
+            });
+            Trade.volum_sort();   
+            //Trade.volum_sort();     
+        },
+        change_token_list:function(tokens,symbol,base_token){
+            
+            let select_base_token = $(".token-info").attr("base_token");
+            if(base_token == select_base_token){
+                let change_token_list = $("#nav-tokens").children("div").children("li").children("ul").find("li[value='"+symbol+"']");
+                $.each(tokens, function(index, element){
+                    if(element.symbol == symbol){
+                        change_token_list.attr("h_price",element.h_price);
+                        change_token_list.attr("price",element.last_price);
+                        change_token_list.attr("h_volumn",element.h_volumn);
+                    }
+                });
+            }
+            
+
+
+
+        },
+        change_header_info:function(data){           
+            let token_contract_addr = data.token_contract_addr;
+            let token_decimals = data.token_decimals;
+            let token_name = data.token_name;
+            let token_symbol = data.token_symbol;
+            let token_last_price = data.token_last_price;
+            let token_h_price = data.token_h_price;
+            let token_h_volumn = data.token_h_volumn;
+            let token_header_tag = $(".token-header");
+            let contract_addr = Trade.change_contract_address(token_contract_addr);
+            let last_price_tag;
+            let h_price_tag;
+            var real_last_price = token_last_price;                
+            if(token_last_price == "--"){
+                last_price_tag = 
+                    "<strong>" + 
+                        "<span>" + "0.000000" + " ETH" + "</span>" +
+                    "</strong>";
+            }else {
+                if(token_last_price >= 0){
+                    last_price_tag = 
+                        "<strong class='text-success'>" + 
+                            "<i aria-hidden='true' class='fa fa-caret-up'></i>" +
+                            "<span>" + real_last_price + " ETH" + "</span>" +
+                        "</strong>";
+                }else{
+                    last_price_tag = 
+                    "<strong class='text-danger'>" + 
+                        "<i aria-hidden='true' class='fa fa-caret-down'></i>" +
+                        "<span>" + real_last_price + " ETH" + "</span>" +
+                    "</strong>";
+                }
+            }                
+            if(token_h_price == "--"){
+                h_price_tag = 
+                    "<strong>" + 
+                        "<span>" + token_h_price + "</span>" +
+                    "</strong>";
+            }else {
+                if(token_h_price >= 0){
+                    h_price_tag = 
+                    "<strong class='text-success'>" + 
+                        "<i aria-hidden='true' class='fa fa-caret-up'></i>" +
+                        "<span>" + token_h_price + "%" + "</span>" +
+                    "</strong>";
+             }else{
+                    h_price_tag = 
+                    "<strong class='text-danger'>" + 
+                        "<i aria-hidden='true' class='fa fa-caret-up'></i>" +
+                        "<span>" + token_h_price + "%" + "</span>" +
+                    "</strong>";
+                }
+            }                
+            //change token header infos
+            token_header_tag.find(":nth-child(1)").children(".token-info").attr("token_symbol",token_symbol);
+            token_header_tag.find(":nth-child(1)").children(".token-info").attr("decimals",token_decimals);
+            token_header_tag.find(":nth-child(1)").children(".token-info").attr("data-name",token_name);
+            token_header_tag.find(":nth-child(1)").children(".token-info").children("span").text(token_name + " (" + token_symbol + ")");
+            token_header_tag.find(":nth-child(1)").children(".contract-address").children("a").text(contract_addr);
+            token_header_tag.find(":nth-child(1)").children(".contract-address").children("a").attr("value",token_contract_addr);
+            token_header_tag.find(":nth-child(1)").children(".contract-address").children("a").attr("href",http_link + "token/"+token_contract_addr);
+            token_header_tag.find(":nth-child(2)").children("div").children(".last-price").children("strong").html(last_price_tag);
+            token_header_tag.find(":nth-child(3)").children("div").children("div").children("strong").html(h_price_tag);
+            token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(token_h_volumn + " " + "ETH");
+            let symbol = $(".token-info").attr("token_symbol");  
+            $(".sell-token-symbol").text(symbol);
+            //change token list tag
+            $("#nav-tokens").children("div").children("li").children("a").text(token_symbol + "-" + "ETH");
+            //Change Trade widget view
+            $(".amount-buy").val("");
+            $(".amount-sell").val("");
+            //$(".amount-buy").trigger("change");
+            //$(".amount-sell").trigger("change");
+            if(token_last_price == "--"){
+                //$("#trade .price").val("");
+                $(".price-buy").val("");
+                $(".price-sell").val("");
+                $(".price-buy").attr('data-lock','true');
+                $(".price-sell").attr('data-lock','true');
+                //$(".price-buy").trigger("change");
+                //$(".price-sell").trigger("change");
+            }else{
+                //$("#trade .price").val(real_last_price);
+                $(".price-buy").val(real_last_price);
+                $(".price-sell").val(real_last_price);
+                $(".price-buy").attr('data-lock','false');
+                $(".price-sell").attr('data-lock','false');
+                $(".price-buy").trigger("change");
+                $(".price-sell").trigger("change");
+            }
+            $(".btn-buy span").text("BUY " + token_name + " (" + token_symbol + ")");
+            $(".btn-sell span").text("SELL " + token_name + " (" + token_symbol + ")");
+            $(".unit.buy").text(token_symbol);
+            $(".unit.sell").text(token_symbol);                
+        },
+        change_contract_address:function(addr){
+            return addr.substring(0, 7) + '...' + addr.slice(-4);
+        },
+        order_alert:function(){
+            $(".alert-order").css("display",'block')
+            window.setTimeout(function(){            
+                $(".alert-order").css("display","none");
+            },4000);
+
+        },
+        trade_alert:function(){
+            $(".alert-trade").css("display",'block')
+            window.setTimeout(function(){            
+                $(".alert-trade").css("display","none");
+            },4000);
+
+        },
+        volum_sort:function(direction = 'desc'){
+            var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
+            table = document.getElementById("market_table");
+            switching = true;
+            dir = "desc";
+            while (switching) {
+                switching = false;
+                rows = table.getElementsByTagName("TR");
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[3].children[0];
+                    y = rows[i + 1].getElementsByTagName("TD")[3].children[0];
+                    if(dir == "asc"){
+                        if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc"){
+                        if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount ++;
+                } else {
+                    if (switchcount == 0 && dir == "desc") {
+                        dir = "asc";
+                        switching = true;
+                    }
+                }
+            }
+        },
+        load_trade:function(){
+            let token_contract_addr = $(".contract-address").children("a").attr("value");
+            let token_last_price = $(".trade-info-number.last-price").children("strong").children("strong").children("span").text().split(" ")[0];
+            if(parseFloat(token_last_price) == 0){
+                //$("#trade .price").val("");    
+                $(".price-buy").val("");
+                $(".price-sell").val("");
+                $(".price-buy").attr('data-lock','true');
+                $(".price-sell").attr('data-lock','true');  
+                          
+            }else{
+                //$("#trade .price").val(token_last_price);
+                $(".price-buy").val(token_last_price);
+                $(".price-sell").val(token_last_price);                    
+                // Change price lock function                    
+                $(".price-buy").attr('data-lock','false');
+                $(".price-sell").attr('data-lock','false');  
+                $(".price-buy").trigger('change');             
+            }                
+            Trade.get_token_amount(token_contract_addr);
+            Trade.draw_quick_balance();
+        },
+        removeTrailingZeros(value) {
+            value = value.toString();
+            //if not containing a dot, we do not need to do anything
+            if (value.indexOf('.') === -1) {
+                return value;
+            }
+            //as long as the last character is a 0 or a dot, remove it
+            while((value.slice(-1) === '0' || value.slice(-1) === '.') && value.indexOf('.') !== -1) {
+                value = value.substr(0, value.length - 1);
+            }
+            return value;
+        }     
+
+    }
+    
+</script>

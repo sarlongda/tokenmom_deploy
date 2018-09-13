@@ -1,0 +1,45 @@
+#social.box.box-mb.flex.flex-column.flex-1
+  .tab-handles.flex.flex-column
+    %ul.nav.nav-tabs
+      %li.nav-item
+        %a.nav-link.active{'data-toggle' => 'tab', 'data-target' => '#social_chat',"data-i18n" => "chat"} CHAT
+      %li.nav-item
+        %a.nav-link{'data-toggle' => 'tab', 'data-target' => '#social_twitter',"data-i18n" => "twitter"} TWITTER
+  .tab-content.chat-twitter.flex.flex-column{'role' => 'tablelist'}
+    .tab-pane.active#social_chat{'role' => 'tabpanel'}
+      .panel-body.flex.flex-column{:style => "padding:8px"}
+        .lang-selection.flex.flex-column
+          %li.dropdown.language-item
+            %a.dropdown-toggle.language-link{"aria-expanded" => "false", "aria-haspopup" => "true",  :href => "javascript:void(0)", :role => "button"}
+              %img.country-icon{:alt => "", :src => "assets/en.fba4238a.svg"}/
+              %span English
+              %span.caret
+            %ul.dropdown-language-menu
+              %li{:value => "1"}
+                %a{:href => "javascript:void(0)"}
+                  %img.country-icon{:alt => "", :src => "assets/en.fba4238a.svg"}>/
+                  English
+              %li{:value => "2"}
+                %a{:href => "javascript:void(0)"}
+                  %img.country-icon{:alt => "", :src => "assets/ko.4d71266b.svg"}>/
+                  한국어
+              %li{:value => "3"}
+                %a{:href => "javascript:void(0)"}
+                  %img.country-icon{:alt => "", :src => "assets/zh.fee5842f.svg"}>/
+                  简体中文
+              %li{:value => "4"}
+                %a{:href => "javascript:void(0)"}
+                  %img.country-icon{:alt => "", :src => "assets/ja.e0b7a3ef.svg"}>/
+                  日本語
+        .panel-scroll-area.flex.flex-column
+          #customScrollBox
+            #messages              
+        .panel-message-input.flex.flex-column
+          - if @user_id
+            %input.form-control{'data-i18n' => '[placeholder]enter_message', :type => "text",:id =>'message_body', 'data-user-id' => "#{@user_id}"}
+          - else
+            %input.form-control{'data-i18n' => '[placeholder]connect_wallet', :type => "text",:id =>'message_body', 'data-user-id' => "#{@user_id}", 'disabled' => 'true'}
+    .tab-pane#social_twitter{'role' => 'tabpanel'}
+      #twitter_panel.panel-body{:style => "padding:2px"}
+        %a.twitter-timeline{"data-height" => "100%","data-theme" => "dark", "data-width" => "100%", "data-chrome" => "noheader nofooter noborders transparent", :href => "https://twitter.com/Token_Mom?ref_src=twsrc%5Etfw"} Tweets Liked by @TwitterDev
+        %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}

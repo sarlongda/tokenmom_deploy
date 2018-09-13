@@ -1,0 +1,47 @@
+#orderbook.box.box-mb.flex-1.flex.flex-column
+  .box-header
+    %span{'data-i18n' => 'order_book'} ORDER BOOK
+  .flex-column
+    .orderbook-header.header-row.text-right
+      .col-xs-2.size
+        %span{'data-i18n' => 'size'} Size
+      .col-xs-3
+        %span{'data-i18n' => 'price'} Price
+      .col-xs-4
+        %span{'data-i18n' => 'amount'} Amount
+      .col-xs-3.depth
+        %span{'data-i18n' => 'depth'} Depth
+    .orderbook-container.flex-1
+      .orderbook{:max_amount => "0"}
+        .orderbook-asks
+          - @sellOrders.each do |order|
+            .hover-row
+              .bar{:style => "width: 10%"}
+              .amount-bar{:style => "width: 15%"}
+              .col-xs-3.col-xs-offset-2.text-danger.text-right.orderbook-price
+                %strong.number
+                  #{order.price}
+              .col-xs-4.text-right.orderbook-amount
+                %strong.number
+                  #{order.amount}            
+        .spread
+          .col-xs-2
+            %span{'data-i18n' => 'spread'} Spread
+          .col-xs-3.text-right
+            %strong.number
+              0.000412
+          %strong.float-right.text-success
+            %i.fa.fa-circle{"aria-hidden" =>"true"}
+            %span{'data-i18n' => 'real_time'} Realtime
+        .orderbook-bids
+          - @buyOrders.each do |order|
+            .hover-row
+              .bar{:style => "width:14%"}
+              .amount-bar{:style => "width:16.67%"}
+              .col-xs-3.col-xs-offset-2.text-success.text-right.orderbook-price
+                %strong.number
+                  #{order.price}
+              .col-xs-4.text-right.orderbook-amount
+                %strong.number
+                  #{order.amount}
+

@@ -1,0 +1,29 @@
+=render :partial => 'index_script.html'
+=render :partial => 'wallet_script.html'
+=render :partial => 'trade_script.html'
+=render :partial => 'orderbook_script.html'
+=render :partial => 'trade_history_script.html'
+=render :partial => 'market_script.html'
+=render :partial => 'overview_script.html'
+=render :partial => 'utils_script.html'
+#trade_workspace
+  =render :partial => 'header'
+  .row.tmom-row
+    .col-md-3.tmom-grid-left
+      =render :partial => 'market'
+      =render :partial => 'social'
+    .col-md-6.tmom-grid-middle
+      =render :partial => 'tradeview'
+      =render :partial => 'trade'
+    .col-md-3.tmom-grid-right
+      =render :partial => 'orderbook'
+      =render :partial => 'trade_history'
+    #wallet_widget
+      =render :partial => 'wallet'
+    #overview_widget
+      =render :partial => 'overview'
+
+
+
+
+
