@@ -96,4 +96,8 @@ gem 'grape-swagger'
 
 group :development do
   gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+  gem 'capistrano-bundler', '~> 1.3'
+  gem 'capistrano-passenger', '~> 0.2.0'
 end
