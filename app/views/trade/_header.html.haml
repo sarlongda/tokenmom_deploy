@@ -23,7 +23,7 @@
             %span 
             .contract-address
               %span{"data-i18n" => "contract_address"} Contract Address:
-              %a
+              %a{:rel => "noopener noreferrer", :target => "_blank"}
         %li
           .trade-info
             .trade-info-number.last-price
@@ -52,25 +52,25 @@
           %i#theme_mode.far.fa-sun
         %li.dropdown.nav-item
           %a.dropdown-toggle.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true",  :href => "javascript:void(0)", :role => "button"}
-            %img.country-icon{:alt => "", :src => "assets/en.fba4238a.svg"}/
+            %img.country-icon{:alt => "", :src => "/assets/en.fba4238a.svg"}/
             %span English
             %span.caret
           %ul.dropdown-menu.language
             %li.lang-switch{:value => "1","data-locale" => "en"}
               %a{:href => "javascript:void(0)"}
-                %img.country-icon{:alt => "", :src => "assets/en.fba4238a.svg"}>/
+                %img.country-icon{:alt => "", :src => "/assets/en.fba4238a.svg"}>/
                 English
             %li.lang-switch{:value => "2","data-locale" => "ko"}
               %a{:href => "javascript:void(0)"}
-                %img.country-icon{:alt => "", :src => "assets/ko.4d71266b.svg"}>/
+                %img.country-icon{:alt => "", :src => "/assets/ko.4d71266b.svg"}>/
                 한국어
             %li.lang-switch{:value => "3","data-locale" => "zh"}
               %a{:href => "javascript:void(0)"}
-                %img.country-icon{:alt => "", :src => "assets/zh.fee5842f.svg"}>/
+                %img.country-icon{:alt => "", :src => "/assets/zh.fee5842f.svg"}>/
                 简体中文
             %li.lang-switch{:value => "4","data-locale" => "ja"}
               %a{:href => "javascript:void(0)"}
-                %img.country-icon{:alt => "", :src => "assets/ja.e0b7a3ef.svg"}>/
+                %img.country-icon{:alt => "", :src => "/assets/ja.e0b7a3ef.svg"}>/
                 日本語
             
         %li
@@ -100,7 +100,7 @@
     %div{ :style => "padding: 25px;" }
       #sign_in{ :style => "display: block;" }
         %span{"data-i18n" => "connect_wallet"} Connect a Wallet
-        %input{:placeholder => "Nick Name", :type => "text",:id =>'nick_name'}
+        %input{"data-i18n" => "[placeholder]nick_name",:placeholder => "Nick Name", :type => "text",:id =>'nick_name'}
         .btn-success.flex-button
           .icon-wrapper
             = image_tag("metamask.svg")

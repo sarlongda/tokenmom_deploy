@@ -4,7 +4,7 @@ let provider;
 let zeroEx;
 let currentWalletAddress;
 let web3Status;
-let http_link = "https://ropsten.etherscan.io/"
+let http_link = "https://ropsten.etherscan.io/";
 // Ropsten Net
 let wethAddress = "0xc778417e063141139fce010982780140aa0cd5ab";
 let zrxAddress = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d";
@@ -59,11 +59,14 @@ jQuery(function($) {
                 });
                 const configs = {
                     networkId: TESTRPC_NETWORK_ID,
-                };                
+                };                  
                 zeroEx = new ZeroEx.ZeroEx(provider, configs);
+                //web3Wrapper = new ZeroEx.ZeroEx(provider, configs);
+                // new Web3ProviderEngine();
+                
                 const accountAsync = async () => {
                     var account = web3.eth.accounts.length > 0 ? web3.eth.accounts[0] : 0;
-                    currentWalletAddress = account;
+                    currentWalletAddress = account;                    
                     auto_login();
                     setInterval(function () {
                         if (web3.eth.accounts[0] !== account) {
@@ -77,7 +80,8 @@ jQuery(function($) {
                     }, 100);
                 };
                 accountAsync().catch(console.error);
-        } else {
+        } 
+        else {
                 web3Status = 0;
         }
         $(document).on('click','#cancel_metamask_login',function(){
@@ -113,7 +117,7 @@ jQuery(function($) {
             if (currentWalletAddress !== undefined && currentWalletAddress != null && currentWalletAddress !== 0) {
                 var get_user = async () => {
                     $.ajax({
-                        url: 'user_sessions/get_user',
+                        url: '/user_sessions/get_user',
                         type: 'GET',
                         dataType: 'json',
                         data: {
@@ -129,7 +133,7 @@ jQuery(function($) {
                             $('#message_body').attr('placeholder',$.i18n('enter_message'))                                                           
                             $('#message_body').attr('disabled', false);                                
                             $.ajax({
-                                url: 'user_sessions/user_login',
+                                url: '/user_sessions/user_login',
                                 type: 'POST',
                                 dataType: 'json',
                                 data: {
@@ -226,7 +230,7 @@ jQuery(function($) {
             currentWalletAddress = account;
             if (currentWalletAddress !== undefined && currentWalletAddress != null && currentWalletAddress !== 0) {
                     $.ajax({
-                        url: 'user_sessions/user_login',
+                        url: '/user_sessions/user_login',
                         type: 'POST',
                         dataType: 'json',
                         data: {

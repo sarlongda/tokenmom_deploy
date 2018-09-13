@@ -28,7 +28,42 @@
                 %span{"data-i18n" => "24h_volumn"} 24h Vol(ETH)
               %th#favorite.text-right
                 %i.fas.fa-star
-          %tbody       
+          %tbody
+            - @tokenlist.each do |token|
+              %tr.market-status-row{:value => token.contract_address}
+                %td.text-center
+                  .pair{:symbol => token.symbol,:name => token.name} #{token.symbol}-ETH
+                %td.text-center
+                  %strong{:value => token.last_price('ETH')}
+                    %strong
+                      %span= number_with_precision(token.last_price('ETH'), precision:7)
+                - if token.h_price('ETH') != nil && token.h_price('ETH') != '--'
+                  - if token.h_price('ETH') > 0
+                    %td.text-center
+                      %strong{:value => token.h_price('ETH')}
+                        %strong.text-success
+                          %i.fa.fa-caret-up{"aria-hidden" => "true"}
+                            %span #{token.h_price('ETH')}% 
+                  - elsif token.h_price('ETH') == 0
+                    %td.text-center
+                      %strong{:value => token.h_price('ETH')}
+                        %strong
+                          %span #{token.h_price('ETH')}%        
+                  - else
+                    %td.text-center
+                      %strong{:value => token.h_price('ETH')}
+                        %strong.text-danger
+                          %i.fa.fa-caret-down{"aria-hidden" => "true"}
+                            %span #{token.h_price('ETH')}%
+                - else 
+                  %td.text-center
+                    %strong{:value => "--"}
+                      %strong
+                        %span #{token.h_price('ETH')}
+                %td.text-center
+                  %strong{:value =>token.h_volumn('ETH')} #{token.h_volumn('ETH')} 
+                %td.text-center.favorite
+                  %i.far.fa-star{:value => token.id, :fav => 0 }     
       .tab-pane#market_tm{'role' => 'tabpanel'}
         %table#market_table.table.table-dark.table-striped
           %thead

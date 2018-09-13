@@ -16,7 +16,7 @@ jQuery(document).on 'turbolinks:load', ->
                 draw_trade trade
                 Trade.get_tokens_table()
                 $.ajax
-                    url: 'trade/get_tokens'
+                    url: 'get_tokens'
                     type: 'POST'
                     dataType: 'json'
                     data:
@@ -33,7 +33,7 @@ jQuery(document).on 'turbolinks:load', ->
             else if symbol != trade.token_symbol and base_token == trade.base_token
                 # Trade.change_token_list(trade.token_symbol,trade.base_token)
                 $.ajax
-                    url: 'trade/get_tokens'
+                    url: 'get_tokens'
                     type: 'POST'
                     dataType: 'json'
                     data:
@@ -174,7 +174,7 @@ change_header_info = (symbol) ->
     base_token = $('.token-header').children('li').children('div').attr 'base_token'
     token_contract = $(".contract-address").children('a').attr('value');
     $.ajax
-        url: 'trade/get_token_info'
+        url: 'get_token_info'
         type: 'POST'
         dataType: 'json'
         data:

@@ -235,6 +235,9 @@
         get_open_orders: function(){
             console.log("get open orders---");
             if(currentWalletAddress != "" && currentWalletAddress != null){
+                
+                address = currentWalletAddress;
+                
                 let wallet_addr = currentWalletAddress;
                 let base_token = $(".token-header").children("li").children("div").attr("base_token");
                 let symbol = $(".token-info").attr("token_symbol");
@@ -244,7 +247,7 @@
                     token_symbol:symbol
                 }
                 $.ajax({
-                    url: 'trade/get_my_open_orders',
+                    url: 'get_my_open_orders',
                     type: 'POST',
                     dataType: 'json',
                     data: data,
@@ -375,11 +378,11 @@
                     let expire = new Date(null);
                     let text_color;                                
                     if(element.type == 1){
-                        type = "Buy";
+                        type = "buy";
                         text_color = "text-success";
                         //order_weth_balance += (parseFloat(element.amount) * parseFloat(element.price) + parseFloat(element.fee));
                     }else if(element.type == 0){
-                        type = "Sell";
+                        type = "sell";
                         text_color = "text-danger";
                         order_token_balance += parseFloat(element.amount);
                     }
@@ -387,7 +390,7 @@
                     let my_order = 
                         "<tr order_id = '"+ element.id + "'>" +
                             "<td class='" + text_color + "'>" +
-                                "<span>" + type + "</span>" +
+                                "<span data-i18n='"+type+"'>" + type + "</span>" +
                             "</td>" +
                             "<td class=''>" +
                                 "<span>" + element.state + "</span>" +
@@ -400,7 +403,7 @@
                             "</td>" +
 
                             "<td class='text-right'>" +
-                                "<span class='btn-danger btn-sm cancel-order' data-toggle='confirmation'>" + "Cancel" + "</span>" +
+                                "<span class='btn-danger btn-sm cancel-order' data-toggle='confirmation' data-i18n='cancel'>" + "Cancel" + "</span>" +
                             "</td>" +
                         "</tr>";
                     thead += my_order;
@@ -431,7 +434,7 @@
                 let token_decimal = $(".token-info").attr("decimals");      
                 let token_symbol = $(".token-info").attr("token_symbol");  
                 $(".sell-token-symbol").text(token_symbol);          
-                tokenContract.balanceOf(address,(error,balance) =>{                            
+                tokenContract.balanceOf(currentWalletAddress,(error,balance) =>{                            
                     token_balance = (balance.toNumber() / Math.pow(10,token_decimal));
                     let token_used_balance = 0
                     let token_available = 0
@@ -443,12 +446,15 @@
                         token_used_balance = order_token_balance.toFixed(token_decimal);
                         token_available = (token_balance - token_used_balance).toFixed(token_decimal);
                         token_balance = token_balance.toFixed(token_decimal);  
+                        token_balance  = token_balance * 1
+                        token_available = token_available * 1
+                        console.log(token_balance)
                     }
                     if(token_available < 0){
                         token_available = "0.00"
                     }                                      
-                    $(".sell-token-balance").text(token_balance);
-                    $(".sell-token-available").text(token_available);                           
+                    $(".sell-token-balance").text(token_balance );
+                    $(".sell-token-available").text(token_available );                           
                                                                   
                 });                        
                   
@@ -555,9 +561,9 @@
         },
         decimalPlaces:function(n){                                 
             //var numAsStr = n.toFixed(11);
-            var numAsStr = n.toString();
+            var numAsStr = n.toString();            
             numAsStr = numAsStr.replace(/0+$/g,'');
-            var precision = String(numAsStr).replace('.','').length - parseFloat(n).toFixed().length;
+            var precision = String(numAsStr).replace('.','').length - parseInt(parseFloat(n)/1).toFixed().length;
             return precision;
         },
         amount_pro: function(max,amount){
@@ -850,10 +856,6 @@
                     }
                 });
             }
-            
-
-
-
         },
         change_header_info:function(data){           
             let token_contract_addr = data.token_contract_addr;

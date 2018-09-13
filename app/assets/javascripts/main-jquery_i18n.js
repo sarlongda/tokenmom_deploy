@@ -42,7 +42,7 @@ jQuery(function($) {
       toolbar_bg: toolbar_bg_dark,
       allow_symbol_change: false,
       container_id: 'tv_chart_container',
-      datafeed: new Datafeeds.UDFCompatibleDatafeed('http://192.168.5.91:10254/api/v1/datafeeds'),
+      datafeed: new Datafeeds.UDFCompatibleDatafeed('http://178.128.31.172/api/v1/datafeeds'),
       library_path: '/assets/charting_library/',
       locale: getLanguageFromURL() || locale,
       overrides: override_dark,
@@ -100,6 +100,7 @@ jQuery(function($) {
       'why_do_i_need_a_wallet': 'Why do I need a wallet?',
       'tokenmom': 'TOKENMOM',
       'connect_wallet': 'Connect a Wallet',
+      'nick_name' : 'Nick Name',
       //
       'welcome': 'Welcome!',
       'message_from': '$1 has send you $2 {{plural:$2|message|messages}}. {{gender:$3|He|She}} is waiting for your response!',
@@ -142,6 +143,9 @@ jQuery(function($) {
       'total≈' : 'Total ≈ ',
       'fee≈' : 'Fee ≈ ',
       'allowance' : 'Allowance',
+      'buy' : 'Buy',
+      'sell' : 'Sell',
+      'cancel' : 'Cancel',
       //orderbook widget
       'order_book' : 'ORDER BOOK',
       'size' : 'Size',
@@ -193,6 +197,9 @@ jQuery(function($) {
       'why_do_i_need_a_wallet': '지갑이 왜 필요한가요?',
       'tokenmom': '토큰맘',
       'connect_wallet' : '지갑을 연결하세요',
+      'nick_name': '닉네임을 입력해주세요.',
+
+      //
       'wallet' : '지갑',
       'orders' : '주문',
       'help' : '지원',
@@ -232,6 +239,9 @@ jQuery(function($) {
       'total≈' : '주문총액 ≈ ',
       'fee≈' : '수수료 ≈ ',
       'allowance': '거래허용',
+      'buy': '매수',
+      'sell': '매도',
+      'cancel': '취소',
       //orderbook widget
       'order_book' : '주문장부',
       'size' : '규모',

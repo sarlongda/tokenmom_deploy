@@ -17,7 +17,7 @@
                 }
                 let that = $(this);
                 $.ajax({
-                    url: 'trade/delete_my_order',
+                    url: 'delete_my_order',
                     type: 'POST',
                     dataType: 'json',
                     data: data,
@@ -446,7 +446,8 @@
                         }else if(trade == "sell"){
                             $(".btn-sell").append("<i class='fa fa-spinner fa-spin'></i>");
                             get_allowance = async () => {
-                                let token_addr = $(".contract-address").children("a").attr("value")
+                                let token_addr = $(".contract-address").children("a").attr("value");
+                                token_addr = token_addr.toLowerCase();
                                 let allow_status = await zeroEx.token.getProxyAllowanceAsync(token_addr, currentWalletAddress);
                                 if (allow_status.toNumber() === 0) {
                                     $(".btn-sell > :nth-child(2)").remove();
@@ -615,6 +616,7 @@
                         BigNumber.config({ EXPONENTIAL_AT:[-9,30]});                        
                         const DECIMALS = 18;
                         const WETH_ADDRESS = wethAddress; // The wrapped ETH token contract
+                        //const TOKEN_ADDRESS = $(".contract-address").children("a").attr("value").toLowerCase();
                         const TOKEN_ADDRESS = $(".contract-address").children("a").attr("value").toLowerCase();
                         let token_decimals = parseInt($(".token-info").attr("decimals"));
                         const EXCHANGE_ADDRESS = zeroEx.exchange.getContractAddress();
@@ -707,11 +709,13 @@
                             };   
                                           
                             $.ajax({
-                                url: 'trade/create_order',
+                                url: 'create_order',
                                 type: 'POST',
                                 dataType: 'json',
                                 data: data,
-                                success: function(data) {                                    
+                                success: function(data) {
+                                    console.log("create_ order *********************");
+                                    console.log(data.result);                                    
                                     if(trade == "buy"){
                                         $(".btn-buy > :nth-child(2)").remove();
                                         $(".amount-buy").val("");
@@ -756,7 +760,7 @@
                     detail_id:id
                 }
                 $.ajax({
-                    url: 'trade/delete_order',
+                    url: 'delete_order',
                     type: 'POST',
                     dataType: 'json',
                     data:data,
@@ -775,7 +779,7 @@
                     amount:amount
                 };
                 $.ajax({
-                    url: 'trade/update_order',
+                    url: 'update_order',
                     type: 'POST',
                     dataType: 'json',
                     data:data,
@@ -800,7 +804,7 @@
                     txHash:txHash
                 }
                 $.ajax({
-                    url: 'trade/create_trade_history',
+                    url: 'create_trade_history',
                     type: 'POST',
                     dataType: 'json',
                     data: data,
@@ -1417,7 +1421,7 @@
                         token_symbol:symbol
                     }
                     $.ajax({
-                        url: 'trade/get_my_open_orders',
+                        url: 'get_my_open_orders',
                         type: 'POST',
                         dataType: 'json',
                         data: data,

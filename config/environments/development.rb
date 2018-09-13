@@ -4,8 +4,8 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.action_cable.url = 'ws://192.168.5.91:10254/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://192.168.5.255:10254', 'http://127.0.0.1:10254' ]
+  config.action_cable.url = 'ws://178.128.31.172/cable'
+  # config.action_cable.allowed_request_origins = [ 'http://178.128.31.172', 'http://178.128.31.172' ]
   config.action_cable.disable_request_forgery_protection = true
   config.cache_classes = false
 

@@ -144,8 +144,7 @@
                 }
                 e.stopPropagation();
 
-            });
-            
+            });            
             var detect_popup_emt, name_emt,price_emt,pricechange_emt,volum_emt,detect_account_emt,metamask_login_emt,ledger_login_emt,favorite_emt, cancel_metamask_install_emt, cancel_metamask_login_emt, metamask_install_button_emt;
 
             detect_account_emt = document.getElementById("detect_account");
@@ -166,7 +165,6 @@
                     detect_popup_emt.classList.toggle("show");
                 }
             });
-
             //metamask_install_button_emt = document.getElementById("metamask_install_button");
             //metamask_install_button_emt.onclick = function() { metamask_install() };
 
@@ -200,7 +198,6 @@
             ledger_login_emt = document.getElementById("ledger_login");
             ledger_login_emt.onclick = function(){ledger_login()};
         });
-
         function load_config(){
             var theme_color = localStorage.getItem('theme_color');
             if(theme_color=='dark'){
@@ -226,7 +223,6 @@
                 $('#trade_workspace').addClass('is-nightmode');
             }
         };
-
     });
 
     function isHex(string){
@@ -244,7 +240,6 @@
             return false;
         }else {
             return true;
-
         }       
     }
     function check_address(token_addr){
@@ -277,10 +272,7 @@
             }else{
                 invalid_address();
             }
-
         });
-       
-
     }
     function metamask_install() {
         var win = window.open('https://metamask.io/', '_blank');
@@ -302,7 +294,6 @@
         connection_status_ele.classList.remove("connection-issue");
         connection_status_ele.classList.remove("connected");
     }
-
     function change_favorite_order(){
         let table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
         table = document.getElementById("market_table");
@@ -320,7 +311,6 @@
                        shouldSwitch = true;
                        break;
                     }
-
                 } else if (dir === "desc"){
                     if (Number(x) < Number(y)) {
                         shouldSwitch = true;
@@ -339,9 +329,7 @@
                 }
             }
         }
-
     }
-
     function name_sort(){
         let table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
         table = document.getElementById("market_table");
@@ -420,8 +408,7 @@
                 }
             }
         }
-    }
-    
+    }    
     function pricechange_sort(){
         var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;;
         table = document.getElementById("market_table");
@@ -467,7 +454,6 @@
         }
 
     }
-
     function search_function(){
         var input, filter, table, tr, td, i;
         input = document.getElementById("symbol_input");
@@ -489,14 +475,8 @@
             }
         }
     }
-
-    
-
     function ledger_login(){
-
     }
-    
-
     function normalize_string(complex) {        
         return complex.substring(0, 7) + '...' + complex.slice(-4);
     }
@@ -508,7 +488,7 @@
             base_token:base_token
         }
         $.ajax({
-            url: 'trade/find_token',
+            url: 'find_token',
             type: 'POST',
             dataType: 'json',
             data: data,
@@ -822,46 +802,6 @@
         $(".sell-token-symbol").text(symbol);
         Trade.get_tokens_table();
         draw_orderbook();
-        //Test 
-        console.log("-------------------");
-        var ABI = human_standard_token_abi;
-        var contract = web3.eth.contract(ABI).at("0x479cc461fecd078f766ecc58533d6f69580cf3ac");
-        let address = [5];
-        address[0] = "0x7cc2768c52deab5bc304485c0fd82bed287372cd"
-        address[1] = "0000000000000000000000000000000000000000"
-        address[2] = "0x375e2debff2e48bfb216cf52826bde3855c1b88c"
-        address[3] = "0xc778417e063141139fce010982780140aa0cd5ab"
-        address[4] = "0000000000000000000000000000000000000000"
-        let address_arr = [];
-        address_arr[0] = address;
-        let ordervalue = [6];
-        ordervalue[0] = "0xe8d4a51000";
-        ordervalue[1] = "0x51ad487f62e000";
-        ordervalue[2] = "0";
-        ordervalue[3] = "0";
-        ordervalue[4] = "0";
-        ordervalue[5] = "0";
-        let ordervalue_arr = [];
-        ordervalue_arr[0] = ordervalue;
-        
-        let filltakerTokenAmount = "0xe8d4a51000";
-        filltakerTokenAmount_arr = [];
-        filltakerTokenAmount_arr[0] = filltakerTokenAmount;
-        let allowance = false;
-        let v = [1];
-        let r = [1];
-        let s = [1];
-        v[0] = "0x1c";
-        r[0] = "ea419b5435c10398072c207aa5b2519c699ec0fd94d75ba7e1a79f9f477b1e11";
-        s[0] = "41475ce4d9c00cce93f8687659272d3ef3039f82fbb7a07466574128093f8975";
-        let v_arr = [];
-        v_arr[0] = v[0];
-        let r_arr = [];
-        r_arr[0] = r[0];
-        let s_arr = [];
-        s_arr[0] = s[0];
-        console.log(contract.batchFillOrders.getData(address_arr,ordervalue_arr,filltakerTokenAmount_arr,v_arr,r_arr,s_arr));
-        console.log(contract.withdraw.getData(100000));
     }
     function draw_orderbook(){
         let symbol = localStorage.getItem("select_token") || "ZRX";

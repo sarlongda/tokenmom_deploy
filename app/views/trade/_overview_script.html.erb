@@ -16,7 +16,7 @@
                 }
                 let that = $(this);
                 $.ajax({
-                    url: 'trade/delete_my_order',
+                    url: 'delete_my_order',
                     type: 'POST',
                     dataType: 'json',
                     data: data,
@@ -35,7 +35,7 @@
                         account_address:currentWalletAddress
                     }
                     $.ajax({
-                    url: 'trade/delete_my_orders',
+                    url: 'delete_my_orders',
                     type: 'POST',
                     dataType: 'json',
                     data: data,
@@ -61,7 +61,7 @@
                         base_token:base_token
                     };
                     $.ajax({
-                    url: 'trade/get_owner_data',
+                    url: 'get_owner_data',
                     type: 'POST',
                     dataType: 'json',
                     data: data,
@@ -101,9 +101,9 @@
                         let time_format = get_timeformat(element.created_at);
                         let side;
                         if(element.type == 1){
-                            side = "Buy";
+                            side = "buy";
                         }else if(element.type == 0){
-                            side = "Sell";
+                            side = "sell";
                         }
                         let order = 
                             "<tr>" + 
@@ -116,11 +116,10 @@
                                 "<td>";
                                 if(element.type == 1){
                                     buy ++;
-                                    order += "<span class='side btn-success'>" + side +"</span>";
+                                    order += "<span class='side btn-success' data-i18n='"+side+"'>" + side +"</span>";
                                 }else if(element.type == 0){
                                     sell ++;
-                                    order += "<span class='side btn-danger'>" + side +"</span>";
-
+                                    order += "<span class='side btn-danger' data-i18n='"+side+"'>" + side +"</span>";
                                 }
                                 order +=                                    
                                 "</td>" +
@@ -131,7 +130,7 @@
                                     "<span>" + element.amount +"</span>" +
                                 "</td>" +
                                 "<td class='text-right'>" +
-                                    "<span class='btn-danger cancel-order-btn' data-id='" + element.id + "'>" + "Cancel" +"</span>" +
+                                    "<span class='btn-danger cancel-order-btn' data-id='" + element.id + "' data-i18n='cancel'>" + "Cancel" +"</span>" +
                                 "</td>" +
                             "</tr>";
                         total ++;
@@ -181,15 +180,15 @@
                         let side;
                         if(element.type == 1){
                             if(element.maker_address == currentWalletAddress){
-                                side = "Buy";
+                                side = "buy";
                             }else{
-                                side = "Sell"
+                                side = "sell";
                             }
                         }else if(element.type == 0){
                             if(element.maker_address == currentWalletAddress){
-                                side = "Sell";
+                                side = "sell";
                             }else{
-                                side = "Buy"
+                                side = "buy";
                             }
                         }
                         let trade = 
@@ -206,13 +205,12 @@
                                     "<span>" + element.token_symbol +"</span>" +
                                 "</td>" +
                                 "<td>";
-                                if(side == "Buy"){
+                                if(side == "buy"){
                                     buy ++;
-                                    trade += "<span class='side btn-success'>" + side +"</span>";
-                                }else if(side == "Sell"){
+                                    trade += "<span class='side btn-success' data-i18n='"+side+"'>" + side +"</span>";
+                                }else if(side == "sell"){
                                     sell ++
-                                    trade += "<span class='side btn-danger'>" + side +"</span>";
-
+                                    trade += "<span class='side btn-danger' data-i18n='"+side+"'>" + side +"</span>";
                                 }
                                 trade +=                                    
                                 "</td>" +

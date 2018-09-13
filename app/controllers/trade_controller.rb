@@ -44,8 +44,6 @@ $zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
 # $weth_contract_addr = "0xd0a1e359811322d97991e03f863a0c30c2cf029c"
 # $zrx_contract_addr = "0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570"
 
-
-
 # Set allowance value
 $set_allow_value = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
 # Server Setting values
@@ -237,15 +235,106 @@ $exchange_abi =
         {"indexed":true,"name":"errorId","type":"uint8"},
         {"indexed":true,"name":"orderHash","type":"bytes32"}],
       "name":"LogError","type":"event"}]'
-$token_abi = '[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"inputs":[],"payable":false,"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}]'
+$token_abi = 
+  '[
+    {"constant":true,
+      "inputs":[],
+      "name":"name",
+      "outputs":[
+        {"name":"","type":"string"}
+      ],
+      "payable":false,
+      "type":"function"
+    },
+    {"constant":false,
+      "inputs":[
+        {"name":"_spender","type":"address"},
+        {"name":"_value","type":"uint256"}
+      ],
+      "name":"approve",
+      "outputs":[{"name":"","type":"bool"}],
+      "payable":false,"type":"function"
+    },
+    {"constant":true,
+      "inputs":[],
+      "name":"totalSupply",
+      "outputs":[{"name":"","type":"uint256"}],
+      "payable":false,"type":"function"
+    },
+    {"constant":false,
+      "inputs":[
+        {"name":"_from","type":"address"},
+        {"name":"_to","type":"address"},
+        {"name":"_value","type":"uint256"}
+      ],
+      "name":"transferFrom",
+      "outputs":[{"name":"","type":"bool"}],
+      "payable":false,"type":"function"
+    },
+    {"constant":true,
+      "inputs":[],
+      "name":"decimals",
+      "outputs":[{"name":"","type":"uint8"}],
+      "payable":false,"type":"function"
+    },
+    {"constant":true,
+      "inputs":[{"name":"_owner","type":"address"}],
+      "name":"balanceOf",
+      "outputs":[{"name":"","type":"uint256"}],
+      "payable":false,"type":"function"
+    },
+    {"constant":true,
+      "inputs":[],
+      "name":"symbol",
+      "outputs":[{"name":"","type":"string"}],
+      "payable":false,"type":"function"
+    },
+    {"constant":false,
+      "inputs":[
+        {"name":"_to","type":"address"},
+        {"name":"_value","type":"uint256"}
+      ],
+      "name":"transfer",
+      "outputs":[{"name":"","type":"bool"}],
+      "payable":false,"type":"function"
+    },
+    {"constant":true,
+      "inputs":[
+        {"name":"_owner","type":"address"},
+        {"name":"_spender","type":"address"}
+      ],
+      "name":"allowance",
+      "outputs":[{"name":"","type":"uint256"}],
+      "payable":false,"type":"function"
+    },
+    {
+      "inputs":[],
+      "payable":false,"type":"constructor"
+    },
+    {
+      "anonymous":false,
+      "inputs":[
+        {"indexed":true,"name":"_from","type":"address"},
+        {"indexed":true,"name":"_to","type":"address"},
+        {"indexed":false,"name":"_value","type":"uint256"}
+      ],
+      "name":"Transfer","type":"event"
+    },
+    {
+      "anonymous":false,
+      "inputs":[
+        {"indexed":true,"name":"_owner","type":"address"},
+        {"indexed":true,"name":"_spender","type":"address"},
+        {"indexed":false,"name":"_value","type":"uint256"}
+      ],
+      "name":"Approval","type":"event"
+    }
+  ]'
 class TradeController < ApplicationController
   skip_before_action :verify_authenticity_token  
-
   def index
-
-  end
-
-  def trade
+  end  
+  def trade   
     @messages = Message.order(updated_at: :asc)
     @tokenlist = get_token_list
     @zrxtoken = Token.where("symbol = ?","ZRX").first
@@ -253,20 +342,19 @@ class TradeController < ApplicationController
     @sellOrders = Order.where(:base_token => "ZRX",:type => 0).order(price: :asc)
     @user_id = current_user ? current_user.id : nil
   end
-
   def get_tokens 
     base_token = params[:base_token]
     tokens = Token.order(symbol: :asc) 
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
       json_record = {          
-          :symbol => token.symbol,
-          :decimals => token.token_decimals,
-          :contract_address => token.contract_address,
-          :name => token.name,
-          :last_price => token.last_price(base_token),
-          :h_price => token.h_price(base_token),
-          :h_volumn => token.h_volumn(base_token)
+        :symbol => token.symbol,
+        :decimals => token.token_decimals,
+        :contract_address => token.contract_address,
+        :name => token.name,
+        :last_price => token.last_price(base_token),
+        :h_price => token.h_price(base_token),
+        :h_volumn => token.h_volumn(base_token)
       }
       tokens_array.push json_record
     end
@@ -291,40 +379,43 @@ class TradeController < ApplicationController
     myContract = $web3.eth.contract($exchange_abi)
     contract_instance = myContract.at('0x479cc461fecd078f766ecc58533d6f69580cf3ac')
     zrx_token_contract = contract_instance.ZRX_TOKEN_CONTRACT
-    # order_hash = '0x5fe66346ed6e738ec529981a9362980886e1b921477577115b56c280aa6659a3'
-    # token_amount_unavailable = contract_instance.getUnavailableTakerTokenAmount($web3.eth.remove_0x_head(order_hash).to_i.to_s(16))
-    # order_detail = JSON.parse(OrderDetail.first.signedorder)
-    # order_address = Array.new(5)
-    # order_values = Array.new(6)
-    
-    # order_address[0] = $web3.eth.remove_0x_head(order_detail["maker"])
-    # order_address[1] = $web3.eth.remove_0x_head(order_detail["taker"])
-    # order_address[2] = $web3.eth.remove_0x_head(order_detail["makerTokenAddress"])
-    # order_address[3] = $web3.eth.remove_0x_head(order_detail["takerTokenAddress"])
-    # order_address[4] = $web3.eth.remove_0x_head(order_detail["feeRecipient"])    
-    # i = 0
-    
-
-    # order_values[0] = order_detail["makerTokenAmount"].to_i.to_s(16)
-    # order_values[1] = order_detail["takerTokenAmount"].to_i.to_s(16)
-    # order_values[2] = order_detail["makerFee"].to_i.to_s(16)
-    # order_values[3] = order_detail["takerFee"].to_i.to_s(16)
-    # order_values[4] = order_detail["expirationUnixTimestampSec"].to_i.to_s(16)
-    # order_values[5] = order_detail["salt"].to_i.to_s(16)
 
     i = 0 
-    # order_hash = (Order.first.order_hash)    
-    # if order_hash
-    #   hash = order_hash
-    #   # hash = $web3.eth.remove_0x_head(order_hash.order_hash)
-    #   # hash = order_hash.order_hash.to_s
-    #   # hash = hash32 hash
-    #   # amount = contract_instance.filled(hash)
-    # end
-    # token_amount_unavailable = $web3.eth.remove_0x_head(order_hash)
+    order_hash = (Order.first)    
+    if order_hash
+      hash = order_hash.order_hash
+      
+      token_amount_unavailable = "order"
+      # abi = $api.contract_getabi address: $exchange_contract_addr
+      # myContract = $web3.eth.contract(abi)
+      # contract_instance = myContract.at($exchange_contract_addr)
+      # order_detail = JSON.parse(OrderDetail.first.signedorder)
+      # orderAddresses = Array.new(5)
+      # orderValues = Array.new(6)
 
-    # token_amount_unavailable = hash.to_s
-    
+      # orderAddresses[0] = (order_detail["maker"])
+      # orderAddresses[1] = (order_detail["taker"])
+      # orderAddresses[2] = (order_detail["makerTokenAddress"])
+      # orderAddresses[3] = (order_detail["takerTokenAddress"])
+      # orderAddresses[4] = (order_detail["feeRecipient"])
+
+      # orderValues[0] = order_detail["makerTokenAmount"].to_i
+      # orderValues[1] = order_detail["takerTokenAmount"].to_i
+      # orderValues[2] = order_detail["makerFee"].to_i
+      # orderValues[3] = order_detail["takerFee"].to_i
+      # orderValues[4] = order_detail["expirationUnixTimestampSec"].to_i
+      # orderValues[5] = order_detail["salt"].to_i
+
+      # templete = orderfilledAmount(order_detail)
+      # token_amount_unavailable = templete
+
+      # partialAmount = contract_instance.getPartialAmount((templete/2).to_i,orderValues[1].to_i,orderValues[0].to_i)
+      # token_amount_unavailable = partialAmount
+      # token_amount_unavailable = BigDecimal.new(10)
+
+      # token_amount_unavailable = max_value(145,245)
+      # token_amount_unavailable = min_value(145,245)
+    end   
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
       json_record = {
@@ -380,6 +471,39 @@ class TradeController < ApplicationController
       format.json { render :json=>json_data}
     end    
   end
+
+  def orderfilledAmount(order_detail)
+    abi = $exchange_abi
+    myContract = $web3.eth.contract(abi)
+    contract_instance =myContract.at($exchange_contract_addr)
+    orderAddresses = Array.new(5)
+    orderValues = Array.new(6)
+    orderAddresses[0] = (order_detail["maker"])
+    orderAddresses[1] = (order_detail["taker"])
+    orderAddresses[2] = (order_detail["makerTokenAddress"])
+    orderAddresses[3] = (order_detail["takerTokenAddress"])
+    orderAddresses[4] = (order_detail["feeRecipient"])
+    orderValues[0] = order_detail["makerTokenAmount"].to_i
+    orderValues[1] = order_detail["takerTokenAmount"].to_i
+    orderValues[2] = order_detail["makerFee"].to_i
+    orderValues[3] = order_detail["takerFee"].to_i
+    orderValues[4] = order_detail["expirationUnixTimestampSec"].to_i
+    orderValues[5] = order_detail["salt"].to_i
+
+    amount = 0
+    order_hash = contract_instance.getOrderHash(orderAddresses,orderValues)
+    amount = contract_instance.filled(order_hash)
+    return amount
+  end
+
+  def max_value(a,b)
+    return a >= b ? a : b
+  end
+
+  def min_value(a,b)
+    return a < b ? a : b
+  end
+  
   # Hash 32 byte fill zero
   def hash32(string)
     num = 64-string.length
@@ -477,7 +601,6 @@ class TradeController < ApplicationController
     return result
     
   end
-
   def batchfillOrder(type,price,amount,base_token='ETH',token_symbol='ZRX')   
     return_str = ""
     # init Arrays
@@ -490,8 +613,14 @@ class TradeController < ApplicationController
     update_taker_order = Array.new
     update_taker_order_amount = BigDecimal.new("0")
     taker_amount = BigDecimal.new(amount.to_s)
-    maker_amount = BigDecimal.new("0")   
+    maker_amount = BigDecimal.new("0") 
+    
+    # Contract define
+    abi = $exchange_abi
+    myContract = $web3.eth.contract(abi)
+    contract_instance =myContract.at($exchange_contract_addr)
 
+    # get taker Order values
     create_order = Order.where("base_token = ? AND token_symbol = ? AND price = ? AND type = ?",base_token,token_symbol,price,type).last
     if create_order
       signed_order[0] = JSON.parse(OrderDetail.where(id:create_order.detail_id).first.signedorder)
@@ -504,8 +633,8 @@ class TradeController < ApplicationController
         token_address = signed_order[0]["makerTokenAddress"]
       end
       abi = $token_abi          
-      exchangeContract = $web3.eth.contract(abi).at(token_address)
-      decimals = exchangeContract.decimals()
+      tokenContract = $web3.eth.contract(abi).at(token_address)
+      decimals = tokenContract.decimals()
       result = ""
       data_code = ""
       if type == 0         
@@ -535,9 +664,9 @@ class TradeController < ApplicationController
           end
           if taker_amount > maker_amount
             if decimals > 8
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).floor(8)              
+              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(8)              
             else
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).floor(decimals)
+              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(decimals)
             end
           end
         end
@@ -567,9 +696,9 @@ class TradeController < ApplicationController
           end
           if taker_amount > maker_amount
             if decimals > 8
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).floor(8)
+              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(8)
             else
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).floor(decimals)
+              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(decimals-1)
             end
           end
         end
@@ -632,39 +761,59 @@ class TradeController < ApplicationController
           paramsArray[j][8] = orderValues[j][3] = signed_order[j]["takerFee"].to_i.to_s(16)
           paramsArray[j][9] = orderValues[j][4] = signed_order[j]["expirationUnixTimestampSec"].to_i.to_s(16)
           paramsArray[j][10] = orderValues[j][5] = signed_order[j]["salt"].to_i.to_s(16)
-
           v[j] = signed_order[j]["ecSignature"]["v"]
           r[j] = signed_order[j]["ecSignature"]["r"]
           s[j] = signed_order[j]["ecSignature"]["s"]
           if j == 0
-            if update_taker_order_amount > 0
-              return_str += "taker_order_amount >>>0"
-              if type == 0 
-                paramsArray[j][11] = (signed_order[j]["takerTokenAmount"].to_f * ((maker_amount * (10 ** decimals)).to_f / signed_order[j]["makerTokenAmount"].to_f)).to_i.to_s(16)                
+            if update_taker_order_amount > 0              
+              if type == 0
+                taker_fill_amount =  (signed_order[j]["takerTokenAmount"].to_f * ((maker_amount * (10 ** decimals)).to_f / signed_order[j]["makerTokenAmount"].to_f))
+                # decimal round down
+                taker_fill_amount_round = (taker_fill_amount / (10 ** 18))
+                return_str += taker_fill_amount_round.to_s                
+                paramsArray[j][11] = (taker_fill_amount_round * (10 ** 18)).to_i.to_s(16)              
+                # taker_fill_amount =  BigDecimal.new(signed_order[j]["takerTokenAmount"].to_s) * ((BigDecimal.new(maker_amount.to_S) * (BigDecimal.new(10.to_s) ** BigDecimal.new(decimals.to_s))) / BigDecimal.new(signed_order[j]["makerTokenAmount"].to_s))
+                # taker_fill_amount_round = (taker_fill_amount / (BigDecimal.new(10.to_s) ** BigDecimal.new(18.to_s))).truncate(8)
+                # paramsArray[j][11] = (taker_fill_amount_round * (BigDecimal.new(10.to_s) ** BigDecimal.new(18.to_s))).to_i.to_s(16) 
               elsif type == 1
-                taker_amount_param_0 = (maker_amount * (10 ** decimals)).to_i.to_s(16)
+                
+                if decimals > 8
+                  round_dec = 8
+                else
+                  round_dec = decimals
+                end
+                taker_amount_param_0 = (maker_amount.truncate(round_dec) * (BigDecimal.new(10.to_s) ** BigDecimal.new(decimals.to_s))).to_i.to_s(16)
                 paramsArray[j][11] = taker_amount_param_0
               end
-            else
-              if type == 0
+            else              
+              if type == 0                
                 paramsArray[j][11] = (signed_order[j]["takerTokenAmount"]).to_i.to_s(16)                
               elsif type == 1
                 paramsArray[j][11] = (signed_order[j]["takerTokenAmount"]).to_i.to_s(16)
-              end
-              
-            end
+              end              
+            end            
           else
             if update_order.count > 0              
-              if update_order[0].id == signed_order_ids[j]
-                if type == 0
+              if update_order[0].id == signed_order_ids[j]                     
+                if type == 0   # SELL
+                  # BUY order current  
                   taker_Token_amount = ( order_real_amountArray[j] * ( 10 ** decimals ) )
-                  paramsArray[j][11] = (taker_Token_amount.to_i - (update_order_amount.to_f * (10 ** decimals)).to_i).to_i.to_s(16)
-                elsif type == 1
-                  maker_Token_amount = ( order_real_amountArray[j] * ( 10 ** decimals ) )
+                  paramsArray[j][11] = (taker_Token_amount.to_i - (update_order_amount.to_f * (10 ** decimals)).to_i).to_i.to_s(16)             
+                elsif type == 1   #BUY  
+                  # SELL order current 
+                  maker_Token_amount = ( BigDecimal.new(order_real_amountArray[j].to_s) * ( BigDecimal.new(10) ** BigDecimal.new(decimals) ) )                                  
+                  # paramsArray[j][11] = ((BigDecimal.new(tmp.to_s) / BigDecimal.new(100.to_s)).to_i * BigDecimal.new(100.to_s)).to_i.to_s(16)    
+                  # get filled amount in order
+                  filledTakerTokenAmount = orderfilledAmount(signed_order[j])
+                  filledMakerTokenAmount = contract_instance.getPartialAmount(filledTakerTokenAmount,signed_order[j]["takerTokenAmount"],signed_order[j]["makerTokenAmount"])
+                  # get current token amounts
+                  restMakerTokenAmount = min_value((signed_order[j]["makerTokenAmount"].to_i - filledMakerTokenAmount),(maker_Token_amount))
+                  fillMakerTokenAmount = restMakerTokenAmount - (BigDecimal.new(update_order_amount.to_s) * (BigDecimal.new(10) ** BigDecimal.new(decimals) ))
+                  fillTakerTokenAmount = ((fillMakerTokenAmount.to_i * signed_order[j]["takerTokenAmount"].to_i).to_i / signed_order[j]["makerTokenAmount"].to_i).to_i
+     
+                  paramsArray[j][11] = fillTakerTokenAmount.to_i.to_s(16)
                   
-                  taker_Token_amount = (signed_order[j]["takerTokenAmount"].to_f * (( order_real_amountArray[j] * ( 10 ** decimals ) ).to_f / signed_order[j]["makerTokenAmount"].to_f))
-                  procentage = (maker_Token_amount.to_i - (update_order_amount.to_f * (10 ** decimals)).to_i)/maker_Token_amount.to_f
-                  paramsArray[j][11] = (taker_Token_amount.to_f * procentage).to_i.to_s(16)
+                  
                 end
               else
                 if type == 1
@@ -676,27 +825,22 @@ class TradeController < ApplicationController
                 end
               end          
             else
-              if type == 1
-                taker_Token_amount = (signed_order[j]["takerTokenAmount"].to_f * (( order_real_amountArray[j] * ( 10 ** decimals ) ).to_f / signed_order[j]["makerTokenAmount"].to_f))
-                # paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)
-                # tmp_value = BigDecimal.new("0")
-                # tmp_value = (taker_Token_amount / (10 ** 18)).floor(6)
-                paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)
-                
+              if type == 1                
+                taker_Token_amount = (BigDecimal.new(signed_order[j]["takerTokenAmount"].to_s) * (( order_real_amountArray[j] * ( 10 ** decimals ) ).to_f / signed_order[j]["makerTokenAmount"].to_f))
+                paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)                   
               elsif type == 0
                 taker_Token_amount = ( order_real_amountArray[j] * ( 10 ** decimals ) )
                 paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)
-              end
-              # paramsArray[j][11] = signed_order[j]["takerTokenAmount"].to_i.to_s(16)
+              end              
             end
           end
-          # paramsArray[j][11] = signed_order[j]["takerTokenAmount"].to_i.to_s(16)
-          # paramsArray[j][12] = 1.to_i.to_s(16)
+          
           paramsArray[j][12] = v[j].to_i.to_s(16)
           paramsArray[j][13] = $web3.eth.remove_0x_head(r[j])
           paramsArray[j][14] = $web3.eth.remove_0x_head(s[j])   
           j += 1
         end
+        # Change order arrays
         if type == 1
           tmp_paramArray = paramsArray[0]
           paramsArray[0] = paramsArray[order_count - 1]
@@ -955,7 +1099,6 @@ class TradeController < ApplicationController
       format.json { render :json=>json_data}
     end
   end
-
   def token_last_price(base_token = 'ETH', token_symbol)
     last = TradeHistory.where(token_symbol:token_symbol).last
     if last
@@ -1236,7 +1379,6 @@ class TradeController < ApplicationController
     detail.taker_amount = taker_amount
     detail.maker_amount = maker_amount
     detail.save
-
     detail_id = detail.id
 
     # Save Order to db
@@ -1254,8 +1396,8 @@ class TradeController < ApplicationController
     order.maker_address = maker_address
     order.save
 
-    result = batchfillOrder(type.to_i,token_price.to_f,amount.to_f,base_token,token_symbol)
-    
+    result = batchfillOrder(type.to_i,token_price.to_f,amount.to_f,base_token,token_symbol) 
+       
     json_data = 
     {
       "status":"ok",
@@ -1265,9 +1407,7 @@ class TradeController < ApplicationController
     respond_to do |format|
       format.json{ render :json => json_data }
     end
-
   end
-
   def create_trade_history
     symbol = params[:symbol]
     type = params[:type]
@@ -1294,7 +1434,6 @@ class TradeController < ApplicationController
       format.json{ render :json => json_data}
     end
   end
-
   def create_trade_histories(symbol,type,maker_address,taker_address,price,amount,base_token,txHash)
     # Save Data to TradeHistory table
     trade = TradeHistory.new
@@ -1320,7 +1459,6 @@ class TradeController < ApplicationController
       format.json{ render :json => json_data }
     end
   end
-
   def get_signed_order
     order_id = params[:address]
     signed_order = OrderDetail.where(id:order_id).order(updated_at: :desc)
@@ -1333,8 +1471,6 @@ class TradeController < ApplicationController
       format.json{ render :json => json_data }
     end
   end
-
-
   def show
 
   end

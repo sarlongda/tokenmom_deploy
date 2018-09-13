@@ -12,27 +12,5 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:href => "assets/favicon.ico", :rel => "shortcut icon"}/
-    -if current_page?(controller: 'trade', action: 'index')
-      %link{:href => "index/ico/apple-icon-120.png", :rel => "apple-touch-icon"}/
-      %link{:href => "index/ico/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
-      / Google Fonts
-      %link{:href => "https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700", :rel => "stylesheet"}/
-      / Font icons
-      %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-      / BEGIN VENDOR CSS
-      %link{:href => 'index/bootstrap.min.css', :rel => "stylesheet", :type => "text/css"}/
-      %link{:href => "index/fonts/themify/style.min.css", :rel => "stylesheet", :type => "text/css"}/
-      %link{:href => "index/flag-icon.min.css", :rel => "stylesheet", :type => "text/css"}/
-      %link{:href => "index/animate.min.css", :rel => "stylesheet", :type => "text/css"}/
-      %link{:href => "vendors/flipclock/flipclock.css", :rel => "stylesheet", :type => "text/css"}/
-      %link{:href => "vendors/swiper/css/swiper.min.css", :rel => "stylesheet", :type => "text/css"}/
-      / END VENDOR CSS
-      / END CRYPTO CSS
-      / BEGIN Page Level CSS
-      %link{:href => "index/template-3d-graphics.css", :rel => "stylesheet", :type => "text/css"}/
-      / END Page Level CSS
-      / BEGIN Custom CSS
-      %link{:href => "index/style.css", :rel => "stylesheet", :type => "text/css"}/
-
   %body
     = yield
