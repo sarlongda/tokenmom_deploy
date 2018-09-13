@@ -4,6 +4,8 @@ lock "~> 3.11.0"
 set :application, "TokenMom"
 set :repo_url, "git@github.com:sarlongda/tokenmom_deploy.git"
 
+set :passenger_restart_with_touch, true
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
