@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_action :detect_device_variant
-
   def get_token_list
     tokens = Token.order(symbol: :asc)  
     return tokens
@@ -16,12 +14,5 @@ class ApplicationController < ActionController::Base
 
   def get_sellorder
     Order.order(created_at: :asc)
-  end
-
-  private
-
-  def detect_device_variant
-    request.variant = :phone if browser.device.mobile?
-    request.variant = :tablet if browser.device.tablet?
   end
 end

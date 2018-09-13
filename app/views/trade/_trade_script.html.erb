@@ -447,29 +447,35 @@
                             $(".btn-sell").append("<i class='fa fa-spinner fa-spin'></i>");
                             get_allowance = async () => {
                                 let token_addr = $(".contract-address").children("a").attr("value");
-                                token_addr = token_addr.toLowerCase();
-                                let allow_status = await zeroEx.token.getProxyAllowanceAsync(token_addr, currentWalletAddress);
-                                if (allow_status.toNumber() === 0) {
-                                    $(".btn-sell > :nth-child(2)").remove();
-                                    let alert = "<span>Please set your token tradable</span>";
-                                    $(".amount-sell").next().children().remove();
-                                    $(".amount-sell").next().append(alert);
-                                    $(".btn-sell").addClass("disabled");                                
-                                } else {
-                                    let token_decimals = parseInt($(".token-info").attr("decimals"));
-                                    let balance_status = await zeroEx.token.getBalanceAsync(token_addr,currentWalletAddress);
-                                    let balance = (balance_status.toNumber() / Math.pow(10,token_decimals));
-                                    if(balance < amount){
+                                console.log("-----------------");
+                                console.log(token_addr);
+                                if(token_addr != "" && token_addr != null){
+                                    token_addr = token_addr.toLowerCase();
+                                    let allow_status = await zeroEx.token.getProxyAllowanceAsync(token_addr, currentWalletAddress);
+                                    if (allow_status.toNumber() === 0) {
                                         $(".btn-sell > :nth-child(2)").remove();
-                                        let alert = "<span>Insufficient Balance</span>";
+                                        let alert = "<span>Please set your token tradable</span>";
                                         $(".amount-sell").next().children().remove();
                                         $(".amount-sell").next().append(alert);
-                                        $(".btn-sell").addClass("disabled");
-                                    }else{
-                                        $(".btn-sell").addClass("disabled");
-                                        get_matching_orders(trade,symbol,price,amount);
-                                    }                                
+                                        $(".btn-sell").addClass("disabled");                                
+                                    } else {
+                                        let token_decimals = parseInt($(".token-info").attr("decimals"));
+                                        let balance_status = await zeroEx.token.getBalanceAsync(token_addr,currentWalletAddress);
+                                        let balance = (balance_status.toNumber() / Math.pow(10,token_decimals));
+                                        if(balance < amount){
+                                            $(".btn-sell > :nth-child(2)").remove();
+                                            let alert = "<span>Insufficient Balance</span>";
+                                            $(".amount-sell").next().children().remove();
+                                            $(".amount-sell").next().append(alert);
+                                            $(".btn-sell").addClass("disabled");
+                                        }else{
+                                            $(".btn-sell").addClass("disabled");
+                                            get_matching_orders(trade,symbol,price,amount);
+                                        }                                
+                                    }
+
                                 }
+                                
                             };
                             get_allowance().catch(console.error);
                         }
@@ -617,7 +623,12 @@
                         const DECIMALS = 18;
                         const WETH_ADDRESS = wethAddress; // The wrapped ETH token contract
                         //const TOKEN_ADDRESS = $(".contract-address").children("a").attr("value").toLowerCase();
-                        const TOKEN_ADDRESS = $(".contract-address").children("a").attr("value").toLowerCase();
+                        
+
+                        let TOKEN_ADDRESS = $(".contract-address").children("a").attr("value");
+                        
+                        TOKEN_ADDRESS = TOKEN_ADDRESS.toLowerCase();
+                        console.log(TOKEN_ADDRESS);
                         let token_decimals = parseInt($(".token-info").attr("decimals"));
                         const EXCHANGE_ADDRESS = zeroEx.exchange.getContractAddress();
                         const accounts = await zeroEx.getAvailableAddressesAsync();

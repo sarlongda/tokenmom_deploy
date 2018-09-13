@@ -2,48 +2,637 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/40/f81f95300781f3" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/40/f81f95300781f3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/41/979b9fe7c2bd67" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/41/979b9fe7c2bd67" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/48/c2fa3185ba41c3" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/48/c2fa3185ba41c3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/50/63b467d4c818a3" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/50/63b467d4c818a3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/52/f061596e60d1ac" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/52/f061596e60d1ac" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/57/fc832106461b70" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/57/fc832106461b70" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5b/b12f4c921fce34" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5b/b12f4c921fce34" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5b/f4e1813c4fbd3a" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5b/f4e1813c4fbd3a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5e/63ae33155ed92f" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5e/63ae33155ed92f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5f/4ef3e0c5a38f60" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5f/4ef3e0c5a38f60" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/66/5212b25567f813" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/66/5212b25567f813" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6b/d1831e14dd9e4a" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6b/d1831e14dd9e4a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6e/2762aebe745383" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6e/2762aebe745383" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6f/1b344d5fd0a92d" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6f/1b344d5fd0a92d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/70/0ee847c621c56a" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/70/0ee847c621c56a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/72/4a100b7cd8ddfe" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/72/4a100b7cd8ddfe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/77/2bbcc55afcb5b7" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/77/2bbcc55afcb5b7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7c/00691cb394e612" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7c/00691cb394e612" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/88/9470fb6b0b4711" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/88/9470fb6b0b4711" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/8c/0d17a139216c07" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/8c/0d17a139216c07" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/8f/2a2650f9c4999b" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/8f/2a2650f9c4999b" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/91/e41d3812be540d" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/91/e41d3812be540d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/93/64d1df51a5ea5d" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/93/64d1df51a5ea5d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/b0/73428ac5fe051d" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/b0/73428ac5fe051d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/cf/976cdb9bf27667" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/cf/976cdb9bf27667" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/cf/e6834527d49d97" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/cf/e6834527d49d97" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/d7/d0aea471305679" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/d7/d0aea471305679" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/de/0272310f741d56" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/de/0272310f741d56" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e0/6e14dbab897450" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e0/6e14dbab897450" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e4/7bb536fa64fb8f" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e4/7bb536fa64fb8f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e7/b1ceabb7354c14" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e7/b1ceabb7354c14" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e8/2b07e650655234" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/e8/2b07e650655234" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f2/87b75a1787d4b6" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f2/87b75a1787d4b6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f3/45aebef90782e4" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f3/45aebef90782e4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/fe/a0c70ba16e78da" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/fe/a0c70ba16e78da" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Work.iml" afterPath="$PROJECT_DIR$/.idea/Work.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/banner-graphic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/bitcoin-banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/blockchain.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/blog-banner-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/blog-banner-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/blog-banner-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/blog-banner-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/company-logo-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/company-logo-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/company-logo-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/company-logo-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/company-logo-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/error.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/flag-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/flag-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/flag-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/flag-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/footer-image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/footer-shape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico-bazaar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico-bench.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico-ranker.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico-track.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico/apple-icon-120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico/apple-icon-152.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico/apple-icon-60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico/apple-icon-76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico/favicon-32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/ico/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/icon-android.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/icon-apple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/icon-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/icon-bitcoin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/icon-eth.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/icon-maestro.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/icon-visa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/loader-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/mobile-app-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/mobile-app-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/mobile-app-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/mobile-app-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/our-coin-shape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/our-coin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/post-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/post-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/post-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/problems-graphic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/solution-shape.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/solutions-graphic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-1-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-10-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-11-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-12-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-13-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-2-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-3-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-4-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-5-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-6-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-7-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-8-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-9-lg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/user-9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/what-is-crypto.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/index/whitepaper.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/index/sales-notification.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/index/scripts/particles-type1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/index/scripts/particles-type2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/index/theme.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/flipclock/flipclock.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/flipclock/flipclock.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/particles.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/swiper/js/swiper.esm.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/swiper/js/swiper.esm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/swiper/js/swiper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/swiper/js/swiper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/swiper/js/swiper.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/vendors.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/waypoints/jquery.waypoints.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/vendor/waypoints/jquery.waypoints.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/flag-icon.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/css/flag-icon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/css/flag-icon.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ad.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ae.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/af.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ag.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ai.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/al.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/am.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ao.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/aq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ar.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/as.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/at.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/au.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/aw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ax.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/az.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ba.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/be.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/br.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/by.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/bz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ca.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ch.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ci.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ck.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/co.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cx.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/cz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/de.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/dj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/dk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/dm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/do.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/dz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ec.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ee.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/eg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/eh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/er.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/es.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/et.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/eu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/fi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/fj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/fk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/fm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/fo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/fr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ga.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gb-eng.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gb-sct.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gb-wls.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ge.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/gy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/hk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/hm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/hn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/hr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ht.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/hu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/id.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ie.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/il.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/im.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/in.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/io.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/iq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ir.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/is.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/it.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/je.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/jm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/jo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/jp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ke.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/kg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/kh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ki.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/km.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/kn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/kp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/kr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/kw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ky.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/kz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/la.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/lb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/lc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/li.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/lk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/lr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ls.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/lt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/lu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/lv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ly.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ma.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/md.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/me.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ml.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ms.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mx.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/my.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/mz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/na.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/nc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ne.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/nf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ng.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ni.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/nl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/no.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/np.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/nr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/nu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/nz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/om.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pa.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pe.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ph.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ps.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/pw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/py.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/qa.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/re.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ro.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/rs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ru.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/rw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sa.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/se.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/si.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/so.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ss.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/st.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sx.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/sz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/td.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/th.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/to.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/tz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ua.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ug.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/um.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/us.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/uy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/uz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/va.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/vc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ve.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/vg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/vi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/vn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/vu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/wf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ws.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/ye.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/yt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/za.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/zm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/zw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/1x1/zz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ad.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ae.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/af.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ag.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ai.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/al.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/am.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ao.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/aq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ar.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/as.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/at.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/au.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/aw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ax.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/az.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ba.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/be.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/br.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/by.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/bz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ca.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ch.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ci.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ck.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/co.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cx.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/cz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/de.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/dj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/dk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/dm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/do.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/dz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ec.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ee.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/eg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/eh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/er.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/es.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/et.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/eu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/fi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/fj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/fk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/fm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/fo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/fr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ga.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gb-eng.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gb-sct.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gb-wls.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ge.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/gy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/hk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/hm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/hn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/hr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ht.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/hu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/id.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ie.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/il.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/im.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/in.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/io.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/iq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ir.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/is.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/it.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/je.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/jm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/jo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/jp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ke.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/kg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/kh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ki.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/km.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/kn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/kp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/kr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/kw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ky.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/kz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/la.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/lb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/lc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/li.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/lk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/lr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ls.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/lt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/lu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/lv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ly.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ma.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/md.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/me.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ml.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mp.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mq.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ms.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mx.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/my.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/mz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/na.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/nc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ne.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/nf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ng.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ni.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/nl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/no.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/np.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/nr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/nu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/nz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/om.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pa.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pe.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ph.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ps.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/pw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/py.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/qa.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/re.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ro.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/rs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ru.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/rw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sa.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sb.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sd.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/se.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sh.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/si.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/so.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ss.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/st.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sx.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/sz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/td.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/th.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tj.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tl.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/to.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tr.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tv.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/tz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ua.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ug.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/um.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/us.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/uy.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/uz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/va.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/vc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ve.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/vg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/vi.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/vn.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/vu.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/wf.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ws.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/ye.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/yt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/za.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/zm.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/zw.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/flag-icon-css/flags/4x3/zz.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/themify/fonts/themify.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/themify/fonts/themify.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/themify/fonts/themify.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/themify/fonts/themify.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/themify/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/fonts/themify/style.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/style-rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/template-3d-graphics.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index/template-3d-graphics.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/template-3d-graphics.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/vendor/animate/animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/vendor/flipclock/flipclock.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/vendor/swiper/css/swiper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/vendor/swiper/css/swiper.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/trade/index.html+phone.haml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/production.log" afterPath="$PROJECT_DIR$/log/production.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -69,7 +658,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -102,28 +691,28 @@
       <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/trade/index.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="42" lean-forward="false" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/0x-library/packages/0x.js/_bundles/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deploy.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/deploy.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="61" lean-forward="false" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -149,11 +738,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="1" column="62" lean-forward="true" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -339,6 +928,26 @@
               <item name="Work" type="b2602c69:ProjectViewProjectNode" />
               <item name="Work" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="channels" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -352,6 +961,26 @@
               <item name="Work" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="trade" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Work" type="b2602c69:ProjectViewProjectNode" />
@@ -611,12 +1240,12 @@
       <workItem from="1536813744601" duration="17000" />
       <workItem from="1536826714234" duration="8203000" />
       <workItem from="1536841579732" duration="741000" />
-      <workItem from="1536851612131" duration="976000" />
+      <workItem from="1536851612131" duration="2196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112550000" />
+    <option name="totallyTimeSpent" value="113770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="680" y="225" width="1873" height="1092" extended-state="6" />
@@ -759,13 +1388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trade/index.html+phone.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/tokens_admin.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -854,13 +1476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trade/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="42" lean-forward="false" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -886,13 +1501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4140">
           <caret line="230" column="14" lean-forward="false" selection-start-line="230" selection-start-column="14" selection-end-line="230" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -964,26 +1572,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1000,6 +1592,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trade/index.html+phone.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trade/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="42" lean-forward="false" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="62" lean-forward="true" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding />
         </state>
       </provider>

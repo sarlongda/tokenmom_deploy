@@ -381,41 +381,58 @@ class TradeController < ApplicationController
     zrx_token_contract = contract_instance.ZRX_TOKEN_CONTRACT
 
     i = 0 
-    order_hash = (Order.first)    
-    if order_hash
-      hash = order_hash.order_hash
+    # order_hash = (Order.first)    
+    # if order_hash
+    #   hash = order_hash.order_hash
+    #   type = order_hash.type
       
-      token_amount_unavailable = "order"
-      # abi = $api.contract_getabi address: $exchange_contract_addr
-      # myContract = $web3.eth.contract(abi)
-      # contract_instance = myContract.at($exchange_contract_addr)
-      # order_detail = JSON.parse(OrderDetail.first.signedorder)
-      # orderAddresses = Array.new(5)
-      # orderValues = Array.new(6)
+    #   token_amount_unavailable = "order"
+    #   abi = $api.contract_getabi address: $exchange_contract_addr
+    #   myContract = $web3.eth.contract(abi)
+    #   contract_instance = myContract.at($exchange_contract_addr)
+    #   order_detail = JSON.parse(OrderDetail.first.signedorder)
+    #   orderAddresses = Array.new(5)
+    #   orderValues = Array.new(6)
 
-      # orderAddresses[0] = (order_detail["maker"])
-      # orderAddresses[1] = (order_detail["taker"])
-      # orderAddresses[2] = (order_detail["makerTokenAddress"])
-      # orderAddresses[3] = (order_detail["takerTokenAddress"])
-      # orderAddresses[4] = (order_detail["feeRecipient"])
+    #   orderAddresses[0] = (order_detail["maker"])
+    #   orderAddresses[1] = (order_detail["taker"])
+    #   orderAddresses[2] = (order_detail["makerTokenAddress"])
+    #   orderAddresses[3] = (order_detail["takerTokenAddress"])
+    #   orderAddresses[4] = (order_detail["feeRecipient"])
 
-      # orderValues[0] = order_detail["makerTokenAmount"].to_i
-      # orderValues[1] = order_detail["takerTokenAmount"].to_i
-      # orderValues[2] = order_detail["makerFee"].to_i
-      # orderValues[3] = order_detail["takerFee"].to_i
-      # orderValues[4] = order_detail["expirationUnixTimestampSec"].to_i
-      # orderValues[5] = order_detail["salt"].to_i
+    #   orderValues[0] = order_detail["makerTokenAmount"].to_i
+    #   orderValues[1] = order_detail["takerTokenAmount"].to_i
+    #   orderValues[2] = order_detail["makerFee"].to_i
+    #   orderValues[3] = order_detail["takerFee"].to_i
+    #   orderValues[4] = order_detail["expirationUnixTimestampSec"].to_i
+    #   orderValues[5] = order_detail["salt"].to_i
 
-      # templete = orderfilledAmount(order_detail)
-      # token_amount_unavailable = templete
+    #   templete = getFilledAmount(order_detail)
+    #   token_amount_unavailable += "-getfilledamount--->"
+    #   token_amount_unavailable += templete.to_s
+    #   token_amount_unavailable += "-takeramount--->"
+    #   token_amount_unavailable += order_detail["takerTokenAmount"].to_s
 
-      # partialAmount = contract_instance.getPartialAmount((templete/2).to_i,orderValues[1].to_i,orderValues[0].to_i)
-      # token_amount_unavailable = partialAmount
-      # token_amount_unavailable = BigDecimal.new(10)
+    #   rest_amount = order_detail["takerTokenAmount"].to_i - templete
 
-      # token_amount_unavailable = max_value(145,245)
-      # token_amount_unavailable = min_value(145,245)
-    end   
+    #   token_amount_unavailable += "-restamount--->"
+    #   token_amount_unavailable += rest_amount.to_s
+
+    #   rest_maker_amount = contract_instance.getPartialAmount(rest_amount.to_i,order_detail["takerTokenAmount"].to_i,order_detail["makerTokenAmount"].to_i)
+    #   token_amount_unavailable += "-getfillamount--->"
+    #   token_amount_unavailable += rest_maker_amount.to_s
+    #   realresttokenamount = getRealAmount(type,order_detail)
+    #   token_amount_unavailable += "-getrestTokenamount--->"
+    #   token_amount_unavailable += realresttokenamount.to_s
+
+
+    #   # partialAmount = contract_instance.getPartialAmount((templete/2).to_i,orderValues[1].to_i,orderValues[0].to_i)
+    #   # token_amount_unavailable = partialAmount
+    #   # token_amount_unavailable = BigDecimal.new(10)
+
+    #   # token_amount_unavailable = max_value(145,245)
+    #   # token_amount_unavailable = min_value(145,245)
+    # end   
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
       json_record = {
@@ -472,7 +489,7 @@ class TradeController < ApplicationController
     end    
   end
 
-  def orderfilledAmount(order_detail)
+  def getFilledAmount(order_detail)
     abi = $exchange_abi
     myContract = $web3.eth.contract(abi)
     contract_instance =myContract.at($exchange_contract_addr)
@@ -492,7 +509,7 @@ class TradeController < ApplicationController
 
     amount = 0
     order_hash = contract_instance.getOrderHash(orderAddresses,orderValues)
-    amount = contract_instance.filled(order_hash)
+    amount = contract_instance.getUnavailableTakerTokenAmount(order_hash)
     return amount
   end
 
@@ -524,6 +541,56 @@ class TradeController < ApplicationController
     end
     return string 
   end
+
+  def getRealAmount(type,order_detail)
+    # init contract abi
+    abi = $exchange_abi
+    myContract = $web3.eth.contract(abi)
+    contract_instance =myContract.at($exchange_contract_addr)
+    # get filled amount
+    filledAmount = getFilledAmount(order_detail)
+    restAmount = order_detail["takerTokenAmount"].to_i - filledAmount
+    
+    if restAmount == 0
+      return 0
+    else
+      if type == 0
+        restTokenAmount = getPartialAmount(restAmount.to_i,order_detail["takerTokenAmount"].to_i,order_detail["makerTokenAmount"].to_i)
+        
+       
+      elsif type == 1
+        restTokenAmount = restAmount
+      end
+      return restTokenAmount
+    end
+    
+  end
+
+  def checkRestAmount(restmaker,resttaker,maker,taker)
+    # init contract abi
+    abi = $exchange_abi
+    myContract = $web3.eth.contract(abi)
+    contract_instance =myContract.at($exchange_contract_addr)
+    check_amount = getPartialAmount(restmaker,maker,taker)
+    Rails.logger.debug("==============&")
+    Rails.logger.debug(check_amount)
+    Rails.logger.debug("===================")
+    Rails.logger.debug(restmaker)
+    if check_amount == resttaker
+      return 0
+    else
+      return (resttaker - check_amount).to_i
+    end
+  end
+
+  def getTokenDecimals(address)
+    abi = $token_abi          
+    tokenContract = $web3.eth.contract(abi).at(address)
+    decimals = tokenContract.decimals()
+    return decimals
+  end
+
+  
   def fill_order
     base_token = "ETH"
     token_symbol = "ZRX"
@@ -601,6 +668,11 @@ class TradeController < ApplicationController
     return result
     
   end
+
+  def getPartialAmount(num,denominator,target)
+    amount = ((num * target) / denominator).to_i
+    return amount
+  end
   def batchfillOrder(type,price,amount,base_token='ETH',token_symbol='ZRX')   
     return_str = ""
     # init Arrays
@@ -614,96 +686,114 @@ class TradeController < ApplicationController
     update_taker_order_amount = BigDecimal.new("0")
     taker_amount = BigDecimal.new(amount.to_s)
     maker_amount = BigDecimal.new("0") 
+
+    result = ""
+    data_code = ""
     
-    # Contract define
+    # Init Contract define
     abi = $exchange_abi
     myContract = $web3.eth.contract(abi)
-    contract_instance =myContract.at($exchange_contract_addr)
+    contract_instance = myContract.at($exchange_contract_addr)
 
     # get taker Order values
     create_order = Order.where("base_token = ? AND token_symbol = ? AND price = ? AND type = ?",base_token,token_symbol,price,type).last
     if create_order
       signed_order[0] = JSON.parse(OrderDetail.where(id:create_order.detail_id).first.signedorder)
       signed_order_ids[0] = create_order.id 
-      order_real_amountArray[0] = create_order.amount.to_f
-      # Get Token decimals from Ether block
+      # Get Token Decimals From Token Address 
       if type == 1
         token_address = signed_order[0]["takerTokenAddress"]
       elsif type == 0
         token_address = signed_order[0]["makerTokenAddress"]
       end
-      abi = $token_abi          
-      tokenContract = $web3.eth.contract(abi).at(token_address)
-      decimals = tokenContract.decimals()
-      result = ""
-      data_code = ""
-      if type == 0         
+      decimals = getTokenDecimals(token_address)
+      
+
+      order_real_amountArray[0] = create_order.amount * ( 10 ** decimals )
+      taker_amount = order_real_amountArray[0]
+      # Get Token decimals from Ether block
+      
+      
+      # Sell Order Case
+      if type == 0    
+        # Get matching orders  
         match_order = Order.where("base_token = ? AND token_symbol = ? AND price >= ? AND type = ?",base_token,token_symbol,price,1).order(price: :desc)
-        if match_order.length > 0
-          result = "YES"
-          delete_order[0] = create_order
+        # If exists matching orders
+        if match_order.length > 0          
           i = 0
           while i < match_order.length do
-            maker_amount += BigDecimal.new(match_order[i].amount.to_s)
-            signed_order[i + 1] = JSON.parse(OrderDetail.where(id:match_order[i].detail_id).first.signedorder)
-            signed_order_ids[i + 1] = match_order[i].id
-            order_real_amountArray[i+1] = match_order[i].amount
+            # maker_amount += BigDecimal.new(match_order[i].amount.to_s)
+            match_order_detail = JSON.parse(OrderDetail.where(id:match_order[i].detail_id).first.signedorder)
+            
+            order_real_amountArray[i+1] = match_order[i].amount * ( 10 ** decimals )
+            # get real rest token amount
+            orderRealAmount = getRealAmount(1,match_order_detail)
+            order_real_amountArray[i+1] = min_value(order_real_amountArray[i+1], orderRealAmount)
+            if(order_real_amountArray[i + 1] != 0)
+              signed_order[i + 1] = match_order_detail
+              signed_order_ids[i + 1] = match_order[i].id
+              maker_amount += order_real_amountArray[i+1]
+            else
+              delete_order[i+1] = match_order[i]
+              i += 1
+              next
+            end            
             if maker_amount >= taker_amount
               if maker_amount == taker_amount
-                delete_order[i+1] = match_order[i]
-                break;
-              elsif
+                delete_order[i+1] = match_order[i]                
+              else
                 update_order[0] = match_order[i]
-                update_order_amount = BigDecimal.new(maker_amount.to_s) - BigDecimal.new(taker_amount.to_s)
+                update_order_amount = (maker_amount - taker_amount).to_i
               end
-              break;
+              break
             else
               delete_order[i+1] = match_order[i]
             end            
             i += 1
           end
-          if taker_amount > maker_amount
-            if decimals > 8
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(8)              
-            else
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(decimals)
-            end
+          if taker_amount > maker_amount            
+            update_taker_order_amount = taker_amount - maker_amount          
           end
         end
       elsif type == 1
         match_order = Order.where("base_token = ? AND token_symbol = ? AND price <= ? AND type = ?",base_token,token_symbol,price,0).order(price: :asc)
-        if match_order.length > 0
-          result = "YES"
-          delete_order[0] = create_order
+        if match_order.length > 0          
           i = 0
           while i < match_order.length do
-            maker_amount += BigDecimal.new(match_order[i].amount.to_s)
-            signed_order[i + 1] = JSON.parse(OrderDetail.where(id:match_order[i].detail_id).first.signedorder)
-            signed_order_ids[i + 1] = match_order[i].id
-            order_real_amountArray[i+1] = match_order[i].amount.to_f
+            # maker_amount += BigDecimal.new(match_order[i].amount.to_s)       
+            match_order_detail = JSON.parse(OrderDetail.where(id:match_order[i].detail_id).first.signedorder)     
+            order_real_amountArray[i+1] = match_order[i].amount * ( 10 ** decimals )
+            orderRealAmount = getRealAmount(0,match_order_detail)
+            order_real_amountArray[i+1] = min_value(order_real_amountArray[i+1], orderRealAmount)
+            if(order_real_amountArray[i + 1] != 0)
+              signed_order[i + 1] = match_order_detail
+              signed_order_ids[i + 1] = match_order[i].id
+              maker_amount += order_real_amountArray[i+1]
+            else
+              delete_order[i+1] = match_order[i]
+              i += 1
+              next
+            end
             if maker_amount >= taker_amount
               if maker_amount == taker_amount
                 delete_order[i+1] = match_order[i]
-              elsif
+              else
                 update_order[0] = match_order[i]
-                update_order_amount = BigDecimal.new(maker_amount.to_s) - BigDecimal.new(taker_amount.to_s)
+                update_order_amount = (maker_amount - taker_amount).to_i
               end
-              break;
+              break
             else
               delete_order[i+1] = match_order[i]              
             end            
             i += 1
           end
           if taker_amount > maker_amount
-            if decimals > 8
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(8)
-            else
-              update_taker_order_amount = (BigDecimal.new(taker_amount.to_s) - BigDecimal.new(maker_amount.to_s)).truncate(decimals-1)
-            end
+            update_taker_order_amount = taker_amount - maker_amount   
           end
         end
       end
       if signed_order.count > 1
+        delete_order[0] = create_order
         order_count = signed_order.count
         # make param prefix
         prefix_param = Array.new
@@ -766,24 +856,24 @@ class TradeController < ApplicationController
           s[j] = signed_order[j]["ecSignature"]["s"]
           if j == 0
             if update_taker_order_amount > 0              
-              if type == 0
-                taker_fill_amount =  (signed_order[j]["takerTokenAmount"].to_f * ((maker_amount * (10 ** decimals)).to_f / signed_order[j]["makerTokenAmount"].to_f))
-                # decimal round down
-                taker_fill_amount_round = (taker_fill_amount / (10 ** 18))
-                return_str += taker_fill_amount_round.to_s                
-                paramsArray[j][11] = (taker_fill_amount_round * (10 ** 18)).to_i.to_s(16)              
-                # taker_fill_amount =  BigDecimal.new(signed_order[j]["takerTokenAmount"].to_s) * ((BigDecimal.new(maker_amount.to_S) * (BigDecimal.new(10.to_s) ** BigDecimal.new(decimals.to_s))) / BigDecimal.new(signed_order[j]["makerTokenAmount"].to_s))
-                # taker_fill_amount_round = (taker_fill_amount / (BigDecimal.new(10.to_s) ** BigDecimal.new(18.to_s))).truncate(8)
-                # paramsArray[j][11] = (taker_fill_amount_round * (BigDecimal.new(10.to_s) ** BigDecimal.new(18.to_s))).to_i.to_s(16) 
-              elsif type == 1
+              if type == 0                
+                fillMakerTokenAmount = maker_amount.to_i
+                fillTakerTokenAmount = getPartialAmount(fillMakerTokenAmount,signed_order[j]["makerTokenAmount"].to_i,signed_order[j]["takerTokenAmount"].to_i)                
+                filled_Maker_tmp = getPartialAmount(fillTakerTokenAmount,signed_order[j]["takerTokenAmount"].to_i,signed_order[j]["makerTokenAmount"].to_i)
                 
-                if decimals > 8
-                  round_dec = 8
+                if fillMakerTokenAmount == filled_Maker_tmp
+                  paramsArray[j][11] = (fillTakerTokenAmount).to_i.to_s(16)
                 else
-                  round_dec = decimals
-                end
-                taker_amount_param_0 = (maker_amount.truncate(round_dec) * (BigDecimal.new(10.to_s) ** BigDecimal.new(decimals.to_s))).to_i.to_s(16)
-                paramsArray[j][11] = taker_amount_param_0
+                  paramsArray[j][11] =  (fillTakerTokenAmount + fillMakerTokenAmount - filled_Maker_tmp).to_i.to_s(16)
+                end                
+              elsif type == 1               
+                fillTakerTokenAmount = maker_amount.to_i
+                return_str += "-fillTaker-->"
+                return_str += fillTakerTokenAmount.to_s
+                fillMakerTokenAmount = getPartialAmount(fillTakerTokenAmount.to_i,signed_order[j]["takerTokenAmount"].to_i,signed_order[j]["makerTokenAmount"].to_i)   
+                filled_Taker_tmp = getPartialAmount(fillMakerTokenAmount.to_i,signed_order[j]["makerTokenAmount"].to_i,signed_order[j]["takerTokenAmount"].to_i)  
+                taker_amount = min_value(fillTakerTokenAmount.to_i,filled_Taker_tmp.to_i)       
+                paramsArray[j][11] = fillTakerTokenAmount.to_i.to_s(16)
               end
             else              
               if type == 0                
@@ -797,40 +887,69 @@ class TradeController < ApplicationController
               if update_order[0].id == signed_order_ids[j]                     
                 if type == 0   # SELL
                   # BUY order current  
-                  taker_Token_amount = ( order_real_amountArray[j] * ( 10 ** decimals ) )
-                  paramsArray[j][11] = (taker_Token_amount.to_i - (update_order_amount.to_f * (10 ** decimals)).to_i).to_i.to_s(16)             
+                  taker_Token_amount = order_real_amountArray[j]
+                  fillTakerTokenAmount = (taker_Token_amount.to_i - (update_order_amount.to_i))
+                  filledMakerTokenAmount = (signed_order[j]["makerTokenAmount"].to_i * fillTakerTokenAmount / signed_order[j]["takerTokenAmount"].to_i).to_i
+                  filledTakerTokenAmount = (signed_order[j]["takerTokenAmount"].to_i * filledMakerTokenAmount / signed_order[j]["makerTokenAmount"].to_i).to_i
+                  taker_amount = min_value(fillTakerTokenAmount, filledTakerTokenAmount)
+                  paramsArray[j][11] = taker_amount.to_i.to_s(16)             
                 elsif type == 1   #BUY  
                   # SELL order current 
-                  maker_Token_amount = ( BigDecimal.new(order_real_amountArray[j].to_s) * ( BigDecimal.new(10) ** BigDecimal.new(decimals) ) )                                  
-                  # paramsArray[j][11] = ((BigDecimal.new(tmp.to_s) / BigDecimal.new(100.to_s)).to_i * BigDecimal.new(100.to_s)).to_i.to_s(16)    
+                  maker_Token_amount = order_real_amountArray[j]           
+                  
                   # get filled amount in order
-                  filledTakerTokenAmount = orderfilledAmount(signed_order[j])
-                  filledMakerTokenAmount = contract_instance.getPartialAmount(filledTakerTokenAmount,signed_order[j]["takerTokenAmount"],signed_order[j]["makerTokenAmount"])
+                  filledTakerTokenAmount = getFilledAmount(signed_order[j])
+                  filledMakerTokenAmount = getPartialAmount(filledTakerTokenAmount,signed_order[j]["takerTokenAmount"].to_i,signed_order[j]["makerTokenAmount"].to_i)
                   # get current token amounts
                   restMakerTokenAmount = min_value((signed_order[j]["makerTokenAmount"].to_i - filledMakerTokenAmount),(maker_Token_amount))
-                  fillMakerTokenAmount = restMakerTokenAmount - (BigDecimal.new(update_order_amount.to_s) * (BigDecimal.new(10) ** BigDecimal.new(decimals) ))
-                  fillTakerTokenAmount = ((fillMakerTokenAmount.to_i * signed_order[j]["takerTokenAmount"].to_i).to_i / signed_order[j]["makerTokenAmount"].to_i).to_i
-     
-                  paramsArray[j][11] = fillTakerTokenAmount.to_i.to_s(16)
+                  fillMakerTokenAmount = (restMakerTokenAmount - update_order_amount ).to_i
                   
+                  fillTakerTokenAmount = getPartialAmount(fillMakerTokenAmount.to_i,signed_order[j]["makerTokenAmount"].to_i,signed_order[j]["takerTokenAmount"].to_i)
+                  tmp = ((fillMakerTokenAmount.to_i * signed_order[j]["takerTokenAmount"].to_i) / signed_order[j]["makerTokenAmount"].to_i).to_i
+                  tmp_Maker = getPartialAmount(fillTakerTokenAmount,signed_order[j]["takerTokenAmount"].to_i,signed_order[j]["makerTokenAmount"].to_i)
                   
+                  if tmp_Maker == fillMakerTokenAmount
+                    paramsArray[j][11] = (fillTakerTokenAmount).to_i.to_s(16)
+                  else                    
+                    paramsArray[j][11] = (fillTakerTokenAmount + (fillMakerTokenAmount-tmp_Maker).to_i).to_i.to_s(16)                    
+                  end             
                 end
               else
                 if type == 1
-                  taker_Token_amount = (signed_order[j]["takerTokenAmount"].to_f * (( order_real_amountArray[j] * ( 10 ** decimals ) ).to_f / signed_order[j]["makerTokenAmount"].to_f))
-                  paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)
+                  fillMakerTokenAmount = order_real_amountArray[j].to_i                
+                  fillTakerTokenAmount = (signed_order[j]["takerTokenAmount"].to_i * fillMakerTokenAmount / signed_order[j]["makerTokenAmount"].to_i).to_i
+                  filledMakerTokenAmount = (signed_order[j]["makerTokenAmount"].to_i * fillTakerTokenAmount / signed_order[j]["takerTokenAmount"].to_i).to_i
+                  if filledMakerTokenAmount == fillMakerTokenAmount
+                    paramsArray[j][11] = (fillTakerTokenAmount).to_i.to_s(16)
+                  else                    
+                    paramsArray[j][11] = (fillTakerTokenAmount + (fillMakerTokenAmount-filledMakerTokenAmount).to_i).to_i.to_s(16)                    
+                  end
+                # paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)                   
                 elsif type == 0
-                  taker_Token_amount = ( order_real_amountArray[j] * ( 10 ** decimals ) )
-                  paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)
+                  fillTakerTokenAmount = order_real_amountArray[j].to_i
+                  fillMakerTokenAmount = (signed_order[j]["makerTokenAmount"].to_i * fillTakerTokenAmount / signed_order[j]["takerTokenAmount"].to_i).to_i
+                  filledTakerTokenAmount = (signed_order[j]["takerTokenAmount"].to_i * fillMakerTokenAmount / signed_order[j]["makerTokenAmount"].to_i).to_i
+                  taker_amount = min_value(fillTakerTokenAmount,filledTakerTokenAmount)
+                  paramsArray[j][11] = fillTakerTokenAmount.to_i.to_s(16)
                 end
               end          
             else
-              if type == 1                
-                taker_Token_amount = (BigDecimal.new(signed_order[j]["takerTokenAmount"].to_s) * (( order_real_amountArray[j] * ( 10 ** decimals ) ).to_f / signed_order[j]["makerTokenAmount"].to_f))
-                paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)                   
+              if type == 1
+                fillMakerTokenAmount = order_real_amountArray[j].to_i                
+                fillTakerTokenAmount = (signed_order[j]["takerTokenAmount"].to_i * fillMakerTokenAmount / signed_order[j]["makerTokenAmount"].to_i).to_i
+                filledMakerTokenAmount = (signed_order[j]["makerTokenAmount"].to_i * fillTakerTokenAmount / signed_order[j]["takerTokenAmount"].to_i).to_i
+                if filledMakerTokenAmount == fillMakerTokenAmount
+                  paramsArray[j][11] = (fillTakerTokenAmount).to_i.to_s(16)
+                else                    
+                  paramsArray[j][11] = (fillTakerTokenAmount + (fillMakerTokenAmount-filledMakerTokenAmount).to_i).to_i.to_s(16)                    
+                end
+                # paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)                   
               elsif type == 0
-                taker_Token_amount = ( order_real_amountArray[j] * ( 10 ** decimals ) )
-                paramsArray[j][11] = taker_Token_amount.to_i.to_s(16)
+                fillTakerTokenAmount = order_real_amountArray[j].to_i
+                fillMakerTokenAmount = (signed_order[j]["makerTokenAmount"].to_i * fillTakerTokenAmount / signed_order[j]["takerTokenAmount"].to_i).to_i
+                filledTakerTokenAmount = (signed_order[j]["takerTokenAmount"].to_i * fillMakerTokenAmount / signed_order[j]["makerTokenAmount"].to_i).to_i
+                taker_amount = min_value(fillTakerTokenAmount,filledTakerTokenAmount)
+                paramsArray[j][11] = fillTakerTokenAmount.to_i.to_s(16)
               end              
             end
           end
@@ -935,20 +1054,7 @@ class TradeController < ApplicationController
           jj = 0
           ii += 1
         end
-        # param s[s] count
-        # data_code.insert(-1,order_count_param)
-        # param s[s]s
-        # ii = 0
-        # jj = 0
-        # while ii < order_count do
-        #   while jj < 1 do
-        #     paramsArray[ii][jj + 15] = hash32 paramsArray[ii][jj + 15]
-        #     data_code.insert(-1,paramsArray[ii][jj + 15])
-        #     jj += 1
-        #   end 
-        #   jj = 0
-        #   ii += 1
-        # end
+        
         tx = Eth::Tx.new({
           value:0,      
           gas_limit: 8900_00,
@@ -961,7 +1067,13 @@ class TradeController < ApplicationController
         $web3.eth.sendRawTransaction([tx.hex]) 
         result = tx.hash 
         if update_taker_order_amount > 0
-          update_orders(create_order.id,update_taker_order_amount)
+          update_amount = BigDecimal.new(update_taker_order_amount.to_s) / (BigDecimal.new(10.to_s) ** BigDecimal.new(decimals.to_s))
+          if decimals > 8
+            update_amount = update_amount.truncate(8)
+          else
+            update_amount = update_amount.truncate(decimals)
+          end
+          update_orders(create_order.id,update_amount)
         else
           delete_orders(delete_order[0].id)
         end
@@ -974,13 +1086,28 @@ class TradeController < ApplicationController
           end 
         end
         if update_order.count > 0
-          update_orders(update_order[0].id,update_order_amount)
-          trade_amount = update_order[0].amount - update_order_amount
+          update_amount = BigDecimal.new(update_order_amount.to_s) / (BigDecimal.new(10.to_s) ** BigDecimal.new(decimals.to_s))
+          if decimals > 8
+            update_amount = update_amount.truncate(8)
+          else
+            update_amount = update_amount.truncate(decimals)
+          end
+          update_orders(update_order[0].id,update_amount)
+          trade_amount = update_order[0].amount - update_amount
           create_trade_histories(update_order[0].token_symbol,update_order[0].type,update_order[0].maker_address,create_order.maker_address,update_order[0].price,trade_amount,update_order[0].base_token,result)
         end
         
         return return_str
-      else
+      else        
+        if delete_order.count > 0          
+          jj = 1
+          while jj <= delete_order.count do
+            if delete_order[jj]
+              delete_orders(delete_order[jj].id)  
+            end          
+            jj += 1
+          end 
+        end
         return "No match"
       end
     else
