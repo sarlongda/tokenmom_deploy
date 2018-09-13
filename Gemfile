@@ -24,7 +24,7 @@ gem 'browser', '2.0.3'
 # Use font awesome
 gem 'font-awesome-sass'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 4.1', '>= 4.1.19'
+gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
