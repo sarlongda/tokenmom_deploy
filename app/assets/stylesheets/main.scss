@@ -94,7 +94,13 @@ body {
 	opacity:0.5;
 }
 
-
+#logo {
+  width: 150px;
+}
+.country-icon {
+  width: 15px;
+  margin-right: 5px;
+}
 #trade_workspace {
 	font-size: 11px;
 	font-family: 'Open Sans', sans-serif;
@@ -950,9 +956,6 @@ body {
 			padding: 7px 15px;
 			margin-left: -15px;
 			cursor: pointer;
-			#logo {
-				width: 150px;
-			}
 		}
 		#nav-tokens {
 			margin-top: 13px;
@@ -1046,10 +1049,6 @@ body {
 					margin-left: -5px; 
 				}
 			}
-		}
-		.country-icon {
-			width: 15px;
-			margin-right: 5px;
 		}
     .header-accounts {
 			a{
