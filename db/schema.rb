@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_150818) do
+ActiveRecord::Schema.define(version: 2018_09_13_115344) do
 
   create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 2018_08_28_150818) do
     t.float "h_volumn", default: 0.0
     t.integer "token_decimals"
     t.boolean "on_hold"
+    t.boolean "tm_field"
+    t.boolean "weth_token"
   end
 
   create_table "trade_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

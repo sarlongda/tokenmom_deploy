@@ -26,23 +26,7 @@ Rails.application.routes.draw do
   resources :trade do
     collection do
       match :trade, via: [:get, :post]
-      post :get_init_data
-      post :get_messages
-      post :create_order
-      post :get_orders
-      post :get_signed_order
-      post :create_trade_history
-      post :get_trade_history
-      post :delete_order
-      post :get_matching_orders
-      post :update_order
-      post :get_my_open_orders
-      post :delete_my_order
-      post :find_token
-      post :get_owner_data
-      post :delete_my_orders
-      post :get_token_info
-      post :get_tokens
+      
     end
   end
 
