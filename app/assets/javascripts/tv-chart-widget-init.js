@@ -125,16 +125,19 @@ TradingView.onready(function() {
         "mainSeriesProperties.priceAxisProperties.percentageDisabled": false,
         "mainSeriesProperties.priceAxisProperties.log": false,
         "mainSeriesProperties.priceAxisProperties.logDisabled": false,
-
-
         "symbolWatermarkProperties.color": "rgba(0, 0, 0, 0.00)",
     };
     
     const toolbar_bg_dark = '#141414';
     const toolbar_bg_light = '#ffffff';
     let token_symbol = localStorage.getItem("select_token") || "ZRX"
+    
+    token_symbol = $(".token-info").attr("token_symbol");
+    base_token = $(".token-info").attr("base_token");
+    symbol_pair = token_symbol + " " + base_token;
+    // console.log(token_symbol);
     var widget = window.tvWidget = new TradingView.widget({
-        symbol: token_symbol,
+        symbol: symbol_pair,
         interval: '1D',
         pricescale:1000000,
         toolbar_bg: toolbar_bg_dark,

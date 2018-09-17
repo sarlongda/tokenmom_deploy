@@ -10,7 +10,7 @@
         18:"ether"
     }
     var Trade = {
-        get_token_amount:function (token_contract_addr){                         
+        get_token_amount:function (token_contract_addr,base_token){                         
             if(currentWalletAddress != "" && currentWalletAddress != null){
                 let get_amount = async() =>{
                     try{
@@ -239,7 +239,7 @@
                 address = currentWalletAddress;
                 
                 let wallet_addr = currentWalletAddress;
-                let base_token = $(".token-header").children("li").children("div").attr("base_token");
+                let base_token = $(".token-info").attr("base_token");
                 let symbol = $(".token-info").attr("token_symbol");
                 let data = {
                     wallet_addr:wallet_addr,
@@ -262,17 +262,31 @@
                                 let tag = $("#open_order_panel").children('div').children('table').children('tbody');
                                 tag.attr("order-weth-bal",0);
                                 tag.attr("order-token-bal",0);
-                                let get_balance = async() => {                
-                                    //get weth balance;                
-                                    let contract_abi = human_standard_token_abi;
-                                    let weth_contract_addr = wethAddress;  // WETH Address;
-                                    let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
-                                    weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
-                                        let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
-                                        //let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
-                                        $(".buy-token-balance").text(weth_balance);
-                                        $(".buy-token-available").text(weth_balance);                                         
-                                    });                
+                                let get_balance = async() => { 
+                                    let base_token = $(".token-info").attr("base_token");
+                                    if(base_token == "WETH"){
+                                        //get weth balance;                
+                                        let contract_abi = human_standard_token_abi;
+                                        let weth_contract_addr = wethAddress;  // WETH Address;
+                                        let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
+                                        weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
+                                            let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                                            //let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
+                                            $(".buy-token-balance").text(weth_balance);
+                                            $(".buy-token-available").text(weth_balance);                                         
+                                        });
+
+                                    }else if(base_token == "TM"){
+                                        let tm_contract_addr = tmAddress;
+                                        let tm_contract = web3.eth.contract(contract_abi).at(tm_contract_addr);
+                                        tm_contract.balanceOf(currentWalletAddress,(error,balance) => {
+                                            tm_balance = (balance.toNumber() / Math.pow(10,tm_decimals)).toFixed(8);
+                                            $(".buy-token-balance").text(tm_balance);
+                                            $(".buy-token-available").text(tm_balance);  
+                                        });
+
+                                    }               
+                                                    
                                     token_contract_addr = $(".contract-address").children("a").attr("value");    //Token Address
                                     var contractAddress = token_contract_addr; // Token Address
                                     var contractABI = human_standard_token_abi;
@@ -309,17 +323,30 @@
                             tag.attr("order-token-bal",0);
                             let token_symbol = $(".token-info").attr("token_symbol");  
                             $(".sell-token-symbol").text(token_symbol);
-                            let get_balance = async() => {                
-                                //get weth balance;                
+                            let get_balance = async() => {  
+                                let base_token = $(".token-info").attr("base_token");
                                 let contract_abi = human_standard_token_abi;
-                                let weth_contract_addr = wethAddress;  // WETH Address;
-                                let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
-                                weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
-                                    let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
-                                    //let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
-                                    $(".buy-token-balance").text(weth_balance);
-                                    $(".buy-token-available").text(weth_balance);                                         
-                                });                
+                                if(base_token == "WETH"){
+                                    //get weth balance;                                  
+                                    let weth_contract_addr = wethAddress;  // WETH Address;
+                                    let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
+                                    weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
+                                        let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                                        //let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
+                                        $(".buy-token-balance").text(weth_balance);
+                                        $(".buy-token-available").text(weth_balance);                                         
+                                    });   
+
+                                }else if(base_token == "TM"){
+                                    let tm_contract_addr = tmAddress;
+                                    let tm_contract = web3.eth.contract(contract_abi).at(tm_contract_addr);
+                                    tm_contract.balanceOf(currentWalletAddress,(error,balance) => {
+                                        tm_balance = (balance.toNumber() / Math.pow(10,tm_decimals)).toFixed(8);
+                                        $(".buy-token-balance").text(tm_balance);
+                                        $(".buy-token-available").text(tm_balance);  
+                                    });
+                                }              
+                                             
                                 token_contract_addr = $(".contract-address").children("a").attr("value");    //Token Address
                                 var contractAddress = token_contract_addr; // Token Address
                                 var contractABI = human_standard_token_abi;
@@ -368,10 +395,20 @@
             let thead = "";
             let order_token_balance = 0;
             let order_weth_balance = 0;
-            let token_decimal = $(".token-info").attr("decimals")                
+            let order_tm_balance = 0;
+            let token_decimal = $(".token-info").attr("decimals");
+            let base_token = $(".token-info").attr("base_token");                
             $.each(orders, function(index, element){
-                if(element.type == 1){
-                    order_weth_balance += (parseFloat(element.amount) * parseFloat(element.price) + parseFloat(element.fee));
+                if(base_token == "WETH"){
+                    if(element.type == 1){
+                        order_weth_balance += (parseFloat(element.amount) * parseFloat(element.price) + parseFloat(element.fee));
+                    }
+                }else if(base_token == "TM"){
+                    if(element.type == 1){
+                        
+                        order_tm_balance += (parseFloat(element.amount) * parseFloat(element.price) + parseFloat(element.fee));
+                        
+                    }
                 }
                 if(element.token_symbol == symbol){
                     let type;
@@ -412,20 +449,37 @@
             let ttail = "</table>";
             thead += ttail;                     
             tag.append(thead);
-            let get_balance = async() => {                
-                //get weth balance;                
-                let contract_abi = human_standard_token_abi;
-                let weth_contract_addr = wethAddress;  // WETH Address;
-                let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
-                weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
-                    let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
-                    let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
-                    if(weth_available < 0) {
-                        weth_available = "0.000000";
-                    }
-                    $(".buy-token-balance").text(weth_balance);
-                    $(".buy-token-available").text(weth_available);                                         
-                });                
+            let get_balance = async() => {  
+                let contract_abi = human_standard_token_abi;           
+                //get weth balance;   
+                
+                if(base_token == "WETH"){
+                    
+                    let weth_contract_addr = wethAddress;  // WETH Address;
+                    let weth_contract = web3.eth.contract(contract_abi).at(weth_contract_addr);
+                    weth_contract.balanceOf(currentWalletAddress,(error,balance) =>{
+                        let weth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                        let weth_available = parseFloat(weth_balance - order_weth_balance.toFixed(4)).toFixed(6);
+                        if(weth_available < 0) {
+                            weth_available = "0.000000";
+                        }
+                        $(".buy-token-balance").text(weth_balance);
+                        $(".buy-token-available").text(weth_available);                                         
+                    });
+                }else if(base_token == "TM"){
+                    let tm_contract_addr = tmAddress;
+                    let tm_contract = web3.eth.contract(contract_abi).at(tm_contract_addr);
+                    tm_contract.balanceOf(currentWalletAddress,(error,balance) => {
+                        tm_balance = (balance.toNumber() / Math.pow(10,tm_decimals)).toFixed(8);
+                        let tm_available = parseFloat(tm_balance - order_tm_balance.toFixed(4)).toFixed(6);
+                        if(tm_available < 0) {
+                            tm_available = "0.000000";
+                        }
+                        $(".buy-token-balance").text(tm_balance);
+                        $(".buy-token-available").text(tm_available);  
+                    });
+                }           
+                             
                 token_contract_addr = $(".contract-address").children("a").attr("value");    //Token Address
                 var contractAddress = token_contract_addr; // Token Address
                 var contractABI = human_standard_token_abi;
@@ -490,10 +544,10 @@
             $(".orderbook").attr("max_amount",max_amount)
             if(type === "buy"){
                 tag = $(".orderbook-bids");
-                text_color = "text_success";
+                text_color = "text-success";
             }else if(type === "sell"){
                 tag = $(".orderbook-asks");
-                text_color = "text_danger";
+                text_color = "text-danger";
             }                
             tag.html("");
             let time_now = Date.now()/1000;
@@ -604,7 +658,8 @@
                 let price = element.price;
                 let amount = element.amount;
                 let type = element.type;
-                let time_format = get_timeformat(time);
+                
+                let time_format = Trade.get_timeformat(time);
                 let mytrade = "";
                 
                 //Calculate price decimals
@@ -619,8 +674,6 @@
                 }else{
                     price = price.toString();
                 }
-                
-
                 let trade = 
                     "<tr class = 'cover-row'>" +
                         "<td>" + "<strong class = 'number'>" + time_format + "</strong>" + "</td>";                       
@@ -649,7 +702,6 @@
                         //my_tag.append(trade);
                             let my_trade = 
                                 "<tr class = 'cover-row'>";
-
                             my_trade +=
                                 "<td class='text-left'>" +
                                     "<a target='_blank' rel='noopener noreferrer' href='" + http_link + "tx/" + element.txHash + "'>" +
@@ -708,7 +760,7 @@
                 } 
             });
         },
-        get_timeformat:function(t){
+        get_timeformat:function(t){            
             let time_format = "";
             let time;
             let format = t.split("T");
@@ -734,10 +786,13 @@
             }
         },
         get_tokens_table:function (){
-            let symbol = localStorage.getItem("select_token") || "ZRX";      
+            let symbol = localStorage.getItem("select_token") || "ZRX"; 
+            symbol = $(".token-info").attr("token_symbol");
+            base_token = $(".token-info").attr("base_token"); 
+            
             let token_addr = localStorage.getItem("select_contract") || zrxAddress;     
             data = {
-                basetoken:"ETH",
+                base_token:"WETH",
                 token_symbol:symbol,
                 token_address:token_addr
             };
@@ -746,11 +801,10 @@
                 type: 'POST',
                 dataType: 'json',
                 data: data,
-                success: function(data) {   
-                    console.log("***********************");
-                    console.log(data.balance);                  
+                success: function(data) {                          
                     Trade.change_header_info(data.select_token);            
-                    Trade.draw_market_table(data.tokens);    
+                    Trade.draw_market_table(data.tokens,"WETH");  
+                    Trade.draw_market_table(data.tm_tokens,"TM")  
                     Trade.load_trade();
                     Trade.get_open_orders();                              
                 },
@@ -760,8 +814,13 @@
 
             });
         },
-        draw_market_table:function (data){
-            let tag = $("#market_table").children("tbody");
+        draw_market_table:function (data,base_token){
+            if(base_token == "WETH"){
+                tag = $("#market_eth").find("#market_table").children("tbody");
+            }else if(base_token == "TM"){
+                tag = $("#market_tm").find("#market_table").children("tbody");
+            }
+            
             tag.html("");
             $.each(data, function(index, element){
                 let token_row;
@@ -782,7 +841,7 @@
                 token_row = 
                     "<tr class= 'market-status-row' value='" + element.contract_address + "' token_symbol='"+element.decimals+"'>" + 
                         "<td class='text-left'>" +
-                            "<div class='pair' name='"+element.name+"' symbol = '"+element.symbol+"'>" + element.symbol+"-" + "ETH" + "</div>" +
+                            "<div class='pair' name='"+element.name+"' symbol = '"+element.symbol+"'>" + element.symbol+"-" + base_token + "</div>" +
                         "</td>" + 
                         "<td class='text-right'>" +
                             "<strong value='"+element.last_price+"'>" + 
@@ -857,7 +916,7 @@
                 });
             }
         },
-        change_header_info:function(data){           
+        change_header_info:function(data){                    
             let token_contract_addr = data.token_contract_addr;
             let token_decimals = data.token_decimals;
             let token_name = data.token_name;
@@ -866,6 +925,7 @@
             let token_h_price = data.token_h_price;
             let token_h_volumn = data.token_h_volumn;
             let token_header_tag = $(".token-header");
+            let base_token = data.base_token;
             let contract_addr = Trade.change_contract_address(token_contract_addr);
             let last_price_tag;
             let h_price_tag;
@@ -873,20 +933,19 @@
             if(token_last_price == "--"){
                 last_price_tag = 
                     "<strong>" + 
-                        "<span>" + "0.000000" + " ETH" + "</span>" +
+                        "<span>" + "0.000000" + " "+base_token + "</span>" +
                     "</strong>";
             }else {
                 if(token_last_price >= 0){
                     last_price_tag = 
-                        "<strong class='text-success'>" + 
-                            "<i aria-hidden='true' class='fa fa-caret-up'></i>" +
-                            "<span>" + real_last_price + " ETH" + "</span>" +
+                        "<strong >" +                             
+                            "<span>" + real_last_price + " "+base_token + "</span>" +
                         "</strong>";
                 }else{
                     last_price_tag = 
                     "<strong class='text-danger'>" + 
                         "<i aria-hidden='true' class='fa fa-caret-down'></i>" +
-                        "<span>" + real_last_price + " ETH" + "</span>" +
+                        "<span>" + real_last_price + " "+base_token + "</span>" +
                     "</strong>";
                 }
             }                
@@ -920,11 +979,11 @@
             token_header_tag.find(":nth-child(1)").children(".contract-address").children("a").attr("href",http_link + "token/"+token_contract_addr);
             token_header_tag.find(":nth-child(2)").children("div").children(".last-price").children("strong").html(last_price_tag);
             token_header_tag.find(":nth-child(3)").children("div").children("div").children("strong").html(h_price_tag);
-            token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(token_h_volumn + " " + "ETH");
+            token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(token_h_volumn + " " + base_token);
             let symbol = $(".token-info").attr("token_symbol");  
             $(".sell-token-symbol").text(symbol);
             //change token list tag
-            $("#nav-tokens").children("div").children("li").children("a").text(token_symbol + "-" + "ETH");
+            $("#nav-tokens").children("div").children("li").children("a").text(token_symbol + "-" + base_token);
             //Change Trade widget view
             $(".amount-buy").val("");
             $(".amount-sell").val("");
@@ -947,10 +1006,11 @@
                 $(".price-buy").trigger("change");
                 $(".price-sell").trigger("change");
             }
-            $(".btn-buy span").text("BUY " + token_name + " (" + token_symbol + ")");
-            $(".btn-sell span").text("SELL " + token_name + " (" + token_symbol + ")");
+            $(".btn-buy span").text("BUY "   + token_symbol  );
+            $(".btn-sell span").text("SELL "   + token_symbol  );
             $(".unit.buy").text(token_symbol);
-            $(".unit.sell").text(token_symbol);                
+            $(".unit.sell").text(token_symbol);
+            $(".base-unit").text(base_token);                
         },
         change_contract_address:function(addr){
             return addr.substring(0, 7) + '...' + addr.slice(-4);
@@ -1008,7 +1068,8 @@
         load_trade:function(){
             let token_contract_addr = $(".contract-address").children("a").attr("value");
             let token_last_price = $(".trade-info-number.last-price").children("strong").children("strong").children("span").text().split(" ")[0];
-            if(parseFloat(token_last_price) == 0){
+            let base_token = $(".token-info").attr("base_token");
+            <%# if(parseFloat(token_last_price) == 0){
                 //$("#trade .price").val("");    
                 $(".price-buy").val("");
                 $(".price-sell").val("");
@@ -1023,8 +1084,8 @@
                 $(".price-buy").attr('data-lock','false');
                 $(".price-sell").attr('data-lock','false');  
                 $(".price-buy").trigger('change');             
-            }                
-            Trade.get_token_amount(token_contract_addr);
+            }                 %>
+            //Trade.get_token_amount(token_contract_addr,base_token);
             Trade.draw_quick_balance();
         },
         removeTrailingZeros(value) {

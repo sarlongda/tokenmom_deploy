@@ -41,12 +41,17 @@
             });
             $(document).on('click','.market-status-row',function(){
                 let token_symbol = $(this).find(":nth-child(1)").find("div").attr("symbol");
-                let base_token = "ETH";
+                //let base_token = "ETH";
+                that = $(this)
+                let token_pair = that.find(":nth-child(1)").find("div").text();
+                let base_token = token_pair.split("-")[1];
+                console.log("----click---")
                 Trade.get_trade_histories(base_token,token_symbol);
             });
             function draw_trade_history(){
                 let symbol = localStorage.getItem("select_token") || "ZRX";
-                let base_token = "ETH";
+                let base_token = $(".token-info").attr("base_token");
+                //let base_token = "WETH";
                 Trade.get_trade_histories(base_token,symbol);
             }
             

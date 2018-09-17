@@ -11,6 +11,8 @@ Trestle.resource(:tokens, model: Token) do
     column :decimal, ->(token) { token.token_decimals }
     column :contract_address, ->(token) { token.contract_address }
     column :on_hold
+    column :tm_field
+    column :weth_token
     column :last_price, ->(token) { token.last_price }
     column :updated_at, header: "Last Updated", align: :center
     actions
@@ -23,6 +25,8 @@ Trestle.resource(:tokens, model: Token) do
     text_field :symbol
     text_field :token_decimals
     text_field :contract_address
+    text_field :tm_field
+    text_field :weth_token
 
     unless token.id.nil?
       toolbar(:secondary) do

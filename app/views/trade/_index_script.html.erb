@@ -766,10 +766,11 @@
         return time_format;
     }
     function change_trade_view(){
-        let token_contract_addr = $(".contract-address").children("a").attr("value");        
-        get_token_amount(token_contract_addr);
+        let token_contract_addr = $(".contract-address").children("a").attr("value");     
+        let base_token = $(".token-info").attr("base_token");   
+        get_token_amount(token_contract_addr,base_token);
     }    
-    function get_token_amount(token_contract_addr){                         
+    function get_token_amount(token_contract_addr,base_token){                         
         if(currentWalletAddress != "" && currentWalletAddress != null){
             try{
                 address = currentWalletAddress    //Wallet Address
@@ -799,15 +800,24 @@
     }
     function init_webpage(){
         symbol = localStorage.getItem("select_token");
+        base_token = $(".token-info").attr("base_token");
         $(".sell-token-symbol").text(symbol);
         Trade.get_tokens_table();
         draw_orderbook();
+        if(base_token == "TM"){
+            $("#market_tab a[data-target='#market_tm']").tab("show");
+            $("#market_tab").find(":nth-child(2)").find("a").addClass("active");
+            $("#market_tab").find(":nth-child(1)").find("a").removeClass("active");
+        }
+        
+        
     }
     function draw_orderbook(){
-        let symbol = localStorage.getItem("select_token") || "ZRX";
+        let symbol = $(".token-info").attr("token_symbol");
         Trade.get_orders(symbol);
         
     }
+    
     
 
 

@@ -335,11 +335,135 @@ class TradeController < ApplicationController
   def index
   end  
   def trade   
+    base_token = params[:trade_pair].split("-")[1]
+    token_symbol = params[:trade_pair].split("-")[0]
+    @base_token = base_token
+    # Get messages
     @messages = Message.order(updated_at: :asc)
+    # ETH token table
     @tokenlist = get_token_list
-    @zrxtoken = Token.where("symbol = ?","ZRX").first
-    @buyOrders = Order.where(:base_token => "ZRX",:type => 1).order(price: :desc)
-    @sellOrders = Order.where(:base_token => "ZRX",:type => 0).order(price: :asc)
+    # TM token table
+    @tmtokenlist = Token.where("tm_field = ?", 1).order(symbol: :asc)
+
+    token = Token.where("symbol = ?",token_symbol).first
+    if token
+      @zrxtoken = token
+      buy_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:token_symbol,type:1).group("price").order(price: :desc)
+      sell_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:token_symbol,type:0 ).group("price").order(price: :asc)
+      # max_amount = Order.select("sum(amount) as amount").where(base_token:base_token,token_symbol:token_symbol).maximum("amount")
+      buy_max = Order.select("sum(amount) as mamount").where(base_token:base_token,token_symbol:token_symbol,type:1).group("price").order("mamount DESC").first
+      sell_max = Order.select("sum(amount) as mamount").where(base_token:base_token,token_symbol:token_symbol,type:0).group("price").order("mamount DESC").first
+      best_asks = Order.where(base_token:base_token,token_symbol:token_symbol,type:0).minimum("price");
+      best_bids = Order.where(base_token:base_token,token_symbol:token_symbol,type:1).maximum("price");
+      max_amount = 0
+      if sell_max && buy_max
+        if buy_max.mamount > sell_max.mamount
+          max_amount = buy_max.mamount
+        else
+          max_amount = sell_max.mamount
+        end
+      elsif sell_max == nil && buy_max != nil
+        max_amount = buy_max.mamount
+      elsif sell_max != nil && buy_max == nil
+        max_amount = sell_max.mamount
+      end
+      total_volumn = 0
+      buy_orders.each_with_index do |token, index|
+        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)        
+        total_volumn += BigDecimal.new(volumn)
+      end
+      sell_orders.each_with_index do |token, index|
+        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)        
+        total_volumn += BigDecimal.new(volumn)
+      end
+      @buy_orders = Array.new
+      buy_orders.each_with_index do |token, index|
+        decimal = get_decimals_places(token.price) 
+        zero_count = maker_zero(decimal)
+        pro = amount_pro(token.amount,buy_max.mamount).to_s 
+        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)  
+        depth = volumn_pro(total_volumn,volumn).to_s 
+        json_record = {  
+          "zero_count" => zero_count, 
+          "depth" => depth.to_s,
+          "pro" => pro,           
+          "price" => token.price,
+          "amount" => token.amount,          
+        }
+        @buy_orders.push json_record
+      end
+      @sell_orders = Array.new
+      sell_orders.each_with_index do |token, index|
+        decimal = get_decimals_places(token.price) 
+        zero_count = maker_zero(decimal)
+        pro = amount_pro(token.amount,sell_max.mamount).to_s 
+        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)  
+        depth = volumn_pro(total_volumn,volumn).to_s 
+        
+        json_record = {  
+          "zero_count" => zero_count, 
+          "depth" => depth.to_s,
+          "pro" => pro,           
+          "price" => token.price,
+          "amount" => token.amount,          
+        }
+        @sell_orders.push json_record
+      end
+      
+      trade_histories = TradeHistory.where(base_token:base_token,token_symbol:token_symbol).order(updated_at: :desc)
+      @trade_histories = Array.new
+      trade_histories.each_with_index do |trade, index|
+        time_format = get_timeformat(trade.created_at)
+
+        json_record = {  
+          "time" => time_format,       
+          "price" => trade.price,
+          "amount" => trade.amount,          
+        }
+        @trade_histories.push json_record
+      end
+    else
+      @zrxtoken = Token.where("symbol = ?","ZRX").first 
+      buy_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:"ZRX",type:1).group("price").order(price: :desc)
+      sell_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:"ZRX",type:0 ).group("price").order(price: :asc)
+      # max_amount = Order.select("sum(amount) as amount").where(base_token:base_token,token_symbol:token_symbol).maximum("amount")
+      buy_max = Order.select("sum(amount) as mamount").where(base_token:base_token,token_symbol:"ZRX",type:1).group("price").order("mamount DESC").first
+      sell_max = Order.select("sum(amount) as mamount").where(base_token:base_token,token_symbol:"ZRX",type:0).group("price").order("mamount DESC").first
+      best_asks = Order.where(base_token:base_token,token_symbol:"ZRX",type:0).minimum("price");
+      best_bids = Order.where(base_token:base_token,token_symbol:"ZRX",type:1).maximum("price");
+      max_amount = 0
+      if sell_max && buy_max
+        if buy_max.mamount > sell_max.mamount
+          max_amount = buy_max.mamount
+        else
+          max_amount = sell_max.mamount
+        end
+      elsif sell_max == nil && buy_max != nil
+        max_amount = buy_max.mamount
+      elsif sell_max != nil && buy_max == nil
+        max_amount = sell_max.mamount
+      end   
+      
+      @buy_orders = Array.new
+      buy_orders.each_with_index do |token, index|      
+        json_record = {          
+          "price" => token.price,
+          "amount" => token.amount,          
+        }
+        @buy_orders.push json_record
+      end
+      @sell_orders = Array.new
+      sell_orders.each_with_index do |token, index|      
+        json_record = {          
+          "price" => token.price,
+          "amount" => token.amount,          
+        }
+        @sell_orders.push json_record
+      end
+    end
+    # Convert token contract address to 
+    @changed_contract = change_contract_address(@zrxtoken.contract_address)
+    
     @user_id = current_user ? current_user.id : nil
   end
   def get_tokens 
@@ -370,7 +494,8 @@ class TradeController < ApplicationController
     base_token = params[:base_token]
     symbol = params[:token_symbol]
     token_addr = params[:token_address]
-    tokens = Token.order(updated_at: :asc)    
+    tokens = get_token_list
+    tm_tokens = Token.where("tm_field = ?", 1).order(symbol: :asc)
     key = Eth::Key.new priv: $server_key    
     result = "OK"  
     # result = batchfillOrder() 
@@ -441,11 +566,25 @@ class TradeController < ApplicationController
         :decimals => token.token_decimals,
         :contract_address => token.contract_address,
         :name => token.name,
-        :last_price => token.last_price(base_token),
-        :h_price => token.h_price(base_token),
-        :h_volumn => token.h_volumn(base_token)
+        :last_price => token.last_price("ZRX"),
+        :h_price => token.h_price("ZRX"),
+        :h_volumn => token.h_volumn("ZRX")
       }
       tokens_array.push json_record
+    end
+    tm_tokens_array = Array.new
+    tm_tokens.each_with_index do |token, index|      
+      json_record = {
+        :id => token.id,
+        :symbol => token.symbol,
+        :decimals => token.token_decimals,
+        :contract_address => token.contract_address,
+        :name => token.name,
+        :last_price => token.last_price("TM"),
+        :h_price => token.h_price("TM"),
+        :h_volumn => token.h_volumn("TM")
+      }
+      tm_tokens_array.push json_record
     end
 
     # Select token info
@@ -458,7 +597,8 @@ class TradeController < ApplicationController
         "token_symbol":token.symbol,
         "token_last_price":token.last_price(base_token),
         "token_h_price":token.h_price(base_token),
-        "token_h_volumn":token.h_volumn(base_token)
+        "token_h_volumn":token.h_volumn(base_token),
+        "base_token":base_token
       }
     else
       abi = $token_abi          
@@ -475,12 +615,14 @@ class TradeController < ApplicationController
         "token_decimals":token_decimals,
         "token_last_price":last_price,
         "token_h_price":h_price,
-        "token_h_volumn":h_volumn
+        "token_h_volumn":h_volumn,
+        "base_token":base_token
       }
     end
     json_data = {
       "state":"ok",
       "tokens":tokens_array,
+      "tm_tokens":tm_tokens_array,
       "select_token":token_info,
       "balance":token_amount_unavailable,          
     }
@@ -488,7 +630,6 @@ class TradeController < ApplicationController
       format.json { render :json=>json_data}
     end    
   end
-
   def getFilledAmount(order_detail)
     abi = $exchange_abi
     myContract = $web3.eth.contract(abi)
@@ -512,15 +653,12 @@ class TradeController < ApplicationController
     amount = contract_instance.getUnavailableTakerTokenAmount(order_hash)
     return amount
   end
-
   def max_value(a,b)
     return a >= b ? a : b
   end
-
   def min_value(a,b)
     return a < b ? a : b
-  end
-  
+  end  
   # Hash 32 byte fill zero
   def hash32(string)
     num = 64-string.length
@@ -541,7 +679,6 @@ class TradeController < ApplicationController
     end
     return string 
   end
-
   def getRealAmount(type,order_detail)
     # init contract abi
     abi = $exchange_abi
@@ -565,32 +702,25 @@ class TradeController < ApplicationController
     end
     
   end
-
   def checkRestAmount(restmaker,resttaker,maker,taker)
     # init contract abi
     abi = $exchange_abi
     myContract = $web3.eth.contract(abi)
     contract_instance =myContract.at($exchange_contract_addr)
     check_amount = getPartialAmount(restmaker,maker,taker)
-    Rails.logger.debug("==============&")
-    Rails.logger.debug(check_amount)
-    Rails.logger.debug("===================")
-    Rails.logger.debug(restmaker)
+    
     if check_amount == resttaker
       return 0
     else
       return (resttaker - check_amount).to_i
     end
   end
-
   def getTokenDecimals(address)
     abi = $token_abi          
     tokenContract = $web3.eth.contract(abi).at(address)
     decimals = tokenContract.decimals()
     return decimals
-  end
-
-  
+  end 
   def fill_order
     base_token = "ETH"
     token_symbol = "ZRX"
@@ -668,12 +798,11 @@ class TradeController < ApplicationController
     return result
     
   end
-
   def getPartialAmount(num,denominator,target)
     amount = ((num * target) / denominator).to_i
     return amount
   end
-  def batchfillOrder(type,price,amount,base_token='ETH',token_symbol='ZRX')   
+  def batchfillOrder(type,price,amount,base_token='WETH',token_symbol='ZRX')   
     return_str = ""
     # init Arrays
     signed_order = Array.new
@@ -1599,6 +1728,49 @@ class TradeController < ApplicationController
     end
   end
   def show
+  end
+  def change_contract_address(address)
+    changed_address = address.to_s[0,7] +"..." +address.to_s[-4..-1]
+    return changed_address
+  end
+  def get_decimals_places(param)
+    amount = BigDecimal.new(param.to_s)
+    if amount.to_s.split(".")[1]
+      length = amount.to_s.split(".")[1].size
+    else
+      length = 0
+    end
+    return length    
+  end
+  def maker_zero(param)
+    place = 8 - param
+    zeros = ""
+    for i in 0..place do
+      zeros << "0"
+    end
+    return zeros
+  end
+  def amount_pro(amount, max)
+    if max == nil
+      return 16.667
+    else
+      return ((BigDecimal.new(amount.to_s) / BigDecimal.new(max.to_s))*16.667).truncate(4)
+    end    
+  end
+  def volumn_pro(max, volumn)
+    return ((BigDecimal.new(volumn.to_s) / BigDecimal.new(max.to_s)) * 66.667).truncate(4)
+  end
+  def get_timeformat(t)
+    format = t.to_s.split(" ")
+    day = format[0].split("-")
+    time = format[1].split(":");
+    time_format = day[1] + "-" + day[2] + " " + time[0] + ":" + time[1] + ":" + time[0]
+    return time_format
+  end
 
+
+  # Reward system
+  def reward
+    
   end
 end

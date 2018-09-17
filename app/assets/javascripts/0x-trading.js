@@ -7,9 +7,13 @@ let web3Status;
 let http_link = "https://ropsten.etherscan.io/";
 // Ropsten Net
 let wethAddress = "0xc778417e063141139fce010982780140aa0cd5ab";
-let zrxAddress = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d";
+const zrxAddress = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d";
+const tmAddress = "0x375e2DebFf2E48bfB216Cf52826BDE3855C1B88c";
+const weth_decimals = 18;
+const tm_decimals = 8;
 
 let max_trading_eth = 20;
+let max_trading_tm = 10000000;
 let max_token_amount = 10000000;
 const txOpts = {
     gasLimit: 89000,
@@ -268,7 +272,8 @@ jQuery(function($) {
                     connection_status_ele.classList.add("connected");
                     //Get token balance and weth balance;
                     let token_addr = $(".contract-address").children("a").attr("value");
-                    Trade.get_token_amount(token_addr);
+                    let base_token = $(".token-info").attr("base_token");
+                    Trade.get_token_amount(token_addr,base_token);
                     document.getElementById('metamask_disconnect').onclick = function () {
                         $('#message_body').attr('data-user-id', '');
                         $('#message_body').attr('data-i18n', '[placeholder]connect_wallet');

@@ -19,6 +19,22 @@
               %th.text-right
                 %span{'data-i18n' => 'amount'} Amount
           %tbody
+            - if @trade_histories
+              - @trade_histories.each do |trade|
+                %tr.cover-row
+                  %td
+                    %strong.number
+                      #{trade["time"]}
+                  %td.text-right.text-danger
+                    %strong.number
+                      #{trade["price"]}
+                      %span.p3.opacity-color 0000
+                    %i.fa.fa-caret-down{"aira-hidden" => "true"}
+                  %td.text-right
+                    %strong.number 
+                      #{trade["amount"]}
+
+
     .relative.tab-pane.flex-1#trade_history_me{:role => 'tabpanel'}
       .box-content.trade-histories.ps.ps--active-y
         %table.table

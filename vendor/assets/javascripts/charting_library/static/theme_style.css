@@ -13,7 +13,7 @@
     --main-text-color-light: #555;
 }
 
-div.group.header-group-symbol-search, div.group.header-group-bars-style {
+div.group.header-group-symbol-search, div.group.header-group-bars-style, div.group.header-group-properties, div.group.header-group-compare, div.group.header-group-undo-redo, div.group.header-group-screenshot {
     display: none !important;
 }
 
@@ -51,6 +51,15 @@ body.chart-page.on-widget.tm-theme-dark{
     border-color: var(--second-bg-color-dark) !important;
 }
 
+.tm-theme-dark .charts-popup-list {
+    overflow: auto;
+    border-color: var(--second-bg-color-dark) !important;
+    background: var(--second-bg-color-dark) !important;
+}
+
+.tm-theme-dark .charts-popup-list span {
+    color: var(--main-text-color-dark) !important;
+}
 
 /*Light Theme*/
 body.chart-page.on-widget.tm-theme-light{

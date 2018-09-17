@@ -30,9 +30,11 @@ module API
         # symbol resolve
         resource :symbols do
           get root: :symbols do
-            render :name => "ETH " + params[:symbol] + " Token",
-                   :ticker => params[:symbol],
-                   :description => params[:symbol] + " - ETH",
+            symbol = params[:symbol].split(" ")[0]
+            base_token = params[:symbol].split(" ")[1]
+            render :name => base_token + " " + symbol + " Token",
+                   :ticker => symbol,
+                   :description => symbol + " - " + base_token,
                    :type => "bitcoin",
                    :exchange => "TokenMom",
                    :minmov => 1,
@@ -75,7 +77,7 @@ module API
               if params[:resolution] == "1D"
                 distance = params[:to].to_i - params[:from].to_i
                 count = distance / 86400
-                token_symbol = params[:symbol]                          
+                token_symbol = params[:symbol].split(" ")[0]                          
                 for i in 0..count
                   from_stamp = params[:from].to_i + i * 86400
                   to_stamp = from_stamp + 86400
@@ -113,7 +115,7 @@ module API
               elsif params[:resolution] == "1"
                 distance = params[:to].to_i - params[:from].to_i
                 count = distance / 60
-                token_symbol = params[:symbol]                          
+                token_symbol = params[:symbol].split("-")[0]                  
                 for i in 0..count
                   from_stamp = params[:from].to_i + i * 60
                   to_stamp = from_stamp + 60
@@ -151,7 +153,7 @@ module API
               elsif params[:resolution] == "15"
                 distance = params[:to].to_i - params[:from].to_i
                 count = distance / 900
-                token_symbol = params[:symbol]                          
+                token_symbol = params[:symbol].split("-")[0]                      
                 for i in 0..count
                   from_stamp = params[:from].to_i + i * 900
                   to_stamp = from_stamp + 900
@@ -190,7 +192,7 @@ module API
               elsif params[:resolution] == "30"
                 distance = params[:to].to_i - params[:from].to_i
                 count = distance / 1800
-                token_symbol = params[:symbol]                          
+                token_symbol = params[:symbol].split("-")[0]                    
                 for i in 0..count
                   from_stamp = params[:from].to_i + i * 1800
                   to_stamp = from_stamp + 1800
@@ -228,7 +230,7 @@ module API
               elsif params[:resolution] == "60"
                 distance = params[:to].to_i - params[:from].to_i
                 count = distance / 3600
-                token_symbol = params[:symbol]                          
+                token_symbol = params[:symbol].split("-")[0]                    
                 for i in 0..count
                   from_stamp = params[:from].to_i + i * 3600
                   to_stamp = from_stamp + 3600

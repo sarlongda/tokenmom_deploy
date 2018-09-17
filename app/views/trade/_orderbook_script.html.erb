@@ -2,14 +2,11 @@
     jQuery(function($) {
         $(document).ready(function() {            
             //Change token list
-            $(".dropdown-menu.token-link").on("click", "li", function(){
-                let token_symbol = $(this).attr("value")
-                Trade.get_orders(token_symbol);
-            });
+            
             //Change token in market-widget
             $(document).on('click','.market-status-row',function(){
                 let token_symbol = $(this).find(":nth-child(1)").find("div").attr("symbol");
-                let token_price = $(this).find(":nth-child(2)").find("strong").attr("value");
+                //let token_price = $(this).find(":nth-child(2)").find("strong").attr("value");
                 Trade.get_orders(token_symbol);
             });            
             $(document).on('click', '.hover-row', function(){
@@ -31,9 +28,7 @@
                     $(".amount-sell").trigger("change");  
                     $(".price-sell").attr('data-lock','false');  
                     $(".price-sell").trigger("change");                       
-                }     
-                
-                
+                }    
                
                    
             });

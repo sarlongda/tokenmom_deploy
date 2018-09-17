@@ -22,7 +22,7 @@
                       %th.text-right{'data-i18n' => 'available'} Available
                     %tr
                       %td.text-left
-                        %span.buy-token-symbol WETH
+                        %span.buy-token-symbol #{@base_token}
                       %td.text-right
                         %span.buy-token-balance
                       %td.text-right
@@ -35,8 +35,11 @@
                     %span.buy-ask{'data-i18n' => 'best_ask'} Best Ask
                   %a.util{:href => "javascript:void(0)", :tabindex => "-1"}
                     %span.buy-bid{'data-i18n' => 'best_bid'} Best Bid
-                %span.unit WETH
-                %input.form-control.price-buy{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => "0.00031","data-lock" => "true"}/
+                %span.unit.base-unit #{@base_token}
+                - if @zrxtoken.last_price(@base_token) != "--"
+                  %input.form-control.price-buy{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => @zrxtoken.last_price(@base_token) ,"data-lock" => "false"}/
+                - else
+                  %input.form-control.price-buy{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => 0 ,"data-lock" => "true"}/
                 %span.text-danger
               .form-group
                 %label
@@ -46,22 +49,22 @@
                   %a.util.buy-50{:href => "javascript:void(0)", :tabindex => "-1"} 50%
                   %a.util.buy-75{:href => "javascript:void(0)", :tabindex => "-1"} 75%
                   %a.util.buy-100{:href => "javascript:void(0)", :tabindex => "-1"} 100%
-                %span.unit.buy ZRX
+                %span.unit.buy #{@zrxtoken.symbol}
                 %input.form-control.amount-buy{:autocomplete => "off", :name => "amount", :placeholder => "0.00", :value => "0","data-lock" => "true"}/
                 %span.text-danger
               .costs.row{:style => "margin-bottom: 10px;"}
                 .total-amount.col-md-7
                   %span{'data-i18n' => 'total≈'} Total ≈
                   %span.total-buy{:style => "display: inline-block; vertical-align: top; margin-left: 5px;"}0.00 
-                  %span ETH
+                  %span.base-unit #{@base_token}
                 .fee.col-md-5{"data-original-title" => "", :style => "cursor: pointer;", :title => ""}
                   %span.fee-buy{:value => "0.00",'data-i18n' => 'fee≈'} Fee ≈
                   %span 0.00
-                  %span WETH
+                  %span.base-unit #{@base_token}
                   %i.fa.fa-question-circle{"aria-hidden" => "true"}
                 .order-addr-buy{:style => "display:hidden", :value => 0}
               %button.btn.btn-success.btn-block.btn-style.btn-buy.disabled
-                %span BUY 0x Protocol Token (ZRX)
+                %span BUY ZRX
         .col-md-6.sell-tag
           .form-group.token-infomation{:style => "margin-bottom:0.1rem"}
             %table.table.wallet-state
@@ -85,8 +88,11 @@
                 %span.sell-ask{'data-i18n' => 'best_ask'} Best Ask
               %a.util{:href => "javascript:void(0)", :tabindex => "-1"}
                 %span.sell-bid{'data-i18n' => 'best_bid'} Best Bid
-            %span.unit WETH
-            %input.form-control.price-sell{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => "0.00031","data-lock" => "true"}/
+            %span.unit.base-unit #{@base_token}
+            - if @zrxtoken.last_price(@base_token) != "--"
+              %input.form-control.price-sell{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => @zrxtoken.last_price(@base_token) ,"data-lock" => "false"}/
+            - else
+              %input.form-control.price-sell{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => 0 ,"data-lock" => "true"}/
             %span.text-danger
           .form-group
             %label
@@ -96,22 +102,22 @@
               %a.util.sell-50{:href => "javascript:void(0)", :tabindex => "-1"} 50%
               %a.util.sell-75{:href => "javascript:void(0)", :tabindex => "-1"} 75%
               %a.util.sell-100{:href => "javascript:void(0)", :tabindex => "-1"} 100%
-            %span.unit.sell ZRX
+            %span.unit.sell #{@zrxtoken.symbol}
             %input.form-control.amount-sell{:autocomplete => "off", :name => "amount", :placeholder => "0.00", :value => "0","data-lock" => "true"}/
             %span.text-danger
           .costs.row{:style => "margin-bottom: 10px;"}
             .total-amount.col-md-7
               %span{'data-i18n' => 'total≈'} Total ≈
               %span.total-sell{:style => "display: inline-block; vertical-align: top; margin-left: 5px;"}0.00
-              %span ETH
+              %span.base-unit #{@base_token}
             .fee.col-md-5{"data-original-title" => "", :style => "cursor: pointer;", :title => ""}
               %span.fee-sell{:value => "0.00",'data-i18n' => 'fee≈'} Fee ≈
               %span 0.00
-              %span WETH
+              %span.base-unit #{@base_token}
               %i.fa.fa-question-circle{"aria-hidden" => "true"}
             .order-addr-sell{:style => "display:hidden", :value => 0}
           %button.btn.btn-danger.btn-block.btn-style.btn-sell.disabled
-            %span SELL 0x Protocol token (ZRX)
+            %span SELL ZRX
     .tab-pane.flex-column#open_order_panel{'role' => 'tabpanel'}
       .no-order-wrap.text-center.flex.flex-column
         %table.table.flex-column.d-flex

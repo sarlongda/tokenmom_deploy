@@ -6,7 +6,7 @@
         %span.navbar-toggler-icon
       %a.navbar-brand{href: "/"}
         = image_tag("tmom_logo.png", id: "logo")
-      %ul#nav-tokens
+      %ul#nav-tokens{:style => "display:none"}
         %div
           %li#pairs-dropdown.dropdown
             %a.selected.dropdown-toggle.token-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "javascript:void(0)", :role => "button"}
@@ -19,29 +19,46 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.token-header.nav.navbar-nav.mr-auto        
         %li
-          .token-info{:base_token => "ETH"}
-            %span 
+          .token-info{:base_token => @base_token,:token_symbol => @zrxtoken.symbol,:decimals => @zrxtoken.token_decimals}
+            %span
+              #{@zrxtoken.name} (#{@zrxtoken.symbol})
             .contract-address
               %span{"data-i18n" => "contract_address"} Contract Address:
-              %a{:rel => "noopener noreferrer", :target => "_blank"}
+              %a{:href => "'https://ropsten.etherscan.io/token/" + @zrxtoken.contract_address + "'", :rel => "noopener noreferrer", :target => "_blank",:value => @zrxtoken.contract_address} #{@changed_contract}
         %li
           .trade-info
             .trade-info-number.last-price
               %strong
                 %strong                  
-                  %span                                   
+                  - if @zrxtoken.last_price(@base_token) == "--"
+                    %span 0.000000 #{@base_token}
+                  - else
+                    - if @zrxtoken.last_price(@base_token)
+                      %span #{@zrxtoken.last_price(@base_token)} #{@base_token}                               
             .trade-info-label
               %span{"data-i18n" => "last_price"}
         %li
           .trade-info
             .trade-info-number
-              %strong                
+              %strong
+                - if @zrxtoken.h_price(@base_token) == "--"
+                  %strong
+                    %span --
+                - else
+                  - if @zrxtoken.h_price(@base_token)  > 0
+                    %strong.text-success
+                      %i.fa.fa-caret-up{"aria-hidden" => "true"}
+                      %span #{@zrxtoken.h_price(@base_token)}%
+                  - else
+                    %strong.text-danger
+                      %i.fa.fa-caret-down{"aria-hidden" => "true"}
+                      %span #{@zrxtoken.h_price(@base_token)}%               
             .trade-info-label
               %span{"data-i18n" => "24h_price"} 24H Price
         %li
           .trade-info
             .trade-info-number
-              %strong
+              %strong #{@zrxtoken.h_volumn(@base_token)} #{@base_token}
             .trade-info-label
               %span{"data-i18n" => "24h_volumn"} 24H Volumn
       %button.btn.btn-sm.btn-info.btn-trade-by-addr

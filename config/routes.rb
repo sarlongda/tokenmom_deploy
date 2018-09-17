@@ -3,7 +3,25 @@ Rails.application.routes.draw do
 
   match '/' => 'trade#index', :as => :root, via: [:get, :post]
 
-  get '/trade/:trade_pair', to: 'trade#trade'
+  get '/exchange/:trade_pair', to: 'trade#trade'
+  get '/reward', to: 'trade#reward'
+  post '/exchange/get_init_data', to: 'trade#get_init_data'
+  post '/exchange/get_messages', to: 'trade#get_messages'
+  post '/exchange/create_order', to: 'trade#create_order'
+  post '/exchange/get_orders', to: 'trade#get_orders'
+  post '/exchange/get_signed_order', to: 'trade#get_signed_order'
+  post '/exchange/create_trade_history', to: 'trade#create_trade_history'
+  post '/exchange/get_trade_history', to: 'trade#get_trade_history'
+  post '/exchange/delete_order', to: 'trade#delete_order'
+  post '/exchange/get_matching_orders', to: 'trade#get_matching_orders'
+  post '/exchange/update_order', to: 'trade#update_order'
+  post '/exchange/get_my_open_orders', to: 'trade#get_my_open_orders'
+  post '/exchange/delete_my_order', to: 'trade#delete_my_order'
+  post '/exchange/find_token', to: 'trade#find_token'
+  post '/exchange/get_owner_data', to: 'trade#get_owner_data'
+  post '/exchange/delete_my_orders', to: 'trade#delete_my_orders'
+  post '/exchange/get_token_info', to: 'trade#get_token_info'
+  post '/exchange/get_tokens', to: 'trade#get_tokens'
 
   resources :trade do
     collection do

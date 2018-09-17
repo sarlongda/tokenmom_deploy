@@ -101,6 +101,26 @@ body {
   width: 15px;
   margin-right: 5px;
 }
+.tm-header{
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	.hy-menu{
+		.hy-menu-item{
+			padding-bottom: 1px !important;
+		}
+	}
+}
+.footer-wrap {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	.tm-footer-wrap{
+		padding-top: 0 !important;
+		.copy-right-wrap{
+			margin-top: 0 !important;
+		}
+	}
+}
 #trade_workspace {
 	font-size: 11px;
 	font-family: 'Open Sans', sans-serif;
@@ -1200,10 +1220,10 @@ body {
 			flex-direction: column;
 			#market-status{
 				min-height: 190px;
+				flex-grow: 3;
 				.box-header {
 					border: none;
-					margin-bottom: 0;
-					
+					margin-bottom: 0;					
 				}
 				.market-status-search {
 					margin-top: -2px;
@@ -1268,6 +1288,8 @@ body {
 							&#favorite {
 								width: 10%;
 								float: right;
+								padding-right: 8px;
+								padding-top: 8px;
 							}
 						}
 					}
@@ -1286,6 +1308,7 @@ body {
 								&.favorite{
 									width: 10%;
 									float: right;
+									padding-right: 0;
 								}
 							}
 						}
@@ -1298,6 +1321,7 @@ body {
 				
 			}
 			#social {
+				flex-grow: 4;
 				.tab-handles{
 					min-height: 33px;
 				}
@@ -1419,6 +1443,7 @@ body {
 			flex-direction: column;
 			#price-history {
 				height: 100%;
+				flex-grow: 6;
 				.chart-div {
 					height: 100%;
 					.page-tv-chart-container {
@@ -1427,6 +1452,7 @@ body {
 				}
 			}
 			#trade {
+				flex-grow: 5;
 				.tab-handles{
 					min-height: 33px;
 				}

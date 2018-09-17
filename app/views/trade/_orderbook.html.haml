@@ -14,16 +14,19 @@
     .orderbook-container.flex-1
       .orderbook{:max_amount => "0"}
         .orderbook-asks
-          - @sellOrders.each do |order|
-            .hover-row
-              .bar{:style => "width: 10%"}
-              .amount-bar{:style => "width: 15%"}
-              .col-xs-3.col-xs-offset-2.text-danger.text-right.orderbook-price
-                %strong.number
-                  #{order.price}
-              .col-xs-4.text-right.orderbook-amount
-                %strong.number
-                  #{order.amount}            
+          - if @sell_orders
+            - @sell_orders.each do |order|
+              .hover-row
+                .bar{:style => "width:"+ order["depth"] + "%"}
+                .amount-bar{:style => "width:"+ order["pro"] + "%"}
+                .col-xs-3.col-xs-offset-2.text-danger.text-right.orderbook-price
+                  %strong.number                    
+                    0.038
+                    %span.p3.opacity-color
+                      #{order["zero_count"]}                     
+                .col-xs-4.text-right.orderbook-amount
+                  %strong.number
+                    #{order["amount"]}            
         .spread
           .col-xs-2
             %span{'data-i18n' => 'spread'} Spread
@@ -34,14 +37,18 @@
             %i.fa.fa-circle{"aria-hidden" =>"true"}
             %span{'data-i18n' => 'real_time'} Realtime
         .orderbook-bids
-          - @buyOrders.each do |order|
-            .hover-row
-              .bar{:style => "width:14%"}
-              .amount-bar{:style => "width:16.67%"}
-              .col-xs-3.col-xs-offset-2.text-success.text-right.orderbook-price
-                %strong.number
-                  #{order.price}
-              .col-xs-4.text-right.orderbook-amount
-                %strong.number
-                  #{order.amount}
+          - if @buy_orders
+            - @buy_orders.each do |order|
+              .hover-row
+                .bar{:style => "width:"+ order["depth"] + "%"}
+                .amount-bar{:style => "width:"+ order["pro"] + "%"}
+                .col-xs-3.col-xs-offset-2.text-success.text-right.orderbook-price
+                  %strong.number
+                    #{order["price"]}
+                    %span.p3.opacity-color 
+                      #{order["zero_count"]}
+                .col-xs-4.text-right.orderbook-amount
+                  %strong.number
+                    #{order["amount"]}    
+                    
 
