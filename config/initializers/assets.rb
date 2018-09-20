@@ -13,3 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( turbolinks.js )
+Rails.application.config.assets.precompile += %w( 0x-trading.js )
+Rails.application.config.assets.precompile += %w( human_standard_info_abi.js )
+Rails.application.config.assets.precompile += %w( main-jquery_i18n.js )
+Rails.application.config.assets.precompile += %w( tv-chart-widget-init.js )

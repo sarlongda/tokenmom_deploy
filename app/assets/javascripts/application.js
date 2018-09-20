@@ -19,10 +19,11 @@
 //= require datafeeds/udf/dist/polyfills.js
 //= require charting_library/charting_library.min.js
 //= require web3/web3.min.js
+//= require qrcode/qrcode.js
 //= require jquery3
+//= require bootstrap
 //= require bootstrap/bootstrap-rails-tooltip
 //= require bootstrap/bootstrap-rails-popover
-//= require bootstrap
 //= require jquery_i18n/CLDRPluralRuleParser.js
 //= require jquery_i18n/jquery.i18n.js
 //= require jquery_i18n/jquery.i18n.messagestore.js

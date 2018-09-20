@@ -115,6 +115,16 @@
                 let price = $(this).val();
                 change_price(price,$(this), "buy");
             });
+            $(".price-sell").on("focusin", function () {
+                console.log("focus sell input---");
+                console.log($(".usd-price").css("visibility","visible"));
+
+            });
+            $(".price-sell").on("focusout", function () {
+                console.log("focus sell input out---");
+                $(".usd-price").css("visibility","hidden")
+
+            });
             //Change sell price value
             $(".price-sell").on("change paste keyup", function () {
                 let price = $(this).val();
@@ -421,29 +431,55 @@
                         if(trade == "buy"){
                             $(".btn-buy").append("<i class='fa fa-spinner fa-spin'></i>");
                             get_allowance = async () => {
-                                let weth_addr = wethAddress;
-                                let allow_status = await zeroEx.token.getProxyAllowanceAsync(weth_addr, currentWalletAddress);
-                                if (allow_status.toNumber() === 0) {
-                                    $(".btn-buy > :nth-child(2)").remove();
-                                    let alert = "<span>Please set your token tradable</span>";
-                                    $(".amount-buy").next().children().remove();
-                                    $(".amount-buy").next().append(alert);
-                                    $(".btn-buy").addClass("disabled");
-                                } else {
-                                    console.log("allow--->")
-                                    let balance_status = await zeroEx.token.getBalanceAsync(weth_addr,currentWalletAddress);
-                                    let balance = web3.fromWei(balance_status.toNumber(), "ether" );
-                                    if(balance < amount * price){
+                                if(base_token == "WETH"){
+                                    let weth_addr = wethAddress;
+                                    let allow_status = await zeroEx.token.getProxyAllowanceAsync(weth_addr, currentWalletAddress);
+                                    if (allow_status.toNumber() === 0) {
                                         $(".btn-buy > :nth-child(2)").remove();
-                                        let alert = "<span>Insufficient Balance</span>";
+                                        let alert = "<span>Please set your token tradable</span>";
                                         $(".amount-buy").next().children().remove();
                                         $(".amount-buy").next().append(alert);
                                         $(".btn-buy").addClass("disabled");
-                                    }else{
+                                    } else {
+                                        let balance_status = await zeroEx.token.getBalanceAsync(weth_addr,currentWalletAddress);
+                                        let balance = web3.fromWei(balance_status.toNumber(), "ether" );
+                                        if(balance < amount * price){
+                                            $(".btn-buy > :nth-child(2)").remove();
+                                            let alert = "<span>Insufficient Balance</span>";
+                                            $(".amount-buy").next().children().remove();
+                                            $(".amount-buy").next().append(alert);
+                                            $(".btn-buy").addClass("disabled");
+                                        }else{
+                                            $(".btn-buy").addClass("disabled");
+                                            get_matching_orders(trade,symbol,price,amount);
+                                        }                               
+                                    }
+                                }else if(base_token == "TM"){
+                                    let tm_addr = tmAddress;
+                                    let allow_status = await zeroEx.token.getProxyAllowanceAsync(tm_addr, currentWalletAddress);
+                                    if (allow_status.toNumber() === 0) {
+                                        $(".btn-buy > :nth-child(2)").remove();
+                                        let alert = "<span>Please set your token tradable</span>";
+                                        $(".amount-buy").next().children().remove();
+                                        $(".amount-buy").next().append(alert);
                                         $(".btn-buy").addClass("disabled");
-                                        get_matching_orders(trade,symbol,price,amount);
-                                    }                               
+                                    } else {
+                                        let balance_status = await zeroEx.token.getBalanceAsync(tm_addr,currentWalletAddress);
+                                        let balance = (balance_status.toNumber() / Math.pow(10,tm_decimals)).toFixed(6);
+                                        if(balance < amount * price){
+                                            $(".btn-buy > :nth-child(2)").remove();
+                                            let alert = "<span>Insufficient Balance</span>";
+                                            $(".amount-buy").next().children().remove();
+                                            $(".amount-buy").next().append(alert);
+                                            $(".btn-buy").addClass("disabled");
+                                        }else{
+                                            $(".btn-buy").addClass("disabled");
+                                            get_matching_orders(trade,symbol,price,amount);
+                                        }                               
+                                    }
+
                                 }
+                                
                             };
                             get_allowance().catch(console.error);
 

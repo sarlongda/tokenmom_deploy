@@ -20,7 +20,6 @@ jQuery(function($) {
       $("#message_body").prop({
         placeholder: $.i18n('connect_wallet')
       });
-
     }
 
   };
@@ -35,8 +34,12 @@ jQuery(function($) {
     const toolbar_bg_light = '#ffffff';
     let token_symbol = localStorage.getItem("select_token") || "ZRX"
     let locale = $(this).data('locale');
+
+    token_symbol = $(".token-info").attr("token_symbol");
+    base_token = $(".token-info").attr("base_token");
+    symbol_pair = token_symbol + " " + base_token;
     var widget = window.tvWidget = new TradingView.widget({
-      symbol: token_symbol,
+      symbol: symbol_pair,
       interval: '1D',
       pricescale: 1000000,
       toolbar_bg: toolbar_bg_dark,
@@ -66,7 +69,6 @@ jQuery(function($) {
 
       ]
     });
-
     widget.onChartReady(() => {
 
       if (localStorage.getItem('theme_color') == "dark") {
@@ -110,7 +112,7 @@ jQuery(function($) {
       'trade_by_addr' : 'Trade by Address',
       'last_price' : 'Last Price',
       '24h_price' : '24H Change',
-      '24h_volumn' : '24H Volumn',
+      '24h_volumn' : '24H Volume',
       'contract_address' : 'Contract Address',
       'trade_notlistedtoken' : 'Trade not listed token',
       'token_address' : 'Token Address:',
@@ -146,6 +148,8 @@ jQuery(function($) {
       'buy' : 'Buy',
       'sell' : 'Sell',
       'cancel' : 'Cancel',
+      'wallet_not_connected': 'Wallet is not connected',
+      'need_connect_wallet': 'You need to connect your wallet from the top menu',
       //orderbook widget
       'order_book' : 'ORDER BOOK',
       'size' : 'Size',
@@ -242,6 +246,8 @@ jQuery(function($) {
       'buy': '매수',
       'sell': '매도',
       'cancel': '취소',
+      'wallet_not_connected': '지갑이 연결되지 않았습니다',
+      'need_connect_wallet': '톱메뉴에서 지갑을 연결해야 합니다',
       //orderbook widget
       'order_book' : '주문장부',
       'size' : '규모',

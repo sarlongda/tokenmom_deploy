@@ -190,10 +190,10 @@
                 alert = 
                     "<div class='no-balance-wrap text-center'>" +
                         "<h6 class='no-balance-name'>" +
-                            "<span>Wallet is not connected</span>" +
+                            "<span data-i18n='wallet_not_connected'>Wallet is not connected</span>" +
                         "</h6>" +
                         "<p class='no-balance-content'>" +
-                            "<span>You need to connect your wallet from the top menu</span>" +
+                            "<span data-i18n='need_connect_wallet'>You need to connect your wallet from the top menu</span>" +
                         "</p>" +
                     "</div>";
                 tag.append(alert);
@@ -207,7 +207,7 @@
                 base_token:base_token
             };
             $.ajax({
-                url: 'get_orders',
+                url: '/exchange/get_orders',
                 type: 'POST',
                 dataType: 'json',
                 data: data,
@@ -221,8 +221,8 @@
                     $.each(data.buy, function(index, element){
                         total_volume += element.price * element.amount;
                     });                    
-                    Trade.draw_orders(data.sell,data.max_amount,sell,total_volume);
-                    Trade.draw_orders(data.buy,data.max_amount,buy,total_volume);
+                    Trade.draw_orders(data.sell,data.max_amount,sell,total_volume,data.matched);
+                    Trade.draw_orders(data.buy,data.max_amount,buy,total_volume,data.matched);
                     Trade.draw_spread(data.best_asks,data.best_bids);
                 },
                 error: function(error) {
@@ -538,7 +538,7 @@
         volume_pro: function(max,volume){
             return ((volume / max) * 66.667).toFixed(4);
         },
-        draw_orders: function(data,max_amount,type,total_volume){
+        draw_orders: function(data,max_amount,type,total_volume,matched){
             let tag;
             let text_color;
             $(".orderbook").attr("max_amount",max_amount)
@@ -553,6 +553,9 @@
             let time_now = Date.now()/1000;
             let tmp_volume = 0;
             $.each(data, function(index, element){
+                console.log("--------draw orders------");
+                console.log(index)
+                console.log(matched)
                 let pro = 0;
                 let depth = 0;
                 let date_pro = (60*24*3600);
@@ -594,8 +597,17 @@
                 }else{
                     pro = 0;
                 }
-                let order = 
-                    "<div class='hover-row'>" + 
+                let order_tag = ""
+                if(index == 0 && matched == 1){
+                    order_tag = 
+                    "<div class='hover-row matched_order'>";
+
+                }else{
+                    order_tag = 
+                    "<div class='hover-row'>";
+                }
+                order_tag += 
+                     
                         "<div class='bar' style='width:" + depth + "%'></div>" +
                         "<div class='amount-bar' style='width:" + pro + "%'></div>" +
                         "<div class='col-xs-3 col-xs-offset-2 "+ text_color + " text-right orderbook-price'>" +
@@ -609,7 +621,7 @@
                             "</strong>" +
                         "</div>" +
                     "</div>"
-                tag.append(order);
+                tag.append(order_tag);
             });
 
         },
@@ -797,7 +809,7 @@
                 token_address:token_addr
             };
             $.ajax({
-                url: 'get_init_data',
+                url: '/exchange/get_init_data',
                 type: 'POST',
                 dataType: 'json',
                 data: data,

@@ -101,6 +101,65 @@ body {
   width: 15px;
   margin-right: 5px;
 }
+.fa-question-circle{
+	position: relative;
+	display: inline-block !important;
+	border-bottom: 1px dotted black;
+	&:hover{
+		.fee-tip{
+			visibility: visible;
+		}
+	}
+	.fee-tip{
+		visibility: hidden;
+		width: 220px;
+		background-color: #17a2b8;
+		color: white;
+		text-align: center;
+		border-radius: 6px;
+		border-bottom-right-radius: 0;
+		padding: 5px 0;
+		position: absolute;
+		z-index: 1;
+		bottom: 150%;
+		left: 50%;
+		margin-left: -220px;
+		font-family: 'Open Sans', sans-serif !important;
+	}
+	.fee-tip::after{
+		content: "";
+		position: absolute;
+		top: 100%;
+		right: 0;
+		margin-left: -5px;
+		border-width: 3px;
+		border-style: solid;
+		border-color: #17a2b8 #17a2b8 transparent transparent;
+	}
+	
+}
+input:focus{
+	.usd-price{
+		visibility: visible;
+	}
+
+}
+.usd-price{
+	visibility: hidden;
+	padding: 5px;
+	background:#17a2b8;
+	color: white !important;
+	position: absolute;
+	left: 12px;
+}
+.usd-price::after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	border-style: solid;
+	border-color: #17a2b8 transparent transparent transparent;
+}
 .tm-header{
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
@@ -113,13 +172,80 @@ body {
 .footer-wrap {
 	width: 100%;
 	position: absolute;
-	bottom: 0;
+	
 	.tm-footer-wrap{
 		padding-top: 0 !important;
 		.copy-right-wrap{
 			margin-top: 0 !important;
 		}
 	}
+}
+#reward_body{
+	background: #101010;
+	color: white;
+	height: 100%;
+	padding-top: 100px;
+	.header-text{
+		text-align: center;
+		h2{
+			font-size: 2.5rem;
+		}
+	}
+	.invite-banner{
+		min-height: 100px;
+	}
+	.invite-info{
+		a{
+			font-size: 30px;
+			color: white;
+		}
+		.owner-info{
+			padding: 0px 30px;
+			#qrcode{
+				img{
+					float: right;
+				}
+			}
+		}
+	}
+	.friends-info{
+		margin: 30px;
+		.box{
+			background: #252020;
+			.box-header{
+				font-size: 18px;
+
+			}
+			.box-content{
+				padding: 0;
+				div{
+					&.flex.flex-column{
+						min-height: 300px;
+						table{
+							thead{
+								tr{
+									th{
+										color: white;
+										border-bottom: 0;
+										font-size: 14px;
+									}
+								}
+
+							}
+							tbody{
+
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
+.home-body{
+	height: 100%;
+	background: #242323;
 }
 #trade_workspace {
 	font-size: 11px;
@@ -396,7 +522,20 @@ body {
 						.col-md-6{
 								.row{									
 									&.token-label{										
-										color: rgba(255, 255, 255, 0.5);										
+										color: rgba(255, 255, 255, 0.5);
+										border-color: #17a2b8 !important;
+										.eth-name{
+											color: white;
+										}	
+										.weth-name{
+											color: white;
+										}
+										.eth-balance{
+											color: white;
+										}
+										.weth-balance{
+											color: white;
+										}									
 									}
 								}
 						}
@@ -809,7 +948,19 @@ body {
 						.col-md-6{
 							.row{									
 								&.token-label{										
-									color: rgba(0, 0, 0, 0.8);										
+									color: rgba(0, 0, 0, 0.8);		
+									.eth-name{
+											color: black;
+										}	
+										.weth-name{
+											color: black;
+										}
+										.eth-balance{
+											color: black;
+										}
+										.weth-balance{
+											color: black;
+										}								
 								}
 							}
 						}
@@ -976,6 +1127,9 @@ body {
 			padding: 7px 15px;
 			margin-left: -15px;
 			cursor: pointer;
+			#logo {
+				width: 150px;
+			}
 		}
 		#nav-tokens {
 			margin-top: 13px;
@@ -1069,6 +1223,10 @@ body {
 					margin-left: -5px; 
 				}
 			}
+		}
+		.country-icon {
+			width: 15px;
+			margin-right: 5px;
 		}
     .header-accounts {
 			a{
@@ -1655,9 +1813,14 @@ body {
 								.row{
 									padding-bottom: 1rem;
 									&.token-label{
-										font-size: 14px;										
-										margin-bottom: 5px;
+										font-size: 14px;
+										border-radius: 0.25rem;
+										border: solid 0.5px;
+										margin: 0;
+
+										margin-bottom: 4px;
 										padding-bottom: 0;
+										
 									}
 								}
 							}
@@ -1783,7 +1946,12 @@ body {
                     .amount-bar{
                       right: 0;
                       background: rgba(201,91,95,0.6);
-                    }
+										}
+										.hover-row{
+											&.matched_order{
+												background: rgba(255,0,0,0.5);
+											}
+										}
 
                   }
                   .spread{
@@ -1811,7 +1979,12 @@ body {
                     .amount-bar{
                       right: 0;
                       background: rgba(34,174,127,0.6);
-                    }
+										}
+										.hover-row{
+											&.matched_order{
+												background: rgba(40,167,69,0.5);
+											}
+										}
                   }
 
                 }

@@ -6,12 +6,18 @@
     = csrf_meta_tags
     = csp_meta_tag
     = action_cable_meta_tag
-    = stylesheet_link_tag    'application', media: 'all' 
-    - if current_page?(controller: 'trade', action: 'trade')
+    = stylesheet_link_tag    'application', media: 'all'    
+    - if current_page?(controller: 'exchange', action: 'trade')   
+      = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'   
+    -if current_page?(controller: 'exchange', action: 'reward')
+      = javascript_include_tag 'application' 
+
+    - if current_page?(controller: 'exchange', action: 'index')
       = javascript_include_tag 'application'
-    - if current_page?(controller: 'trade', action: 'index')
       %link{:href => "https://unpkg.com/aos@next/dist/aos.css", :rel => "stylesheet"}/
       %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.3.1/css/all.css", :integrity => "sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU", :rel => "stylesheet"}/
+    
+      
     %link{:href => "assets/favicon.ico", :rel => "shortcut icon"}/
   %body    
     = yield

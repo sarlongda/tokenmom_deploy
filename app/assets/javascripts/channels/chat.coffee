@@ -8,16 +8,15 @@ jQuery(document).on 'turbolinks:load', ->
     selText = $(this).text()
     value = $(this).val()
     getMessages(value)
-
   $(".dropdown-menu.language").on 'click', 'li', (event) ->
     value = $(this).val()
     getMessages(value)
-
   $($language).change ->
     value = $('.language option:selected').val()
     getMessages(value)
-
-  getMessages() 
+  if $('#trade_workspace').length
+    getMessages() 
+  else
 
   if $messages.length > 0
     App.chat = App.cable.subscriptions.create {
@@ -54,8 +53,7 @@ jQuery(document).on 'turbolinks:load', ->
         return false
 drawMessages = (data)->
   $messages = $('#messages')
-  $messages.html('')
-  
+  $messages.html('')  
   $.each data, (index, element) ->
     $messages.append  '<div class="message">'+'<strong><a href="' + http_link + 'address/' + element.contract_address + '" rel="noopener noreferrer" target="_blank">' + element.nick_name + ' :</a></strong> ' + element.content + '<br>' + '</div>'
   return
@@ -69,6 +67,5 @@ getMessages = (param1) ->
       param1: param1
     success: (data) ->
       drawMessages data
-
     error: (data) ->
       console.log('error')

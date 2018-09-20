@@ -1,5 +1,7 @@
 require 'net/http'
 require 'net/https'
+require 'digest/md5'
+require 'digest/sha1'
 require 'uri'
 require 'json'
 require 'bigdecimal'
@@ -17,6 +19,7 @@ require "web3/eth/trace_module"
 require "web3/eth/etherscan"
 require "web3/eth/rpc"
 require "ethereum.rb"
+
 
 $web3 = Web3::Eth::Rpc.new host: 'ropsten.infura.io',
   port: 443,  
@@ -330,9 +333,13 @@ $token_abi =
       "name":"Approval","type":"event"
     }
   ]'
-class TradeController < ApplicationController
+class ExchangeController < ApplicationController
   skip_before_action :verify_authenticity_token  
   def index
+
+    h = mk_referral_id($wallet_address)
+    
+
   end  
   def trade   
     base_token = params[:trade_pair].split("-")[1]
@@ -566,9 +573,9 @@ class TradeController < ApplicationController
         :decimals => token.token_decimals,
         :contract_address => token.contract_address,
         :name => token.name,
-        :last_price => token.last_price("ZRX"),
-        :h_price => token.h_price("ZRX"),
-        :h_volumn => token.h_volumn("ZRX")
+        :last_price => token.last_price("WETH"),
+        :h_price => token.h_price("WETH"),
+        :h_volumn => token.h_volumn("WETH")
       }
       tokens_array.push json_record
     end
@@ -1425,6 +1432,25 @@ class TradeController < ApplicationController
   def get_orders
     token_symbol = params[:symbol]
     base_token = params[:base_token]
+    last_order = Order.select("price,type").where("base_token = ? AND token_symbol = ?",base_token,token_symbol).last
+    if last_order
+      if last_order.type == 1 
+        match_order = Order.where("base_token = ? AND token_symbol = ? AND price <= ? AND type = ?",base_token,token_symbol,last_order.price,0).order(price: :desc)
+      elsif last_order.type == 0
+        match_order = Order.where("base_token = ? AND token_symbol = ? AND price >= ? AND type = ?",base_token,token_symbol,last_order.price,1).order(price: :desc)
+      end
+    else 
+      matched = 0
+    end
+    if match_order
+      if match_order.length > 0
+        matched = 1
+      else
+        matched = 0
+      end
+    else
+      matched = 0
+    end
     buy_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:token_symbol,type:1).group("price").order(price: :desc)
     sell_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:token_symbol,type:0 ).group("price").order(price: :asc)
     # max_amount = Order.select("sum(amount) as amount").where(base_token:base_token,token_symbol:token_symbol).maximum("amount")
@@ -1449,7 +1475,9 @@ class TradeController < ApplicationController
       "sell":sell_orders,
       "max_amount":max_amount,
       "best_asks":best_asks,
-      "best_bids":best_bids,      
+      "best_bids":best_bids,  
+      "matched":matched
+      
     }
     respond_to do |format|
       format.json { render :json=>json_data}
@@ -1772,5 +1800,14 @@ class TradeController < ApplicationController
   # Reward system
   def reward
     
+  end
+
+  # make referral id with wallet address
+  def mk_referral_id(address)
+    md5 = Digest::MD5.new.hexdigest address
+    md5_str = md5.to_s
+    referral_id = md5_str.to_s[0,5].to_s +  + md5_str.to_s[-4..-1].to_s
+    # return sha2
+    return referral_id
   end
 end

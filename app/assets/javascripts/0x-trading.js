@@ -30,15 +30,19 @@ let fee_percent = 0.05
 let initial_fee = 0.002
 jQuery(function($) {        
     $(document).ready(function () {
-        metamask_login_emt = document.getElementById("metamask_login");
-        metamask_login_emt.onclick = function () { metamask_login() };
-        if ((typeof web3) !== 'undefined') {
+        function load_js(){
+            
+            if ($("#trade_workspace").length) {
+                metamask_login_emt = document.getElementById("metamask_login");
+                metamask_login_emt.onclick = function () { metamask_login() };
+            }
+            if ((typeof web3) !== 'undefined') {
                 web3Status = 1;
                 provider = web3.currentProvider;
                 web3 = new Web3(provider);
                 web3.version.getNetwork((err, netId) => {
                     TESTRPC_NETWORK_ID = netId;
-                    switch (netId) {                        
+                    switch (netId) {
                         case "1":
                             console.log('This is mainnet');
                             wethAddress = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
@@ -63,31 +67,39 @@ jQuery(function($) {
                 });
                 const configs = {
                     networkId: TESTRPC_NETWORK_ID,
-                };                  
+                };
                 zeroEx = new ZeroEx.ZeroEx(provider, configs);
                 //web3Wrapper = new ZeroEx.ZeroEx(provider, configs);
                 // new Web3ProviderEngine();
-                
+
                 const accountAsync = async () => {
                     var account = web3.eth.accounts.length > 0 ? web3.eth.accounts[0] : 0;
-                    currentWalletAddress = account;                    
-                    auto_login();
-                    setInterval(function () {
-                        if (web3.eth.accounts[0] !== account) {
-                            account = web3.eth.accounts[0];
-                            currentWalletAddress = account;
-                            if (currentWalletAddress === null || currentWalletAddress === undefined) {
-                                clear();
+                    currentWalletAddress = account;
+                    if ($("#trade_workspace").length) {
+                        auto_login();
+                        setInterval(function () {
+                            if (web3.eth.accounts[0] !== account) {
+                                account = web3.eth.accounts[0];
+                                currentWalletAddress = account;
+                                if (currentWalletAddress === null || currentWalletAddress === undefined) {
+                                    clear();
+                                }
+                                auto_login();
                             }
-                            auto_login();
-                        }
-                    }, 100);
+                        }, 100);
+
+                    }
+
+
                 };
                 accountAsync().catch(console.error);
-        } 
-        else {
+            }
+            else {
                 web3Status = 0;
+            }
+
         }
+        
         $(document).on('click','#cancel_metamask_login',function(){
             metamask_cancel();
         });
@@ -307,6 +319,7 @@ jQuery(function($) {
                 }
             }
         }
+        load_js();
     });       
 });
 

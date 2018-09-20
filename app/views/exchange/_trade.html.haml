@@ -52,6 +52,7 @@
                 %span.unit.buy #{@zrxtoken.symbol}
                 %input.form-control.amount-buy{:autocomplete => "off", :name => "amount", :placeholder => "0.00", :value => "0","data-lock" => "true"}/
                 %span.text-danger
+                
               .costs.row{:style => "margin-bottom: 10px;"}
                 .total-amount.col-md-7
                   %span{'data-i18n' => 'total≈'} Total ≈
@@ -62,6 +63,9 @@
                   %span 0.00
                   %span.base-unit #{@base_token}
                   %i.fa.fa-question-circle{"aria-hidden" => "true"}
+                    %span.fee-tip
+                      %span Ethereum tx fee : 0.0002 WETH
+                      %span Tokenmom fee : 0.00000 WETH
                 .order-addr-buy{:style => "display:hidden", :value => 0}
               %button.btn.btn-success.btn-block.btn-style.btn-buy.disabled
                 %span BUY ZRX
@@ -88,12 +92,14 @@
                 %span.sell-ask{'data-i18n' => 'best_ask'} Best Ask
               %a.util{:href => "javascript:void(0)", :tabindex => "-1"}
                 %span.sell-bid{'data-i18n' => 'best_bid'} Best Bid
+            %span.usd-price $ 234
             %span.unit.base-unit #{@base_token}
             - if @zrxtoken.last_price(@base_token) != "--"
               %input.form-control.price-sell{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => @zrxtoken.last_price(@base_token) ,"data-lock" => "false"}/
             - else
               %input.form-control.price-sell{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => 0 ,"data-lock" => "true"}/
             %span.text-danger
+            
           .form-group
             %label
               %span.token-amount{'data-i18n' => 'amount'} Amount
@@ -103,8 +109,10 @@
               %a.util.sell-75{:href => "javascript:void(0)", :tabindex => "-1"} 75%
               %a.util.sell-100{:href => "javascript:void(0)", :tabindex => "-1"} 100%
             %span.unit.sell #{@zrxtoken.symbol}
-            %input.form-control.amount-sell{:autocomplete => "off", :name => "amount", :placeholder => "0.00", :value => "0","data-lock" => "true"}/
+            %input.form-control.amount-sell{:autocomplete => "off", :name => "amount", :placeholder => "0.00", :value => "0","data-lock" => "true"}
+              
             %span.text-danger
+            
           .costs.row{:style => "margin-bottom: 10px;"}
             .total-amount.col-md-7
               %span{'data-i18n' => 'total≈'} Total ≈
@@ -115,6 +123,9 @@
               %span 0.00
               %span.base-unit #{@base_token}
               %i.fa.fa-question-circle{"aria-hidden" => "true"}
+                %span.fee-tip
+                  %span Ethereum tx fee : 0.0002 WETH
+                  %span Tokenmom fee : 0.00000 WETH
             .order-addr-sell{:style => "display:hidden", :value => 0}
           %button.btn.btn-danger.btn-block.btn-style.btn-sell.disabled
             %span SELL ZRX
@@ -145,11 +156,10 @@
             .col-sm-6
               %span{'data-i18n' => 'token'} Token
             .col-sm-6{:style => "text-align:right"}
-              %span{'data-i18n' => 'balance'} Balance
-          .row
+              %span{'data-i18n' => 'balance'} Balance          
             .col-sm-6
               %label
-                %span ETH
+                %span.eth-name ETH
             .col-sm-6
               %label.float-right.eth-balance
                 %i.fa.fa-spinner.fa-spin
@@ -170,10 +180,10 @@
               %span{'data-i18n' => 'balance'} Balance
             .col-sm-4{:style => "text-align:right"}
               %span{'data-i18n' => 'allowance'} Allowance
-          .row
+          
             .col-sm-3
               %label
-                %span WETH
+                %span.weth-name WETH
             .col-sm-5
               %label.float-right.weth-balance
                 %i.fa.fa-spinner.fa-spin

@@ -1,0 +1,43 @@
+.header-wrap
+    %nav.tm-header.navbar.navbar-default.navbar-expand.theme-dark
+        .container-fluid
+            .navbar-header
+                %a.navbar-brand{:href => "/"}
+                    = image_tag("tmom_logo.png", id: "logo")
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                %div
+                    %ul.hy-menu
+                        %li.hy-menu-item
+                            %a.bar{:href => "/exchange/ZRX-WETH"}
+                                %span.nav-item.nav-trade
+                                    %i.fas.fa-balance-scale
+                                    %span EXCHANGE
+                        %li.hy-menu-item
+                            %a.bar{:href => "/reward"}
+                                %span.nav-item.nav-task
+                                    %i.fas.fa-coins{:style => "color:#0dfd59"}
+                                    %span{:style => "color:#0dfd59"} REWARD
+                .navbar-nav.ml-auto
+                    %ul.hy-menu
+                        %li.hy-menu-item
+                            %a.dropdown-toggle.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true",  :href => "javascript:void(0)", :role => "button"}
+                                %img.country-icon{:alt => "", :src => "/assets/en.fba4238a.svg"}/
+                                %span English
+                                %span.caret
+                            %ul.dropdown-menu.language
+                                %li.lang-switch{:value => "1","data-locale" => "en"}
+                                    %a{:href => "javascript:void(0)"}
+                                        %img.country-icon{:alt => "", :src => "/assets/en.fba4238a.svg"}>/
+                                        English
+                                %li.lang-switch{:value => "2","data-locale" => "ko"}
+                                    %a{:href => "javascript:void(0)"}
+                                        %img.country-icon{:alt => "", :src => "/assets/ko.4d71266b.svg"}>/
+                                        한국어
+                                %li.lang-switch{:value => "3","data-locale" => "zh"}
+                                    %a{:href => "javascript:void(0)"}
+                                        %img.country-icon{:alt => "", :src => "/assets/zh.fee5842f.svg"}>/
+                                        简体中文
+                                %li.lang-switch{:value => "4","data-locale" => "ja"}
+                                    %a{:href => "javascript:void(0)"}
+                                        %img.country-icon{:alt => "", :src => "/assets/ja.e0b7a3ef.svg"}>/
+                                        日本語

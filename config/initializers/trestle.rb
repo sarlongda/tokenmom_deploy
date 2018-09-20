@@ -23,8 +23,11 @@ Trestle.configure do |config|
   # == Mounting Options
   #
   # Set the path at which to mount the Trestle admin. Defaults to /admin.
-  #
+  
   # config.path = "/admin"
+
+  # Change by bond 2018-9-20
+  config.path = "/manager"
 
   # Toggle whether Trestle should automatically mount the admin within your
   # Rails application's routes. Defaults to true.
