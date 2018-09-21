@@ -6,7 +6,7 @@
         .container-fluid
           .navbar-header
             %a.navbar-brand{:href => "/"}
-              -#= image_tag("tmom_logo.png", id: "logo")
+              = image_tag("tmom_logo.png", id: "logo")
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             %div
               %ul.hy-menu
@@ -42,122 +42,157 @@
                       %a{:href => "javascript:void(0)"}
                         %img.country-icon{:alt => "", :src => "/assets/ja.e0b7a3ef.svg"}>/
                         日本語
+    %nav.vertical-social
+      %ul
+        %li
+          %a{:href => "#"}
+            %i.fab.fa-facebook{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fab.fa-twitter{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fab.fa-telegram{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fab.fa-medium-m{"aria-hidden" => "true"}
     .home-main-wrap
       .home-main.theme-dark
+        #particles-js
         .section.section-one
           .container
             .show-grid
               .column-1.left.mobile-flex.left-animated
                 .section-one-title-wrap
                   %h5
-                    %span Redefining
+                    %span TOKENMOM
                   %h5
-                    %span Decentralized Exchanges
+                    %span Invest in Future Value
                 .parting-line
                 %p.desc
-                  %span DDEX is the first decentralized exchange built on Hydro Protocol technology, offering instant, real-time order matching with secure on-chain settlement.
-                %a.start-trading-btn{:href => "/exchange/ZRX-WETH"}
+                  %span KOREA's First Futuristic Real Decentralized Exchage
+                %p.desc
+                  %span Our goal is your investment success not ours!
+                %a.start-trading-btn{:href => "/trade/ZRX-WETH"}
                   %span Start Trading
+                %a.start-trading-btn{:href => "/"}
+                  %span Whitepaper
               .column-2
                 = image_tag('imgpsh_fullsize.png', class: "desc-image right-animated")
-        -#.section-two
-        -#  .container
-        -#    .support-wrap
-        -#      .backed-by
-        -#        %span
-        -#          %span Backed by
-        -#        %a{:href => "http://www.zhenfund.com", :rel => "noopener noreferrer", :target => "_blank"}
-        -#          %span.backed-one
-        -#        %a{:href => "https://initialized.com", :rel => "noopener noreferrer", :target => "_blank"}
-        -#          %span.backed-two
-        -#      .featured-on
-        -#        %span
-        -#          %span Featured on
-        -#        %a{:href => "https://www.wsj.com/articles/alexis-ohanians-vc-firm-invests-2-1-million-in-crypto-trading-platform-1520365270", :rel => "noopener noreferrer", :target => "_blank"}
-        -#          %span.backed-four
-        -#        %a{:href => "http://36kr.com/p/5112769.html", :rel => "noopener noreferrer", :target => "_blank"}
-        -#          %span.backed-five
-        -#        %a{:href => "https://www.theinformation.com/articles/crackdown-fails-to-stop-chinas-crypto-gold-rush?jwt=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaWFuZTE5OTdAZm94bWFpbC5jb20iLCJleHAiOjE1NTA2NjA5MzksIm4iOiJHdWVzdCIsInNjb3BlIjpbInNoYXJlIl19.sOAVigyxXF9Yoef_CWkJOsxa9pGbZK5j28Ts0vg-_MA&unlock=1d1c75dc90bc9498", :rel => "noopener noreferrer", :target => "_blank"}
-        -#          %span.backed-six
-        -#        %a{:href => "https://xw.qq.com/tech/20180209028688/TEC2018020902868800", :rel => "noopener noreferrer", :target => "_blank"}
-        -#          %span.backed-seven
         .section.section-three.background
           .container
+            .heading.text-center
+              %h6.sub-title ADVANTAGES
             .show-grid.reverse
               .column-1(data-aos="fade-right")
-                %img.desc-image{:alt => "", :src => "https://cdn.ddex.io/static/media/wallet.b5704517.png"}/
-              .mobile-flex.column-2(data-aos="fade-left")
-                %h5
-                  %span No Sign Up Required
-                %p.description
-                  %span Start securely trading on DDEX right away using one of our many supported digital wallets. No additional registration is required.
+                = image_tag('no.png', class: "desc-image")
+              .mobile-flex.column-2
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span No Sign Up Required
+                  %p.description
+                    %span Tokenmom is anonymous and do not need to sign up for trading. It is true decentralized exchange that helps to trade in realtime between individuals by using personal wallets(Metamask, Ledger nano hardware wallet)
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span No KYC For Confirming Personal Identification
+                  %p.description
+                    %span Start securely trading without any identity verification. No personal information is required.
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span No Deposit/Withdraw
+                  %p.description
+                    %span Tokenmom does not ask additional deposit and withdrawal. Only with Metamask and Ledger Nano S hardware wallet, users can trade their tokens in real-time anywhere, anytime.
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span No Hacking
+                  %p.description
+                    %span Even if Tokenmom exchange is hacked or closed, it does not have to worry about it because users own still the assets in their personal wallet.
         .section.section-four.light-bg.background
           .container
+            .heading.text-center
+              %h6.sub-title KEY POINTS
             .show-grid
               .column-1.mobile-flex(data-aos="fade-up")
-                %h5
-                  %span Industry Leading Decentralized
-                %h5
-                  %span Exchange with Actual Liquidity
-                %p.description
-                  %span
-                    One of the top decentralized exchanges by both
-                    %a{:href => "https://etherscan.io/stat/dextracker", :target => "_blank"} total number of transactions
-                    and
-                    = succeed "." do
-                      %a{:href => "https://coinmarketcap.com/exchanges/ddex/", :target => "_blank"} trading volume
-                    = succeed "." do
-                      %a{:href => "https://docs.ddex.io/", :target => "_blank"} API
-                    %a{:href => "https://support.ddex.io/hc/en-us/articles/115004535333-Fees", :target => "_blank"} fee structure
-                    yields greater market depth.
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span Easy & Simple Interface
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span Lowest Trading Fee
+                  %p.description
+                    %span At the same time as Tokenmom is opened, the FEE for buy/sell or maker/taker for all transactions is 0%.
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span All Ethereum Based Token's Trading
+                  %p.description
+                    %span Don't just wait for your tokens to be listed on the exchange. Any ethereum based token's trade is possible as you want.
+                .desc-item(data-aos="fade-up")
+                  %h5
+                    %span Multi Languages Supported Interface
+                  %p.description
+                    %span Tokenmom supports English, Korean, Chinese and Japanese too. More and more languages coming soon.
               .column-2(data-aos="fade-down")
-                %img.desc-image{:alt => "", :src => "https://cdn.ddex.io/static/media/liquidity.227b525a.png"}/
+                = image_tag('tokenmom_key.png', class: "desc-image")
         .section.section-five.background
           .container
+            .heading.text-center
+              %h6.sub-title Our token
             .show-grid.reverse
               .column-1(data-aos="fade-down-right")
-                %img.desc-image{:alt => "", :src => "https://cdn.ddex.io/static/media/secure.70c9bbba.png"}/
+                = image_tag('ethereum-token-relayer-liquidity.png', class: "desc-image")
               .column-2.mobile-flex(data-aos="fade-down-left")
                 %h5
-                  %span Secure Trading -
+                  %span Tokenmom Exchange Token(TM)
                 %h5
-                  %span No Deposit Required
+                  %span NO ICO, NO PRESALE & NO CROWD SALE
                 %p.description
-                  %span Using Ethereum smart contracts and the 0x protocol, DDEX allows users to trade digital assets directly from wallet-to-wallet. No depositing required: you have complete control of your assets.
+                  %span Tokenmom Exchange introduces it's own TM token.
                 %p.desc
-                  %span Revolutionary for Ledger users - trade without your assets ever leaving your storage barrier!
-        -#.section.section-six.light-bg.background
-        -#  .container
-        -#    .show-grid
-        -#      .column-1.mobile-flex.left-animated
-        -#        %h5
-        -#          %span Mobile-focused
-        -#        %h5
-        -#          %span 24/7 Trading on the go
-        -#        %p.description
-        -#          %span We offer a wide variety of mobile options for trading 24/7. We are currently available on mobile DApp browsers including Cipher, Toshi, Trust and Dapp Browser. Our highly-anticipated DDEX mobile-native trading app is coming soon!
-        -#        %ul.dapp-browser-wrap
-        -#          %li
-        -#            %a{:href => "https://trustwalletapp.com/features/trust-browser", :target => "_blank"}
-        -#              %span.dapp-browser.trust
-        -#          %li
-        -#            %a{:href => "https://www.toshi.org/", :target => "_blank"}
-        -#              %span.dapp-browser.toshi
-        -#          %li
-        -#            %a{:href => "https://www.cipherbrowser.com/", :target => "_blank"}
-        -#              %span.dapp-browser.cipher
-        -#          %li
-        -#            %a{:href => "https://www.cmcmbc.com/en-us/dapp-browser/?from=ddex_HP_mobile", :target => "_blank"}
-        -#              %span.dapp-browser.dapp
-        -#          %li
-        -#            %a{:href => "https://cobo.com", :target => "_blank"}
-        -#              %span.dapp-browser.cobo
-        -#          %li
-        -#            %a{:href => "https://token.im/download", :target => "_blank"}
-        -#              %span.dapp-browser.imtoken
-        -#      .column-2
-        -#        %img.desc-image.down-animated{:alt => "", :src => "https://cdn.ddex.io/static/media/mobile.1d753871.png"}/
+                  %span It sells only 30% of total supply, and it does not proceed with ICO etc, which can only be purchased on Tokenmom Exchange. We do not know whether it will be listed in other exchanges.
+                %p.desc
+                  %span In order to maximize the profit of the initial investors, the price will be differentiated step by step and so the earlier investment profit will be maximized.
+                %p.desc
+                  %span The target price of TM Token is 0.001$(about 11.6 KRW). Thus, investors who invest first become more profitable. We also aim to operate TM Market and the fee will be lower than ETH market, and the fee will be received as TM token, which helps Tokenmom exchange to regain TM token and so more profitable for investors. This depends on the success of both TM token's sales and Tokenmom exchange.
+        .section.section-seven.background
+          .container
+            .heading.text-center
+              %h6.sub-title Token Distribution
+            .show-grid.reverse
+              .column-1(data-aos="fade-down-right")
+                = image_tag('distribution.png', class: "desc-image")
+              .column-2.mobile-flex(data-aos="fade-down-left")
+                %h5
+                  %span Usage
+                %p.description
+                  %span - 40%(8,000,000,000) Free TM token to exchange users
+                %p.desc
+                  %span - 30%(6,000,000,000) Founder, team, exchange maintenance
+                %p.desc
+                  %span - 20%(4,000,000,000) Price stability and maintenance of TM token
+                %p.desc
+                  %span - 10%(2,000,000,000) Reserved funds to prepare for problems
+        .section.section-eight.light-bg.background
+          .container
+            .heading.text-center
+              %h6.sub-title Who are we
+            .show-grid.reverse
+              .column-1(data-aos="zoom-out-right")
+                = image_tag('who we are.png', class: "desc-image")
+              .column-2.mobile-flex(data-aos="zoom-out-left")
+                %h5
+                  %span Who are We?
+                %p.desc
+                  %span We started off on the basis of a number of human resources based in Asian countries, and we were born planning an anonymous decentralized exchange.
+                  So where is our headquarter? China, Japan, Korea, Tiwan, Singapore, Thailand, Vietnam, the Philippines, Laos, India, Indonesia, etc.? Don't wonder. It's near you.
+                %p.desc
+                  %span Our team members are distributed all over the world and united for anonymous Decentralized Exchange.
+                %p.desc
+                  %span We are an exchange for the activation of fair trade between anounymous individuals.
+                %p.desc
+                  %span Do not forget that those who know true future values must win.
         .client-download-wrap.background
+          .heading.text-center
+            %h6.sub-title Exchange app
           .client-download-inner-wrap
             .download-wrap
               = image_tag('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAUCAYAAABroNZJAAAABGdBTUEAALGPC/xhBQAAAUtJREFUOBGllD1LA0EQhndPAtooBG0UbVKkE8tYaKGdla1Ffpf/wkIsAqYUNU3QShQEA34QkjQGhah4Pu+ZPY5TMHMOPJndvZl3ZtndODehxXFchTpU8ilRfuG3OYkbrO+BBHr5mD9FEJgnaWuceOO9fzaLkLAKHoZwCD9MH1OjaonJInxAn6oj1jYZz8ApzIE6e4E7vr/jkwqOQG1rG9Yhu0Xt/wlmYRmmIJiEjhC6SjpBZJeFtfDV4D+J3Y8QUPtFBFTrmE56al1bKGIdBM6UKJGFIgrkXIQ8iZTDxOjT+yKRN2NyCNdxJyaRwXhsdelh/EdkhZOtqbJnoEdVt7aRiW9HHNMtC93MonVY0nZk59/O/BuTcRJELpk8mCWca7GTbiLCQG/gAF4NQvfENhWf/yvQ7d0BvadH6ICCp2EJ9JJ1Oa+hQfER3n0BHLJX4HmBPSwAAAAASUVORK5CYII=')
@@ -167,74 +202,36 @@
               %span Android
           %p.tip
             %span Coming Soon…
-        .section.section-seven.background
-          .container
-            .show-grid
-              .column-1.mobile-flex(data-aos="zoom-in")
-                %h5
-                  %span Automated Trading and Market Making
-                %p.description
-                  %span Our Hydro API documentation is free! The realtime websocket API provides state-of-the-art capabilities for automated trading.
-                %a.start-trading-btn{:href => "https://docs.ddex.io/", :rel => "noopener noreferrer", :target => "_blank"}
-                  %span Read API Documentation
-              .column-2(data-aos="zoom-in-up")
-                %img.desc-image{:alt => "", :src => "https://cdn.ddex.io/static/media/api.9076efab.png"}/
-        .section.section-eight.light-bg.background
-          .container
-            .show-grid.reverse
-              .column-1(data-aos="zoom-out-right")
-                %img.desc-image{:alt => "", :src => "https://cdn.ddex.io/static/media/list.97a7a0ad.png"}/
-              .column-2.mobile-flex(data-aos="zoom-out-left")
-                %h5
-                  %span Simple Listing Process
-                %p.description
-                  %span We are excited to work with innovative and unique projects that provide value to the decentralized community. Our token listing application form is open for any project to apply.
-                %a.start-trading-btn{:href => "https://support.ddex.io/hc/en-us/articles/360004588513-Token-Listing-Guidelines", :rel => "noopener noreferrer", :target => "_blank"}
-                  %span Apply to List
-        -#.partners-wrap.background
-        -#  .container
-        -#    .partners-inner-wrap
-        -#      %h5
-        -#        %span Partners
-        -#      .partners-box
-        -#        .partners-row
-        -#          %a.partner{:href => "https://ethereum.org/", :target => "_blank"}
-        -#            %span.eth
-        -#          %a.partner{:href => "https://0xproject.com/", :target => "_blank"}
-        -#            %span.protocol
-        -#          %a.partner{:href => "https://thehydrofoundation.com/", :target => "_blank"}
-        -#            %span.hydro
-        -#          %a.partner{:href => "https://www.toshi.org/", :target => "_blank"}
-        -#            %span.toshi
-        -#          %a.partner{:href => "https://trustwalletapp.com/", :target => "_blank"}
-        -#            %span.trust
-        -#          %a.partner{:href => "https://www.cipherbrowser.com/", :target => "_blank"}
-        -#            %span.cipher
-        -#          %a.partner{:href => "https://www.cmcmbc.com/en-us/dapp-browser/?from=ddex_HP_partner_apk", :target => "_blank"}
-        -#            %span.dapp-browser
-        -#          %a.partner{:href => "https://cobo.com", :target => "_blank"}
-        -#            %span.cobo
-        -#          %a.partner{:href => "https://token.im/download", :target => "_blank"}
-        -#            %span.imtoken
-        -#          %a.partner{:href => "https://ratingtoken.io/", :target => "_blank"}
-        -#            %span.rating-token
-        .community-wrap.background
-          .container
-            %h5.title
-              %span What Our Community is Saying...
-            .community-saying-wrap
-              .community-saying(data-aos="fade-up")
-                %p.saying
-                  %span The UI is wonderful. It's the convenience of EtherDelta but with the UI of GDAX.
-              .community-saying(data-aos="fade-up")
-                %p.saying
-                  %span The ability to buy and sell tokens directly from my ledger is the ultimate form of security. Decentralized exchanges are providing the safety and security that crypto desperately needs!
-              .community-saying(data-aos="fade-up")
-                %p.saying
-                  %span They provide one of the only DEX API's that supports free order cancellation, which is key for our market making strategy. Their SDK is extremely well documented. Support is professional and fast. Brilliant!
-              .community-saying(data-aos="fade-up")
-                %p.saying
-                  %span DDEX consistently lists cool decentralized projects before anyone else. Anyone looking to trade a hot ICO needs to check DDEX out.
+        .community-wrap.background.faq
+          .heading.text-center
+            %h6.sub-title QUESTION
+          .container.collapse-icon
+            #accordion
+              .card(data-aos="fade-up")
+                .card-header
+                  %a.collapsed.card-link{"data-toggle" => "collapse", :href => "#collapseOne"}
+                    %span.icon
+                    What is the Tokenmom?
+                #collapseOne.collapse{"data-parent" => "#accordion"}
+                  .card-body
+                    TokenMom is the Korean's First Futuristic Real Decentralized Exchange
+              .card(data-aos="fade-up")
+                .card-header
+                  %a.collapsed.card-link{"data-toggle" => "collapse", :href => "#collapseTwo"}
+                    %span.icon
+                    How can I purchase TM token?
+                #collapseTwo.collapse{"data-parent" => "#accordion"}
+                  .card-body
+                    Tokenmom does not proceed with ICO etc, which can only be purchased on Tokenmom Exchange.
+              .card(data-aos="fade-up")
+                .card-header
+                  %a.collapsed.card-link{"data-toggle" => "collapse", :href => "#collapseThree"}
+                    %span.icon
+                    How much is the trade fee?
+                #collapseThree.collapse{"data-parent" => "#accordion"}
+                  .card-body
+                    Free trading fee for 2 months, After 2 months, the highest fee shall be 0.05% or less
+
     .footer-wrap
       .tm-footer-wrap.theme-dark
         .container
@@ -319,6 +316,8 @@
             .copy-right-wrap.col-md-12
               %div COPYRIGHT 2018 © DDEX.IO ALL RIGHTS RESERVED
 %script{:src => "https://unpkg.com/aos@next/dist/aos.js"}
+%script{:src => "http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"}
+
 :javascript
   AOS.init({
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -334,3 +333,115 @@
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   });
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+        "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 4,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": false,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 400,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  });
+
+
