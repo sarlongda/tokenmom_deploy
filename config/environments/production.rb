@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_cable.url = 'wss://54.251.164.163/cable'
+  config.action_cable.url = 'ws://54.251.164.163:80/cable'
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
