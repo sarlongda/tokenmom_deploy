@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_115344) do
+ActiveRecord::Schema.define(version: 2018_09_17_050554) do
 
   create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -100,6 +100,8 @@ ActiveRecord::Schema.define(version: 2018_09_13_115344) do
     t.boolean "banned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "referral_id"
+    t.string "recommended_id"
   end
 
   create_table "wallets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
