@@ -142,7 +142,13 @@ input:focus{
 	.usd-price{
 		visibility: visible;
 	}
-
+}
+.wrong-network-warning{
+	border: 1px;
+	background: #d7484d;
+	border-color: #c82333;
+	margin: 0 4px 4px;
+	padding: 10px;
 }
 .usd-price{
 	visibility: hidden;
@@ -182,8 +188,7 @@ input:focus{
 }
 #reward_body{
 	background: #101010;
-	color: white;
-	height: 100%;
+	color: white;	
 	padding-top: 100px;
 	.header-text{
 		text-align: center;
@@ -214,7 +219,6 @@ input:focus{
 			background: #252020;
 			.box-header{
 				font-size: 18px;
-
 			}
 			.box-content{
 				padding: 0;
@@ -1600,8 +1604,7 @@ input:focus{
 			-ms-flex-direction: column;
 			flex-direction: column;
 			#price-history {
-				height: 100%;
-				flex-grow: 6;
+				height: 100%;				
 				.chart-div {
 					height: 100%;
 					.page-tv-chart-container {
@@ -1610,7 +1613,7 @@ input:focus{
 				}
 			}
 			#trade {
-				flex-grow: 5;
+				
 				.tab-handles{
 					min-height: 33px;
 				}

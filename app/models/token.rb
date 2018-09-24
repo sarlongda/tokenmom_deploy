@@ -6,8 +6,7 @@ class Token < ActiveRecord::Base
       return last.price
     else 
       return "--"
-    end
-    
+    end    
   end
 
   def h_price(based_token='WETH')
@@ -21,8 +20,7 @@ class Token < ActiveRecord::Base
       end
     else
       return "--"
-    end
-    
+    end    
   end
 
   def h_volumn(based_token='WETH')

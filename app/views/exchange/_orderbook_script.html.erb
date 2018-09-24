@@ -11,7 +11,7 @@
             });            
             $(document).on('click', '.hover-row', function(){
                 let price = $(this).find(":nth-child(3)").find("strong").text();
-                let amount = $(this).find(":nth-child(4)").find("strong").text();
+                let amount = $(this).find(":nth-child(5)").find("strong").text();
                 let parent = $(this).parent().attr("class");
                 amount = Trade.removeTrailingZeros(amount);
                 price = Trade.removeTrailingZeros(price);              

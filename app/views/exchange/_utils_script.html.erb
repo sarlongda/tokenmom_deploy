@@ -221,8 +221,8 @@
                     $.each(data.buy, function(index, element){
                         total_volume += element.price * element.amount;
                     });                    
-                    Trade.draw_orders(data.sell,data.max_amount,sell,total_volume,data.matched);
-                    Trade.draw_orders(data.buy,data.max_amount,buy,total_volume,data.matched);
+                    Trade.draw_orders(data.sell,data.max_amount,sell,total_volume,data.matched,data.last_price);
+                    Trade.draw_orders(data.buy,data.max_amount,buy,total_volume,data.matched,data.last_price);
                     Trade.draw_spread(data.best_asks,data.best_bids);
                 },
                 error: function(error) {
@@ -538,9 +538,9 @@
         volume_pro: function(max,volume){
             return ((volume / max) * 66.667).toFixed(4);
         },
-        draw_orders: function(data,max_amount,type,total_volume,matched){
+        draw_orders: function(data,max_amount,type,total_volume,matched,last_price){
             let tag;
-            let text_color;
+            let text_color;            
             $(".orderbook").attr("max_amount",max_amount)
             if(type === "buy"){
                 tag = $(".orderbook-bids");
@@ -553,9 +553,7 @@
             let time_now = Date.now()/1000;
             let tmp_volume = 0;
             $.each(data, function(index, element){
-                console.log("--------draw orders------");
-                console.log(index)
-                console.log(matched)
+                
                 let pro = 0;
                 let depth = 0;
                 let date_pro = (60*24*3600);
@@ -586,11 +584,17 @@
                     price = price.toString();
                 }
                 tmp_volume += amount * price;              
-                //if(element.expire - time_now < 0 ){
-                //    depth = 0
-                //}else{
-                //    depth = (date_pro-(element.expire - time_now))/date_pro * 100;
-                //}
+                closing_price_percent = Trade.closing_price_percent(price,last_price)
+                if(closing_price_percent == 0){
+                    closing_color = "text-white";
+                    closing_sign = "";
+                }else if(closing_price_percent > 0){
+                    closing_color = "text-success";
+                    closing_sign = "+";
+                }else if(closing_price_percent < 0 ){
+                    closing_color = "text-danger";
+                    closing_sign = "";
+                }
                 depth = Trade.volume_pro(total_volume,tmp_volume);
                 if(max_amount){
                     pro = amount_pro(max_amount,element.amount);
@@ -613,6 +617,11 @@
                         "<div class='col-xs-3 col-xs-offset-2 "+ text_color + " text-right orderbook-price'>" +
                             "<strong class='number'>" + price + 
                                 "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +                                
+                            "</strong>" +
+                        "</div>" +
+                        "<div class='col-xs-3 col-xs-offset-1 "+ closing_color + " text-right orderbook-price'>" +
+                            "<strong class='number'>" + closing_sign + closing_price_percent + "%" + 
+                                                           
                             "</strong>" +
                         "</div>" +
                         "<div class='col-xs-4 text-right orderbook-amount'>" +
@@ -1111,6 +1120,14 @@
                 value = value.substr(0, value.length - 1);
             }
             return value;
+        },
+        closing_price_percent(price, last_price){
+            
+            diff = price - last_price;
+            percentage = ((diff / last_price) * 100).toFixed(3);
+
+            
+            return percentage;
         }     
 
     }

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     collection do
       match :trade, via: [:get, :post]
       post :get_init_data
+      post :get_reward
+      get :get_reward
       post :get_messages
       post :create_order
       post :get_orders

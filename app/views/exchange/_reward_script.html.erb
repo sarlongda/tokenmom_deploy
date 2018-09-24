@@ -8,6 +8,56 @@
             });
             console.log("reward script loaded");
             qrcode.makeCode("Tokenmom.com");
+
+            if(currentWalletAddress != "" && currentWalletAddress != null){
+                
+                $.ajax({
+                    url: '/user_sessions/get_user',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        wallet_address: currentWalletAddress
+                    },
+                    success: function (response) {
+                                            
+                        if(response){ 
+                            
+                            $(".referral-id").children("span").text(response.referral_id);
+                            let link = "https://tokenmom.com/?r=" + response.referral_id;
+                            $(".referral-link").children("input").attr("value",link);
+                            facebook_link = "javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=https://tokenmom.com?r=" + response.referral_id + "&amp;t=Tokenmom referral system','_blank','width=800,height = 500,top=200, left=300');void(0)";
+                            $(".social-share").children(".facebook").attr("onclick",facebook_link);
+                        }
+                    }
+                });
+                $.ajax({
+                    url: '/exchange/get_reward',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        wallet_address: currentWalletAddress
+                    },
+                    success: function (response) {
+                                              
+                        if(response){ 
+                            
+                            if(response.trades.length > 0){
+                                
+                                $.each(response.trades, function(index, element){
+                                    
+
+                                });
+                            }
+
+                           
+                        }
+                    }
+                });
+
+
+            }else{
+
+            }
         });
     });
     

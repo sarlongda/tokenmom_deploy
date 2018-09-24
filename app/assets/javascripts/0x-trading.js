@@ -87,10 +87,7 @@ jQuery(function($) {
                                 auto_login();
                             }
                         }, 100);
-
                     }
-
-
                 };
                 accountAsync().catch(console.error);
             }

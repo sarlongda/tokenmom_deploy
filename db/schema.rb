@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_17_050554) do
+ActiveRecord::Schema.define(version: 2018_09_22_070047) do
 
   create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -72,13 +72,11 @@ ActiveRecord::Schema.define(version: 2018_09_17_050554) do
     t.string "contract_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "l_price", default: 0.0
-    t.float "h_price", default: 0.0
-    t.float "h_volumn", default: 0.0
     t.integer "token_decimals"
     t.boolean "on_hold"
     t.boolean "tm_field"
     t.boolean "weth_token"
+    t.index ["id"], name: "idx_tokens_id"
   end
 
   create_table "trade_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,12 +84,13 @@ ActiveRecord::Schema.define(version: 2018_09_17_050554) do
     t.string "base_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "token_symbol"
-    t.decimal "amount", precision: 21, scale: 10
-    t.decimal "price", precision: 21, scale: 10
     t.string "maker_address"
     t.string "taker_address"
     t.string "txHash"
+    t.string "token_symbol"
+    t.decimal "amount", precision: 21, scale: 10
+    t.decimal "price", precision: 21, scale: 10
+    t.boolean "reward_status"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

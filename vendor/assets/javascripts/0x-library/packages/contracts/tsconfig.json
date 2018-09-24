@@ -1,0 +1,18 @@
+{
+    "extends": "../../tsconfig",
+    "compilerOptions": {
+        "outDir": "lib",
+        "baseUrl": ".",
+        "declaration": false,
+        "allowJs": true
+    },
+    "include": [
+        "./globals.d.ts",
+        "./contract_wrappers",
+        "./src/**/*",
+        "./utils/**/*",
+        "./test/**/*",
+        "./migrations/**/*"
+    ],
+    "exclude": ["./deploy/solc/solc_bin"]
+}

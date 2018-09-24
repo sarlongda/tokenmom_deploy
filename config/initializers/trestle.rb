@@ -20,6 +20,11 @@ Trestle.configure do |config|
   #
   # config.footer = "Powered by Trestle"
 
+  # Sets the default precision for timestamps (either :minutes or :seconds).
+  # Defaults to :minutes.
+  #
+  # config.timestamp_precision = :minutes
+
   # == Mounting Options
   #
   # Set the path at which to mount the Trestle admin. Defaults to /admin.
@@ -36,10 +41,15 @@ Trestle.configure do |config|
 
   # == Navigation Options
   #
-  # Set the initial breadcrumbs to display in the breadcrumb trail.
-  # Defaults to a breadcrumb labeled 'Home' linking to to the admin root.
+  # Set the path to consider the application root (for title links and breadcrumbs).
+  # Defaults to the same value as `config.path`.
   #
-  # config.root_breadcrumbs = -> { [Trestle::Breadcrumb.new("Home", Trestle.config.path)] }
+  # config.root = "/"
+
+  # Set the initial breadcrumbs to display in the breadcrumb trail.
+  # Defaults to a breadcrumb labeled 'Home' linking to to the application root.
+  #
+  # config.root_breadcrumbs = -> { [Trestle::Breadcrumb.new("Home", Trestle.config.root)] }
 
   # Set the default icon class to use when it is not explicitly provided.
   # Defaults to "fa fa-arrow-circle-o-right".

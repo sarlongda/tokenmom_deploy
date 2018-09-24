@@ -338,6 +338,9 @@ class ExchangeController < ApplicationController
   def index
 
     h = mk_referral_id($wallet_address)
+   
+    @eth_price = get_eth_price
+    
     
 
   end  
@@ -1451,6 +1454,12 @@ class ExchangeController < ApplicationController
     else
       matched = 0
     end
+    last_day_trade = TradeHistory.where("created_at < ? AND token_symbol = ? AND base_token = ?",Time.now.midnight,token_symbol,base_token).order(created_at: :asc).last
+    if last_day_trade
+      last_day_price = last_day_trade.price
+    else
+      last_day_price = 0.0001
+    end
     buy_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:token_symbol,type:1).group("price").order(price: :desc)
     sell_orders = Order.select("type,price,sum(amount) as amount, min(expire) as expire").where(base_token:base_token,token_symbol:token_symbol,type:0 ).group("price").order(price: :asc)
     # max_amount = Order.select("sum(amount) as amount").where(base_token:base_token,token_symbol:token_symbol).maximum("amount")
@@ -1475,7 +1484,8 @@ class ExchangeController < ApplicationController
       "sell":sell_orders,
       "max_amount":max_amount,
       "best_asks":best_asks,
-      "best_bids":best_bids,  
+      "best_bids":best_bids,
+      "last_price":last_day_price,  
       "matched":matched
       
     }
@@ -1799,7 +1809,22 @@ class ExchangeController < ApplicationController
 
   # Reward system
   def reward
+
     
+  end
+
+  def get_reward
+    user_wallet_address = params[:wallet_address]
+
+    trades = TradeHistory.where("maker_address = ? OR taker_address = ?",user_wallet_address,user_wallet_address).order(created_at: :asc)
+    
+    json_data = {
+      "state":"OK",
+      "trades":trades
+    }    
+    respond_to do |format|
+      format.json { render :json=>json_data}
+    end
   end
 
   # make referral id with wallet address
@@ -1809,5 +1834,23 @@ class ExchangeController < ApplicationController
     referral_id = md5_str.to_s[0,5].to_s +  + md5_str.to_s[-4..-1].to_s
     # return sha2
     return referral_id
+  end
+  # Get eth_to_usd price from coinmarketcap API
+  def get_eth_price
+    url = URI.parse('https://api.coinmarketcap.com/v2/ticker/?limit=100 &start= 1& convert=ETH')
+    url = URI.parse('https://api.coinmarketcap.com/v2/ticker/1027/?convert=USD')
+
+    http = Net::HTTP.new(url.host,url.port)
+    http.use_ssl = true
+    resp = http.get(url)
+    
+    parsed = resp.body
+    json_data = (JSON.parse parsed)["data"]
+    
+
+    eth_price = json_data["quotes"]["USD"]["price"]
+
+    return eth_price
+
   end
 end
