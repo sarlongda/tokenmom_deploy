@@ -4,6 +4,7 @@ jQuery(document).on 'turbolinks:load', ->
   $new_message_body = $('#message_body')
   $language = $('.language')
   $language_menu = $('.dropdown-language-menu')
+  console.log("====chat message channel =====")
   $('.dropdown-language-menu').on 'click', 'li', (event) ->
     selText = $(this).text()
     value = $(this).val()
