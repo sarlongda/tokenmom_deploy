@@ -3909,3 +3909,17 @@ OrderChannel is transmitting the subscription confirmation
 OrderChannel is streaming from order_channel
 TradeChannel is transmitting the subscription confirmation
 TradeChannel is streaming from trade_channel
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 19:10:14 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 19:22:46 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 19:22:46 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 19:25:30 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel

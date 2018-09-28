@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  #config.action_cable.url = 'wss://54.251.164.163/cable'
+  #config.action_cable.url = 'wss://54.169.72.160/cable'
   #config.action_cable.disable_request_forgery_protection = true
   config.action_cable.url = '/cable'
   config.action_cable.allowed_request_origins = [/http:\/\/*/,/https:\/\/*/]
