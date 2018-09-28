@@ -1,9 +1,12 @@
 jQuery(document).on 'turbolinks:load', ->
     
+    console.log("====order channel =====")
+    
     App.order = App.cable.subscriptions.create {
         channel:"OrderChannel"
         },
         connected: ->
+            console.log("====order channel connected=====")
             
 
         disconnected: ->
