@@ -2142,3 +2142,1784 @@ Processing by ExchangeController#index as HTML
 Completed 200 OK in 129ms (Views: 127.9ms | ActiveRecord: 0.0ms)
 
 
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-25 22:44:01 +0700
+ChatChannel stopped streaming from chat_channel
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:06:58 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.0) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.0) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (20.3ms)[0m  [1m[34mSELECT GET_LOCK('2981584425121857975', 0)[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+Migrating to AddRewardFieldToTradeTable (20180922070047)
+  [1m[35m (735.1ms)[0m  [1m[35mALTER TABLE `trade_histories` ADD `reward_status` tinyint(1)[0m
+  ↳ db/migrate/20180922070047_add_reward_field_to_trade_table.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180922070047')[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (35.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('2981584425121857975')[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/bin/rake:22
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:07:30 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (8473.5ms)
+Completed 200 OK in 9430ms (Views: 9128.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:07:41 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:07:41 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+Started GET "/exchange/ZRX-WETH" for 192.168.5.14 at 2018-09-26 12:07:43 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#trade as HTML
+  Parameters: {"trade_pair"=>"ZRX-WETH"}
+  [1m[36mToken Load (0.5ms)[0m  [1m[34mSELECT  `tokens`.* FROM `tokens` WHERE (symbol = 'ZRX') ORDER BY `tokens`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:358
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:364
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:365
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:366
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:367
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:381
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:385
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`base_token` = 'WETH' AND `trade_histories`.`token_symbol` = 'ZRX' ORDER BY `trade_histories`.`updated_at` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:425
+  Rendering exchange/trade.html.haml within layouts/application
+  [1m[36mToken Load (0.3ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (symbol != 'WETH') ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_header.html.haml:15
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.5ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'B0X' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'TKN0' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.5ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'TKN1' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'TKN10' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'TKN11' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'ZRX' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  Rendered exchange/_header.html.haml (80.2ms)
+  Rendered exchange/_notice.html.haml (1.9ms)
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mToken Load (0.2ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (tm_field = 1) ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_market.html.haml:82
+  Rendered exchange/_market.html.haml (58.0ms)
+  Rendered exchange/_social.html.haml (8.4ms)
+  Rendered exchange/_tradeview.html.haml (1.4ms)
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  Rendered exchange/_trade.html.haml (37.8ms)
+  Rendered exchange/_orderbook.html.haml (6.8ms)
+  Rendered exchange/_trade_history.html.haml (7.8ms)
+  Rendered exchange/_wallet.html.haml (9.1ms)
+  Rendered exchange/_overview.html.haml (8.3ms)
+  Rendered exchange/_index_script.html.erb (0.7ms)
+  Rendered exchange/_wallet_script.html.erb (0.8ms)
+  Rendered exchange/_trade_script.html.erb (1.3ms)
+  Rendered exchange/_orderbook_script.html.erb (0.2ms)
+  Rendered exchange/_trade_history_script.html.erb (0.2ms)
+  Rendered exchange/_market_script.html.erb (0.2ms)
+  Rendered exchange/_overview_script.html.erb (0.6ms)
+  Rendered exchange/_utils_script.html.erb (1.4ms)
+  Rendered exchange/trade.html.haml within layouts/application (330.3ms)
+Completed 200 OK in 518ms (Views: 401.1ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/exchange/ZRX-WETH" for 192.168.5.14 at 2018-09-26 12:07:44 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#trade as HTML
+  Parameters: {"trade_pair"=>"ZRX-WETH"}
+  [1m[36mToken Load (0.5ms)[0m  [1m[34mSELECT  `tokens`.* FROM `tokens` WHERE (symbol = 'ZRX') ORDER BY `tokens`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:358
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:364
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:365
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:366
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:367
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:381
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:385
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`base_token` = 'WETH' AND `trade_histories`.`token_symbol` = 'ZRX' ORDER BY `trade_histories`.`updated_at` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:425
+  Rendering exchange/trade.html.haml within layouts/application
+  [1m[36mToken Load (0.3ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (symbol != 'WETH') ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_header.html.haml:15
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'B0X' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'TKN0' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'TKN1' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'TKN10' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'TKN11' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'ZRX' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  Rendered exchange/_header.html.haml (45.4ms)
+  Rendered exchange/_notice.html.haml (1.3ms)
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mToken Load (0.2ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (tm_field = 1) ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_market.html.haml:82
+  Rendered exchange/_market.html.haml (44.7ms)
+  Rendered exchange/_social.html.haml (11.9ms)
+  Rendered exchange/_tradeview.html.haml (1.8ms)
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  Rendered exchange/_trade.html.haml (37.7ms)
+  Rendered exchange/_orderbook.html.haml (6.8ms)
+  Rendered exchange/_trade_history.html.haml (10.2ms)
+  Rendered exchange/_wallet.html.haml (12.4ms)
+  Rendered exchange/_overview.html.haml (6.4ms)
+  Rendered exchange/_index_script.html.erb (0.8ms)
+  Rendered exchange/_wallet_script.html.erb (1.0ms)
+  Rendered exchange/_trade_script.html.erb (1.5ms)
+  Rendered exchange/_orderbook_script.html.erb (0.3ms)
+  Rendered exchange/_trade_history_script.html.erb (0.2ms)
+  Rendered exchange/_market_script.html.erb (0.3ms)
+  Rendered exchange/_overview_script.html.erb (0.4ms)
+  Rendered exchange/_utils_script.html.erb (1.2ms)
+  Rendered exchange/trade.html.haml within layouts/application (196.7ms)
+Completed 200 OK in 298ms (Views: 276.4ms | ActiveRecord: 11.4ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:07:44 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started POST "/exchange/get_messages" for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+Processing by ExchangeController#get_messages as JSON
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Parameters: {"param1"=>"1"}
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mMessage Load (5.9ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1 ORDER BY `messages`.`created_at` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:1403
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+No serializer found for resource: {:content=>"Hi", :nick_name=>"TEST", :contract_address=>"0x3360debda575e4564709bbb3b098627444a7b191"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.44ms)
+Completed 200 OK in 51ms (Views: 4.3ms | ActiveRecord: 12.1ms)
+
+
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/user_sessions/get_user?wallet_address=0xb0881b938ebcecaa12391b3c189b39f5268a5abd" for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserSessionsController#get_user as JSON
+  Parameters: {"wallet_address"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`wallet_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' LIMIT 1[0m
+  ↳ app/controllers/user_sessions_controller.rb:26
+Started POST "/exchange/get_init_data" for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.53ms)
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/exchange/get_orders" for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_init_data as JSON
+  Parameters: {"base_token"=>"WETH", "token_symbol"=>"ZRX", "token_address"=>"0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"}
+Processing by ExchangeController#get_orders as JSON
+  Parameters: {"symbol"=>"ZRX", "base_token"=>"WETH"}
+Started POST "/exchange/get_trade_history" for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_trade_history as JSON
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT  price,type FROM `orders` WHERE (base_token = 'WETH' AND token_symbol = 'ZRX') ORDER BY `orders`.`id` DESC LIMIT 1[0m
+  Parameters: {"symbol"=>"ZRX", "base_token"=>"WETH"}
+  ↳ app/controllers/exchange_controller.rb:1438
+[active_model_serializers]   [1m[36mTradeHistory Load (0.8ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`base_token` = 'WETH' AND `trade_histories`.`token_symbol` = 'ZRX' ORDER BY `trade_histories`.`updated_at` DESC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1753
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.54ms)
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at < '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`created_at` DESC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+  ↳ app/controllers/exchange_controller.rb:1457
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1466
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1467
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:1468
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:1469
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.41ms)
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/user_sessions/user_login" for 192.168.5.14 at 2018-09-26 12:07:45 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserSessionsController#user_login as JSON
+  Parameters: {"login_type"=>"META_MASK", "wallet_address"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd", "nick_name"=>"TEST1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`wallet_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' LIMIT 1[0m
+  ↳ app/controllers/user_sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_sessions_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_sessions_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.25ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mToken Load (0.7ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (symbol != 'WETH') ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:572
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mToken Load (0.2ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (tm_field = 1) ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:586
+  [1m[36mToken Load (0.2ms)[0m  [1m[34mSELECT  `tokens`.* FROM `tokens` WHERE `tokens`.`symbol` = 'ZRX' ORDER BY `tokens`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:601
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 1318ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/exchange/get_my_open_orders" for 192.168.5.14 at 2018-09-26 12:07:47 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_my_open_orders as JSON
+  Parameters: {"wallet_addr"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd", "base_token"=>"WETH", "token_symbol"=>"ZRX"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`maker_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' ORDER BY `orders`.`created_at` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:1420
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/exchange/get_orders" for 192.168.5.14 at 2018-09-26 12:07:50 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_orders as JSON
+  Parameters: {"symbol"=>"TKN0", "base_token"=>"WETH"}
+Started POST "/exchange/get_trade_history" for 192.168.5.14 at 2018-09-26 12:07:50 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mOrder Load (2.2ms)[0m  [1m[34mSELECT  price,type FROM `orders` WHERE (base_token = 'WETH' AND token_symbol = 'TKN0') ORDER BY `orders`.`id` DESC LIMIT 1[0m
+Processing by ExchangeController#get_trade_history as JSON
+  ↳ app/controllers/exchange_controller.rb:1438
+  Parameters: {"symbol"=>"TKN0", "base_token"=>"WETH"}
+  [1m[36mTradeHistory Load (1.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at < '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`created_at` DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1457
+[active_model_serializers]   [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`base_token` = 'WETH' AND `trade_histories`.`token_symbol` = 'TKN0' ORDER BY `trade_histories`.`updated_at` DESC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1753
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.99ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1466
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1467
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:1468
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:1469
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.86ms)
+Completed 200 OK in 17ms (Views: 1.5ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/exchange/get_my_open_orders" for 192.168.5.14 at 2018-09-26 12:07:50 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_my_open_orders as JSON
+  Parameters: {"wallet_addr"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd", "base_token"=>"WETH", "token_symbol"=>"TKN0"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`maker_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' ORDER BY `orders`.`created_at` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:1420
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/exchange/get_orders" for 192.168.5.14 at 2018-09-26 12:07:50 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_orders as JSON
+  Parameters: {"symbol"=>"TKN0", "base_token"=>"WETH"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  price,type FROM `orders` WHERE (base_token = 'WETH' AND token_symbol = 'TKN0') ORDER BY `orders`.`id` DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1438
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at < '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`created_at` DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1457
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1466
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1467
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:1468
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:1469
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+[active_model_serializers]   [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'TKN0' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.44ms)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:19:08 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (2409.2ms)
+Completed 200 OK in 3330ms (Views: 3005.5ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:19:12 +0700
+TradeChannel stopped streaming from trade_channel
+OrderChannel stopped streaming from order_channel
+ChatChannel stopped streaming from chat_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:19:13 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:19:13 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:23:01 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (57.9ms)
+Completed 200 OK in 431ms (Views: 134.1ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:23:02 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:23:03 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:23:03 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:23:05 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (77.8ms)
+Completed 200 OK in 491ms (Views: 189.2ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:23:06 +0700
+TradeChannel stopped streaming from trade_channel
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:23:07 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:23:07 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:24:42 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (67.3ms)
+Completed 200 OK in 442ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:24:42 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:24:43 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:24:43 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+  
+ActionController::RoutingError (No route matches [GET] "/assets/0x-library/packages/0x.js/index.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:26:23 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (60.6ms)
+Completed 200 OK in 428ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:26:24 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+  
+ActionController::RoutingError (No route matches [GET] "/assets/0x-library/packages/0x.js/index.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:26:25 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:26:25 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:27:28 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (60.9ms)
+Completed 200 OK in 919ms (Views: 572.4ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:27:29 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+  
+ActionController::RoutingError (No route matches [GET] "/assets/0x-library/packages/0x.js/index.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:27:31 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:27:31 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:27:43 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (37.7ms)
+Completed 200 OK in 436ms (Views: 111.8ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:27:44 +0700
+TradeChannel stopped streaming from trade_channel
+OrderChannel stopped streaming from order_channel
+  
+ActionController::RoutingError (No route matches [GET] "/assets/0x-library/packages/0x.js/index.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:27:45 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:27:45 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:28:02 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (63.4ms)
+Completed 200 OK in 469ms (Views: 148.0ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:28:03 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+  
+ActionController::RoutingError (No route matches [GET] "/assets/0x-library/packages/0x.js/index.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:28:05 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:28:05 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:29:06 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (51.3ms)
+Completed 200 OK in 2679ms (Views: 2358.4ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:29:08 +0700
+TradeChannel stopped streaming from trade_channel
+OrderChannel stopped streaming from order_channel
+  
+ActionController::RoutingError (No route matches [GET] "/assets/0x-library/packages/0x.js/index.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.0) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.0) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:29:10 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:29:10 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:30:39 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (58.1ms)
+Completed 200 OK in 432ms (Views: 143.7ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:30:40 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:30:41 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:30:41 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for 192.168.5.14 at 2018-09-26 12:31:12 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (69.5ms)
+Completed 200 OK in 434ms (Views: 155.1ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:31:12 +0700
+TradeChannel stopped streaming from trade_channel
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 12:31:13 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 12:31:13 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/reward" for 192.168.5.14 at 2018-09-26 16:40:46 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ExchangeController#reward as HTML
+  Rendering exchange/reward.html.haml within layouts/application
+  Rendered exchange/_reward_script.html.erb (0.2ms)
+  Rendered exchange/_reward_header.html.haml (9.7ms)
+  Rendered exchange/_reward_body.html.haml (11.0ms)
+  Rendered exchange/_footer.html.haml (2.0ms)
+  Rendered exchange/reward.html.haml within layouts/application (34.6ms)
+Completed 200 OK in 119ms (Views: 102.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_sessions/get_user?wallet_address=0xb0881b938ebcecaa12391b3c189b39f5268a5abd" for 192.168.5.14 at 2018-09-26 16:40:47 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserSessionsController#get_user as JSON
+  Parameters: {"wallet_address"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd"}
+Started POST "/exchange/get_reward" for 192.168.5.14 at 2018-09-26 16:40:47 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`wallet_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' LIMIT 1[0m
+  ↳ app/controllers/user_sessions_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.1ms)
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 3.5ms)
+
+
+  [1m[35m (3.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ExchangeController#get_reward as JSON
+  Parameters: {"wallet_address"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd"}
+[active_model_serializers]   [1m[36mTradeHistory Load (0.8ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (maker_address = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' OR taker_address = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd') ORDER BY `trade_histories`.`created_at` ASC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1826
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.41ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exchange/ZRX-WETH" for 192.168.5.14 at 2018-09-26 16:41:03 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#trade as HTML
+  Parameters: {"trade_pair"=>"ZRX-WETH"}
+  [1m[36mToken Load (0.5ms)[0m  [1m[34mSELECT  `tokens`.* FROM `tokens` WHERE (symbol = 'ZRX') ORDER BY `tokens`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:358
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:364
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:365
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:366
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:367
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:381
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:385
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`base_token` = 'WETH' AND `trade_histories`.`token_symbol` = 'ZRX' ORDER BY `trade_histories`.`updated_at` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:425
+  Rendering exchange/trade.html.haml within layouts/application
+  [1m[36mToken Load (0.3ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (symbol != 'WETH') ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_header.html.haml:15
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'B0X' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'TKN0' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'TKN1' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'TKN10' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'TKN11' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'ZRX' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  Rendered exchange/_header.html.haml (39.2ms)
+  Rendered exchange/_notice.html.haml (1.3ms)
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mToken Load (0.2ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (tm_field = 1) ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_market.html.haml:82
+  Rendered exchange/_market.html.haml (36.1ms)
+  Rendered exchange/_social.html.haml (7.8ms)
+  Rendered exchange/_tradeview.html.haml (1.2ms)
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  Rendered exchange/_trade.html.haml (33.6ms)
+  Rendered exchange/_orderbook.html.haml (5.9ms)
+  Rendered exchange/_trade_history.html.haml (6.9ms)
+  Rendered exchange/_wallet.html.haml (8.5ms)
+  Rendered exchange/_overview.html.haml (5.6ms)
+  Rendered exchange/_index_script.html.erb (0.6ms)
+  Rendered exchange/_wallet_script.html.erb (0.6ms)
+  Rendered exchange/_trade_script.html.erb (1.1ms)
+  Rendered exchange/_orderbook_script.html.erb (0.2ms)
+  Rendered exchange/_trade_history_script.html.erb (0.2ms)
+  Rendered exchange/_market_script.html.erb (0.2ms)
+  Rendered exchange/_overview_script.html.erb (0.3ms)
+  Rendered exchange/_utils_script.html.erb (1.0ms)
+  Rendered exchange/trade.html.haml within layouts/application (159.6ms)
+Completed 200 OK in 234ms (Views: 218.1ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/exchange/ZRX-WETH" for 192.168.5.14 at 2018-09-26 16:41:04 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#trade as HTML
+  Parameters: {"trade_pair"=>"ZRX-WETH"}
+  [1m[36mToken Load (0.4ms)[0m  [1m[34mSELECT  `tokens`.* FROM `tokens` WHERE (symbol = 'ZRX') ORDER BY `tokens`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:358
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:364
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:365
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:366
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:367
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:381
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:385
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`base_token` = 'WETH' AND `trade_histories`.`token_symbol` = 'ZRX' ORDER BY `trade_histories`.`updated_at` DESC[0m
+  ↳ app/controllers/exchange_controller.rb:425
+  Rendering exchange/trade.html.haml within layouts/application
+  [1m[36mToken Load (0.3ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (symbol != 'WETH') ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_header.html.haml:15
+  [1m[36mTradeHistory Load (0.3ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'B0X')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'B0X' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'TKN0')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'TKN0' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'TKN1')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'TKN1' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'TKN10')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'TKN10' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'TKN11')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'TKN11' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'ZRX')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'ZRX' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.1ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  Rendered exchange/_header.html.haml (48.1ms)
+  Rendered exchange/_notice.html.haml (1.1ms)
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.2ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mToken Load (0.2ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (tm_field = 1) ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/views/exchange/_market.html.haml:82
+  Rendered exchange/_market.html.haml (33.3ms)
+  Rendered exchange/_social.html.haml (7.5ms)
+  Rendered exchange/_tradeview.html.haml (1.3ms)
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  Rendered exchange/_trade.html.haml (30.5ms)
+  Rendered exchange/_orderbook.html.haml (6.6ms)
+  Rendered exchange/_trade_history.html.haml (7.3ms)
+  Rendered exchange/_wallet.html.haml (9.1ms)
+  Rendered exchange/_overview.html.haml (6.0ms)
+  Rendered exchange/_index_script.html.erb (0.8ms)
+  Rendered exchange/_wallet_script.html.erb (0.6ms)
+  Rendered exchange/_trade_script.html.erb (1.2ms)
+  Rendered exchange/_orderbook_script.html.erb (0.2ms)
+  Rendered exchange/_trade_history_script.html.erb (0.2ms)
+  Rendered exchange/_market_script.html.erb (0.2ms)
+  Rendered exchange/_overview_script.html.erb (0.4ms)
+  Rendered exchange/_utils_script.html.erb (1.1ms)
+  Rendered exchange/trade.html.haml within layouts/application (168.1ms)
+Completed 200 OK in 258ms (Views: 237.8ms | ActiveRecord: 10.8ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 16:41:04 +0700
+TradeChannel stopped streaming from trade_channel
+OrderChannel stopped streaming from order_channel
+Started POST "/exchange/get_messages" for 192.168.5.14 at 2018-09-26 16:41:05 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 16:41:05 +0700
+Processing by ExchangeController#get_messages as JSON
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Parameters: {"param1"=>"1"}
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 16:41:05 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mMessage Load (4.0ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1 ORDER BY `messages`.`created_at` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:1403
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/exchange_controller.rb:1406
+No serializer found for resource: {:content=>"Hi", :nick_name=>"TEST", :contract_address=>"0x3360debda575e4564709bbb3b098627444a7b191"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.79ms)
+Completed 200 OK in 42ms (Views: 1.3ms | ActiveRecord: 6.7ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/user_sessions/get_user?wallet_address=0xb0881b938ebcecaa12391b3c189b39f5268a5abd" for 192.168.5.14 at 2018-09-26 16:41:05 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserSessionsController#get_user as JSON
+  Parameters: {"wallet_address"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`wallet_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' LIMIT 1[0m
+  ↳ app/controllers/user_sessions_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.88ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/exchange/get_init_data" for 192.168.5.14 at 2018-09-26 16:41:05 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_init_data as JSON
+  Parameters: {"base_token"=>"WETH", "token_symbol"=>"ZRX", "token_address"=>"0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"}
+Started POST "/exchange/get_orders" for 192.168.5.14 at 2018-09-26 16:41:05 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_orders as JSON
+  Parameters: {"symbol"=>"ZRX", "base_token"=>"WETH"}
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  price,type FROM `orders` WHERE (base_token = 'WETH' AND token_symbol = 'ZRX') ORDER BY `orders`.`id` DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1438
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at < '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`created_at` DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1457
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1466
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  sum(amount) as mamount FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY mamount DESC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:1467
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MIN(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0[0m
+  ↳ app/controllers/exchange_controller.rb:1468
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX(`orders`.`price`) FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1[0m
+  ↳ app/controllers/exchange_controller.rb:1469
+Started POST "/exchange/get_trade_history" for 192.168.5.14 at 2018-09-26 16:41:05 +0700
+[active_model_serializers]   [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 1 GROUP BY `orders`.`price` ORDER BY `orders`.`price` DESC[0m
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT type,price,sum(amount) as amount, min(expire) as expire FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`token_symbol` = 'ZRX' AND `orders`.`type` = 0 GROUP BY `orders`.`price` ORDER BY `orders`.`price` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1493
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.3ms)
+Processing by ExchangeController#get_trade_history as JSON
+Completed 200 OK in 19ms (Views: 4.8ms | ActiveRecord: 4.4ms)
+
+
+  Parameters: {"symbol"=>"ZRX", "base_token"=>"WETH"}
+[active_model_serializers]   [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`base_token` = 'WETH' AND `trade_histories`.`token_symbol` = 'ZRX' ORDER BY `trade_histories`.`updated_at` DESC[0m
+[active_model_serializers]   ↳ app/controllers/exchange_controller.rb:1753
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.2ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_sessions/user_login" for 192.168.5.14 at 2018-09-26 16:41:06 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserSessionsController#user_login as JSON
+  Parameters: {"login_type"=>"META_MASK", "wallet_address"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd", "nick_name"=>"TEST1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`wallet_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' LIMIT 1[0m
+  ↳ app/controllers/user_sessions_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_sessions_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_sessions_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.98ms)
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mToken Load (0.8ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (symbol != 'WETH') ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:572
+  [1m[36mTradeHistory Load (0.7ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'B0X' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'B0X' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN0' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.8ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.7ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN0' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.5ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN1' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.5ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN1' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN10' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.5ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.5ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN10' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'TKN11' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.6ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.5ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'TKN11' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mTradeHistory Load (0.4ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+  [1m[36mToken Load (0.4ms)[0m  [1m[34mSELECT `tokens`.* FROM `tokens` WHERE (tm_field = 1) ORDER BY `tokens`.`symbol` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:586
+  [1m[36mToken Load (0.3ms)[0m  [1m[34mSELECT  `tokens`.* FROM `tokens` WHERE `tokens`.`symbol` = 'ZRX' ORDER BY `tokens`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/exchange_controller.rb:601
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE `trade_histories`.`token_symbol` = 'ZRX' AND `trade_histories`.`base_token` = 'WETH' ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:4
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT  `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH') ORDER BY `trade_histories`.`id` DESC LIMIT 1[0m
+  ↳ app/models/token.rb:13
+  [1m[36mCACHE TradeHistory Load (0.0ms)[0m  [1m[34mSELECT `trade_histories`.* FROM `trade_histories` WHERE (created_at > '2018-09-25 17:00:00' AND token_symbol = 'ZRX' AND base_token = 'WETH')[0m
+  ↳ app/models/token.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.7ms)
+Completed 200 OK in 1194ms (Views: 1.1ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/exchange/get_my_open_orders" for 192.168.5.14 at 2018-09-26 16:41:07 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#get_my_open_orders as JSON
+  Parameters: {"wallet_addr"=>"0xb0881b938ebcecaa12391b3c189b39f5268a5abd", "base_token"=>"WETH", "token_symbol"=>"ZRX"}
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`base_token` = 'WETH' AND `orders`.`maker_address` = '0xb0881b938ebcecaa12391b3c189b39f5268a5abd' ORDER BY `orders`.`created_at` ASC[0m
+  ↳ app/controllers/exchange_controller.rb:1420
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 192.168.5.14 at 2018-09-26 16:47:47 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (49.4ms)
+Completed 200 OK in 430ms (Views: 130.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_messages" for 192.168.5.14 at 2018-09-26 16:47:47 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [POST] "/get_messages"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 192.168.5.14 at 2018-09-26 16:47:48 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ExchangeController#index as HTML
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/index.html.haml within layouts/application (32.1ms)
+Completed 200 OK in 663ms (Views: 113.5ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 16:47:48 +0700
+ChatChannel stopped streaming from chat_channel
+TradeChannel stopped streaming from trade_channel
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 16:47:50 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 16:47:50 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 19:10:14 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started GET "/cable" for 192.168.5.14 at 2018-09-26 19:22:46 +0700
+Cannot render console from 192.168.5.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 19:22:46 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Finished "/cable/" [WebSocket] for 192.168.5.14 at 2018-09-26 19:25:30 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
