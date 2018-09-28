@@ -30,8 +30,7 @@ let fee_percent = 0.05
 let initial_fee = 0.002
 jQuery(function($) {        
     $(document).ready(function () {
-        function load_js(){
-            
+        function load_js(){            
             if ($("#trade_workspace").length) {
                 metamask_login_emt = document.getElementById("metamask_login");
                 metamask_login_emt.onclick = function () { metamask_login() };
@@ -71,7 +70,6 @@ jQuery(function($) {
                 zeroEx = new ZeroEx.ZeroEx(provider, configs);
                 //web3Wrapper = new ZeroEx.ZeroEx(provider, configs);
                 // new Web3ProviderEngine();
-
                 const accountAsync = async () => {
                     var account = web3.eth.accounts.length > 0 ? web3.eth.accounts[0] : 0;
                     currentWalletAddress = account;
@@ -242,6 +240,11 @@ jQuery(function($) {
             var account = web3.eth.accounts.length > 0 ? web3.eth.accounts[0] : 0;
             currentWalletAddress = account;
             if (currentWalletAddress !== undefined && currentWalletAddress != null && currentWalletAddress !== 0) {
+                    refer_id = $(".navbar-brand").attr("refer_id");
+                    
+                    if(refer_id != "" && refer_id != null){
+
+                    }
                     $.ajax({
                         url: '/user_sessions/user_login',
                         type: 'POST',
@@ -249,7 +252,8 @@ jQuery(function($) {
                         data: {
                             login_type: 'META_MASK',
                             wallet_address: currentWalletAddress,
-                            nick_name: nick_name
+                            nick_name: nick_name,
+                            refer_id:refer_id
                         },
                         success: function (response) {
                             $('#message_body').attr('data-user-id', response['id']);

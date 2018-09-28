@@ -175,10 +175,7 @@ input:focus{
 		}
 	}
 }
-.footer-wrap {
-	width: 100%;
-	position: absolute;
-	
+.footer-wrap {	
 	.tm-footer-wrap{
 		padding-top: 0 !important;
 		.copy-right-wrap{
@@ -190,6 +187,9 @@ input:focus{
 	background: #101010;
 	color: white;	
 	padding-top: 100px;
+	.box-header{
+		border-bottom: 1px solid white;
+	}
 	.header-text{
 		text-align: center;
 		h2{
@@ -204,6 +204,55 @@ input:focus{
 			font-size: 30px;
 			color: white;
 		}
+		.reward-info{
+			.box{
+				.box-header{
+
+				}
+				.box-content{
+					table{
+						thead{
+							tr{
+								th{
+									padding: 0;
+									border: 0;
+								}
+							}
+
+						}
+						tbody{
+							tr{
+								td{
+									padding: 0;
+									border: 0;
+									color: white;
+								}
+							}
+
+						}
+					}
+				}
+
+				&.pending{
+					.reward-request{
+						float: right;
+						background: #238823;
+						padding: 3px;
+						border-radius: 5px;
+						cursor: pointer;
+						&.disabled{
+							cursor: not-allowed;
+							opacity: 0.6;
+						}
+					}
+				}
+				&.claimed{
+
+				}
+			}
+			
+
+		}
 		.owner-info{
 			padding: 0px 30px;
 			#qrcode{
@@ -211,9 +260,44 @@ input:focus{
 					float: right;
 				}
 			}
+			.referral-link{
+				height: 30px;
+				.copy-btn{
+					display: inline-block;
+					height: 30px;
+					vertical-align: bottom;
+					width: 20px;
+					cursor: pointer;
+					i{
+						font-size: 25px;
+					}
+				}
+			}
+		}
+		.friends-info{
+			table{
+				thead{
+					tr{
+						th{
+							padding: 0;
+							border: 0;
+						}
+					}
+
+				}
+				tbody{
+					tr{
+						td{
+							padding: 0;
+							border: 0;
+							color: white;
+						}
+					}
+				}
+			}
 		}
 	}
-	.friends-info{
+	.flex-container{
 		margin: 30px;
 		.box{
 			background: #252020;

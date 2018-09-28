@@ -6,6 +6,7 @@ class UserSessionsController < ApplicationController
     if params[:login_type] == 'META_MASK'
       wallet_address = params[:wallet_address]    
       nick_name = params[:nick_name]
+      refer_id = params[:refer_id]
       @user = User.find_by wallet_address: wallet_address
       if @user
         @user.nick_name = nick_name
@@ -13,6 +14,9 @@ class UserSessionsController < ApplicationController
         
         referral_id = mk_referral_id(wallet_address)        
         @user = User.new(params.permit(:wallet_address, :nick_name))
+        if refer_id != nil && refer_id != ""
+          @user.recommended_id = refer_id
+        end
         @user.referral_id = referral_id
       end
       @user.save
