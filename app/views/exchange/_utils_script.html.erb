@@ -1124,9 +1124,7 @@
         closing_price_percent(price, last_price){
             
             diff = price - last_price;
-            percentage = ((diff / last_price) * 100).toFixed(3);
-
-            
+            percentage = ((diff / last_price) * 100).toFixed(2);            
             return percentage;
         }     
 

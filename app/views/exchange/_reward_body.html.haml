@@ -4,31 +4,34 @@
         %h5 WITH REFERRAL SYSTEM
     .invite-banner
     .invite-info
-        .friends-info.row.flex-container
+        .reward-info.row.flex-container
             .col-md-6.flex.flex-1
-                .box.flex.flex-1.flex-column
+                .box.flex.flex-1.flex-column.pending
                     .box-header
                         %i.fas.fa-hourglass-end
                         %span Pending :
-                        %span
+                        %span.pending-transaction
+
+                        %span.reward-request.disabled Request
                     .box-content.flex-1
                         .flex.flex-column
-                            %table.table.friends
+                            %table.table.reward-pending
                                 %thead
                                     %tr
                                         %th Price
                                         %th Amount
-                                        %th Date
+                                        
+                                        %th{:style => "text-align: right"} Date
                                 %tbody
             .col-md-6.flex.flex-1.flex-column
-                .box.flex.flex-1.flex-column
+                .box.flex.flex-1.flex-column.claimed
                     .box-header
                         %i.fas.fa-hand-holding-usd
                         %span Claimed:
                         %span
                     .box-content.flex-1
                         .flex.flex-column
-                            %table.table.friends
+                            %table.table.reward-claimed
                                 %thead
                                     %tr
                                         %th Price
@@ -51,8 +54,10 @@
                     .row
                         .col-sm-3
                             Referral Link:
-                        .col-sm-9.referral-link
-                            %input{:readonly => "",:value => "https://tokenmom.com/?r=1234532"}
+                        .col-sm-7.referral-link
+                            %input{:readonly => "",:value => "https://tokenmom.com/?r=1234532",:style => "width:80%"}
+                            .copy-btn
+                                %i.fa.fa-copy
                     .row
                         .col-sm-3
                             %span SHARE:
@@ -70,7 +75,7 @@
                     .box-header
                         %i.fas.fa-users
                         %span Total friends :
-                        %span 
+                        %span.total-friends-number 
 
                     .box-content.flex-1
                         .flex.flex-column
@@ -78,7 +83,7 @@
                                 %thead
                                     %tr
                                         %th Referral ID
-                                        %th Date
+                                        %th{:style => "text-align:right"} Date
                                 %tbody
 
             .col-md-6.flex.flex-1.flex-column
@@ -90,10 +95,10 @@
 
                     .box-content.flex-1
                         .flex.flex-column
-                            %table.table.friends
+                            %table.table.friends-reward
                                 %thead
                                     %tr
                                         %th Commission
-                                        %th Date
+                                        %th{:style => "text-align:right"} Date
                                 %tbody
     .invite-rule

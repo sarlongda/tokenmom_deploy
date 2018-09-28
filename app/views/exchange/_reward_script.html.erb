@@ -18,15 +18,31 @@
                     data: {
                         wallet_address: currentWalletAddress
                     },
-                    success: function (response) {
-                                            
-                        if(response){ 
-                            
+                    success: function (response) {                                            
+                        if(response){                             
                             $(".referral-id").children("span").text(response.referral_id);
                             let link = "https://tokenmom.com/?r=" + response.referral_id;
                             $(".referral-link").children("input").attr("value",link);
                             facebook_link = "javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=https://tokenmom.com?r=" + response.referral_id + "&amp;t=Tokenmom referral system','_blank','width=800,height = 500,top=200, left=300');void(0)";
                             $(".social-share").children(".facebook").attr("onclick",facebook_link);
+                            $.ajax({
+                                url: '/exchange/get_users',
+                                type: 'POST',
+                                dataType: 'json',
+                                data: {                                    
+                                    referral_id: response.referral_id
+                                },
+                                success: function (response) { 
+                                    console.log("=============");
+                                    console.log(response.refer_users);
+                                    if(response.refer_users){
+                                        draw_refer_users(response.refer_users);  
+
+                                    }
+                                                         
+
+                                }
+                            });
                         }
                     }
                 });
@@ -37,28 +53,72 @@
                     data: {
                         wallet_address: currentWalletAddress
                     },
-                    success: function (response) {
-                                              
-                        if(response){ 
-                            
-                            if(response.trades.length > 0){
-                                
+                    success: function (response) {                        
+                        if(response){  
+                            console.log(response);                           
+                            if(response.trades.length > 0){ 
+                                let tag = $(".reward-pending").children("tbody"); 
+                                let total_transaction = 0;                              
                                 $.each(response.trades, function(index, element){
+                                    total_transaction += 1;
+
+                                    let time_format = Trade.get_timeformat(element.updated_at);
+                                    let element_tr = "<tr>";
+                                    element_tr += "<td>" + element.price + "</td>";
+                                    element_tr += "<td>" + element.amount + "</td>";                                    
+                                    element_tr += "<td style='text-align:right'>" + time_format + "</td>";                            
                                     
+                                    element_tr += "</tr>";                                                     
 
+                                    tag.append(element_tr);
                                 });
-                            }
-
-                           
+                                let pending_text = "( " + total_transaction +" " + "/" + "100" + " " + ")";
+                                $(".pending-transaction").text(pending_text);
+                            }                          
                         }
                     }
                 });
+
+                
+
+               
 
 
             }else{
 
             }
+
+            $(document).on('click', '.copy-btn', function(){
+                console.log("-copy-btn----");
+
+                copyText = $(".referral-link").children("input").select();
+
+                document.execCommand('copy');
+                
+            });
         });
+
+        function draw_refer_users(users){            
+            console.log("draw-refer users");
+            let tag = $(".friends").children("tbody");
+            let total_users = 0;
+            $.each(users, function(index, element){
+                console.log("each-draw-refer users");
+                total_users += 1;
+
+                let each_tag = "<tr>";
+
+                let time_format = Trade.get_timeformat(element.created_at);
+                each_tag += "<td>" + element.referral_id + "</td>";
+                each_tag += "<td style='text-align:right'>" + time_format + "</td>";
+                each_tag += "</tr>";  
+
+                tag.append(each_tag);              
+            });
+
+            $(".total-friends-number").text(total_users);
+
+        }
     });
     
     

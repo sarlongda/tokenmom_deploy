@@ -333,20 +333,20 @@ $token_abi =
       "name":"Approval","type":"event"
     }
   ]'
+$refer_id
 class ExchangeController < ApplicationController
   skip_before_action :verify_authenticity_token  
   def index
-
-    h = mk_referral_id($wallet_address)
-   
+    h = mk_referral_id($wallet_address)   
     @eth_price = get_eth_price
-    
-    
+    $refer_id = params[:r] 
 
   end  
   def trade   
     base_token = params[:trade_pair].split("-")[1]
     token_symbol = params[:trade_pair].split("-")[0]
+    
+    @refer_id = $refer_id
     @base_token = base_token
     # Get messages
     @messages = Message.order(updated_at: :asc)
@@ -475,6 +475,22 @@ class ExchangeController < ApplicationController
     @changed_contract = change_contract_address(@zrxtoken.contract_address)
     
     @user_id = current_user ? current_user.id : nil
+  end
+
+  def get_users
+
+    referral_id  = params[:referral_id]
+    refer_users = User.where("recommended_id = ?", referral_id).order(created_at: :asc)
+    
+
+    json_data = {
+      "state":"OK",
+      "refer_users":refer_users
+    }    
+    respond_to do |format|
+      format.json { render :json=>json_data}
+    end
+
   end
   def get_tokens 
     base_token = params[:base_token]
