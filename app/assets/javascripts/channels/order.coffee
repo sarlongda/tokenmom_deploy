@@ -9,6 +9,7 @@ jQuery(document).on 'turbolinks:load', ->
         disconnected: ->
 
         received: (data) ->
+            console.log("order-received-------------")
             order = data.order;
             type = data.type;
             token_symbol = order.token_symbol

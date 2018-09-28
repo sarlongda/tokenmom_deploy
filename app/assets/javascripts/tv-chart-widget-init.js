@@ -126,7 +126,7 @@ TradingView.onready(function() {
             "mainSeriesProperties.priceAxisProperties.percentageDisabled": false,
             "mainSeriesProperties.priceAxisProperties.log": false,
             "mainSeriesProperties.priceAxisProperties.logDisabled": false,
-            "symbolWatermarkProperties.color": "rgba(0, 0, 0, 0.00)",
+            "symbolWatermarkProperties.color": "rgba(0, 0, 0, 0.00)"
         };
 
         const toolbar_bg_dark = '#141414';
@@ -201,10 +201,6 @@ TradingView.onready(function() {
         }   
 
     }
-
-     
-    
-
 });
 // BEWARE: no trailing slash is expected in feed URL
 // tslint:disable-next-line:no-any

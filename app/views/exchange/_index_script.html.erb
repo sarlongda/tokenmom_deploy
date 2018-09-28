@@ -555,8 +555,7 @@
                     "<span>" + last_price + " ETH" + "</span>" +
                 "</strong>";
             }
-        }
-        
+        }        
         if(h_price == "--"){
             h_price_tag = 
                 "<strong>" + 
@@ -593,9 +592,13 @@
         if(last_price == "--"){
             $(".price-buy").val("");
             $(".price-sell").val("");
+            $(".price-buy").attr('data-lock','true');
+            $(".price-sell").attr('data-lock','true');
         }else{
             $(".price-buy").val(last_price);
             $(".price-sell").val(last_price);
+            $(".price-buy").attr('data-lock','false');
+            $(".price-sell").attr('data-lock','false');
         }
         $(".amount-buy").val("");
         $(".amount-sell").val("");
@@ -606,10 +609,10 @@
         $(".btn-sell span").text("SELL " + token_name + " (" + token_symbol + ")");
         $(".unit.buy").text(token_symbol);
         $(".unit.sell").text(token_symbol);
-        changed_header();
+        changed_header(token_symbol);
     }
-    function changed_header(){
-        let token_symbol = $(".token-info").attr("token_symbol");
+    function changed_header(token_symbol){
+        //let token_symbol = 
         let base_token = $(".token-info").attr("base_token");
         //change trade view
         change_trade_view();
@@ -622,7 +625,8 @@
         Trade.get_open_orders();
         //change charts
         //Change tradingview chart
-        window.tvWidget.setSymbol(token_symbol, '1D', function () {
+        token_pair = token_symbol + " " + base_token;
+        window.tvWidget.setSymbol(token_pair, '1D', function () {
             console.log(token_symbol);
         });        
     }

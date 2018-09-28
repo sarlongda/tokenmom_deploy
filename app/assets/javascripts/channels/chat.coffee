@@ -28,6 +28,7 @@ jQuery(document).on 'turbolinks:load', ->
       disconnected: ->
 
       received: (data) ->
+        console.log("----------chat receive-------")
         value = $(".dropdown-toggle.language-link").val() || 1
         int_value = parseInt(value)
         if int_value == data['room_id']
