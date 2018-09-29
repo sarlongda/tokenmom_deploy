@@ -39,7 +39,7 @@
                                         %th State
                                 %tbody
         .owner-info.row            
-            .col-md-12.row                
+            .col-md-12.row.reward-wallet-connected                
                 .col-sm-3
                     .row
                         .col
@@ -65,9 +65,12 @@
                                 %i.fab.fa-facebook{"aria-hidden" => "true"}        
                             %a.twitter{:href => "https://twitter.com/intent/tweet?text=It pays to have friends!&url=https://tokenmom.com/?r=35339374", :target => "_blank"}
                                 %i.fab.fa-twitter-square{"aria-hidden" => "true"}
-                            %a.linkedin{:href => "http://www.linkedin.com/shareArticle?mini=true&ro=true&title=Tokenmom Referral Program&url=https://tokenmom.com/?r=35339374&summary=It pays to have friends!&source=It pays to have friends!&armin=armin", :target => "_blank"}
+                            %a{:href => "http://www.linkedin.com/shareArticle?mini=true&ro=true&title=Tokenmom Referral Program&url=https://www.tokenmom.com/?r=35339374&summary=It pays to have friends!&source=It pays to have friends!&armin=armin", :target => "_blank"}
                                 %i.fab.fa-linkedin{"aria-hidden" => "true"}
-            .col-md_6
+            .col-md-12.reward-wallet-not-connected{:style => "display:none;text-align:center"}
+                %span{:style => "display:block"} You are not connected, please connect your wallet.
+                %a.connect-btn{:href => "/exchange/ZRX-WETH"}
+                    %span Connect
         .friends-info.row.flex-container
             .col-md-6.flex.flex-1
                 .box.flex.flex-1.flex-column
