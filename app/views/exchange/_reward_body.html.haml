@@ -1,7 +1,7 @@
 #reward_body
     .header-text
-        %h2 TOKENMOM REWARD SYSTEM
-        %h5 WITH REFERRAL SYSTEM
+        %h2{"data-i18n" => "tokenmom_reward_system"} TOKENMOM REWARD SYSTEM
+        %h5{"data-i18n" => "with_referral_system"} WITH REFERRAL SYSTEM
     .invite-banner
     .invite-info
         .reward-info.row.flex-container
@@ -9,18 +9,18 @@
                 .box.flex.flex-1.flex-column.pending
                     .box-header
                         %i.fas.fa-hourglass-end
-                        %span Pending :
+                        %span{"data-i18n" => "pending:"}
                         %span.pending-transaction
 
-                        %span.reward-request.disabled Request
+                        %span.reward-request.disabled{"data-i18n" => "request"} Request
                     .box-content.flex-1
                         .flex.flex-column
                             %table.table.reward-pending
                                 %thead
                                     %tr
-                                        %th Price
-                                        %th Amount                                        
-                                        %th{:style => "text-align: right"} Date
+                                        %th{"data-i18n" => "price"} Price
+                                        %th{"data-i18n" => "amount"} Amount                                        
+                                        %th{:style => "text-align: right","data-i18n" => "date"} Date
                                 %tbody
             .col-md-6.flex.flex-1.flex-column
                 .box.flex.flex-1.flex-column.claimed

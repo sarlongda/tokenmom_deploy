@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       match :trade, via: [:get, :post]
       post :get_init_data
       post :get_reward
+      post :request_reward
       post :get_users
       get :get_reward
       post :get_messages

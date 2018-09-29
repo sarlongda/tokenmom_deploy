@@ -6,15 +6,18 @@ jQuery(document).on 'turbolinks:load', ->
   $language_menu = $('.dropdown-language-menu')
   console.log("====chat message channel =====")
   $('.dropdown-language-menu').on 'click', 'li', (event) ->
-    selText = $(this).text()
-    value = $(this).val()
-    getMessages(value)
+    if $('#trade_workspace').length
+      selText = $(this).text()
+      value = $(this).val()
+      getMessages(value)
   $(".dropdown-menu.language").on 'click', 'li', (event) ->
-    value = $(this).val()
-    getMessages(value)
+    if $('#trade_workspace').length
+      value = $(this).val()
+      getMessages(value)
   $($language).change ->
-    value = $('.language option:selected').val()
-    getMessages(value)
+    if $('#trade_workspace').length
+      value = $('.language option:selected').val()
+      getMessages(value)
   if $('#trade_workspace').length
     getMessages() 
   else

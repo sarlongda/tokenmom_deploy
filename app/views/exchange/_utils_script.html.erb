@@ -1,6 +1,6 @@
 <script type="text/javascript">
-    const gas_limit = 0.02;
-    const DECIMALS = 18;
+    var gas_limit = 0.02;
+    var DECIMALS = 18;
     var Unit = {
         3:"kwei",
         6:"mwei",
@@ -9,6 +9,30 @@
         15:"milliether",
         18:"ether"
     }
+    console.log("util script load")
+    //Language Menu Select Event
+    $('.dropdown-toggle.nav-link').on("click",function(e){        
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+    });
+    //Language Menu Change
+    $(".dropdown-menu.language").on("click", "li", function(){
+        let selText = $(this).text();
+        let selImg = $(this).find('img').attr('src');
+        //Change Language Menu Items
+        $(".dropdown-toggle.nav-link :nth-child(2)").html(selText);
+        $(".dropdown-toggle.nav-link :nth-child(1)").attr('src',selImg);
+        //Change Chat channel language items
+        if ($("#trade_workspace").length) {
+            $(".dropdown-toggle.language-link :nth-child(2)").html(selText);
+            $(".dropdown-toggle.language-link").val($(this).val());
+            $(".dropdown-toggle.language-link :nth-child(1)").attr('src',selImg);
+            
+        }
+        $(".dropdown-toggle.nav-link").next("ul").toggle();
+        
+    });
     var Trade = {
         get_token_amount:function (token_contract_addr,base_token){                         
             if(currentWalletAddress != "" && currentWalletAddress != null){

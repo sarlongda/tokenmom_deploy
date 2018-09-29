@@ -12,11 +12,11 @@
                 %li.hy-menu-item
                   %a.bar{:href => "/exchange/ZRX-WETH"}
                     %span.nav-item.nav-trade
-                      %span TRADE
+                      %span{"data-i18n" => "trade"} TRADE
                 %li.hy-menu-item
                   %a.bar{:href => "/reward"}
                     %span.nav-item.nav-task
-                      %span REWARDS
+                      %span{"data-i18n" => "reward"} REWARD
             .navbar-nav.ml-auto
               %ul.hy-menu
                 %li.hy-menu-item
@@ -64,172 +64,171 @@
               .column-1.left.mobile-flex.left-animated
                 .section-one-title-wrap
                   %h5
-                    %span TOKENMOM
+                    %span{"data-i18n" => "tokenmom"} TOKENMOM
                   %h5
-                    %span Invest in Future Value
+                    %span{"data-i18n" => "invest_future"} Invest in Future Value
                 .parting-line
                 %p.desc
-                  %span KOREA's First Futuristic Real Decentralized Exchage
+                  %span{"data-i18n" => "korea_first_decentral"} KOREA's First Futuristic Real Decentralized Exchage
                 %p.desc
-                  %span Our goal is your investment success not ours!
+                  %span{"data-i18n" => "our_goal_is"} Our goal is your investment success not ours!
                 %a.start-trading-btn{:href => "/exchange/ZRX-WETH"}
-                  %span Start Trading
+                  %span{"data-i18n" => "start_trading"} Start Trading
                 %a.start-trading-btn{:href => "/"}
-                  %span Whitepaper
+                  %span{"data-i18n" => "whitepaper"} Whitepaper
               .column-2
                 = image_tag('laptop.png', class: "desc-image right-animated")
         .section.section-three.background
           .container
             .heading.text-center
-              %h6.sub-title ADVANTAGES
+              %h6.sub-title{"data-i18n" => "advantage"} ADVANTAGES
             .show-grid.reverse
               .column-1(data-aos="fade-right")
                 = image_tag('no.png', class: "desc-image")
               .mobile-flex.column-2
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span No Sign Up Required
+                    %span{"data-i18n" => "no_sign_up_required"} No Sign Up Required
                   %p.description
-                    %span Tokenmom is anonymous and do not need to sign up for trading. It is true decentralized exchange that helps to trade in realtime between individuals by using personal wallets(Metamask, Ledger nano hardware wallet)
+                    %span{"data-i18n" => "no_sign_up_required_detail"} Tokenmom is anonymous and do not need to sign up for trading. It is true decentralized exchange that helps to trade in realtime between individuals by using personal wallets(Metamask, Ledger nano hardware wallet)
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span No KYC For Confirming Personal Identification
+                    %span{"data-i18n" => "no_kyc"} No KYC For Confirming Personal Identification
                   %p.description
-                    %span Start securely trading without any identity verification. No personal information is required.
+                    %span{"data-i18n" => "no_kyc_detail"} Start securely trading without any identity verification. No personal information is required.
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span No Deposit/Withdraw
+                    %span{"data-i18n" => "no_deposit"} No Deposit/Withdraw
                   %p.description
-                    %span Tokenmom does not ask additional deposit and withdrawal. Only with Metamask and Ledger Nano S hardware wallet, users can trade their tokens in real-time anywhere, anytime.
+                    %span{"data-i18n" => "no_deposit_detail"} Tokenmom does not ask additional deposit and withdrawal. Only with Metamask and Ledger Nano S hardware wallet, users can trade their tokens in real-time anywhere, anytime.
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span No Hacking
+                    %span{"data-i18n" => "no_hacking"} No Hacking
                   %p.description
-                    %span Even if Tokenmom exchange is hacked or closed, it does not have to worry about it because users own still the assets in their personal wallet.
+                    %span{"data-i18n" => "no_hacking_detail"} Even if Tokenmom exchange is hacked or closed, it does not have to worry about it because users own still the assets in their personal wallet.
         .section.section-four.light-bg.background
           .container
             .heading.text-center
-              %h6.sub-title KEY POINTS
+              %h6.sub-title{"data-i18n" => "key_points"} KEY POINTS
             .show-grid
               .column-1.mobile-flex(data-aos="fade-up")
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span Easy & Simple Interface
+                    %span{"data-i18n" => "easy_interface"} Easy & Simple Interface
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span Lowest Trading Fee
+                    %span{"data-i18n" => "lowest_fee"} Lowest Trading Fee
                   %p.description
-                    %span At the same time as Tokenmom is opened, the FEE for buy/sell or maker/taker for all transactions is 0%.
+                    %span{"data-i18n" => "lowest_fee_detail"} At the same time as Tokenmom is opened, the FEE for buy/sell or maker/taker for all transactions is 0%.
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span All Ethereum Based Token's Trading
+                    %span{"data-i18n" => "ethereum_based_trading"} All Ethereum Based Token's Trading
                   %p.description
-                    %span Don't just wait for your tokens to be listed on the exchange. Any ethereum based token's trade is possible as you want.
+                    %span{"data-i18n" => "ethereum_based_trading_detail"} Don't just wait for your tokens to be listed on the exchange. Any ethereum based token's trade is possible as you want.
                 .desc-item(data-aos="fade-up")
                   %h5
-                    %span Multi Languages Supported Interface
+                    %span{"data-i18n" => "multi_languages_supported"} Multi Languages Supported Interface
                   %p.description
-                    %span Tokenmom supports English, Korean, Chinese and Japanese too. More and more languages coming soon.
+                    %span{"data-i18n" => "multi_languages_supported_detail"} Tokenmom supports English, Korean, Chinese and Japanese too. More and more languages coming soon.
               .column-2(data-aos="fade-down")
                 = image_tag('tokenmom_key.png', class: "desc-image")
         .section.section-five.background
           .container
             .heading.text-center
-              %h6.sub-title Our token
+              %h6.sub-title{"data-i18n" => "our_token"} Tokenmom token
             .show-grid.reverse
               .column-1(data-aos="fade-down-right")
                 = image_tag('ethereum-token-relayer-liquidity.png', class: "desc-image")
               .column-2.mobile-flex(data-aos="fade-down-left")
                 %h5
-                  %span Tokenmom Exchange Token(TM)
-                %h5
-                  %span NO ICO, NO PRESALE & NO CROWD SALE
+                  %span{"data-i18n" => "tokenmom_exchange_token"} Tokenmom Exchange Token(TM)
+                
                 %p.description
-                  %span Tokenmom Exchange introduces it's own TM token.
+                  %span{"data-i18n" => "tokenmom_introduce"} Tokenmom Exchange introduces it's own TM token.
                 %p.desc
-                  %span It sells only 30% of total supply, and it does not proceed with ICO etc, which can only be purchased on Tokenmom Exchange. We do not know whether it will be listed in other exchanges.
+                  %span{"data-i18n" => "tokenmom_introduce_1"} It sells only 30% of total supply, and it does not proceed with ICO etc, which can only be purchased on Tokenmom Exchange. We do not know whether it will be listed in other exchanges.
                 %p.desc
-                  %span In order to maximize the profit of the initial investors, the price will be differentiated step by step and so the earlier investment profit will be maximized.
+                  %span{"data-i18n" => "tokenmom_introduce_2"} In order to maximize the profit of the initial investors, the price will be differentiated step by step and so the earlier investment profit will be maximized.
                 %p.desc
-                  %span The target price of TM Token is 0.001$(about 11.6 KRW). Thus, investors who invest first become more profitable. We also aim to operate TM Market and the fee will be lower than ETH market, and the fee will be received as TM token, which helps Tokenmom exchange to regain TM token and so more profitable for investors. This depends on the success of both TM token's sales and Tokenmom exchange.
+                  %span{"data-i18n" => "tokenmom_introduce_3"} The target price of TM Token is 0.001$(about 11.6 KRW). Thus, investors who invest first become more profitable. We also aim to operate TM Market and the fee will be lower than ETH market, and the fee will be received as TM token, which helps Tokenmom exchange to regain TM token and so more profitable for investors. This depends on the success of both TM token's sales and Tokenmom exchange.
         .section.section-seven.background
           .container
             .heading.text-center
-              %h6.sub-title Token Distribution
+              %h6.sub-title{"data-i18n" => "token_distribution"} Token Distribution
             .show-grid.reverse
               .column-1(data-aos="fade-down-right")
                 = image_tag('distribution.png', class: "desc-image")
               .column-2.mobile-flex(data-aos="fade-down-left")
                 %h5
-                  %span Usage
+                  %span{"data-i18n" => "usage"} Usage
                 %p.description
-                  %span - 40%(8,000,000,000) Free TM token to exchange users
+                  %span{"data-i18n" => "usage_40"} - 40%(8,000,000,000) Free TM token to exchange users
                 %p.desc
-                  %span - 30%(6,000,000,000) Founder, team, exchange maintenance
+                  %span{"data-i18n" => "usage_30"} - 30%(6,000,000,000) Founder, team, exchange maintenance
                 %p.desc
-                  %span - 20%(4,000,000,000) Price stability and maintenance of TM token
+                  %span{"data-i18n" => "usage_20"} - 20%(4,000,000,000) Price stability and maintenance of TM token
                 %p.desc
-                  %span - 10%(2,000,000,000) Reserved funds to prepare for problems
+                  %span{"data-i18n" => "usage_10"} - 10%(2,000,000,000) Reserved funds to prepare for problems
         .section.section-eight.light-bg.background
           .container
             .heading.text-center
-              %h6.sub-title Who are we
+              %h6.sub-title{"data-i18n" => "who_are_we"} Who are we
             .show-grid.reverse
               .column-1(data-aos="zoom-out-right")
                 = image_tag('who we are.png', class: "desc-image")
               .column-2.mobile-flex(data-aos="zoom-out-left")
                 %h5
-                  %span Who are We?
+                  %span{"data-i18n" => "who_are_we"} Who are We?
                 %p.desc
-                  %span We started off on the basis of a number of human resources based in Asian countries, and we were born planning an anonymous decentralized exchange.
+                  %span{"data-i18n" => "who_are_we_detail_1"} We started off on the basis of a number of human resources based in Asian countries, and we were born planning an anonymous decentralized exchange.
                   So where is our headquarter? China, Japan, Korea, Tiwan, Singapore, Thailand, Vietnam, the Philippines, Laos, India, Indonesia, etc.? Don't wonder. It's near you.
                 %p.desc
-                  %span Our team members are distributed all over the world and united for anonymous Decentralized Exchange.
+                  %span{"data-i18n" => "who_are_we_detail_2"} Our team members are distributed all over the world and united for anonymous Decentralized Exchange.
                 %p.desc
-                  %span We are an exchange for the activation of fair trade between anounymous individuals.
+                  %span{"data-i18n" => "who_are_we_detail_3"} We are an exchange for the activation of fair trade between anounymous individuals.
                 %p.desc
-                  %span Do not forget that those who know true future values must win.
+                  %span{"data-i18n" => "who_are_we_detail_4"} Do not forget that those who know true future values must win.
         .client-download-wrap.background
           .heading.text-center
-            %h6.sub-title Exchange app
+            %h6.sub-title{"data-i18n" => "exchange_app"} Exchange App
           .client-download-inner-wrap
             .download-wrap
               = image_tag('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAUCAYAAABroNZJAAAABGdBTUEAALGPC/xhBQAAAUtJREFUOBGllD1LA0EQhndPAtooBG0UbVKkE8tYaKGdla1Ffpf/wkIsAqYUNU3QShQEA34QkjQGhah4Pu+ZPY5TMHMOPJndvZl3ZtndODehxXFchTpU8ilRfuG3OYkbrO+BBHr5mD9FEJgnaWuceOO9fzaLkLAKHoZwCD9MH1OjaonJInxAn6oj1jYZz8ApzIE6e4E7vr/jkwqOQG1rG9Yhu0Xt/wlmYRmmIJiEjhC6SjpBZJeFtfDV4D+J3Y8QUPtFBFTrmE56al1bKGIdBM6UKJGFIgrkXIQ8iZTDxOjT+yKRN2NyCNdxJyaRwXhsdelh/EdkhZOtqbJnoEdVt7aRiW9HHNMtC93MonVY0nZk59/O/BuTcRJELpk8mCWca7GTbiLCQG/gAF4NQvfENhWf/yvQ7d0BvadH6ICCp2EJ9JJ1Oa+hQfER3n0BHLJX4HmBPSwAAAAASUVORK5CYII=')
-              %span App Store
+              %span{"data-i18n" => "appstore"} App Store
             .download-wrap
               = image_tag ('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAWCAYAAAAinad/AAAABGdBTUEAALGPC/xhBQAAAYtJREFUOBHNlL1KA0EUhWf9IWKhRlEExZ/YWWhhlUo7K1uL9D6AjyU+gXaCGLARUygogmAhKJoiokaL9TvLzLIzu5KslRcON/ecMzdzZyYxpiDiOJ4CCwWSga+C5SItKiLFsWDDamo6Ct7BPRiOouicnIuhHANBoxXSJhgL9HXqDvoLDe8CzQyEBMYaXAPIfBHoN9SXoGF9nuw1wzCIugOUtTshG/MUqyDxWX+qe81gF0HVqhoxHFNnN2l1+eRPw7sAvmkCZSZVe39oc3bPzhbRYItiDRyCJbAN+o1rjCdgF7Q0Zh1o62r4l9ANa31dzSq2w4jNZZNbVwkvoGwjz/+/m3XtXj+9PfdfuHVdjdkEr6DV/3rPqXVa3wwfrZ5JqXfGoz1wrcMLcFt2eq/sjijxhX9BV7CzYBrUEocxbbJ+MnpP7g9T9SM4BWl4YzqWn9g4n/dtfcYox3Bz1HuWO4LTWXsRjumJZYvfmn1lGrlz+c5wWT2lC5sxwgcOXXkH6BwN3BPpAbyBW5CLH/7yZe1+YuwFAAAAAElFTkSuQmCC')
-              %span Android
+              %span{"data-i18n" => "android"} Android
           %p.tip
-            %span Coming Soon…
+            %span{"data-i18n" => "coming_soon"} Coming Soon …
         .community-wrap.background.faq
           .heading.text-center
-            %h6.sub-title QUESTION
+            %h6.sub-title{"data-i18n" => "question"} QUESTION
           .container.collapse-icon
             #accordion
               .card(data-aos="fade-up")
                 .card-header
                   %a.collapsed.card-link{"data-toggle" => "collapse", :href => "#collapseOne"}
-                    %span.icon
-                    What is the Tokenmom?
+                    %span.icon{"data-i18n" => "what_is_tokenmom"} What is the Tokenmom?
+                    
                 #collapseOne.collapse{"data-parent" => "#accordion"}
-                  .card-body
-                    TokenMom is the Korean's First Futuristic Real Decentralized Exchange
+                  .card-body{"data-i18n" => "what_is_tokenmom_answer"} TokenMom is the Korean's First Futuristic Real Decentralized Exchange
+                    
               .card(data-aos="fade-up")
                 .card-header
                   %a.collapsed.card-link{"data-toggle" => "collapse", :href => "#collapseTwo"}
-                    %span.icon
-                    How can I purchase TM token?
+                    %span.icon{"data-i18n" => "how_purchase_tm_token"} How can I purchase TM token?
+                    
                 #collapseTwo.collapse{"data-parent" => "#accordion"}
-                  .card-body
-                    Tokenmom does not proceed with ICO etc, which can only be purchased on Tokenmom Exchange.
+                  .card-body{"data-i18n" => "how_purchase_tm_token_answer"} Tokenmom does not proceed with ICO etc, which can only be purchased on Tokenmom Exchange.
+                    
               .card(data-aos="fade-up")
                 .card-header
                   %a.collapsed.card-link{"data-toggle" => "collapse", :href => "#collapseThree"}
-                    %span.icon
-                    How much is the trade fee?
+                    %span.icon{"data-i18n" => "how_much_trade_fee"} How much is the trade fee?
+                    
                 #collapseThree.collapse{"data-parent" => "#accordion"}
-                  .card-body
-                    Free trading fee for 2 months, After 2 months, the highest fee shall be 0.05% or less
+                  .card-body{"data-i18n" => "how_much_trade_fee_answer"} Free trading fee for 2 months, After 2 months, the highest fee shall be 0.05% or less
+                    
 
     .footer-wrap
       .tm-footer-wrap.theme-dark
@@ -316,7 +315,7 @@
               %div COPYRIGHT 2018 © TOKENMOM.COM ALL RIGHTS RESERVED
 %script{:src => "https://unpkg.com/aos@next/dist/aos.js"}
 %script{:src => "http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"}
-
+=render :partial => 'utils_script.html'
 :javascript
   AOS.init({
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -442,5 +441,8 @@
     },
     "retina_detect": true
   });
+
+
+
 
 

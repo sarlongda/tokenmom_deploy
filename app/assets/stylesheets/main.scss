@@ -183,6 +183,22 @@ input:focus{
 		}
 	}
 }
+.navbar{
+	.dropdown-menu{
+		color: white;
+		background-color: #242323;
+		li{
+			a{
+				display: block;
+				padding: 3px 20px;
+				clear: both;
+				font-weight: 400;
+				line-height: 1.42857143;
+				white-space: nowrap;
+			}
+		}
+	}
+}
 #reward_body{
 	background: #101010;
 	color: white;	
@@ -272,6 +288,16 @@ input:focus{
 						font-size: 25px;
 					}
 				}
+			}
+			.connect-btn{
+				font-size: 25px;
+				color: white;
+				background: #22ae7f;
+				padding: 6px;
+				cursor: pointer;
+				text-decoration: none;
+				border-radius: 4px;
+				border: none;
 			}
 		}
 		.friends-info{

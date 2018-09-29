@@ -48,11 +48,12 @@
             });
 
             //Language Menu Select Event
-            $('.dropdown-toggle.nav-link').on("click",function(e){
+            /* $('.dropdown-toggle.nav-link').on("click",function(e){  
+                
                 $(this).next('ul').toggle();
                 e.stopPropagation();
                 e.preventDefault();
-            });
+            }); */
 
             //Chat Channel language menu select event
             $('.dropdown-toggle.language-link').on("click",function(e){
@@ -67,7 +68,7 @@
                 $(this).parent().prev().text(selText);
             });
 
-            //Language Menu Change
+            /* //Language Menu Change
             $(".dropdown-menu.language").on("click", "li", function(){
                 let selText = $(this).text();
                 let selImg = $(this).find('img').attr('src');
@@ -79,7 +80,7 @@
                 $(".dropdown-toggle.language-link").val($(this).val());
                 $(".dropdown-toggle.language-link :nth-child(1)").attr('src',selImg);
                 $(".dropdown-toggle.nav-link").next("ul").toggle();
-            });
+            }); */
             //Click Submit button in Trade by Address modal
 
             $(document).on('click',".trade-by-address",function(){
@@ -807,12 +808,14 @@
         symbol = localStorage.getItem("select_token");
         base_token = $(".token-info").attr("base_token");
         $(".sell-token-symbol").text(symbol);
-        Trade.get_tokens_table();
-        draw_orderbook();
-        if(base_token == "TM"){
-            $("#market_tab a[data-target='#market_tm']").tab("show");
-            $("#market_tab").find(":nth-child(2)").find("a").addClass("active");
-            $("#market_tab").find(":nth-child(1)").find("a").removeClass("active");
+        if($("#trade_workspace").length > 1){
+            Trade.get_tokens_table();
+            draw_orderbook();
+            if(base_token == "TM"){
+                $("#market_tab a[data-target='#market_tm']").tab("show");
+                $("#market_tab").find(":nth-child(2)").find("a").addClass("active");
+                $("#market_tab").find(":nth-child(1)").find("a").removeClass("active");
+            }
         }
         
         
