@@ -91,7 +91,9 @@ jQuery(function($) {
       window.tvWidget.chart().createStudy("volume", false, false);
 
     });    
-  });
+  }
+}
+);
 
   $.i18n().load({
     'en': {
