@@ -6,7 +6,5 @@ class TradeChannel < ApplicationCable::Channel
   def unsubscribed
   end
 
-  def create_trade(data) 
-    
-  end
+  
 end
