@@ -351,7 +351,8 @@
                             places = token_decimal;
                         }                           
                         if(!isNaN(parseFloat(balance))){
-                            let fee = calculate_fee(balance);
+                            base_token = $(".token-info").attr('base_token');
+                            let fee = calculate_fee(balance,base_token);
                             let real_weth = balance - fee;
                             let total = (real_weth/(100 / pro)).toFixed(6);
                             let price = $(".price-buy").val();
@@ -1101,7 +1102,8 @@
                                     let fee = $("#trade .fee-buy").attr("value");
                                     //let total = ((parseFloat(price) * parseFloat(amount)) + parseFloat(fee)).toFixed(10);
                                     let total = (((parseFloat(price) * parseFloat(amount))).toFixed(6));  
-                                    let fee_price = calculate_fee(total).toFixed(5);
+                                    base_token = $(".token-info").attr('base_token');
+                                    let fee_price = calculate_fee(total,base_token).toFixed(5);
                                     $("#trade .fee-buy").next().text(fee_price);   
                                     let real_price = (parseFloat(total) + parseFloat(fee_price)).toFixed(6);
                                     $(".total-buy").text(real_price);
@@ -1162,7 +1164,8 @@
                                 if(!isNaN(amount) && amount != "" && amount != 0 && amount_lock == "false"){
                                     let fee = $("#trade .fee-sell").attr("value");
                                     let total = (((parseFloat(price) * parseFloat(amount))).toFixed(6));  
-                                    let fee_price = calculate_fee(total).toFixed(5);
+                                    base_token = $(".token-info").attr('base_token');
+                                    let fee_price = calculate_fee(total,base_token).toFixed(5);
                                     $("#trade .fee-sell").next().text(fee_price);
                                     let real_price = (parseFloat(total) - parseFloat(fee_price)).toFixed(6);
                                     $(".total-sell").text(real_price);                                    
@@ -1335,8 +1338,9 @@
                                 let price_lock = $(".price-buy").attr("data-lock");
                                 if(!isNaN(price) && price != "" && price != 0 && price_lock == "false"){
                                     let fee = $("#trade .fee-buy").attr("value");
-                                    let total = (((parseFloat(price) * parseFloat(amount))).toFixed(6));  
-                                    let fee_price = calculate_fee(total).toFixed(5);
+                                    let total = (((parseFloat(price) * parseFloat(amount))).toFixed(6)); 
+                                    base_token = $(".token-info").attr('base_token'); 
+                                    let fee_price = calculate_fee(total,base_token).toFixed(5);
                                     
                                     $("#trade .fee-buy").next().text(fee_price)   
                                     let real_price = (parseFloat(total) + parseFloat(fee_price)).toFixed(6);
@@ -1397,8 +1401,9 @@
                                 let price_lock = $(".price-sell").attr("data-lock");
                                 if(!isNaN(price) && price != "" && price != 0 && price_lock == "false"){
                                     let fee = $("#trade .fee-sell").attr("value");
-                                    let total = (((parseFloat(price) * parseFloat(amount))).toFixed(6));  
-                                    let fee_price = calculate_fee(total).toFixed(5);
+                                    let total = (((parseFloat(price) * parseFloat(amount))).toFixed(6)); 
+                                    base_token = $(".token-info").attr('base_token'); 
+                                    let fee_price = calculate_fee(total,base_token).toFixed(5);
                                     $("#trade .fee-sell").next().text(fee_price)   
                                     let real_price = (parseFloat(total) - parseFloat(fee_price)).toFixed(6);
                                     if(real_price < 0){
@@ -1602,8 +1607,14 @@
             function convertDecimal(num){                
                 return num * 1;
             }
-            function calculate_fee(total){
-                return parseFloat((total * fee_percent)/100 + initial_fee);
+            function calculate_fee(total,base_token){
+                if(base_token == "TM"){
+                    return parseFloat((total * tm_fee_percent)/100 + initial_tm_fee);
+
+                }else{
+                    return parseFloat((total * fee_percent)/100 + initial_fee);
+                }
+                
             }
             Number.prototype.getPrecision = function(){
                 var v = this;

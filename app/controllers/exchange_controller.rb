@@ -20,7 +20,7 @@ require "web3/eth/etherscan"
 require "web3/eth/rpc"
 require "ethereum.rb"
 
-
+$reward_ratio = 100
 $web3 = Web3::Eth::Rpc.new host: 'ropsten.infura.io',
   port: 443,  
   connect_options: {
@@ -39,6 +39,7 @@ $exchange_contract_addr = "0x479cc461fecd078f766ecc58533d6f69580cf3ac"
 $token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
 $weth_contract_addr = "0xc778417e063141139fce010982780140aa0cd5ab"
 $zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
+$tm_token_addr = "0x375e2DebFf2E48bfB216Cf52826BDE3855C1B88c"
 
 
 # Contract Addresses for kovan Network
@@ -584,6 +585,13 @@ class ExchangeController < ApplicationController
     #   # token_amount_unavailable = max_value(145,245)
     #   # token_amount_unavailable = min_value(145,245)
     # end   
+
+    abi = $token_abi
+    myContract = $web3.eth.contract(abi)
+    contract_instance = myContract.at($tm_token_addr)
+    
+
+
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
       json_record = {
@@ -1706,12 +1714,12 @@ class ExchangeController < ApplicationController
     order.maker_address = maker_address
     order.save
 
-    result = batchfillOrder(type.to_i,token_price.to_f,amount.to_f,base_token,token_symbol) 
+    batchfillOrder(type.to_i,token_price.to_f,amount.to_f,base_token,token_symbol) 
        
     json_data = 
     {
       "status":"ok",
-      "result":result,
+      
       "token_allow":tx_hash
     }
     respond_to do |format|
@@ -1832,14 +1840,38 @@ class ExchangeController < ApplicationController
   def get_reward
     user_wallet_address = params[:wallet_address]
 
-    trades = TradeHistory.where("maker_address = ? OR taker_address = ?",user_wallet_address,user_wallet_address).order(created_at: :asc)
-    
+    trades = TradeHistory.where("base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",user_wallet_address,user_wallet_address).order(created_at: :asc)
+    total_volumn = 0
+    if trades      
+      trades.each_with_index do |trade, index|
+        volumn = BigDecimal.new(trade.price.to_s) * BigDecimal.new(trade.amount.to_s)        
+        total_volumn += BigDecimal.new(volumn)
+      end
+      volume = (total_volumn * $reward_ratio).to_i
+    end
     json_data = {
       "state":"OK",
-      "trades":trades
+      "trades":trades,
+      "volume":volume
     }    
     respond_to do |format|
       format.json { render :json=>json_data}
+    end
+  end
+
+  def request_reward
+    wallet_addr = params[:wallet_addr]
+    trades = TradeHistory.where("base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",wallet_addr,wallet_addr).order(created_at: :asc)
+    total_volumn = 0
+    if trades      
+      trades.each_with_index do |trade, index|
+        volumn = BigDecimal.new(trade.price.to_s) * BigDecimal.new(trade.amount.to_s)        
+        total_volumn += BigDecimal.new(volumn)
+      end
+      volume = (total_volumn * $reward_ratio).to_i
+    end
+    if volume > 1000 
+
     end
   end
 

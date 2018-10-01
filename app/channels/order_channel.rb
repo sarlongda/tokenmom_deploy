@@ -6,7 +6,5 @@ class OrderChannel < ApplicationCable::Channel
   def unsubscribed
   end
 
-  def create_order(data)   
-    
-  end
+  
 end

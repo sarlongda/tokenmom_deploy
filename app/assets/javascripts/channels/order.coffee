@@ -1,14 +1,18 @@
 jQuery(document).on 'turbolinks:load', ->
     
+    console.log("====order channel =====")
+    
     App.order = App.cable.subscriptions.create {
         channel:"OrderChannel"
         },
         connected: ->
+            console.log("====order channel connected=====")
             
 
         disconnected: ->
 
         received: (data) ->
+            console.log("order-received-------------")
             order = data.order;
             type = data.type;
             token_symbol = order.token_symbol

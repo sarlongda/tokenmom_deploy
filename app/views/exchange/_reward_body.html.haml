@@ -1,7 +1,7 @@
 #reward_body
     .header-text
-        %h2 TOKENMOM REWARD SYSTEM
-        %h5 WITH REFERRAL SYSTEM
+        %h2{"data-i18n" => "tokenmom_reward_system"} TOKENMOM REWARD SYSTEM
+        %h5{"data-i18n" => "with_referral_system"} WITH REFERRAL SYSTEM
     .invite-banner
     .invite-info
         .reward-info.row.flex-container
@@ -9,19 +9,18 @@
                 .box.flex.flex-1.flex-column.pending
                     .box-header
                         %i.fas.fa-hourglass-end
-                        %span Pending :
+                        %span{"data-i18n" => "pending:"}
                         %span.pending-transaction
 
-                        %span.reward-request.disabled Request
+                        %span.reward-request.disabled{"data-i18n" => "request"} Request
                     .box-content.flex-1
                         .flex.flex-column
                             %table.table.reward-pending
                                 %thead
                                     %tr
-                                        %th Price
-                                        %th Amount
-                                        
-                                        %th{:style => "text-align: right"} Date
+                                        %th{"data-i18n" => "price"} Price
+                                        %th{"data-i18n" => "amount"} Amount                                        
+                                        %th{:style => "text-align: right","data-i18n" => "date"} Date
                                 %tbody
             .col-md-6.flex.flex-1.flex-column
                 .box.flex.flex-1.flex-column.claimed
@@ -40,7 +39,7 @@
                                         %th State
                                 %tbody
         .owner-info.row            
-            .col-md-12.row                
+            .col-md-12.row.reward-wallet-connected                
                 .col-sm-3
                     .row
                         .col
@@ -66,9 +65,12 @@
                                 %i.fab.fa-facebook{"aria-hidden" => "true"}        
                             %a.twitter{:href => "https://twitter.com/intent/tweet?text=It pays to have friends!&url=https://tokenmom.com/?r=35339374", :target => "_blank"}
                                 %i.fab.fa-twitter-square{"aria-hidden" => "true"}
-                            %a.linkedin{:href => "http://www.linkedin.com/shareArticle?mini=true&ro=true&title=Tokenmom Referral Program&url=https://tokenmom.com/?r=35339374&summary=It pays to have friends!&source=It pays to have friends!&armin=armin", :target => "_blank"}
+                            %a{:href => "http://www.linkedin.com/shareArticle?mini=true&ro=true&title=Tokenmom Referral Program&url=https://www.tokenmom.com/?r=35339374&summary=It pays to have friends!&source=It pays to have friends!&armin=armin", :target => "_blank"}
                                 %i.fab.fa-linkedin{"aria-hidden" => "true"}
-            .col-md_6
+            .col-md-12.reward-wallet-not-connected{:style => "display:none;text-align:center"}
+                %span{:style => "display:block"} You are not connected, please connect your wallet.
+                %a.connect-btn{:href => "/exchange/ZRX-WETH"}
+                    %span Connect
         .friends-info.row.flex-container
             .col-md-6.flex.flex-1
                 .box.flex.flex-1.flex-column

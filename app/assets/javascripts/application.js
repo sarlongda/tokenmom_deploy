@@ -33,3 +33,4 @@
 //= require jquery_i18n/jquery.i18n.emitter.js
 //= require jquery_i18n/jquery.i18n.emitter.bidi.js
 //= require_tree .
+//= require_tree ./channels

@@ -15,19 +15,15 @@ const tm_decimals = 8;
 let max_trading_eth = 20;
 let max_trading_tm = 10000000;
 let max_token_amount = 10000000;
+
 const txOpts = {
     gasLimit: 89000,
     gasPrice: new BigNumber(20000000000)
 };
-
-// Main Net
-//let wethAddress = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
-
-// Kovan Net
-// let wethAddress = "0xd0a1e359811322d97991e03f863a0c30c2cf029c";
-
-let fee_percent = 0.05
-let initial_fee = 0.002
+let fee_percent = 0.05;
+let tm_fee_percent = 0.01;
+let initial_tm_fee = 500;
+let initial_fee = 0.002;
 jQuery(function($) {        
     $(document).ready(function () {
         function load_js(){            
