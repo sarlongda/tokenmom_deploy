@@ -7,12 +7,11 @@ jQuery(document).on 'turbolinks:load', ->
         },
         connected: ->
             console.log("====order channel connected=====")
-            
-
         disconnected: ->
 
         received: (data) ->
-            console.log("order-received-------------")
+            console.log("-----order-received-------------")
+            
             order = data.order;
             type = data.type;
             token_symbol = order.token_symbol
