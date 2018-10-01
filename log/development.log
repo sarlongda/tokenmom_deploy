@@ -7510,3 +7510,45 @@ Processing by ExchangeController#index as HTML
 Completed 200 OK in 440ms (Views: 81.8ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/" for 127.0.0.1 at 2018-10-01 22:27:46 +0700
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/holy/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ExchangeController#index as HTML
+  Parameters: {"name"=>"", "mail"=>"", "message"=>""}
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/_utils_script.html.erb (1.5ms)
+  Rendered exchange/index.html.haml within layouts/application (51.7ms)
+Completed 200 OK in 2946ms (Views: 2610.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reward" for 127.0.0.1 at 2018-10-01 22:28:20 +0700
+Processing by ExchangeController#reward as HTML
+  Rendering exchange/reward.html.haml within layouts/application
+  Rendered exchange/_reward_header.html.haml (9.3ms)
+  Rendered exchange/_reward_body.html.haml (10.9ms)
+  Rendered exchange/_footer.html.haml (1.5ms)
+  Rendered exchange/_reward_script.html.erb (0.4ms)
+  Rendered exchange/_utils_script.html.erb (1.7ms)
+  Rendered exchange/reward.html.haml within layouts/application (28.0ms)
+Completed 200 OK in 136ms (Views: 135.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-10-01 22:28:21 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-01 22:28:21 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TradeChannel is transmitting the subscription confirmation
+TradeChannel is streaming from trade_channel
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-01 22:28:27 +0700
+OrderChannel stopped streaming from order_channel
+TradeChannel stopped streaming from trade_channel
+Started POST "/" for 127.0.0.1 at 2018-10-01 22:32:34 +0700
+Processing by ExchangeController#index as HTML
+  Parameters: {"name"=>"", "mail"=>"", "message"=>""}
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/_utils_script.html.erb (1.8ms)
+  Rendered exchange/index.html.haml within layouts/application (73.9ms)
+Completed 200 OK in 3276ms (Views: 2935.9ms | ActiveRecord: 0.0ms)
+
+

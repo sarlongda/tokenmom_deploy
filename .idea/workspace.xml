@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exchange/index.html.haml" afterPath="$PROJECT_DIR$/app/views/exchange/index.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -52,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="84" column="54" lean-forward="false" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="54" />
+            <state relative-caret-position="54">
+              <caret line="54" column="78" lean-forward="true" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
               <folding>
                 <marker date="1538407140151" expanded="true" signature="17623:18612" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
                 <marker date="1538407140151" expanded="true" signature="18645:20824" ph="{...}" />
@@ -91,15 +88,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="103" column="25" lean-forward="false" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+            <state relative-caret-position="456">
+              <caret line="158" column="21" lean-forward="true" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
               <folding>
-                <element signature="e#21826#22381#1" expanded="true" />
-                <element signature="e#22549#33544#1" expanded="true" />
-                <element signature="e#33713#35948#1" expanded="true" />
+                <element signature="e#21846#22401#1" expanded="true" />
+                <element signature="e#22569#33564#1" expanded="true" />
+                <element signature="e#33733#35968#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,12 +150,12 @@
       <find>tm-footer-wrap</find>
       <find>who_are_we</find>
       <find>index.js.map</find>
-      <find>setSymbol</find>
       <find>redis</find>
-      <find>laptop</find>
       <find>50</find>
       <find>'reward'</find>
       <find>whitepaper_eng</find>
+      <find>setSymbol</find>
+      <find>laptop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,8 +213,8 @@
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/index.scss" />
         <option value="$PROJECT_DIR$/app/views/exchange/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/index.scss" />
       </list>
     </option>
   </component>
@@ -565,12 +562,12 @@
       <workItem from="1537548788382" duration="10947000" />
       <workItem from="1538108781735" duration="4598000" />
       <workItem from="1538198556911" duration="2268000" />
-      <workItem from="1538366103369" duration="19698000" />
+      <workItem from="1538366103369" duration="20474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165928000" />
+    <option name="totallyTimeSpent" value="166704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="680" y="225" width="1873" height="1092" extended-state="6" />
@@ -889,22 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="103" column="25" lean-forward="false" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding>
-            <element signature="e#21826#22381#1" expanded="true" />
-            <element signature="e#22549#33544#1" expanded="true" />
-            <element signature="e#33713#35948#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="84" column="54" lean-forward="false" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="54" />
+        <state relative-caret-position="54">
+          <caret line="54" column="78" lean-forward="true" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
           <folding>
             <marker date="1538407140151" expanded="true" signature="17623:18612" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
             <marker date="1538407140151" expanded="true" signature="18645:20824" ph="{...}" />
@@ -934,6 +919,18 @@
             <marker date="1538407140151" expanded="true" signature="20599:20663" ph="{...}" />
             <marker date="1538407140151" expanded="true" signature="20681:20720" ph="{...}" />
             <marker date="1538407140151" expanded="true" signature="20740:20779" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="158" column="21" lean-forward="true" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
+          <folding>
+            <element signature="e#21846#22401#1" expanded="true" />
+            <element signature="e#22569#33564#1" expanded="true" />
+            <element signature="e#33733#35968#1" expanded="true" />
           </folding>
         </state>
       </provider>
