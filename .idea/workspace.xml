@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/85/5ac97bbdb64732" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/85/5ac97bbdb64732" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/index.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exchange/index.html.haml" afterPath="$PROJECT_DIR$/app/views/exchange/index.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -49,54 +53,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="54" column="78" lean-forward="true" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+            <state relative-caret-position="592">
+              <caret line="240" column="72" lean-forward="false" selection-start-line="240" selection-start-column="72" selection-end-line="240" selection-end-column="72" />
               <folding>
-                <marker date="1538407140151" expanded="true" signature="17623:18612" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
-                <marker date="1538407140151" expanded="true" signature="18645:20824" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="18664:20020" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="18682:18797" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="18724:18789" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="18814:18850" ph="{&quot;value&quot;: &quot;##ffffff&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="18867:19146" ph="{&quot;type&quot;: &quot;circle&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="18913:18975" ph="{&quot;color&quot;: &quot;##000000&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="18996:19031" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="19050:19138" ph="{&quot;src&quot;: &quot;img/github.svg&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="19165:19352" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="19230:19344" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="19368:19550" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="19430:19542" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="19573:19702" ph="{&quot;color&quot;: &quot;##ffffff&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="19718:20014" ph="{&quot;direction&quot;: &quot;none&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="19916:20006" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20043:20793" ph="{&quot;detect_on&quot;: &quot;canvas&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="20090:20291" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20111:20176" ph="{&quot;mode&quot;: &quot;repulse&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="20197:20259" ph="{&quot;mode&quot;: &quot;push&quot;...}" />
-                <marker date="1538407140151" expanded="true" signature="20308:20787" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20326:20428" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20380:20418" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20448:20578" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20599:20663" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20681:20720" ph="{...}" />
-                <marker date="1538407140151" expanded="true" signature="20740:20779" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="16983:17972" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
+                <marker date="1538415746742" expanded="true" signature="18005:20184" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18024:19380" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18042:18157" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18084:18149" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18174:18210" ph="{&quot;value&quot;: &quot;##ffffff&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="18227:18506" ph="{&quot;type&quot;: &quot;circle&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="18273:18335" ph="{&quot;color&quot;: &quot;##000000&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="18356:18391" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18410:18498" ph="{&quot;src&quot;: &quot;img/github.svg&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="18525:18712" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18590:18704" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18728:18910" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18790:18902" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="18933:19062" ph="{&quot;color&quot;: &quot;##ffffff&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="19078:19374" ph="{&quot;direction&quot;: &quot;none&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="19276:19366" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="19403:20153" ph="{&quot;detect_on&quot;: &quot;canvas&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="19450:19651" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="19471:19536" ph="{&quot;mode&quot;: &quot;repulse&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="19557:19619" ph="{&quot;mode&quot;: &quot;push&quot;...}" />
+                <marker date="1538415746742" expanded="true" signature="19668:20147" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="19686:19788" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="19740:19778" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="19808:19938" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="19959:20023" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="20041:20080" ph="{...}" />
+                <marker date="1538415746742" expanded="true" signature="20100:20139" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+            <state relative-caret-position="318">
+              <caret line="335" column="28" lean-forward="false" selection-start-line="335" selection-start-column="28" selection-end-line="335" selection-end-column="28" />
               <folding>
-                <element signature="e#21898#22453#1" expanded="true" />
-                <element signature="e#22621#33616#1" expanded="true" />
-                <element signature="e#33785#36020#1" expanded="true" />
+                <element signature="e#21764#22319#1" expanded="true" />
+                <element signature="e#22487#33482#1" expanded="true" />
+                <element signature="e#33651#35886#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -213,8 +217,8 @@
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/views/exchange/index.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/index.scss" />
+        <option value="$PROJECT_DIR$/app/views/exchange/index.html.haml" />
       </list>
     </option>
   </component>
@@ -562,12 +566,12 @@
       <workItem from="1537548788382" duration="10947000" />
       <workItem from="1538108781735" duration="4598000" />
       <workItem from="1538198556911" duration="2268000" />
-      <workItem from="1538366103369" duration="21351000" />
+      <workItem from="1538366103369" duration="22448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167581000" />
+    <option name="totallyTimeSpent" value="168678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="680" y="225" width="1873" height="1092" extended-state="6" />
@@ -886,51 +890,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="54" column="78" lean-forward="true" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+        <state relative-caret-position="318">
+          <caret line="335" column="28" lean-forward="false" selection-start-line="335" selection-start-column="28" selection-end-line="335" selection-end-column="28" />
           <folding>
-            <marker date="1538407140151" expanded="true" signature="17623:18612" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
-            <marker date="1538407140151" expanded="true" signature="18645:20824" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="18664:20020" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="18682:18797" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="18724:18789" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="18814:18850" ph="{&quot;value&quot;: &quot;##ffffff&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="18867:19146" ph="{&quot;type&quot;: &quot;circle&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="18913:18975" ph="{&quot;color&quot;: &quot;##000000&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="18996:19031" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="19050:19138" ph="{&quot;src&quot;: &quot;img/github.svg&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="19165:19352" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="19230:19344" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="19368:19550" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="19430:19542" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="19573:19702" ph="{&quot;color&quot;: &quot;##ffffff&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="19718:20014" ph="{&quot;direction&quot;: &quot;none&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="19916:20006" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20043:20793" ph="{&quot;detect_on&quot;: &quot;canvas&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="20090:20291" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20111:20176" ph="{&quot;mode&quot;: &quot;repulse&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="20197:20259" ph="{&quot;mode&quot;: &quot;push&quot;...}" />
-            <marker date="1538407140151" expanded="true" signature="20308:20787" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20326:20428" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20380:20418" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20448:20578" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20599:20663" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20681:20720" ph="{...}" />
-            <marker date="1538407140151" expanded="true" signature="20740:20779" ph="{...}" />
+            <element signature="e#21764#22319#1" expanded="true" />
+            <element signature="e#22487#33482#1" expanded="true" />
+            <element signature="e#33651#35886#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        <state relative-caret-position="592">
+          <caret line="240" column="72" lean-forward="false" selection-start-line="240" selection-start-column="72" selection-end-line="240" selection-end-column="72" />
           <folding>
-            <element signature="e#21898#22453#1" expanded="true" />
-            <element signature="e#22621#33616#1" expanded="true" />
-            <element signature="e#33785#36020#1" expanded="true" />
+            <marker date="1538415746742" expanded="true" signature="16983:17972" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
+            <marker date="1538415746742" expanded="true" signature="18005:20184" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18024:19380" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18042:18157" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18084:18149" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18174:18210" ph="{&quot;value&quot;: &quot;##ffffff&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18227:18506" ph="{&quot;type&quot;: &quot;circle&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18273:18335" ph="{&quot;color&quot;: &quot;##000000&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18356:18391" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18410:18498" ph="{&quot;src&quot;: &quot;img/github.svg&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18525:18712" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18590:18704" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18728:18910" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18790:18902" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18933:19062" ph="{&quot;color&quot;: &quot;##ffffff&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19078:19374" ph="{&quot;direction&quot;: &quot;none&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19276:19366" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19403:20153" ph="{&quot;detect_on&quot;: &quot;canvas&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19450:19651" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19471:19536" ph="{&quot;mode&quot;: &quot;repulse&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19557:19619" ph="{&quot;mode&quot;: &quot;push&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19668:20147" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19686:19788" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19740:19778" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19808:19938" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19959:20023" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="20041:20080" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="20100:20139" ph="{...}" />
           </folding>
         </state>
       </provider>

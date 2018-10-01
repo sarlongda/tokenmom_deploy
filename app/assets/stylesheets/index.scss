@@ -331,16 +331,9 @@ body {
           }
         }
         .section-seven {
-          .column-1 {
-            width: 40%;
-            .contact-info {
-              li {
-                padding: 2rem 0;
-              }
-            }
-          }
-          .column-2 {
-            width: 50%;
+          .contact-info {
+            width: 60%;
+            margin-left: 20%;
             .form-control {
               border-radius: 0;
               border: none;
