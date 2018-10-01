@@ -7552,3 +7552,21 @@ Processing by ExchangeController#index as HTML
 Completed 200 OK in 3276ms (Views: 2935.9ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/" for 127.0.0.1 at 2018-10-01 22:37:01 +0700
+Processing by ExchangeController#index as HTML
+  Parameters: {"name"=>"", "mail"=>"", "message"=>""}
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/_utils_script.html.erb (1.1ms)
+  Rendered exchange/index.html.haml within layouts/application (64.2ms)
+Completed 200 OK in 2972ms (Views: 2635.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2018-10-01 22:41:18 +0700
+Processing by ExchangeController#index as HTML
+  Parameters: {"name"=>"", "mail"=>"", "message"=>""}
+  Rendering exchange/index.html.haml within layouts/application
+  Rendered exchange/_utils_script.html.erb (4.0ms)
+  Rendered exchange/index.html.haml within layouts/application (129.2ms)
+Completed 200 OK in 544ms (Views: 194.2ms | ActiveRecord: 0.0ms)
+
+

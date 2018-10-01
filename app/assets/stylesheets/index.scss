@@ -131,7 +131,7 @@ body {
         height:60px;
         &.theme-dark {
           background-color: #111111;
-          color: #AAA;
+          color: #fff;
         }
         .bar {
           margin: 0 -22px;
@@ -167,7 +167,7 @@ body {
             -o-transition: border-color 0.3s, background-color 0.3s, color 0.3s;
             transition: border-color 0.3s, background-color 0.3s, color 0.3s;
             &:hover {
-              color: #fff;
+              color: #aaa;
             }
           }
         }
