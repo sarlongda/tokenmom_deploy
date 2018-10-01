@@ -4,7 +4,6 @@ jQuery(document).on 'turbolinks:load', ->
   $new_message_body = $('#message_body')
   $language = $('.language')
   $language_menu = $('.dropdown-language-menu')
-  console.log("====chat message channel =====")
   $('.dropdown-language-menu').on 'click', 'li', (event) ->
     if $('#trade_workspace').length
       selText = $(this).text()
@@ -31,7 +30,6 @@ jQuery(document).on 'turbolinks:load', ->
       disconnected: ->
 
       received: (data) ->
-        console.log("----------chat receive-------")
         value = $(".dropdown-toggle.language-link").val() || 1
         int_value = parseInt(value)
         if int_value == data['room_id']

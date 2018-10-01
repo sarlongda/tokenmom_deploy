@@ -15,7 +15,6 @@ const tm_decimals = 8;
 let max_trading_eth = 20;
 let max_trading_tm = 10000000;
 let max_token_amount = 10000000;
-
 const txOpts = {
     gasLimit: 89000,
     gasPrice: new BigNumber(20000000000)

@@ -1714,12 +1714,12 @@ class ExchangeController < ApplicationController
     order.maker_address = maker_address
     order.save
 
-    batchfillOrder(type.to_i,token_price.to_f,amount.to_f,base_token,token_symbol) 
+    result = batchfillOrder(type.to_i,token_price.to_f,amount.to_f,base_token,token_symbol) 
        
     json_data = 
     {
       "status":"ok",
-      
+      "result":result,
       "token_allow":tx_hash
     }
     respond_to do |format|
