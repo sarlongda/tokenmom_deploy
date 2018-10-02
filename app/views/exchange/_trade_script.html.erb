@@ -753,14 +753,15 @@
                             // Get OrderHash
                             const orderHash = ZeroEx.ZeroEx.getOrderHashHex(order);
                             // Signing orderHash -> ecSignature
-                            const shouldAddPersonalMessagePrefix = true;                        
-                        
+                            const shouldAddPersonalMessagePrefix = true;
+                            console.log('here2');
                             //Signing to Order
                             const ecSignature = await zeroEx.signOrderHashAsync(orderHash, makerAddress, shouldAddPersonalMessagePrefix);
                             const signedOrder = {
                                 ...order,
                                 ecSignature,
                             };
+                            console.log('here3');
                             let data = {
                                 state:0,
                                 type:type,
@@ -777,8 +778,8 @@
                                 token_addr:TOKEN_ADDRESS,
                                 trade_fee:trade_fee,
                                 signed_order:JSON.stringify(signedOrder)
-                            };   
-                                          
+                            };
+
                             $.ajax({
                                 url: 'create_order',
                                 type: 'POST',
