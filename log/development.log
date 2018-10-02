@@ -4098,6 +4098,7 @@ OrderChannel is transmitting the subscription confirmation
 OrderChannel is streaming from order_channel
 TradeChannel is transmitting the subscription confirmation
 TradeChannel is streaming from trade_channel
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2018-10-01 11:29:03 +0700
 Processing by ExchangeController#index as HTML
   Rendering exchange/index.html.haml within layouts/application
@@ -13394,3 +13395,5 @@ Completed 200 OK in 29ms (Views: 2.5ms | ActiveRecord: 12.9ms)
 Completed 200 OK in 18ms (Views: 2.9ms | ActiveRecord: 6.8ms)
 
 
+=======
+>>>>>>> parent of 49ed8a6e... change

@@ -175,6 +175,14 @@ input:focus{
 		}
 	}
 }
+.footer-wrap {	
+	.tm-footer-wrap{
+		padding-top: 0 !important;
+		.copy-right-wrap{
+			margin-top: 0 !important;
+		}
+	}
+}
 .navbar{
 	.dropdown-menu{
 		color: white;
