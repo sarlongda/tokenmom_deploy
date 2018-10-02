@@ -3,8 +3,8 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  # config.action_cable.url = '/cable'
-  config.action_cable.url = 'wss://tokenmom.com/cable'
+  config.action_cable.url = '/cable'
+  # config.action_cable.url = 'wss://tokenmom.com/cable'
   config.action_cable.disable_request_forgery_protection = true
   config.action_cable.allowed_request_origins = [/http:\/\/*/,/https:\/\/*/]
   # Eager load code on boot. This eager loads most of Rails and
