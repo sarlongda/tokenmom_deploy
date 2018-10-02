@@ -715,6 +715,23 @@
                         }
                         // Generate order
                         try{
+                            console.log('here0');
+                            console.log(makerAddress);
+                            console.log(takerAddress);
+                            console.log(feeRecipient);
+                            console.log(maker_token_addr);
+                            console.log(taker_token_addr);
+                            console.log(EXCHANGE_ADDRESS);
+                            console.log(salt);
+                            console.log(makerFee);
+                            console.log(takerFee);
+                            console.log(ZeroEx.ZeroEx.toBaseUnitAmount(new BigNumber(maker_amount), maker_decimal));
+                            console.log('here_1');
+                            console.log(taker_amount);
+                            console.log(taker_decimal);
+                            console.log(ZeroEx.ZeroEx.toBaseUnitAmount(new BigNumber(taker_amount), taker_decimal));
+                            console.log('here_2');
+                            console.log(new BigNumber(expire*1000));
                             const order = {
                                 maker: makerAddress,
                                 taker: takerAddress,
@@ -731,6 +748,8 @@
                                 //takerTokenAmount: new BigNumber(taker_amount * Math.pow(10,taker_decimal)).toString(),
                                 expirationUnixTimestampSec: new BigNumber(expire*1000), // Valid for up to an hour
                             };
+                            console.log(order);
+                            console.log('here1');
                             // Get OrderHash
                             const orderHash = ZeroEx.ZeroEx.getOrderHashHex(order);
                             // Signing orderHash -> ecSignature
