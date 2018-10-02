@@ -144,7 +144,11 @@ TradingView.onready(function() {
             toolbar_bg: toolbar_bg_dark,
             allow_symbol_change: false,
             container_id: 'tv_chart_container',
+<<<<<<< HEAD
             datafeed: new Datafeeds.UDFCompatibleDatafeed('https:tokenmom.com/api/v1/datafeeds'),
+=======
+            datafeed: new Datafeeds.UDFCompatibleDatafeed('https://tokenmom.com/api/v1/datafeeds'),
+>>>>>>> 88d27a4afb17f72f8243d2b506cf0ff51ebf0b4a
             library_path: '/assets/charting_library/',
             locale: getLanguageFromURL() || "en",
             overrides: override_dark,
@@ -198,7 +202,11 @@ TradingView.onready(function() {
                     console.log(symbol);
                 });
             });
+<<<<<<< HEAD
         }   
+=======
+        }
+>>>>>>> 88d27a4afb17f72f8243d2b506cf0ff51ebf0b4a
 
     }
 });
@@ -206,27 +214,3 @@ TradingView.onready(function() {
 // tslint:disable-next-line:no-any
 // http://localhost:3000/api/v1/datafeeds
 // https://demo_feed.tradingview.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

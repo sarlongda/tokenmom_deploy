@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/no.png" afterPath="$PROJECT_DIR$/app/assets/images/no.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/lK/lKsSyObJo7NwQ2dtuFKoWL3dHX1bslG2zeLJpI5XIfI.cache" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v3.0/lK/lKsSyObJo7NwQ2dtuFKoWL3dHX1bslG2zeLJpI5XIfI.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/ed/75bb12816104d9" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/ed/75bb12816104d9" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exchange/index.html.haml" afterPath="$PROJECT_DIR$/app/views/exchange/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/tv-chart-widget-init.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/tv-chart-widget-init.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -24,71 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="development.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/database.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="35" column="14" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="46" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="secrets.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/secrets.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="147" />
               <folding />
             </state>
           </provider>
@@ -104,50 +38,88 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5419">
-              <caret line="312" column="39" lean-forward="false" selection-start-line="312" selection-start-column="39" selection-end-line="312" selection-end-column="39" />
+            <state relative-caret-position="234">
+              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_trade_script.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/exchange/_trade_script.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="98" column="31" lean-forward="false" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tv-chart-widget-init.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tv-chart-widget-init.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="149" column="37" lean-forward="true" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_index_script.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/exchange/_index_script.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7020">
+              <caret line="824" column="21" lean-forward="true" selection-start-line="824" selection-start-column="21" selection-end-line="824" selection-end-column="21" />
               <folding>
-                <marker date="1538203211635" expanded="true" signature="18063:19052" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
-                <marker date="1538203211635" expanded="true" signature="19085:21264" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19104:20460" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19122:19237" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19164:19229" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19254:19290" ph="{&quot;value&quot;: &quot;##ffffff&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="19307:19586" ph="{&quot;type&quot;: &quot;circle&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="19353:19415" ph="{&quot;color&quot;: &quot;##000000&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="19436:19471" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19490:19578" ph="{&quot;src&quot;: &quot;img/github.svg&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="19605:19792" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19670:19784" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19808:19990" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="19870:19982" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="20013:20142" ph="{&quot;color&quot;: &quot;##ffffff&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="20158:20454" ph="{&quot;direction&quot;: &quot;none&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="20356:20446" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="20483:21233" ph="{&quot;detect_on&quot;: &quot;canvas&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="20530:20731" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="20551:20616" ph="{&quot;mode&quot;: &quot;repulse&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="20637:20699" ph="{&quot;mode&quot;: &quot;push&quot;...}" />
-                <marker date="1538203211635" expanded="true" signature="20748:21227" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="20766:20868" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="20820:20858" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="20888:21018" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="21039:21103" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="21121:21160" ph="{...}" />
-                <marker date="1538203211635" expanded="true" signature="21180:21219" ph="{...}" />
+                <marker date="1538368080779" expanded="true" signature="29158:29178" ph="..." />
+                <marker date="1538368080779" expanded="true" signature="29242:29260" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
+      <file leaf-file-name="_utils_script.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/exchange/_utils_script.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4626">
-              <caret line="257" column="21" lean-forward="false" selection-start-line="257" selection-start-column="21" selection-end-line="257" selection-end-column="21" />
+            <state relative-caret-position="1496">
+              <caret line="226" column="8" lean-forward="false" selection-start-line="226" selection-start-column="8" selection-end-line="226" selection-end-column="8" />
+              <folding>
+                <marker date="1538368080783" expanded="true" signature="7087:7099" ph="..." />
+                <marker date="1538368080783" expanded="true" signature="36717:36737" ph="..." />
+                <marker date="1538368080783" expanded="true" signature="36805:36823" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exchange_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/exchange_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5760">
+              <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -157,18 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Charting Li</find>
-      <find>const per</find>
-      <find>secret_key</find>
-      <find>localhost:6379</find>
-      <find>config.log</find>
-      <find>@media</find>
-      <find>col-sm-3</find>
-      <find>@media (min-width: 768px)</find>
-      <find>980px</find>
-      <find>min-width</find>
-      <find>bootstrap</find>
-      <find>mobile-hide</find>
       <find>jquery_ujs</find>
       <find>before_filter</find>
       <find>market_table</find>
@@ -187,6 +147,18 @@
       <find>trade_button</find>
       <find>5.2.1</find>
       <find>animate.min</find>
+      <find>start-</find>
+      <find>tm-foo</find>
+      <find>tm-footer-wrap</find>
+      <find>who_are_we</find>
+      <find>index.js.map</find>
+      <find>redis</find>
+      <find>50</find>
+      <find>'reward'</find>
+      <find>whitepaper_eng</find>
+      <find>laptop</find>
+      <find>setSymbol</find>
+      <find>tvWidget</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -210,7 +182,6 @@
         <option value="$PROJECT_DIR$/config/secrets.yml" />
         <option value="$PROJECT_DIR$/log/production.log" />
         <option value="$PROJECT_DIR$/config/cable.yml" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/main.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/views/trade/_header.html.haml" />
         <option value="$PROJECT_DIR$/app/views/trade/_market.html.haml" />
@@ -230,22 +201,23 @@
         <option value="$PROJECT_DIR$/app/views/trade/_index_script.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/trade_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/trade/_market_script.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
         <option value="$PROJECT_DIR$/Capfile" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/main-jquery_i18n.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/tv-chart-widget-init.js" />
         <option value="$PROJECT_DIR$/app/views/trade/index.html.haml" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/config/boot.rb" />
         <option value="$PROJECT_DIR$/.ruby-version" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/index.scss" />
         <option value="$PROJECT_DIR$/config/deploy/production.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/main.scss" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/index.scss" />
         <option value="$PROJECT_DIR$/app/views/exchange/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/tv-chart-widget-init.js" />
       </list>
     </option>
   </component>
@@ -287,7 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,6 +270,26 @@
               <item name="Work" type="b2602c69:ProjectViewProjectNode" />
               <item name="Work" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Work" type="b2602c69:ProjectViewProjectNode" />
@@ -330,21 +321,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Work" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="trestle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Work" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="trestle" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Work" type="b2602c69:ProjectViewProjectNode" />
@@ -391,12 +367,28 @@
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Work" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
+              <item name="charting_library" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="RailsProjectView" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -580,12 +572,13 @@
       <workItem from="1537548788382" duration="10947000" />
       <workItem from="1538108781735" duration="4598000" />
       <workItem from="1538198556911" duration="2268000" />
-      <workItem from="1538366103369" duration="605000" />
+      <workItem from="1538366103369" duration="22448000" />
+      <workItem from="1538448972273" duration="1607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146835000" />
+    <option name="totallyTimeSpent" value="170285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="680" y="225" width="1873" height="1092" extended-state="6" />
@@ -595,6 +588,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -607,7 +601,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -625,36 +618,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html+phone.haml" />
-    <entry file="file://$PROJECT_DIR$/app/admin/tokens_admin.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180813051853_add_hold_to_tokens.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180712171350_add_columns_to_tokens.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/users_admin.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="15" lean-forward="false" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trade/trade.html.haml" />
     <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb" />
     <entry file="file://$PROJECT_DIR$/app/views/trades/trade.html.haml" />
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
@@ -685,13 +648,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1692">
-          <caret line="94" column="1" lean-forward="false" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index/bootstrap.css" />
     <entry file="file://$PROJECT_DIR$/config/secrets.yml.example">
       <provider selected="true" editor-type-id="text-editor">
@@ -715,39 +671,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/0x-library/packages/0x.js/_bundles/index.js" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/trade/index.html+phone.haml" />
     <entry file="file://$PROJECT_DIR$/Capfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/main-jquery_i18n.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="44" column="60" lean-forward="false" selection-start-line="44" selection-start-column="60" selection-end-line="44" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tv-chart-widget-init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="155" column="42" lean-forward="false" selection-start-line="155" selection-start-column="42" selection-end-line="155" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -759,13 +687,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/trade/index.html.haml" />
-    <entry file="file://$PROJECT_DIR$/app/controllers/exchange_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/trade.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -789,10 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1537930330343" expanded="true" signature="407:679" ph="##..." />
-            <marker date="1537930330343" expanded="true" signature="1605:3987" ph="##..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,26 +720,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="63" lean-forward="false" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
-          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4626">
-          <caret line="257" column="21" lean-forward="false" selection-start-line="257" selection-start-column="21" selection-end-line="257" selection-end-column="21" />
-          <folding />
+          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <marker date="1538368080783" expanded="true" signature="320:948" ph="do ... end" />
+            <marker date="1538368080783" expanded="true" signature="338:942" ph="do ... end" />
+            <marker date="1538368080783" expanded="true" signature="1142:1201" ph="do ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -848,27 +754,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="35" column="14" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="46" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +765,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3168">
+          <caret line="176" column="1" lean-forward="false" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/main-jquery_i18n.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1474">
+          <caret line="134" column="7" lean-forward="false" selection-start-line="134" selection-start-column="7" selection-end-line="134" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -888,6 +799,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/_home_body.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/_header.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/_reward_header.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6030">
+          <caret line="335" column="28" lean-forward="false" selection-start-line="335" selection-start-column="28" selection-end-line="335" selection-end-column="28" />
+          <folding>
+            <element signature="e#21764#22319#1" expanded="false" />
+            <element signature="e#22487#33482#1" expanded="false" />
+            <element signature="e#33651#35886#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="244" column="14" lean-forward="true" selection-start-line="244" selection-start-column="14" selection-end-line="244" selection-end-column="14" />
+          <folding>
+            <marker date="1538415746742" expanded="true" signature="16983:17972" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
+            <marker date="1538415746742" expanded="true" signature="18005:20184" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18024:19380" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18042:18157" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18084:18149" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18174:18210" ph="{&quot;value&quot;: &quot;##ffffff&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18227:18506" ph="{&quot;type&quot;: &quot;circle&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18273:18335" ph="{&quot;color&quot;: &quot;##000000&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18356:18391" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18410:18498" ph="{&quot;src&quot;: &quot;img/github.svg&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="18525:18712" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18590:18704" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18728:18910" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18790:18902" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="18933:19062" ph="{&quot;color&quot;: &quot;##ffffff&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19078:19374" ph="{&quot;direction&quot;: &quot;none&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19276:19366" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19403:20153" ph="{&quot;detect_on&quot;: &quot;canvas&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19450:19651" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19471:19536" ph="{&quot;mode&quot;: &quot;repulse&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19557:19619" ph="{&quot;mode&quot;: &quot;push&quot;...}" />
+            <marker date="1538415746742" expanded="true" signature="19668:20147" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19686:19788" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19740:19778" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19808:19938" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="19959:20023" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="20041:20080" ph="{...}" />
+            <marker date="1538415746742" expanded="true" signature="20100:20139" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -896,40 +878,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/exchange/index.html.haml">
+    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5419">
-          <caret line="312" column="39" lean-forward="false" selection-start-line="312" selection-start-column="39" selection-end-line="312" selection-end-column="39" />
+        <state relative-caret-position="216">
+          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/exchange_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5760">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/_utils_script.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="226" column="8" lean-forward="false" selection-start-line="226" selection-start-column="8" selection-end-line="226" selection-end-column="8" />
           <folding>
-            <marker date="1538203211635" expanded="true" signature="18063:19052" ph="{&quot;startEvent&quot;: 'DOMContentLoaded'...}" />
-            <marker date="1538203211635" expanded="true" signature="19085:21264" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19104:20460" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19122:19237" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19164:19229" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19254:19290" ph="{&quot;value&quot;: &quot;##ffffff&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="19307:19586" ph="{&quot;type&quot;: &quot;circle&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="19353:19415" ph="{&quot;color&quot;: &quot;##000000&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="19436:19471" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19490:19578" ph="{&quot;src&quot;: &quot;img/github.svg&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="19605:19792" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19670:19784" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19808:19990" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="19870:19982" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="20013:20142" ph="{&quot;color&quot;: &quot;##ffffff&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="20158:20454" ph="{&quot;direction&quot;: &quot;none&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="20356:20446" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="20483:21233" ph="{&quot;detect_on&quot;: &quot;canvas&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="20530:20731" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="20551:20616" ph="{&quot;mode&quot;: &quot;repulse&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="20637:20699" ph="{&quot;mode&quot;: &quot;push&quot;...}" />
-            <marker date="1538203211635" expanded="true" signature="20748:21227" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="20766:20868" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="20820:20858" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="20888:21018" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="21039:21103" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="21121:21160" ph="{...}" />
-            <marker date="1538203211635" expanded="true" signature="21180:21219" ph="{...}" />
+            <marker date="1538368080783" expanded="true" signature="7087:7099" ph="..." />
+            <marker date="1538368080783" expanded="true" signature="36717:36737" ph="..." />
+            <marker date="1538368080783" expanded="true" signature="36805:36823" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/_index_script.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7020">
+          <caret line="824" column="21" lean-forward="true" selection-start-line="824" selection-start-column="21" selection-end-line="824" selection-end-column="21" />
+          <folding>
+            <marker date="1538368080779" expanded="true" signature="29158:29178" ph="..." />
+            <marker date="1538368080779" expanded="true" signature="29242:29260" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exchange/_trade_script.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="98" column="31" lean-forward="false" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tv-chart-widget-init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="149" column="37" lean-forward="true" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

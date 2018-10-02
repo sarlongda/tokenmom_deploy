@@ -6,15 +6,20 @@
 
 # Ignore bundler config.
 /.bundle
-/.idea
+/.idea/*
+.idea/workspace.xml
+.DS_Store
+/.idea/
+.env
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+log/*
+log/
+tmp/*
 !/log/.keep
 !/tmp/.keep
 
