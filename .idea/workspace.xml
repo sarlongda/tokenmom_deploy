@@ -2,7 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/channels/index.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/channels/index.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/04/539e6e61df5381" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/04/539e6e61df5381" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/14/a65b545bd9d1e1" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/14/a65b545bd9d1e1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/16/5cc9437175c201" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/16/5cc9437175c201" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/1b/ea0b9d7b9a48c3" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/1b/ea0b9d7b9a48c3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/36/37a2da16763b99" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/36/37a2da16763b99" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/36/f8179752ecefcf" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/36/f8179752ecefcf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/43/33697847165a82" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/43/33697847165a82" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/4d/3f84441cb91723" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/4d/3f84441cb91723" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5d/1651b046e5340f" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5d/1651b046e5340f" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/60/36c209ad5a6a9d" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/60/36c209ad5a6a9d" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/60/4938d62cca1ccb" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/60/4938d62cca1ccb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6f/7d3c1d699c1cc8" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/6f/7d3c1d699c1cc8" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7f/32dd3ed2abc9c2" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7f/32dd3ed2abc9c2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7f/849c5955456541" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/7f/849c5955456541" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/85/fc631fd257318e" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/85/fc631fd257318e" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/8f/2475f9dc85f305" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/8f/2475f9dc85f305" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/9b/58252c4a1a0bd3" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/9b/58252c4a1a0bd3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a5/604bb1667eaa52" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a5/604bb1667eaa52" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a5/b3c2de0893fb20" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a5/b3c2de0893fb20" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/b1/0a9f0f9da26957" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/b1/0a9f0f9da26957" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/c3/3b568bb323bd9a" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/c3/3b568bb323bd9a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/da/7b371162ac04c3" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/da/7b371162ac04c3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/df/4b8c16404e3784" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/df/4b8c16404e3784" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/ed/75bb12816104d9" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/ed/75bb12816104d9" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f7/62b6697f5b67b8" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f7/62b6697f5b67b8" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -21,14 +47,14 @@
       <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="522">
               <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/index.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -48,14 +74,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="development.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="development.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-              <folding>
-                <marker date="1538507014032" expanded="true" signature="806:1159" ph="if ... end" />
-              </folding>
+            <state relative-caret-position="144">
+              <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -196,7 +220,6 @@
         <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/config/boot.rb" />
         <option value="$PROJECT_DIR$/.ruby-version" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/deploy/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -213,6 +236,7 @@
         <option value="$PROJECT_DIR$/config/cable.yml" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/channels/index.coffee" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
       </list>
     </option>
   </component>
@@ -518,12 +542,12 @@
       <workItem from="1538198556911" duration="2268000" />
       <workItem from="1538366103369" duration="22448000" />
       <workItem from="1538448972273" duration="3566000" />
-      <workItem from="1538455934170" duration="12889000" />
+      <workItem from="1538455934170" duration="13118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185133000" />
+    <option name="totallyTimeSpent" value="185362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-6" width="1871" height="1086" extended-state="6" />
@@ -845,16 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-          <folding>
-            <marker date="1538507014032" expanded="true" signature="806:1159" ph="if ... end" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.2.0/lib/action_cable/helpers/action_cable_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -911,18 +925,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/index.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="522">
           <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/index.coffee">
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="144">
+          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding />
         </state>
       </provider>
