@@ -5,5 +5,4 @@ test:
   adapter: async
 
 production:
-  adapter: redis
-  url: redis://tokenmom.com:6379
+  adapter: async
