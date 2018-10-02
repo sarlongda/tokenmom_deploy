@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/cable.yml" afterPath="$PROJECT_DIR$/config/cable.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-    </list>
+    <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -518,12 +514,12 @@
       <workItem from="1538198556911" duration="2268000" />
       <workItem from="1538366103369" duration="22448000" />
       <workItem from="1538448972273" duration="3566000" />
-      <workItem from="1538455934170" duration="10182000" />
+      <workItem from="1538455934170" duration="10341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182426000" />
+    <option name="totallyTimeSpent" value="182585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-6" width="1871" height="1086" extended-state="6" />
