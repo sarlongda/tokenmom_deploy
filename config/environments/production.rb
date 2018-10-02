@@ -4,14 +4,10 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
   # config.action_cable.url = '/cable'
-  config.action_cable.url = 'wss://tokenmom.com/cable'
+  #config.action_cable.url = 'ws://tokenmom.com/cable'
   config.action_cable.disable_request_forgery_protection = true
-<<<<<<< HEAD
   config.action_cable.url = '/cable/'
   #config.action_cable.allowed_request_origins = [/http:\/\/*/,/https:\/\/*/]
-=======
-  config.action_cable.allowed_request_origins = [/http:\/\/*/,/https:\/\/*/]
->>>>>>> a3be9d6f2d06a96e7e334c4e92e83a13a6df982b
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -32,7 +28,7 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   require 'uglifier'
-  # config.assets.js_compressor = Uglifier.new(harmony: true)
+  config.assets.js_compressor = Uglifier.new(harmony: true)
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
