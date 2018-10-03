@@ -808,7 +808,7 @@
         symbol = localStorage.getItem("select_token");
         base_token = $(".token-info").attr("base_token");
         $(".sell-token-symbol").text(symbol);
-        if($("#trade_workspace").length > 1){
+        if($("#trade_workspace").length ){
             Trade.get_tokens_table();
             draw_orderbook();
             if(base_token == "TM"){
