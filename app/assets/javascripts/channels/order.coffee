@@ -1,5 +1,4 @@
 jQuery(document).on 'turbolinks:load', ->
-    
     App.order = App.cable.subscriptions.create {
         channel:"OrderChannel"
         },
