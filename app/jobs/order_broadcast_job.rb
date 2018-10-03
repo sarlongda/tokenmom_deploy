@@ -3,7 +3,6 @@ class OrderBroadcastJob < ApplicationJob
 
   def perform(type, order)
     # Do something later
-    logger.debug("#####################Order_BroadCast")
     ActionCable.server.broadcast 'order_channel', order: order, type: type
   end
 end
