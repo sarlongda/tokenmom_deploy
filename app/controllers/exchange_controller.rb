@@ -1918,4 +1918,20 @@ class ExchangeController < ApplicationController
       )
     end
   end
+
+  def terms
+    send_file(
+        "#{Rails.root}/public/terms.pdf",
+        filename: 'Tokenmom.com\'s Terms and Conditions.pdf',
+        type: 'application/pdf'
+    )
+  end
+
+  def privacy
+    send_file(
+        "#{Rails.root}/public/privacy.pdf",
+        filename: 'Tokenmom.com\'s Privacy Policy.pdf',
+        type: 'application/pdf'
+    )
+  end
 end
