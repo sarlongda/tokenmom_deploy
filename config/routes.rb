@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/exchange/:trade_pair', to: 'exchange#trade'
   get '/reward', to: 'exchange#reward'
   get '/whitepaper/:lang', to: 'exchange#download_whitepaper'
-  
+  get '/terms', to: 'exchange#terms'
+  get '/privacy', to: 'exchange#privacy'
+
 
   resources :exchange do
     collection do

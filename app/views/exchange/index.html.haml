@@ -244,14 +244,21 @@
             .col-6.col-md-4
               .more-entry-wrap
                 %p.entry-title
-                  %span Terms and Conditions
+                  %span{'data-i18n' => 'tokenmom'} TokenMom
+                .entry-list.text-center
+                  = link_to 'Terms and Conditions', '/terms', download:true, 'data-i18n' => 'terms_and_conditions'
+                  = link_to 'Privacy Policy', '/privacy', download:true, 'data-i18n' => 'privacy_policy'
             .col-6.col-md-4
               .more-entry-wrap
                 %p.entry-title
-                  %span Privacy
+                  %span{'data-i18n' => 'support'} Support
+                .entry-list.text-center
+                  = link_to 'Token Listing', 'https://docs.google.com/forms/d/e/1FAIpQLSefBihzI5YD4kbFQMwAbsDrpGmtW_GFa_RUbY86L5FvqT_VHw/viewform', 'data-i18n' => 'token_listing', :target => '_blank'
+                  = link_to 'Support Center', 'https://tokenmom.freshdesk.com', 'data-i18n' => 'support_center', :target => '_blank'
             .col-6.col-md-4
               .image-entry-wrap
-                %span.image-logo-wrap
+                %p.entry-title
+                  %span{'data-i18n' => 'contact'} Contact
                 .image-entries
                   %a{:href => "https://t.me/tokenmom", :rel => "noopener noreferrer", :target => "_blank"}
                     %span.image-wrap
