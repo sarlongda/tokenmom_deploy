@@ -477,7 +477,6 @@ class ExchangeController < ApplicationController
     
     @user_id = current_user ? current_user.id : nil
   end
-
   def get_users
 
     referral_id  = params[:referral_id]

@@ -22,7 +22,6 @@ jQuery(function($) {
           placeholder: $.i18n('connect_wallet')
         });
       }
-
     }
     
 
