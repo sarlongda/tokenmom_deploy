@@ -16,17 +16,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="exchange_controller.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="exchange_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/exchange_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1422" column="17" lean-forward="false" selection-start-line="1422" selection-start-column="10" selection-end-line="1422" selection-end-column="17" />
+            <state relative-caret-position="804">
+              <caret line="1921" column="0" lean-forward="true" selection-start-line="1921" selection-start-column="0" selection-end-line="1921" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
@@ -440,12 +440,12 @@
       <workItem from="1538448972273" duration="3566000" />
       <workItem from="1538455934170" duration="13577000" />
       <workItem from="1538536002618" duration="6659000" />
-      <workItem from="1538648952569" duration="726000" />
+      <workItem from="1538648952569" duration="752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193206000" />
+    <option name="totallyTimeSpent" value="193232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-6" width="1871" height="1086" extended-state="6" />
@@ -720,6 +720,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -817,18 +818,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/exchange_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1422" column="17" lean-forward="false" selection-start-line="1422" selection-start-column="10" selection-end-line="1422" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="80" lean-forward="false" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/exchange_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="1921" column="0" lean-forward="true" selection-start-line="1921" selection-start-column="0" selection-end-line="1921" selection-end-column="0" />
           <folding />
         </state>
       </provider>
