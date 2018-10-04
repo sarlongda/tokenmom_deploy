@@ -1901,4 +1901,21 @@ class ExchangeController < ApplicationController
     return eth_price
 
   end
+
+  # Download whitepaper
+  def download_whitepaper
+    if params[:lang] == 'eng'
+      send_file(
+          "#{Rails.root}/public/whitepaper_eng_1.1.pdf",
+          filename: 'Whitepaper(eng).pdf',
+          type: 'application/pdf'
+      )
+    else
+      send_file(
+          "#{Rails.root}/public/whitepaper_kor_1.1.pdf",
+          filename: 'Whitepaper(kor).pdf',
+          type: 'application/pdf'
+      )
+    end
+  end
 end

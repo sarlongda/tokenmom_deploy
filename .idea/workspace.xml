@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-    </list>
+    <list default="true" id="09fd8b9d-0702-495c-99f8-3bc09f1f66c8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -443,15 +440,15 @@
       <workItem from="1538448972273" duration="3566000" />
       <workItem from="1538455934170" duration="13577000" />
       <workItem from="1538536002618" duration="6659000" />
-      <workItem from="1538648952569" duration="132000" />
+      <workItem from="1538648952569" duration="726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192612000" />
+    <option name="totallyTimeSpent" value="193206000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="-11" width="1873" height="1092" extended-state="6" />
+    <frame x="49" y="-6" width="1871" height="1086" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
