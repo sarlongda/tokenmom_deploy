@@ -1074,11 +1074,24 @@
             },4000);
 
         },
-        volum_sort:function(direction = 'desc'){
+        volum_sort:function(direction = 'desc',switch_bool = true){
+            
             var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
-            table = document.getElementById("market_table");
+            base_token = $(".token-info").attr("base_token");
+            
+            selected_tab = $(".market-tab .active");
+            
+            if(base_token == "WETH"){
+                table = document.getElementById("market_eth").getElementsByTagName("table")[0]
+            }else if(base_token == "TM"){
+                table = document.getElementById("market_tm").getElementsByTagName("table")[0];
+                
+            }
+            
+            //table = document.getElementById("market_table");
             switching = true;
-            dir = "desc";
+            dir = direction;
+            
             while (switching) {
                 switching = false;
                 rows = table.getElementsByTagName("TR");
