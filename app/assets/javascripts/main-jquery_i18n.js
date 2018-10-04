@@ -97,12 +97,15 @@ jQuery(function($) {
 
   $.i18n().load({
     'en': {
-      'reward': 'Reward',
+      'reward': 'REWARD',
       'tokenmom': 'TOKENMOM',
       'invest_future': 'Invest in Future Value',
       'korea_first_decentral': 'KOREA\'s First Futuristic Real Decentralized Exchage',
       'our_goal_is': 'Our goal is your investment success not ours!',
       'start_trading': 'Start Trading',
+      'buy_tm_token': 'Buy TM Token',
+      'whitepaper_eng': 'Whitepaper(Eng)',
+      'whitepaper_kor': 'Whitepaper(Kor)',
       'advantage': 'ADVANTAGES',
       'no_sign_up_required': 'No Sign Up Required',
       'no_sign_up_required_detail': 'Tokenmom is anonymous and do not need to sign up for trading. It is true decentralized exchange that helps to trade in realtime between individuals by using personal wallets(Metamask, Ledger nano hardware wallet)',
@@ -148,6 +151,10 @@ jQuery(function($) {
       'how_purchase_tm_token_answer': 'Tokenmom does not proceed with ICO etc, which can only be purchased on Tokenmom Exchange.',
       'how_much_trade_fee': 'How much is the trade fee?',
       'how_much_trade_fee_answer': 'Free trading fee for 2 months, After 2 months, the highest fee shall be 0.05% or less',
+      'contact_us': 'Contact Us',
+      'have_question': 'Have questions? We\'re happy to help',
+      'contact_us_with_question': 'Contact us with any questions regarding TokenMom exchange',
+      'send_message': 'Send Message',
 
       //Reward Page
       'tokenmom_reward_system': 'TOKENMOM REWARD SYSTEM',
@@ -262,6 +269,9 @@ jQuery(function($) {
       'korea_first_decentral': '한국 최초의 미래 지향적인 분산 교환',
       'our_goal_is': '우리의 목표는 귀하의 투자 성공입니다.',
       'start_trading': '거래 시작',
+      'buy_tm_token': 'TM토큰 구매',
+      'whitepaper_eng': '백서(영어)',
+      'whitepaper_kor': '백서(한국어)',
       'whitepaper': '백서',
       'advantage': '장점',
       'no_sign_up_required': '가입필요없음',
@@ -310,6 +320,10 @@ jQuery(function($) {
       'how_purchase_tm_token_answer': '별도위 ICO등은 진행하지 않으므로,토큰맘 거래소에서만 구입할수가 있다.',
       'how_much_trade_fee': '거래 수수료는 얼마인가?',
       'how_much_trade_fee_answer': '오픈시 거래소 수수료 2개월간 무료, 2개월뒤 최고 수수료 0.05% 이하',
+      'contact_us': '문의',
+      'have_question': '질문이 있습니까? 기꺼이 도와드리겠습니다.',
+      'contact_us_with_question': '토큰맘 거래소에 관한 문의 사항은 당사에 문의 하십시오.',
+      'send_message': '문자 보내기',
       //Header
       'select_wallet': '지갑선택',
       'login_metamask': '메타마스크에서 로그인',
