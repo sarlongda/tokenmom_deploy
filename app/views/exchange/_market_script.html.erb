@@ -6,7 +6,7 @@
                 let token_pair = that.find(":nth-child(1)").find("div").text();
                 let base_token = token_pair.split("-")[1];
                 let token_contract_addr = that.attr("value");
-                let token_decimals = that.attr("decimals");
+                let token_decimals = that.attr("token_symbol");
                 let token_name = that.find(":nth-child(1)").find("div").attr("name");
                 let token_symbol = that.find(":nth-child(1)").find("div").attr("symbol");
                 $(".token-info").attr("base_token",base_token);

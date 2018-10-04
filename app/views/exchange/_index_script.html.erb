@@ -188,7 +188,15 @@
             price_emt.onclick = function(){price_sort()};
 
             volum_emt = document.getElementById("volum_name");
-            volum_emt.onclick = function(){Trade.volum_sort()};
+            <%# volum_emt.onclick = function(){
+                console.log("volum_name clicked--");
+                Trade.volum_sort();
+            }; %>
+
+            $(document).on('click','#volum_name',function(e){
+                
+                Trade.volum_sort();                
+            });
 
             
             $(document).on('click','#pricechange_name',function(e){                
@@ -462,7 +470,13 @@
 
         filter = input.value.toUpperCase();
 
-        table = document.getElementById("market_table");
+        if(base_token == "WETH"){
+            table = $("#market_eth").find("#market_table").children("tbody");
+        }else if(base_token == "TM"){
+            table = $("#market_tm").find("#market_table").children("tbody");
+        }
+
+        //table = document.getElementById("market_table");
 
         tr = table.getElementsByTagName("tr");
 
@@ -822,8 +836,7 @@
     }
     function draw_orderbook(){
         let symbol = $(".token-info").attr("token_symbol");
-        Trade.get_orders(symbol);
-        
+        Trade.get_orders(symbol);        
     }
     
     
