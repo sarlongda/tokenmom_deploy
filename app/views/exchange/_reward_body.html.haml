@@ -11,7 +11,6 @@
                         %i.fas.fa-hourglass-end
                         %span{"data-i18n" => "pending:"} Pending
                         %span.pending-transaction
-
                         %span.reward-request.disabled{"data-i18n" => "request"} Request
                     .box-content.flex-1
                         .flex.flex-column
@@ -20,13 +19,13 @@
                                     %tr
                                         %th{"data-i18n" => "price"} Price
                                         %th{"data-i18n" => "amount"} Amount                                        
-                                        %th{:style => "text-align: right","data-i18n" => "date"} Date
+                                        %th{:style => "text-align: right","data-i18n" => "time"} Time
                                 %tbody
             .col-md-6.flex.flex-1.flex-column
                 .box.flex.flex-1.flex-column.claimed
                     .box-header
                         %i.fas.fa-hand-holding-usd
-                        %span Claimed:
+                        %span{"data-i18n" => "claimed:"} Claimed:
                         %span
                     .box-content.flex-1
                         .flex.flex-column
@@ -67,8 +66,8 @@
                                 %i.fab.fa-twitter-square{"aria-hidden" => "true"}
                             %a{:href => "http://www.linkedin.com/shareArticle?mini=true&ro=true&title=Tokenmom Referral Program&url=https://www.tokenmom.com/?r=35339374&summary=It pays to have friends!&source=It pays to have friends!&armin=armin", :target => "_blank"}
                                 %i.fab.fa-linkedin{"aria-hidden" => "true"}
-            .col-md-12.reward-wallet-not-connected{:style => "display:none;text-align:center"}
-                %span{:style => "display:block"} You are not connected, please connect your wallet.
+            .col-md-12.reward-wallet-not-connected
+                %span.not-connect-wallet-info{"data-i18n" => "wallet_not_connected"} Wallet is not connected.
                 %a.connect-btn{:href => "/exchange/ZRX-WETH"}
                     %span Connect
         .friends-info.row.flex-container
@@ -94,7 +93,6 @@
                         %i.fas.fa-hand-holding-usd
                         %span Total Commission :
                         %span 
-
                     .box-content.flex-1
                         .flex.flex-column
                             %table.table.friends-reward

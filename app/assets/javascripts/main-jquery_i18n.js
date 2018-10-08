@@ -159,6 +159,8 @@ jQuery(function($) {
       'tokenmom_reward_system': 'TOKENMOM REWARD SYSTEM',
       'with_referral_system': 'WITH REFERRAL SYSTEM',
       'pending:': 'Pending :',
+      'request': 'Request',
+      'claimed:' : 'Claimed :',
 
 
       
@@ -177,13 +179,6 @@ jQuery(function($) {
       'connect_wallet': 'Connect a Wallet',
       'nick_name' : 'Nick Name',
       'wrong_network': 'Warning!! You are on the wrong network.Please open MetaMask and switch over to the Mainnet Ethereum Network.',
-      //Footer
-      'terms_and_conditions': 'Terms and Conditions',
-      'privacy_policy': 'Privacy Policy',
-      'support': 'Support',
-      'token_listing': 'Token Listing',
-      'support_center': 'Support Center',
-      'contact': 'Contact',
       //
       'welcome': 'Welcome!',
       'message_from': '$1 has send you $2 {{plural:$2|message|messages}}. {{gender:$3|He|She}} is waiting for your response!',
@@ -330,6 +325,11 @@ jQuery(function($) {
       'have_question': '질문이 있습니까? 기꺼이 도와드리겠습니다.',
       'contact_us_with_question': '토큰맘 거래소에 관한 문의 사항은 당사에 문의 하십시오.',
       'send_message': '문자 보내기',
+      //Reward page
+      'pending:': '처리중 :',
+      'claimed:': '완료됨 :',      
+      'request': '요청',
+
       //Header
       'select_wallet': '지갑선택',
       'login_metamask': '메타마스크에서 로그인',

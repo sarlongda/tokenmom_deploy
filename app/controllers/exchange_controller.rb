@@ -32,7 +32,8 @@ $hash_function_name = {
   "withdraw" => "0x2e1a7d4d",
   "fillOrder" => "0xbc61394a",
   "batchFillOrKillOrders" => "0x4f150787",
-  "approve" => "0x095ea7b3"
+  "approve" => "0x095ea7b3",
+  "transfer" => "0xa9059cbb",
 }
 # Contract Addresses for ropsten network
 $exchange_contract_addr = "0x479cc461fecd078f766ecc58533d6f69580cf3ac"
@@ -40,6 +41,8 @@ $token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
 $weth_contract_addr = "0xc778417e063141139fce010982780140aa0cd5ab"
 $zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
 $tm_token_addr = "0x375e2DebFf2E48bfB216Cf52826BDE3855C1B88c"
+
+$tm_token_decimals = 8;
 
 
 # Contract Addresses for kovan Network
@@ -831,6 +834,54 @@ class ExchangeController < ApplicationController
     return result
     
   end
+
+
+  def send_tm_token value = 100
+
+    # token_address = '0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d' # ZRX token address
+    contract_address = $tm_token_addr
+    key = Eth::Key.new priv: $server_key
+    decimal = $tm_token_decimals
+    # convert token amount to BigDecimal value
+
+    big_value = value * (decimal ** 10)
+
+    # get nonce count
+    count = $web3.eth.getTransactionCount([key.address,"pending"]).to_i(16)
+    # params
+    spender_address = $token_contract_addr    
+    function_name = '';
+    function_name = "0xa9059cbb" # approve function name
+
+    # make approve function params
+    # spender_address = hash32 $web3.eth.remove_0x_head(spender_address)
+    # function_name.insert(-1,spender_address)
+    # function_name.insert(-1,big_value)
+
+    # tx = Eth::Tx.new({
+    #   value:0,      
+    #   gas_limit: 1100_00,
+    #   gas_price: 20000000000,
+    #   nonce: count,
+    #   to: contract_address,
+    #   data:function_name,
+    # })
+    # tx.sign key
+    # $web3.eth.sendRawTransaction([tx.hex]) 
+    # result = tx.hash
+    # result = $web3.eth.getTransactionByHash tx.hash
+    # return result
+  end
+  def getTokenAllowance token_addr
+    abi = $token_abi
+    # token_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"  # Zrx token address
+    spender_address = $token_contract_addr    
+    exchangeContract = $web3.eth.contract(abi).at(token_addr)
+    balance = exchangeContract.allowance($wallet_address,spender_address)
+    return balance
+
+
+  end
   def getPartialAmount(num,denominator,target)
     amount = ((num * target) / denominator).to_i
     return amount
@@ -868,14 +919,11 @@ class ExchangeController < ApplicationController
       elsif type == 0
         token_address = signed_order[0]["makerTokenAddress"]
       end
-      decimals = getTokenDecimals(token_address)
-      
+      decimals = getTokenDecimals(token_address)    
 
       order_real_amountArray[0] = create_order.amount * ( 10 ** decimals )
       taker_amount = order_real_amountArray[0]
-      # Get Token decimals from Ether block
-      
-      
+      # Get Token decimals from Ether block      
       # Sell Order Case
       if type == 0    
         # Get matching orders  
@@ -1235,7 +1283,12 @@ class ExchangeController < ApplicationController
           else
             update_amount = update_amount.truncate(decimals)
           end
-          update_orders(create_order.id,update_amount)
+
+          if update_amount != 0 
+            update_orders(create_order.id,update_amount)
+          else
+            delete_orders(create_order.id)
+          end
         else
           delete_orders(delete_order[0].id)
         end
@@ -1254,7 +1307,11 @@ class ExchangeController < ApplicationController
           else
             update_amount = update_amount.truncate(decimals)
           end
-          update_orders(update_order[0].id,update_amount)
+          if update_amount != 0
+            update_orders(update_order[0].id,update_amount)
+          else
+            delete_orders(update_order[0].id)
+          end
           trade_amount = update_order[0].amount - update_amount
           create_trade_histories(update_order[0].token_symbol,update_order[0].type,update_order[0].maker_address,create_order.maker_address,update_order[0].price,trade_amount,update_order[0].base_token,result)
         end

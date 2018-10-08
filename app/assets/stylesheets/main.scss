@@ -205,7 +205,7 @@ input:focus{
 		}
 	}
 	.invite-banner{
-		min-height: 100px;
+		min-height: 10px;
 	}
 	.invite-info{
 		a{
@@ -245,7 +245,7 @@ input:focus{
 					.reward-request{
 						float: right;
 						background: #238823;
-						padding: 3px;
+						padding: 5px 12px;
 						border-radius: 5px;
 						cursor: pointer;
 						&.disabled{
@@ -285,11 +285,19 @@ input:focus{
 				font-size: 25px;
 				color: white;
 				background: #22ae7f;
-				padding: 6px;
+				padding: 6px 18px;
 				cursor: pointer;
 				text-decoration: none;
 				border-radius: 4px;
 				border: none;
+			}
+			.reward-wallet-not-connected{
+				display: none;
+				text-align: center;
+				.not-connect-wallet-info{
+					padding:6px 12px;
+					display: block;
+				}
 			}
 		}
 		.friends-info{
