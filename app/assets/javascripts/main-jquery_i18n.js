@@ -32,6 +32,7 @@ jQuery(function($) {
     $.i18n().locale = $(this).data('locale');    
     update_texts();
     //window.tvWidget.setLanguage($(this).data('locale'));
+    Trade.change_metatag($(this).data('locale'));
 
     if ($("#trade_workspace").length) {
       window.tvWidget.remove();

@@ -27,8 +27,7 @@
         if ($("#trade_workspace").length) {
             $(".dropdown-toggle.language-link :nth-child(2)").html(selText);
             $(".dropdown-toggle.language-link").val($(this).val());
-            $(".dropdown-toggle.language-link :nth-child(1)").attr('src',selImg);
-            
+            $(".dropdown-toggle.language-link :nth-child(1)").attr('src',selImg);            
         }
         $(".dropdown-toggle.nav-link").next("ul").toggle();
         
@@ -1147,7 +1146,97 @@
             diff = price - last_price;
             percentage = ((diff / last_price) * 100).toFixed(2);            
             return percentage;
-        }     
+        },     
+        change_metatag(locale) {
+            
+            console.log($("meta[property='og\\:url']").attr("content"));
+            console.log($('link[rel=alternate]').attr("hreflang"));
+            console.log(locale);
+
+            if(locale == "en"){   
+                $(document).attr("title", "TOKENMOM - Decentralized Ethereum Based TOKEN Exchange - TM COIN");
+
+                //Change link info
+                $('link[rel=alternate]').attr("hreflang","en-us");
+
+                //Change meta info
+                $("meta[name='description']").attr('content',"Tokenmom is Real Decentralized Token Exchange(DEX) TM COIN");
+                $("meta[name='keywords']").attr('content',"decentralized exchange,idex,etherdelta,forkdelta,tokenmom,tm token,tm coin,myetherwallet,metamask,dex");
+                $("meta[name='twitter:site_name']").attr('content',"Tokenmom - Decentralized Exchange(DEX) TM COIN");
+                $("meta[name='twitter:title']").attr('content',"Tokenmom - Decentralized Exchange(DEX) TM COIN");
+                $("meta[name='twitter:description']").attr('content',"Tokenmom - Decentralized Exchange(DEX) TM COIN");
+                $("meta[name='twitter:locale']").attr('content',"en_us");
+
+                //Change meta property
+                $("meta[property='og\\:site_name'").attr('content',"Tokenmom - Decentralized Exchange(DEX) TM COIN");               
+                $("meta[property='og\\:title'").attr('content',"Tokenmom - Decentralized Exchange(DEX) TM COIN");               
+                $("meta[property='og\\:description'").attr('content',"Tokenmom - Decentralized Exchange(DEX) TM COIN");               
+                $("meta[property='og\\:locale'").attr('content',"en_us");             
+
+            }else if(locale == "ko"){
+                //Change site tile
+                $(document).attr("title", "토큰맘 - 이더리움 기반 개인간 탈중앙화거래소 TM코인");
+
+                //Change link info
+                $('link[rel=alternate]').attr("hreflang","ko-kr");
+
+                //Change meta info
+                $("meta[name='description']").attr('content',"국내 최초 이더리움기반 탈중앙화거래소로 개인간 가상화폐 토큰과 코인거래 TM코인");
+                $("meta[name='keywords']").attr('content',"탈중앙화거래소,TM토큰,tm코인,아이덱스,이더델타,포크델타,토큰맘,tokenmom,가상화폐거래소,토큰구매,코인구매,토큰구매방법,마이이더왈렛,메타마스크,myetherwallet,metamask");
+                $("meta[name='twitter:site_name']").attr('content',"토큰맘 - 탈중앙화거래소 TM코인");
+                $("meta[name='twitter:title']").attr('content',"토큰맘 - 탈중앙화거래소 TM코인");
+                $("meta[name='twitter:description']").attr('content',"토큰맘 - 탈중앙화거래소 TM코인");
+                $("meta[name='twitter:locale']").attr('content',"ko_kr");
+
+                //Change meta property
+                $("meta[property='og\\:site_name'").attr('content',"토큰맘 - 탈중앙화거래소 TM코인");               
+                $("meta[property='og\\:title'").attr('content',"토큰맘 - 탈중앙화거래소 TM코인");               
+                $("meta[property='og\\:description'").attr('content',"탈중앙화거래소로 개인간 가상화폐 토큰과 코인 거래 - TM코인");               
+                $("meta[property='og\\:locale'").attr('content',"ko_kr");               
+
+            }else if(locale == "ja") {
+                $(document).attr("title", "TOKENMOM  - 分散型エテリアムベ?スのTOKENエクスチェンジ -  TM COIN");
+
+                //Change link info
+                $('link[rel=alternate]').attr("hreflang","ja-jp");
+
+                //Change meta info
+                $("meta[name='description']").attr('content',"Tokenmomは、?在する分散型ト?クンエクスチェンジ（DEX）TM COIN");
+                $("meta[name='keywords']").attr('content',"decentralized exchange,idex,etherdelta,forkdelta,tokenmom,tm token,tm coin,myetherwallet,metamask,dex");
+                $("meta[name='twitter:site_name']").attr('content',"Tokenmom  - 分散型Exchange（DEX）TM COIN");
+                $("meta[name='twitter:title']").attr('content',"Tokenmom  - 分散型Exchange（DEX）TM COIN");
+                $("meta[name='twitter:description']").attr('content',"Tokenmom  - 分散型Exchange（DEX）TM COIN");
+                $("meta[name='twitter:locale']").attr('content',"ja_jp");
+
+                //Change meta property
+                $("meta[property='og\\:site_name'").attr('content',"Tokenmom  - 分散型Exchange（DEX）TM COIN");               
+                $("meta[property='og\\:title'").attr('content',"Tokenmom  - 分散型Exchange（DEX）TM COIN");               
+                $("meta[property='og\\:description'").attr('content',"Tokenmom  - 分散型Exchange（DEX）TM COIN");               
+                $("meta[property='og\\:locale'").attr('content',"ja_jp");
+
+            }else if(locale == "zh"){
+                $(document).attr("title", "TOKENMOM - 基於分佈式以太坊的TOKEN交換 - TM COIN");
+
+                //Change link info
+                $('link[rel=alternate]').attr("hreflang","zh-cn");
+
+                //Change meta info
+                $("meta[name='description']").attr('content',"Tokenmom是Real Decentralized Token Exchange（DEX）TM COIN");
+                $("meta[name='keywords']").attr('content',"decentralized exchange,idex,etherdelta,forkdelta,tokenmom,tm token,tm coin,myetherwallet,metamask,dex");
+                $("meta[name='twitter:site_name']").attr('content',"TOKENMOM - 基於分佈式以太坊的TOKEN交換 - TM COIN");
+                $("meta[name='twitter:title']").attr('content',"TOKENMOM - 基於分佈式以太坊的TOKEN交換 - TM COIN");
+                $("meta[name='twitter:description']").attr('content',"TOKENMOM - 基於分佈式以太坊的TOKEN交換 - TM COIN");
+                $("meta[name='twitter:locale']").attr('content',"zh_cn");
+
+                //Change meta property
+                $("meta[property='og\\:site_name'").attr('content',"TOKENMOM - 基於分佈式以太坊的TOKEN交換 - TM COIN");               
+                $("meta[property='og\\:title'").attr('content',"TOKENMOM - 基於分佈式以太坊的TOKEN交換 - TM COIN");               
+                $("meta[property='og\\:description'").attr('content',"TOKENMOM - 基於分佈式以太坊的TOKEN交換 - TM COIN");               
+                $("meta[property='og\\:locale'").attr('content',"zh_cn");      
+
+            }
+
+        }
 
     }
     

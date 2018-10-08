@@ -7,10 +7,7 @@
                 var qrcode = new QRCode(document.getElementById("qrcode"),{
                     width  : 100,
                     height  : 100
-
-                });
-                            
-                
+                });              
                 $.ajax({
                     url: '/user_sessions/get_user',
                     type: 'GET',
@@ -36,8 +33,6 @@
                                     referral_id: response.referral_id
                                 },
                                 success: function (response) { 
-                                    console.log("=============");
-                                    console.log(response.refer_users);
                                     if(response.refer_users){
                                         draw_refer_users(response.refer_users);
                                     }                                  
@@ -45,7 +40,6 @@
                                 }
                             });
                         }else{
-                            console.log("-----------elese--")
                             $(".reward-wallet-not-connected").show(); 
                             $(".reward-wallet-connected").hide(); 
                         }
@@ -123,7 +117,6 @@
 
             });
         });
-
         function draw_refer_users(users){            
             console.log("draw-refer users");
             let tag = $(".friends").children("tbody");
