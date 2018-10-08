@@ -8,9 +8,9 @@ let http_link = "https://ropsten.etherscan.io/";
 // Ropsten Net
 let wethAddress = "0xc778417e063141139fce010982780140aa0cd5ab";
 const zrxAddress = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d";
-const tmAddress = "0x375e2DebFf2E48bfB216Cf52826BDE3855C1B88c";
+const tmAddress = "0x91495D6969120fc016BB687EaD5F5cE56F135504";
 const weth_decimals = 18;
-const tm_decimals = 8;
+const tm_decimals = 18;
 
 let max_trading_eth = 20;
 let max_trading_tm = 10000000;

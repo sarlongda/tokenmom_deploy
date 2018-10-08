@@ -591,8 +591,6 @@ class ExchangeController < ApplicationController
     abi = $token_abi
     myContract = $web3.eth.contract(abi)
     contract_instance = myContract.at($tm_token_addr)
-    
-
 
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
