@@ -495,7 +495,7 @@
                     let tm_contract = web3.eth.contract(contract_abi).at(tm_contract_addr);
                     tm_contract.balanceOf(currentWalletAddress,(error,balance) => {
                         tm_balance = (balance.toNumber() / Math.pow(10,tm_decimals)).toFixed(8);
-                        let tm_available = parseFloat(tm_balance - order_tm_balance.toFixed(4)).toFixed(6);
+                        let tm_available = parseFloat(tm_balance - order_tm_balance.toFixed(4)).toFixed(8);
                         if(tm_available < 0) {
                             tm_available = "0.000000";
                         }
@@ -831,13 +831,13 @@
             }
         },
         get_tokens_table:function (){
-            let symbol = localStorage.getItem("select_token") || "ZRX"; 
+            //let symbol = localStorage.getItem("select_token") || "ZRX"; 
             symbol = $(".token-info").attr("token_symbol");
             base_token = $(".token-info").attr("base_token"); 
             
             let token_addr = localStorage.getItem("select_contract") || zrxAddress;     
             data = {
-                base_token:"WETH",
+                base_token:base_token,
                 token_symbol:symbol,
                 token_address:token_addr
             };
@@ -1127,23 +1127,7 @@
             let token_contract_addr = $(".contract-address").children("a").attr("value");
             let token_last_price = $(".trade-info-number.last-price").children("strong").children("strong").children("span").text().split(" ")[0];
             let base_token = $(".token-info").attr("base_token");
-            <%# if(parseFloat(token_last_price) == 0){
-                //$("#trade .price").val("");    
-                $(".price-buy").val("");
-                $(".price-sell").val("");
-                $(".price-buy").attr('data-lock','true');
-                $(".price-sell").attr('data-lock','true');  
-                          
-            }else{
-                //$("#trade .price").val(token_last_price);
-                $(".price-buy").val(token_last_price);
-                $(".price-sell").val(token_last_price);                    
-                // Change price lock function                    
-                $(".price-buy").attr('data-lock','false');
-                $(".price-sell").attr('data-lock','false');  
-                $(".price-buy").trigger('change');             
-            }                 %>
-            //Trade.get_token_amount(token_contract_addr,base_token);
+           
             Trade.draw_quick_balance();
         },
         removeTrailingZeros(value) {
