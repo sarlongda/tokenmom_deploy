@@ -40,9 +40,9 @@ $exchange_contract_addr = "0x479cc461fecd078f766ecc58533d6f69580cf3ac"
 $token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
 $weth_contract_addr = "0xc778417e063141139fce010982780140aa0cd5ab"
 $zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
-$tm_token_addr = "0x375e2DebFf2E48bfB216Cf52826BDE3855C1B88c"
+$tm_token_addr = "0x91495D6969120fc016BB687EaD5F5cE56F135504"
 
-$tm_token_decimals = 8;
+$tm_token_decimals = 18;
 
 
 # Contract Addresses for kovan Network

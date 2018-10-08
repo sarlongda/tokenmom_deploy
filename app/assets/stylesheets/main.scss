@@ -1548,6 +1548,7 @@ input:focus{
 						tr {
 							width: 100%;
 							display: inline-block;
+							padding-right: 5px;
 						}
 						th {
 							vertical-align: middle;
@@ -1562,6 +1563,7 @@ input:focus{
 								width: 10%;
 								float: right;								
 								padding-top: 8px;
+								padding-right: 0px;
 							}
 						}
 					}
@@ -1572,6 +1574,7 @@ input:focus{
 						cursor: pointer;
 						tr {
 							display: block;
+							padding-right: 5px;
 							td {
 								width: 21%;
 								display: inline-block;
