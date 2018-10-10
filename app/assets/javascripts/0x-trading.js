@@ -314,7 +314,7 @@ jQuery(function($) {
                     document.getElementById('metamask_logoutted').style.display = "none";
                 }
             }
-        }
+        }        
         load_js();
     });       
 });

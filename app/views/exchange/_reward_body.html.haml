@@ -12,14 +12,14 @@
                         %span{"data-i18n" => "pending:"} Pending
                         %span.pending-transaction
                         %span.reward-request.disabled{"data-i18n" => "request"} Request
-                    .box-content.flex-1
-                        .flex.flex-column
+                    .box-content.flex-1{:style => "min-height:350px;overflow-y:auto"}
+                        .flex.flex-1.flex-column
                             %table.table.reward-pending
                                 %thead
                                     %tr
-                                        %th{"data-i18n" => "price"} Price
-                                        %th{"data-i18n" => "amount"} Amount                                        
-                                        %th{:style => "text-align: right","data-i18n" => "time"} Time
+                                        %th{"data-i18n" => "time"} Time                                       
+                                        %th{:style => "text-align: right","data-i18n" => "volume"} Volume
+                                        %th{:style => "text-align: right","data-i18n" => "tm_point"} TM Point
                                 %tbody
             .col-md-6.flex.flex-1.flex-column
                 .box.flex.flex-1.flex-column.claimed
@@ -31,11 +31,10 @@
                         .flex.flex-column
                             %table.table.reward-claimed
                                 %thead
-                                    %tr
-                                        %th Price
-                                        %th Amount
-                                        %th Date
-                                        %th State
+                                    %tr                                        
+                                        %th{"data-i18n" => "time"} Time
+                                        %th{:style => "text-align: right","data-i18n" => "amount"} Amount
+                                        %th{:style => "text-align: right","data-i18n" => "state"} State
                                 %tbody
         .owner-info.row            
             .col-md-12.row.reward-wallet-connected                
@@ -46,19 +45,19 @@
                 .col-sm-9
                     .row
                         .col-sm-3
-                            My Referral ID: 
+                            %span{"data-i18n" => "my_referral_id"} My Referral ID: 
                         .col-sm-9.referral-id
                             %span 12346532
                     .row
                         .col-sm-3
-                            Referral Link:
+                            %span{"data-i18n" => "referral_link"} Referral Link:
                         .col-sm-7.referral-link
                             %input{:readonly => "",:value => "https://tokenmom.com/?r=1234532",:style => "width:80%"}
                             .copy-btn
                                 %i.fa.fa-copy
                     .row
                         .col-sm-3
-                            %span SHARE:
+                            %span{"data-i18n" => "share"} SHARE:
                         .col-sm-9.social-share
                             %a.facebook{:onclick => "javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=https://tokenmom.com?r=12345678&amp;t=Tokenmom referral system','_blank','width=800, height=500,top=200,left=300');void(0);"}
                                 %i.fab.fa-facebook{"aria-hidden" => "true"}        
@@ -69,13 +68,13 @@
             .col-md-12.reward-wallet-not-connected
                 %span.not-connect-wallet-info{"data-i18n" => "wallet_not_connected"} Wallet is not connected.
                 %a.connect-btn{:href => "/exchange/ZRX-WETH"}
-                    %span Connect
+                    %span{"data-i18n" => "connect"} Connect
         .friends-info.row.flex-container
             .col-md-6.flex.flex-1
                 .box.flex.flex-1.flex-column
                     .box-header
                         %i.fas.fa-users
-                        %span Total friends :
+                        %span{"data-i18n" => "total_friends"} Total friends :
                         %span.total-friends-number 
 
                     .box-content.flex-1
@@ -83,22 +82,23 @@
                             %table.table.friends
                                 %thead
                                     %tr
-                                        %th Referral ID
-                                        %th{:style => "text-align:right"} Date
+                                        %th{"data-i18n" => "referral_id"} Referral ID
+                                        %th{:style => "text-align:right","data-i18n" => "time"} Time
                                 %tbody
 
             .col-md-6.flex.flex-1.flex-column
                 .box.flex.flex-1.flex-column
                     .box-header
                         %i.fas.fa-hand-holding-usd
-                        %span Total Commission :
+                        %span{"data-i18n" => "total_commission"} Total Commission :
                         %span 
                     .box-content.flex-1
                         .flex.flex-column
                             %table.table.friends-reward
                                 %thead
-                                    %tr
-                                        %th Commission
-                                        %th{:style => "text-align:right"} Date
+                                    %tr                                        
+                                        %th{"data-i18n" => "time"} Time
+                                        %th{:style => "text-align:right","data-i18n" => "referral_id"} Referral ID
+                                        %th{:style => "text-align:right","data-i18n" => "commission"} Commission
                                 %tbody
     .invite-rule

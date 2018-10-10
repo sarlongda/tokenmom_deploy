@@ -162,9 +162,15 @@ jQuery(function($) {
       'pending:': 'Pending :',
       'request': 'Request',
       'claimed:' : 'Claimed :',
-
-
-      
+      'my_referral_id': 'My Referral ID :',
+      'referral_link': 'Referral Link :',
+      'total_friends': 'Total friends : ',
+      'referral_id': 'Referral ID',
+      'total_commission': 'Total Commission : ',
+      'commission': 'Commission ',
+      'share': 'SHARE ',
+      'volume' : 'Volume',
+      'tm_point' : 'TM Point',    
       //Header
       'select_wallet': 'Select Wallet',
       'login_metamask': 'Login to MetaMask',
@@ -330,6 +336,15 @@ jQuery(function($) {
       'pending:': '처리중 :',
       'claimed:': '완료됨 :',      
       'request': '요청',
+      'my_referral_id': '내 추천 ID :',
+      'referral_link': '추천 링크 :',
+      'total_friends': '총 친구수 : ',
+      'referral_id': '추천 ID',
+      'total_commission': '총 수수료 : ',
+      'commission': '수수료 ',
+      'share': '공유 :',
+      'volume': '거래량',
+      'tm_point': 'TM 포인트',
 
       //Header
       'select_wallet': '지갑선택',

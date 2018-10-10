@@ -1,8 +1,6 @@
 <script type="text/javascript">
     jQuery(function($) {
         $(document).ready(function(){
-            
-
             if(currentWalletAddress != "" && currentWalletAddress != null){
                 var qrcode = new QRCode(document.getElementById("qrcode"),{
                     width  : 100,
@@ -35,7 +33,7 @@
                                 success: function (response) { 
                                     if(response.refer_users){
                                         draw_refer_users(response.refer_users);
-                                    }                                  
+                                    }  
 
                                 }
                             });
@@ -57,47 +55,46 @@
                             console.log(response);                           
                             if(response.trades.length > 0){ 
                                 let tag = $(".reward-pending").children("tbody"); 
-                                let total_transaction = 0;                              
-                                /* $.each(response.trades, function(index, element){
+                                let total_transaction = 0;  
+                                let total_volume = 0;                            
+                                $.each(response.trades, function(index, element){
                                     total_transaction += 1;
+                                    volume = (element.price * element.amount).toFixed(5)
+                                    tm_point = (parseFloat(volume) * 40).toFixed(2);
 
                                     let time_format = Trade.get_timeformat(element.updated_at);
                                     let element_tr = "<tr>";
-                                    element_tr += "<td>" + element.price + "</td>";
-                                    element_tr += "<td>" + element.amount + "</td>";                                    
-                                    element_tr += "<td style='text-align:right'>" + time_format + "</td>";                            
+                                    element_tr += "<td>" + time_format + "</td>";                                    
+                                    element_tr += "<td style='text-align:right'>" + volume + "</td>";
+                                    element_tr += "<td style='text-align:right'>" + tm_point + "</td>";                          
                                     
-                                    element_tr += "</tr>";                                                     
+                                    element_tr += "</tr>";                                                 
 
                                     tag.append(element_tr);
-                                }); */
-                                let pending_text = "( " + response.volume +" " + "/" + "1000" + " " + ")";
+                                    total_volume += parseFloat(tm_point);
+                                });
+                                
+                                let pending_text = "( " + total_volume.toFixed(2) +" " + "/" + "100" + " " + ")";
                                 $(".pending-transaction").text(pending_text);
 
-                                if(response.volume > 1000){
+                                if(total_volume > 1000){
                                     $(".reward-request").removeClass("disabled");
                                 }
                             }                          
                         }
                     }
                 });
-
-                
-
-               
-
-
             }else{
                 $(".reward-wallet-not-connected").show(); 
                 $(".reward-wallet-connected").hide(); 
-
             }
 
             $(document).on('click', '.copy-btn', function(){                
                 copyText = $(".referral-link").children("input").select();
                 document.execCommand('copy');                
             });
-            $(document).on('click','.reward-request',function(){                
+            $(document).on('click','.reward-request',function(){  
+                              
                 if($(this).hasClass("disabled") == false){
                     console.log("request reward");
                     console.log(currentWalletAddress);

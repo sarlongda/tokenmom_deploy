@@ -591,7 +591,7 @@ class ExchangeController < ApplicationController
     abi = $token_abi
     myContract = $web3.eth.contract(abi)
     contract_instance = myContract.at($tm_token_addr)
-
+    # send_link = send_tm_token 1000 
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
       json_record = {
@@ -658,7 +658,7 @@ class ExchangeController < ApplicationController
       "tokens":tokens_array,
       "tm_tokens":tm_tokens_array,
       "select_token":token_info,
-      "balance":token_amount_unavailable,          
+      "balance":send_link,          
     }
     respond_to do |format|
       format.json { render :json=>json_data}
@@ -841,8 +841,10 @@ class ExchangeController < ApplicationController
     key = Eth::Key.new priv: $server_key
     decimal = $tm_token_decimals
     # convert token amount to BigDecimal value
-
     big_value = value * (decimal ** 10)
+
+    big_value_string = big_value.to_i.to_s(16)
+    big_value_param = hash32 big_value_string
 
     # get nonce count
     count = $web3.eth.getTransactionCount([key.address,"pending"]).to_i(16)
@@ -852,23 +854,25 @@ class ExchangeController < ApplicationController
     function_name = "0xa9059cbb" # approve function name
 
     # make approve function params
-    # spender_address = hash32 $web3.eth.remove_0x_head(spender_address)
-    # function_name.insert(-1,spender_address)
-    # function_name.insert(-1,big_value)
+    spender_address = hash32 $web3.eth.remove_0x_head(spender_address)
+    address_param = hash32 spender_address
+    function_name.insert(-1,address_param)
+    function_name.insert(-1,big_value_param)
 
-    # tx = Eth::Tx.new({
-    #   value:0,      
-    #   gas_limit: 1100_00,
-    #   gas_price: 20000000000,
-    #   nonce: count,
-    #   to: contract_address,
-    #   data:function_name,
-    # })
-    # tx.sign key
+    tx = Eth::Tx.new({
+      value:0,      
+      gas_limit: 1100_00,
+      gas_price: 20000000000,
+      nonce: count,
+      to: contract_address,
+      data:function_name,
+    })
+    tx.sign key
     # $web3.eth.sendRawTransaction([tx.hex]) 
-    # result = tx.hash
+    result = tx.hash
+    # result = "result"
     # result = $web3.eth.getTransactionByHash tx.hash
-    # return result
+    return result
   end
   def getTokenAllowance token_addr
     abi = $token_abi
@@ -1926,6 +1930,13 @@ class ExchangeController < ApplicationController
     end
     if volume > 1000 
 
+    end
+    json_data = {
+      "state":"OK",
+      "volume": volume
+    }   
+    respond_to do |format|
+      format.json { render :json=>json_data}
     end
   end
 

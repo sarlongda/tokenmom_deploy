@@ -1494,7 +1494,7 @@ input:focus{
 			flex-direction: column;
 			#market-status{
 				min-height: 190px;
-				flex-grow: 3;
+				flex-grow: 1;
 				.box-header {
 					border: none;
 					margin-bottom: 0;					
@@ -1597,7 +1597,7 @@ input:focus{
 				
 			}
 			#social {
-				flex-grow: 4;
+				flex-grow: 1;
 				.tab-handles{
 					min-height: 33px;
 				}
