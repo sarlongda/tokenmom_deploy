@@ -26,7 +26,7 @@
                     .box-header
                         %i.fas.fa-hand-holding-usd
                         %span{"data-i18n" => "claimed:"} Claimed:
-                        %span
+                        %span.total-claimed-amount
                     .box-content.flex-1
                         .flex.flex-column
                             %table.table.reward-claimed
@@ -34,7 +34,7 @@
                                     %tr                                        
                                         %th{"data-i18n" => "time"} Time
                                         %th{:style => "text-align: right","data-i18n" => "amount"} Amount
-                                        %th{:style => "text-align: right","data-i18n" => "state"} State
+                                        
                                 %tbody
         .owner-info.row            
             .col-md-12.row.reward-wallet-connected                
@@ -77,7 +77,7 @@
                         %span{"data-i18n" => "total_friends"} Total friends :
                         %span.total-friends-number 
 
-                    .box-content.flex-1
+                    .box-content.flex-1{:style => "min-height:350px;overflow-y:auto"}
                         .flex.flex-column
                             %table.table.friends
                                 %thead
@@ -86,13 +86,13 @@
                                         %th{:style => "text-align:right","data-i18n" => "time"} Time
                                 %tbody
 
-            .col-md-6.flex.flex-1.flex-column
+            .col-md-6.flex.flex-1
                 .box.flex.flex-1.flex-column
                     .box-header
                         %i.fas.fa-hand-holding-usd
                         %span{"data-i18n" => "total_commission"} Total Commission :
-                        %span 
-                    .box-content.flex-1
+                        %span.total-commission-value
+                    .box-content.flex-1{:style => "min-height:350px;overflow-y:auto"}
                         .flex.flex-column
                             %table.table.friends-reward
                                 %thead

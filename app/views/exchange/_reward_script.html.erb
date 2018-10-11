@@ -14,7 +14,8 @@
                         wallet_address: currentWalletAddress
                     },
                     success: function (response) {                                            
-                        if(response){                             
+                        if(response != null){       
+                            //console.log(response);                      
                             $(".referral-id").children("span").text(response.referral_id);
                             let link = "https://tokenmom.com/?r=" + response.referral_id;
                             $(".reward-wallet-not-connected").hide(); 
@@ -23,67 +24,17 @@
                             facebook_link = "javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=https://tokenmom.com?r=" + response.referral_id + "&amp;t=Tokenmom referral system','_blank','width=800,height = 500,top=200, left=300');void(0)";
                             $(".social-share").children(".facebook").attr("onclick",facebook_link);
                             qrcode.makeCode(response.referral_id);
-                            $.ajax({
-                                url: '/exchange/get_users',
-                                type: 'POST',
-                                dataType: 'json',
-                                data: {                                    
-                                    referral_id: response.referral_id
-                                },
-                                success: function (response) { 
-                                    if(response.refer_users){
-                                        draw_refer_users(response.refer_users);
-                                    }  
-
-                                }
-                            });
+                            //draw referral tables
+                            draw_referral_tables(response.referral_id)
+                            //draw reward table;
+                            draw_reward_tables(currentWalletAddress);                            
                         }else{
                             $(".reward-wallet-not-connected").show(); 
                             $(".reward-wallet-connected").hide(); 
                         }
                     }
                 });
-                $.ajax({
-                    url: '/exchange/get_reward',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        wallet_address: currentWalletAddress
-                    },
-                    success: function (response) {                        
-                        if(response){  
-                            console.log(response);                           
-                            if(response.trades.length > 0){ 
-                                let tag = $(".reward-pending").children("tbody"); 
-                                let total_transaction = 0;  
-                                let total_volume = 0;                            
-                                $.each(response.trades, function(index, element){
-                                    total_transaction += 1;
-                                    volume = (element.price * element.amount).toFixed(5)
-                                    tm_point = (parseFloat(volume) * 40).toFixed(2);
-
-                                    let time_format = Trade.get_timeformat(element.updated_at);
-                                    let element_tr = "<tr>";
-                                    element_tr += "<td>" + time_format + "</td>";                                    
-                                    element_tr += "<td style='text-align:right'>" + volume + "</td>";
-                                    element_tr += "<td style='text-align:right'>" + tm_point + "</td>";                          
-                                    
-                                    element_tr += "</tr>";                                                 
-
-                                    tag.append(element_tr);
-                                    total_volume += parseFloat(tm_point);
-                                });
-                                
-                                let pending_text = "( " + total_volume.toFixed(2) +" " + "/" + "100" + " " + ")";
-                                $(".pending-transaction").text(pending_text);
-
-                                if(total_volume > 1000){
-                                    $(".reward-request").removeClass("disabled");
-                                }
-                            }                          
-                        }
-                    }
-                });
+                
             }else{
                 $(".reward-wallet-not-connected").show(); 
                 $(".reward-wallet-connected").hide(); 
@@ -97,7 +48,7 @@
                               
                 if($(this).hasClass("disabled") == false){
                     console.log("request reward");
-                    console.log(currentWalletAddress);
+                    //console.log(currentWalletAddress);
                     $.ajax({
                         url: '/exchange/request_reward',
                         type: 'POST',
@@ -105,8 +56,9 @@
                         data: {                                    
                             wallet_addr: currentWalletAddress
                         },
-                        success: function (data) {                          
-                            console.log("success ----");
+                        success: function (data) { 
+                            draw_reward_tables(currentWalletAddress);      
+                            
                         }
                     });
 
@@ -114,6 +66,91 @@
 
             });
         });
+
+        function draw_reward_tables(wallet_address){
+            $.ajax({
+                url: '/exchange/get_reward',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    wallet_address: wallet_address
+                },
+                success: function (response) {                        
+                    if(response){  
+                        console.log(response);                                      
+                        draw_reward_request(response.trades);                                        
+                        draw_claimed(response.claimed);
+                    }
+                }
+            });
+        }
+        function draw_referral_tables(referral_id){
+            $.ajax({
+                url: '/exchange/get_users',
+                type: 'POST',
+                dataType: 'json',
+                data: {                                    
+                    referral_id: referral_id
+                },
+                success: function (response) { 
+                    if(response.refer_users){
+                        draw_refer_users(response.refer_users);
+
+                        draw_refer_commissions(response.commissions);
+                       
+                    } 
+                }
+            });           
+        }
+        function draw_refer_commissions(commissions){
+            console.log(commissions);
+            let tag = $(".friends-reward").children("tbody");
+            tag.html(""); 
+            total_volume = 0
+            $.each(commissions, function(index, element){
+                
+                volume = (element.price * element.amount).toFixed(5)
+                tm_point = (parseFloat(volume) * 40 / 10).toFixed(2);
+                
+                let time_format = Trade.get_timeformat(element.time);
+                let element_tr = "<tr>";
+                element_tr += "<td>" + time_format + "</td>";                                    
+                element_tr += "<td style='text-align:right'>" + element.referral_id + "</td>";
+                element_tr += "<td style='text-align:right'>" + tm_point + "</td>";                                  
+                element_tr += "</tr>";
+                tag.append(element_tr);
+                total_volume += parseFloat(tm_point);
+                
+            });
+
+            $(".total-commission-value").text(total_volume.toFixed(2) + " TM");    
+
+        }
+        function draw_reward_request(trades) {
+            let tag = $(".reward-pending").children("tbody");
+            tag.html(""); 
+            let total_transaction = 0;  
+            let total_volume = 0;                            
+            $.each(trades, function(index, element){
+                total_transaction += 1;
+                volume = (element.price * element.amount).toFixed(5)
+                tm_point = (parseFloat(volume) * 40).toFixed(2);
+                let time_format = Trade.get_timeformat(element.updated_at);
+                let element_tr = "<tr>";
+                element_tr += "<td>" + time_format + "</td>";                                    
+                element_tr += "<td style='text-align:right'>" + volume + "</td>";
+                element_tr += "<td style='text-align:right'>" + tm_point + "</td>";                                  
+                element_tr += "</tr>";
+                tag.append(element_tr);
+                total_volume += parseFloat(tm_point);
+            });                                
+            let pending_text = "( " + total_volume.toFixed(2) +" " + "/" + "100" + " " + ")";
+            $(".pending-transaction").text(pending_text);
+            if(total_volume > 100){
+                $(".reward-request").removeClass("disabled");
+            }
+
+        }
         function draw_refer_users(users){            
             console.log("draw-refer users");
             let tag = $(".friends").children("tbody");
@@ -121,7 +158,6 @@
             $.each(users, function(index, element){
                 console.log("each-draw-refer users");
                 total_users += 1;
-
                 let each_tag = "<tr>";
 
                 let time_format = Trade.get_timeformat(element.created_at);
@@ -133,6 +169,26 @@
             });
 
             $(".total-friends-number").text(total_users);
+
+        }
+
+        function draw_claimed(claimed) {
+            let tag = $(".reward-claimed").children("tbody");
+            tag.html("");
+            total_volume = 0;
+
+            $.each(claimed, function(index, element){   
+                console.log(element)             
+                let time_format = Trade.get_timeformat(element.created_at);
+                let element_tr = "<tr>";
+                element_tr += "<td>" + time_format + "</td>";                                    
+                element_tr += "<td style='text-align:right'>" + element.amount + "</td>";
+                                                  
+                element_tr += "</tr>";
+                tag.append(element_tr);
+                total_volume += parseFloat(element.amount);
+            });
+            $(".total-claimed-amount").text(total_volume); 
 
         }
     });

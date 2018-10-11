@@ -20,7 +20,7 @@ require "web3/eth/etherscan"
 require "web3/eth/rpc"
 require "ethereum.rb"
 
-$reward_ratio = 100
+$reward_ratio = 40
 $web3 = Web3::Eth::Rpc.new host: 'ropsten.infura.io',
   port: 443,  
   connect_options: {
@@ -481,15 +481,44 @@ class ExchangeController < ApplicationController
     @user_id = current_user ? current_user.id : nil
   end
   def get_users
-
     referral_id  = params[:referral_id]
     refer_users = User.where("recommended_id = ?", referral_id).order(created_at: :asc)
-    
 
-    json_data = {
-      "state":"OK",
-      "refer_users":refer_users
-    }    
+    if refer_users.length > 0
+      wallet = Array.new
+      refer_users.each_with_index do |refer_user, index|       
+        wallet[index] = refer_user.wallet_address        
+      end
+      commissions = TradeHistory.where("base_token = ? AND maker_address = ?","WETH",wallet[0]).order(created_at: :asc).first(100)     
+
+      commission_array = Array.new
+      commissions.each_with_index do |commission, index|
+        referral_id = User.where("wallet_address = ?",commission.maker_address).first.referral_id
+
+        json_record = {
+          "price" => commission.price,
+          "amount" => commission.amount,
+          "referral_id" => referral_id,
+          "time" => commission.created_at
+        }
+
+        commission_array.push json_record
+      end
+      json_data = {
+        "state":"OK",
+        "refer_users":refer_users,
+        "wallets":wallet,
+        "commissions":commission_array        
+      }
+
+    else
+      json_data = {
+        "state":"OK",
+        "refer_users":refer_users        
+      }
+
+    end
+        
     respond_to do |format|
       format.json { render :json=>json_data}
     end
@@ -533,7 +562,6 @@ class ExchangeController < ApplicationController
     myContract = $web3.eth.contract($exchange_abi)
     contract_instance = myContract.at('0x479cc461fecd078f766ecc58533d6f69580cf3ac')
     zrx_token_contract = contract_instance.ZRX_TOKEN_CONTRACT
-
     i = 0 
     # order_hash = (Order.first)    
     # if order_hash
@@ -591,7 +619,7 @@ class ExchangeController < ApplicationController
     abi = $token_abi
     myContract = $web3.eth.contract(abi)
     contract_instance = myContract.at($tm_token_addr)
-    send_link = send_tm_token 1000 
+    # send_link = send_tm_token 1000 
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
       json_record = {
@@ -658,7 +686,7 @@ class ExchangeController < ApplicationController
       "tokens":tokens_array,
       "tm_tokens":tm_tokens_array,
       "select_token":token_info,
-      "balance":send_link,          
+      "balance":"balance",          
     }
     respond_to do |format|
       format.json { render :json=>json_data}
@@ -841,7 +869,7 @@ class ExchangeController < ApplicationController
     key = Eth::Key.new priv: $server_key
     decimal = $tm_token_decimals
     # convert token amount to BigDecimal value
-    big_value = value * (decimal ** 10)
+    big_value = value * (10 ** decimal)
 
     big_value_string = big_value.to_i.to_s(16)
     big_value_param = hash32 big_value_string
@@ -868,7 +896,7 @@ class ExchangeController < ApplicationController
       data:function_name,
     })
     tx.sign key
-    # $web3.eth.sendRawTransaction([tx.hex]) 
+    $web3.eth.sendRawTransaction([tx.hex]) 
     result = tx.hash
     # result = "result"
     # result = $web3.eth.getTransactionByHash tx.hash
@@ -1897,8 +1925,12 @@ class ExchangeController < ApplicationController
 
   def get_reward
     user_wallet_address = params[:wallet_address]
-
-    trades = TradeHistory.where("base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",user_wallet_address,user_wallet_address).order(created_at: :asc)
+    claimed = Reward.where("wallet_address = ?",user_wallet_address).order(created_at: :desc)
+    if claimed.length > 0
+      trades = TradeHistory.where("created_at > ? AND base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)",claimed[0].created_at,"WETH",user_wallet_address,user_wallet_address).order(created_at: :desc)
+    else
+      trades = TradeHistory.where("base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",user_wallet_address,user_wallet_address).order(created_at: :desc)
+    end
     total_volumn = 0
     if trades      
       trades.each_with_index do |trade, index|
@@ -1910,7 +1942,8 @@ class ExchangeController < ApplicationController
     json_data = {
       "state":"OK",
       "trades":trades,
-      "volume":volume
+      "volume":volume,
+      "claimed":claimed
     }    
     respond_to do |format|
       format.json { render :json=>json_data}
@@ -1926,18 +1959,35 @@ class ExchangeController < ApplicationController
         volumn = BigDecimal.new(trade.price.to_s) * BigDecimal.new(trade.amount.to_s)        
         total_volumn += BigDecimal.new(volumn)
       end
-      volume = (total_volumn * $reward_ratio).to_i
+      tm_point = (total_volumn * $reward_ratio).to_f.truncate(2)
+    end    
+    if tm_point > 100 
+      tx = send_tm_token(tm_point) 
+      create_reward(wallet_addr, tm_point,tx)     
+      json_data = {
+        "state":"ok",
+        "tx": tx,
+        "tm_point": tm_point
+      }
+    else
+      json_data = {
+        "state":"No_transaction",
+        "volume": volume
+      } 
     end
-    if volume > 1000 
-
-    end
-    json_data = {
-      "state":"OK",
-      "volume": volume
-    }   
+      
     respond_to do |format|
       format.json { render :json=>json_data}
     end
+  end
+
+  def create_reward(wallet_address, amount,txHash)
+    # Save reward to db
+    reward = Reward.new
+    reward.wallet_address = wallet_address
+    reward.amount = amount   
+    reward.txHash = txHash 
+    reward.save
   end
 
   # make referral id with wallet address
