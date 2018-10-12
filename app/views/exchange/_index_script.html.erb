@@ -127,7 +127,17 @@
                 $(".dropdown-toggle.language-link").next("ul").toggle();
             });
             $(document).on('click','.favorite',function(e){
+                console.log('favorite click');
+                market = $(this).parent().parent().parent().parent().attr("id");
+                if(market == "market_eth"){
+                    base_token = "WETH";
+                    
+                }else{
+                    base_token = "TM";
+                    
+                }
                 //Change token's Favorite
+                //base_token = $(".token-info").attr("base_token");
                 let value;
                 value = $(this).children(1).attr('fav');
                 let token_id = $(this).children(1).attr('value');
@@ -136,13 +146,14 @@
                     $(this).children(1).addClass("fas");
                     $(this).children(1).addClass("fa-star");
                     $(this).children(1).attr('fav',1);
-                    localStorage.setItem("token"+token_id, 1);
+                    localStorage.setItem(base_token + "token"+token_id, 1);
+                    //console.log(localStorage.getItem("token"+token_id))
                 }else if(value == 1){
                     $(this).children(1).removeClass();
                     $(this).children(1).addClass("far");
                     $(this).children(1).addClass("fa-star");
                     $(this).children(1).attr('fav',0);
-                    localStorage.setItem("token"+token_id, 0);
+                    localStorage.setItem(base_token + "token"+token_id, 0);
                 }
                 e.stopPropagation();
 
@@ -174,37 +185,29 @@
             //cancel_metamask_login_emt.onclick = function() { metamask_cancel() };
 
             //cancel_metamask_install_emt = document.getElementById("cancel_metamask_install");
-            //cancel_metamask_install_emt.onclick = function() { metamask_cancel() };
-
-	        favorite_emt = document.getElementById("favorite")
-            favorite_emt.onclick = function(){
-                change_favorite_order();
-            };
-
-            name_emt = document.getElementById("pair_name");
-            name_emt.onclick = function(){name_sort()};
-
-            price_emt = document.getElementById("price_name");
-            price_emt.onclick = function(){price_sort()};
-
+            //cancel_metamask_install_emt.onclick = function() { metamask_cancel() };           
+            $(document).on('click','#pair_name',function(e){               
+                that = $(this);              
+                name_sort(that);
+            });
+            //Price sort function event
+            $(document).on('click','#price_name',function(e){               
+                that = $(this);              
+                price_sort(that);
+            });
             volum_emt = document.getElementById("volum_name");
-            <%# volum_emt.onclick = function(){
-                console.log("volum_name clicked--");
-                Trade.volum_sort();
-            }; %>
-
-            $(document).on('click','#volum_name',function(e){
-                
+            //Favorite sort function event
+            $(document).on('click','#favorite',function(e){            
+                that = $(this);
+                change_favorite_order(that);
+            });
+            $(document).on('click','#volum_name',function(e){                
                 Trade.volum_sort();                
+            });            
+            $(document).on('click','#pricechange_name',function(e){                  
+                that = $(this);              
+                pricechange_sort(that);
             });
-
-            
-            $(document).on('click','#pricechange_name',function(e){                
-                pricechange_sort();
-            });
-
-            
-
             ledger_login_emt = document.getElementById("ledger_login");
             ledger_login_emt.onclick = function(){ledger_login()};
         });
@@ -304,9 +307,16 @@
         connection_status_ele.classList.remove("connection-issue");
         connection_status_ele.classList.remove("connected");
     }
-    function change_favorite_order(){
+    function change_favorite_order(that){
         let table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
-        table = document.getElementById("market_table");
+
+        current_table = that.parent().parent().parent().parent().attr("id");
+        if(current_table == "market_eth"){
+            table = document.getElementById("market_eth").children[0];
+        }else{
+            table = document.getElementById("market_tm").children[0];
+        }
+        //table = document.getElementById("market_table");
         switching = true;
         dir = "asc";
         while (switching) {
@@ -342,7 +352,13 @@
     }
     function name_sort(){
         let table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
-        table = document.getElementById("market_table");
+        current_table = that.parent().parent().parent().parent().attr("id");
+        if(current_table == "market_eth"){
+            table = document.getElementById("market_eth").children[0];
+        }else{
+            table = document.getElementById("market_tm").children[0];
+        }
+        //table = document.getElementById("market_table");
         switching = true;
         dir = "asc";
         while (switching) {
@@ -376,9 +392,15 @@
             }
         }
     }
-    function price_sort(){
-        var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;;
-        table = document.getElementById("market_table");
+    function price_sort(that){
+        var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
+        current_table = that.parent().parent().parent().parent().attr("id");
+        if(current_table == "market_eth"){
+            table = document.getElementById("market_eth").children[0];
+        }else{
+            table = document.getElementById("market_tm").children[0];
+        }        
+        
         switching = true;
         dir = "asc";
         while (switching) {
@@ -419,9 +441,15 @@
             }
         }
     }    
-    function pricechange_sort(){
-        var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;;
-        table = document.getElementById("market_table");
+    function pricechange_sort(that){
+        var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
+        current_table = that.parent().parent().parent().parent().attr("id");
+        if(current_table == "market_eth"){
+            table = document.getElementById("market_eth").children[0];
+        }else{
+            table = document.getElementById("market_tm").children[0];
+        }
+        //table = document.getElementById("market_table");
         switching = true;
         dir = "asc";
         while (switching) {
@@ -467,15 +495,15 @@
     function search_function(){
         var input, filter, table, tr, td, i;
         input = document.getElementById("symbol_input");
-
         filter = input.value.toUpperCase();
-
-        if(base_token == "WETH"){
-            table = $("#market_eth").find("#market_table").children("tbody");
-        }else if(base_token == "TM"){
-            table = $("#market_tm").find("#market_table").children("tbody");
+        let base_token = "TM";
+        let market_name = $("#market_tab").find(".active").attr("data-target");
+        
+        if(market_name == "#market_eth"){
+            table = document.getElementById("market_eth").children[0];
+        }else{
+            table = document.getElementById("market_tm").children[0];
         }
-
         //table = document.getElementById("market_table");
 
         tr = table.getElementsByTagName("tr");

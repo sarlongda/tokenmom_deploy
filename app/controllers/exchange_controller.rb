@@ -552,7 +552,7 @@ class ExchangeController < ApplicationController
     symbol = params[:token_symbol]
     token_addr = params[:token_address]
     tokens = get_token_list
-    tm_tokens = Token.where("tm_field = ?", 1).order(symbol: :asc)
+    tm_tokens = Token.where("tm_field = ?", 1).order(name: :asc)
     key = Eth::Key.new priv: $server_key    
     result = "OK"  
     # result = batchfillOrder() 
@@ -1914,8 +1914,6 @@ class ExchangeController < ApplicationController
     time_format = day[1] + "-" + day[2] + " " + time[0] + ":" + time[1] + ":" + time[0]
     return time_format
   end
-
-
   # Reward system
   def reward
 

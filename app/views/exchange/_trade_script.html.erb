@@ -1708,11 +1708,9 @@
                     success: function(data) {                        
                         eth_price = data.price;
                         weth_price = that.val();
-                        real_usd_price = (eth_price * weth_price).toFixed(2);
-                        console.log(real_usd_price);
+                        real_usd_price = (eth_price * weth_price).toFixed(2);                        
                         that.parent().find(".usd-price").text("$" + real_usd_price);
-                        that.parent().find(".usd-price").css("visibility","visible");
-                                      
+                        that.parent().find(".usd-price").css("visibility","visible");                                      
                     },
                     error: function(error) {
                         console.log(error);
@@ -1731,8 +1729,7 @@
                     success: function(data) {                        
                         eth_price = data.price;
                         weth_price = that.val();
-                        real_usd_price = (eth_price * weth_price).toFixed(2);
-                        console.log(real_usd_price);
+                        real_usd_price = (eth_price * weth_price).toFixed(2);                        
                         that.parent().find(".usd-price").text("$" + real_usd_price);
                         //$(".usd-price").css("visibility","visible");
                                       

@@ -522,9 +522,8 @@
                         token_used_balance = order_token_balance.toFixed(token_decimal);
                         token_available = (token_balance - token_used_balance).toFixed(token_decimal);
                         token_balance = token_balance.toFixed(token_decimal);  
-                        token_balance  = token_balance * 1
-                        token_available = token_available * 1
-                        console.log(token_balance)
+                        token_balance  = token_balance * 1;
+                        token_available = token_available * 1;                        
                     }
                     if(token_available < 0){
                         token_available = "0.00"
@@ -850,7 +849,8 @@
                     Trade.draw_market_table(data.tm_tokens,"TM")  
                     Trade.load_trade();
                     Trade.get_open_orders();   
-                    Trade.volum_sort();                           
+                    Trade.volum_sort(); 
+                    //Trade.volum_sort();                              
                 },
                 error: function(error) {
                     console.log(error);
@@ -935,10 +935,21 @@
                             "<strong value='"+element.h_volumn+"'>" + element.h_volumn +                       
                             "</strong>" +
                         "</td>";
-                        token_row += 
-                        "<td class='text-right favorite'>" +
-                            "<i class='far fa-star' fav= '0' value='"+element.id+"'>"+"</i>"
-                        "</td>";
+
+                        if(localStorage.getItem(base_token + "token" + element.id) == 1){
+                            token_row += 
+                            "<td class='text-right favorite'>" +
+                                "<i class='fas fa-star' fav= '1' value='"+element.id+"'>"+"</i>"
+                            "</td>";
+
+                        }else{
+                            token_row += 
+                            "<td class='text-right favorite'>" +
+                                "<i class='far fa-star' fav= '0' value='"+element.id+"'>"+"</i>"
+                            "</td>";
+
+                        }
+                        
                     "</tr>";
                 tag.append(token_row);
                 //Trade.sort_favorite();
@@ -1073,24 +1084,18 @@
             },4000);
 
         },
-        volum_sort:function(direction = 'desc',switch_bool = true){
-            
+        volum_sort:function(direction = 'desc',switch_bool = true){            
             var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
-            base_token = $(".token-info").attr("base_token");
-            
-            selected_tab = $(".market-tab .active");
-            
+            base_token = $(".token-info").attr("base_token");          
+            selected_tab = $(".market-tab .active");           
             if(base_token == "WETH"){
                 table = document.getElementById("market_eth").getElementsByTagName("table")[0]
             }else if(base_token == "TM"){
-                table = document.getElementById("market_tm").getElementsByTagName("table")[0];
-                
-            }
-            
+                table = document.getElementById("market_tm").getElementsByTagName("table")[0];                
+            }           
             //table = document.getElementById("market_table");
             switching = true;
-            dir = direction;
-            
+            dir = direction;            
             while (switching) {
                 switching = false;
                 rows = table.getElementsByTagName("TR");
