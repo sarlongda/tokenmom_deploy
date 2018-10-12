@@ -44,8 +44,7 @@
                 copyText = $(".referral-link").children("input").select();
                 document.execCommand('copy');                
             });
-            $(document).on('click','.reward-request',function(){  
-                              
+            $(document).on('click','.reward-request',function(){                                
                 if($(this).hasClass("disabled") == false){
                     console.log("request reward");
                     //console.log(currentWalletAddress);
@@ -57,8 +56,7 @@
                             wallet_addr: currentWalletAddress
                         },
                         success: function (data) { 
-                            draw_reward_tables(currentWalletAddress);      
-                            
+                            draw_reward_tables(currentWalletAddress);                           
                         }
                     });
 
@@ -163,20 +161,16 @@
                 let time_format = Trade.get_timeformat(element.created_at);
                 each_tag += "<td>" + element.referral_id + "</td>";
                 each_tag += "<td style='text-align:right'>" + time_format + "</td>";
-                each_tag += "</tr>";  
-
+                each_tag += "</tr>";
                 tag.append(each_tag);              
             });
-
             $(".total-friends-number").text(total_users);
-
         }
 
         function draw_claimed(claimed) {
             let tag = $(".reward-claimed").children("tbody");
             tag.html("");
             total_volume = 0;
-
             $.each(claimed, function(index, element){   
                 console.log(element)             
                 let time_format = Trade.get_timeformat(element.created_at);
@@ -189,7 +183,6 @@
                 total_volume += parseFloat(element.amount);
             });
             $(".total-claimed-amount").text(total_volume); 
-
         }
     });
     

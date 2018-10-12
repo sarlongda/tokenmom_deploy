@@ -35,6 +35,7 @@
                     %span.buy-ask{'data-i18n' => 'best_ask'} Best Ask
                   %a.util{:href => "javascript:void(0)", :tabindex => "-1"}
                     %span.buy-bid{'data-i18n' => 'best_bid'} Best Bid
+                
                 %span.unit.base-unit #{@base_token}
                 - if @zrxtoken.last_price(@base_token) != "--"
                   %input.form-control.price-buy{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => @zrxtoken.last_price(@base_token) ,"data-lock" => "false"}/
@@ -92,7 +93,7 @@
                 %span.sell-ask{'data-i18n' => 'best_ask'} Best Ask
               %a.util{:href => "javascript:void(0)", :tabindex => "-1"}
                 %span.sell-bid{'data-i18n' => 'best_bid'} Best Bid
-            %span.usd-price $ 234
+            %span.usd-price 
             %span.unit.base-unit #{@base_token}
             - if @zrxtoken.last_price(@base_token) != "--"
               %input.form-control.price-sell{:autocomplete => "off", :name => "price", :placeholder => "0.00", :value => @zrxtoken.last_price(@base_token) ,"data-lock" => "false"}/

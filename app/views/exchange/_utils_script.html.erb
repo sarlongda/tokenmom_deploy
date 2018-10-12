@@ -9,7 +9,7 @@
         15:"milliether",
         18:"ether"
     }
-    console.log("util script load")
+    
     //Language Menu Select Event
     $('.dropdown-toggle.nav-link').on("click",function(e){        
         $(this).next('ul').toggle();
@@ -255,8 +255,7 @@
             });
 
         },
-        get_open_orders: function(){
-            console.log("get open orders---");
+        get_open_orders: function(){            
             if(currentWalletAddress != "" && currentWalletAddress != null){
                 
                 address = currentWalletAddress;

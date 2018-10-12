@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       post :request_reward
       post :get_users
       get :get_reward
+      post :get_eth_usd_price
       post :get_messages
       post :create_order
       post :get_orders

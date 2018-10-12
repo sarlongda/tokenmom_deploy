@@ -352,6 +352,7 @@ class ExchangeController < ApplicationController
     
     @refer_id = $refer_id
     @base_token = base_token
+    @eth_price = get_eth_price
     # Get messages
     @messages = Message.order(updated_at: :asc)
     # ETH token table
@@ -476,8 +477,7 @@ class ExchangeController < ApplicationController
       end
     end
     # Convert token contract address to 
-    @changed_contract = change_contract_address(@zrxtoken.contract_address)
-    
+    @changed_contract = change_contract_address(@zrxtoken.contract_address)    
     @user_id = current_user ? current_user.id : nil
   end
   def get_users
@@ -489,7 +489,7 @@ class ExchangeController < ApplicationController
       refer_users.each_with_index do |refer_user, index|       
         wallet[index] = refer_user.wallet_address        
       end
-      commissions = TradeHistory.where("base_token = ? AND maker_address = ?","WETH",wallet[0]).order(created_at: :asc).first(100)     
+      commissions = TradeHistory.where("base_token = ? AND (maker_address = ? OR taker_address = ?)","WETH",wallet[0],wallet[0]).order(created_at: :desc).first(100)     
 
       commission_array = Array.new
       commissions.each_with_index do |commission, index|
@@ -501,7 +501,6 @@ class ExchangeController < ApplicationController
           "referral_id" => referral_id,
           "time" => commission.created_at
         }
-
         commission_array.push json_record
       end
       json_data = {
@@ -1965,13 +1964,13 @@ class ExchangeController < ApplicationController
       tx = send_tm_token(tm_point) 
       create_reward(wallet_addr, tm_point,tx)     
       json_data = {
-        "state":"ok",
+        "state": "ok",
         "tx": tx,
         "tm_point": tm_point
       }
     else
       json_data = {
-        "state":"No_transaction",
+        "state": "No_transaction",
         "volume": volume
       } 
     end
@@ -2012,9 +2011,28 @@ class ExchangeController < ApplicationController
     
 
     eth_price = json_data["quotes"]["USD"]["price"]
-
     return eth_price
+  end
 
+  def get_eth_usd_price
+    url = URI.parse('https://api.coinmarketcap.com/v2/ticker/?limit=100 &start= 1& convert=ETH')
+    url = URI.parse('https://api.coinmarketcap.com/v2/ticker/1027/?convert=USD')
+
+    http = Net::HTTP.new(url.host,url.port)
+    http.use_ssl = true
+    resp = http.get(url)
+    
+    parsed = resp.body
+    json_data = (JSON.parse parsed)["data"]
+    
+
+    eth_price = json_data["quotes"]["USD"]["price"]
+    json_data = {
+      "price": eth_price
+    }
+    respond_to do |format|
+      format.json { render :json=>json_data}
+    end
   end
 
   # Download whitepaper

@@ -115,18 +115,21 @@
                 let price = $(this).val();
                 change_price(price,$(this), "buy");
             });
-            $(".price-sell").on("focusin", function () {
-                console.log("focus sell input---");
-                console.log($(".usd-price").css("visibility","visible"));
+            $(".price-sell").on("focusin", function () {   
+                that = $(this);
+                get_eth_usd_price(that);     
 
             });
             $(".price-sell").on("focusout", function () {
-                console.log("focus sell input out---");
-                $(".usd-price").css("visibility","hidden")
+                //console.log("focus sell input out---");
+                $(this).parent().find(".usd-price").css("visibility","hidden");
+                //$(".usd-price").css("visibility","hidden")
 
             });
             //Change sell price value
             $(".price-sell").on("change paste keyup", function () {
+                that = $(this);
+                change_eth_usd_price(that); 
                 let price = $(this).val();
                 change_price(price,$(this), "sell");
             });
@@ -1636,6 +1639,53 @@
                 return decimal;                                                 
                 
             }
+
+            function get_eth_usd_price(that){
+                $.ajax({
+                    url: 'get_eth_usd_price',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: null,
+                    
+                    success: function(data) {                        
+                        eth_price = data.price;
+                        weth_price = that.val();
+                        real_usd_price = (eth_price * weth_price).toFixed(2);
+                        console.log(real_usd_price);
+                        that.parent().find(".usd-price").text("$" + real_usd_price);
+                        $(".usd-price").css("visibility","visible");
+                                      
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+
+            }
+
+            function change_eth_usd_price(that){
+                $.ajax({
+                    url: 'get_eth_usd_price',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: null,
+                    
+                    success: function(data) {                        
+                        eth_price = data.price;
+                        weth_price = that.val();
+                        real_usd_price = (eth_price * weth_price).toFixed(2);
+                        console.log(real_usd_price);
+                        that.parent().find(".usd-price").text("$" + real_usd_price);
+                        //$(".usd-price").css("visibility","visible");
+                                      
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+
+            }
+            
             //get my open orders
             function get_open_orders(){
                 if(currentWalletAddress != "" && currentWalletAddress != null){
