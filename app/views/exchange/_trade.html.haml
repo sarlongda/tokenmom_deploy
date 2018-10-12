@@ -35,6 +35,8 @@
                     %span.buy-ask{'data-i18n' => 'best_ask'} Best Ask
                   %a.util{:href => "javascript:void(0)", :tabindex => "-1"}
                     %span.buy-bid{'data-i18n' => 'best_bid'} Best Bid
+
+                %span.usd-price 
                 
                 %span.unit.base-unit #{@base_token}
                 - if @zrxtoken.last_price(@base_token) != "--"
@@ -65,8 +67,14 @@
                   %span.base-unit #{@base_token}
                   %i.fa.fa-question-circle{"aria-hidden" => "true"}
                     %span.fee-tip
-                      %span Ethereum tx fee : 0.0002 WETH
-                      %span Tokenmom fee : 0.00000 WETH
+                      %div
+                        %span Ethereum tx fee : 
+                        %span.ether-tx-fee 0.0002 
+                        %span WETH
+                      %div
+                        %span Tokenmom fee :
+                        %span.tokenmom-fee 0.0002 
+                        %span WETH
                 .order-addr-buy{:style => "display:hidden", :value => 0}
               %button.btn.btn-success.btn-block.btn-style.btn-buy.disabled
                 %span{'data-i18n' => 'buy ZRX'} BUY ZRX
@@ -125,8 +133,14 @@
               %span.base-unit #{@base_token}
               %i.fa.fa-question-circle{"aria-hidden" => "true"}
                 %span.fee-tip
-                  %span Ethereum tx fee : 0.0002 WETH
-                  %span Tokenmom fee : 0.00000 WETH
+                  %div
+                    %span Ethereum tx fee : 
+                    %span.ether-tx-fee 0.0002 
+                    %span WETH
+                  %div
+                    %span Tokenmom fee :
+                    %span.tokenmom-fee 0.0002 
+                    %span WETH
             .order-addr-sell{:style => "display:hidden", :value => 0}
           %button.btn.btn-danger.btn-block.btn-style.btn-sell.disabled
             %span{'data-i18n' => 'sell ZRX'} SELL ZRX

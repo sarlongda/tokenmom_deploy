@@ -4,7 +4,37 @@
             const gas_limit = 0.02;
             const DECIMALS = 18;
             //load_trade("ZRX");
-            //Tab change event
+            //Tab change event           
+            $(".fa-question-circle").hover(function(){      
+
+                total_fee = parseFloat($(this).prev().prev().text());
+                base_token = $(this).prev().text();              
+
+                if(total_fee == 0){
+                    $(this).find(".fee-tip").find(".ether-tx-fee").text("0.0000");
+                    $(this).find(".fee-tip").find(".ether-tx-fee").next().text(base_token);
+                    $(this).find(".fee-tip").find(".tokenmom-fee").text("0.0000");
+                    $(this).find(".fee-tip").find(".tokenmom-fee").next().text(base_token);
+                    
+                }else{
+                    if(base_token == "WETH"){
+                        eth_fee = initial_fee;
+                        tm_fee = (total_fee - eth_fee).toFixed(5);
+                        $(this).find(".fee-tip").find(".ether-tx-fee").text(eth_fee);
+                        $(this).find(".fee-tip").find(".ether-tx-fee").next().text(base_token);
+                        $(this).find(".fee-tip").find(".tokenmom-fee").text(tm_fee);
+                        $(this).find(".fee-tip").find(".tokenmom-fee").next().text(base_token);
+                    }else if(base_token == "TM"){
+                        eth_fee = initial_tm_fee;
+                        tm_fee = (total_fee - eth_fee).toFixed(3);
+                        $(this).find(".fee-tip").find(".ether-tx-fee").text(eth_fee);
+                        $(this).find(".fee-tip").find(".ether-tx-fee").next().text(base_token);
+                        $(this).find(".fee-tip").find(".tokenmom-fee").text(tm_fee);
+                        $(this).find(".fee-tip").find(".tokenmom-fee").next().text(base_token);
+                    }
+                }
+
+            });
             $(document).on('click','#open_order_tab',function(){
                 Trade.get_open_orders();
 
@@ -77,8 +107,7 @@
 
                         } finally {
                             parent.children("i").css("display","none");
-                            $(this).parent().css("display","block");     
-                            
+                            $(this).parent().css("display","block");                           
                         }
                     };
                     set_unallowance().catch(console.error);
@@ -112,24 +141,53 @@
             });
             //Change buy price value
             $(".price-buy").on("change paste keyup", function () {
+                base_token = $(".token-info").attr("base_token");
+                if(base_token == "WETH"){
+                    that = $(this);
+                    change_eth_usd_price(that);
+                }                
                 let price = $(this).val();
                 change_price(price,$(this), "buy");
             });
             $(".price-sell").on("focusin", function () {   
-                that = $(this);
-                get_eth_usd_price(that);     
-
+                base_token = $(".token-info").attr("base_token");
+                if(base_token == "WETH"){
+                    that = $(this);
+                    get_eth_usd_price(that);
+                }                
             });
             $(".price-sell").on("focusout", function () {
                 //console.log("focus sell input out---");
-                $(this).parent().find(".usd-price").css("visibility","hidden");
-                //$(".usd-price").css("visibility","hidden")
-
+                base_token = $(".token-info").attr("base_token");
+                if(base_token == "WETH"){
+                    $(this).parent().find(".usd-price").css("visibility","hidden");
+                }                
+                //$(".usd-price").css("visibility","hidden");
+            });
+            $(".price-buy").on("focusin", function () {  
+                base_token = $(".token-info").attr("base_token");
+                if(base_token == "WETH"){
+                    that = $(this);
+                    get_eth_usd_price(that);
+                }                
+            });
+            $(".price-buy").on("focusout", function () {
+                base_token = $(".token-info").attr("base_token");
+                //console.log("focus sell input out---");
+                if(base_token == "WETH"){
+                    $(this).parent().find(".usd-price").css("visibility","hidden");
+                }
+                
+                //$(".usd-price").css("visibility","hidden");
             });
             //Change sell price value
             $(".price-sell").on("change paste keyup", function () {
-                that = $(this);
-                change_eth_usd_price(that); 
+                base_token = $(".token-info").attr("base_token");
+                if(base_token == "WETH"){
+                    that = $(this);
+                    change_eth_usd_price(that); 
+                }
+                
                 let price = $(this).val();
                 change_price(price,$(this), "sell");
             });
@@ -1653,7 +1711,7 @@
                         real_usd_price = (eth_price * weth_price).toFixed(2);
                         console.log(real_usd_price);
                         that.parent().find(".usd-price").text("$" + real_usd_price);
-                        $(".usd-price").css("visibility","visible");
+                        that.parent().find(".usd-price").css("visibility","visible");
                                       
                     },
                     error: function(error) {

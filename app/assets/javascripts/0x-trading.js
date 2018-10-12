@@ -21,7 +21,7 @@ const txOpts = {
 };
 let fee_percent = 0.05;
 let tm_fee_percent = 0.01;
-let initial_tm_fee = 500;
+let initial_tm_fee = 50;
 let initial_fee = 0.002;
 jQuery(function($) {        
     $(document).ready(function () {
