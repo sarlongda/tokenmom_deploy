@@ -12,9 +12,9 @@ const tmAddress = "0x91495D6969120fc016BB687EaD5F5cE56F135504";
 const weth_decimals = 18;
 const tm_decimals = 18;
 
-let max_trading_eth = 20;
-let max_trading_tm = 10000000;
-let max_token_amount = 10000000;
+let max_trading_eth = 100;
+let max_trading_tm = 100000000;
+let max_token_amount = 100000000;
 const txOpts = {
     gasLimit: 89000,
     gasPrice: new BigNumber(20000000000)
