@@ -201,8 +201,9 @@
                 that = $(this);
                 change_favorite_order(that);
             });
-            $(document).on('click','#volum_name',function(e){                
-                Trade.volum_sort();                
+            $(document).on('click','#volum_name',function(e){      
+                that = $(this);          
+                Trade.volum_sort(null,that);                
             });            
             $(document).on('click','#pricechange_name',function(e){                  
                 that = $(this);              
@@ -278,7 +279,6 @@
                         data["symbol"] = symbol;
                         data["address"] = contractAddress;
                         trade_by_address(data);
-
                     });            
                 });
 
