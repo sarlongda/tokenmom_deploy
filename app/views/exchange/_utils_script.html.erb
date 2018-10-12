@@ -849,7 +849,8 @@
                     Trade.draw_market_table(data.tokens,"WETH");  
                     Trade.draw_market_table(data.tm_tokens,"TM")  
                     Trade.load_trade();
-                    Trade.get_open_orders();                              
+                    Trade.get_open_orders();   
+                    Trade.volum_sort();                           
                 },
                 error: function(error) {
                     console.log(error);
