@@ -1530,7 +1530,7 @@
                 let token_name = that.attr("name");
                 let token_last_price = that.attr("price");
                 let token_h_price = that.attr("h_price");
-                let token_h_volumn = that.attr("h_volumn");
+                let token_h_volume = that.attr("h_volume");
                 let token_contract_addr = that.attr("addr");
                 let contract_addr = change_contract_address(token_contract_addr);                
                 let token_header_tag = $(".token-header");
@@ -1586,7 +1586,7 @@
                 token_header_tag.find(":nth-child(1)").children(".contract-address").children("a").attr("href",http_link + "token/"+token_contract_addr);
                 token_header_tag.find(":nth-child(2)").children("div").children(".last-price").children("strong").html(last_price_tag);
                 token_header_tag.find(":nth-child(3)").children("div").children("div").children("strong").html(h_price_tag);
-                token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(token_h_volumn + " " + "ETH");            
+                token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(token_h_volume + " " + "ETH");            
 
             }
             function change_trade_info(this_obj){

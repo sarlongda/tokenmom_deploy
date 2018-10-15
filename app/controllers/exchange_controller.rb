@@ -382,22 +382,22 @@ class ExchangeController < ApplicationController
       elsif sell_max != nil && buy_max == nil
         max_amount = sell_max.mamount
       end
-      total_volumn = 0
+      total_volume = 0
       buy_orders.each_with_index do |token, index|
-        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)        
-        total_volumn += BigDecimal.new(volumn)
+        volume = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)        
+        total_volume += BigDecimal.new(volume)
       end
       sell_orders.each_with_index do |token, index|
-        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)        
-        total_volumn += BigDecimal.new(volumn)
+        volume = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)        
+        total_volume += BigDecimal.new(volume)
       end
       @buy_orders = Array.new
       buy_orders.each_with_index do |token, index|
         decimal = get_decimals_places(token.price) 
         zero_count = maker_zero(decimal)
         pro = amount_pro(token.amount,buy_max.mamount).to_s 
-        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)  
-        depth = volumn_pro(total_volumn,volumn).to_s 
+        volume = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)  
+        depth = volume_pro(total_volume,volume).to_s 
         json_record = {  
           "zero_count" => zero_count, 
           "depth" => depth.to_s,
@@ -412,8 +412,8 @@ class ExchangeController < ApplicationController
         decimal = get_decimals_places(token.price) 
         zero_count = maker_zero(decimal)
         pro = amount_pro(token.amount,sell_max.mamount).to_s 
-        volumn = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)  
-        depth = volumn_pro(total_volumn,volumn).to_s 
+        volume = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)  
+        depth = volume_pro(total_volume,volume).to_s 
         
         json_record = {  
           "zero_count" => zero_count, 
@@ -535,7 +535,7 @@ class ExchangeController < ApplicationController
         :name => token.name,
         :last_price => token.last_price(base_token),
         :h_price => token.h_price(base_token),
-        :h_volumn => token.h_volumn(base_token)
+        :h_volume => token.h_volume(base_token)
       }
       tokens_array.push json_record
     end
@@ -629,7 +629,7 @@ class ExchangeController < ApplicationController
         :name => token.name,
         :last_price => token.last_price("WETH"),
         :h_price => token.h_price("WETH"),
-        :h_volumn => token.h_volumn("WETH")
+        :h_volume => token.h_volume("WETH")
       }
       tokens_array.push json_record
     end
@@ -643,7 +643,7 @@ class ExchangeController < ApplicationController
         :name => token.name,
         :last_price => token.last_price("TM"),
         :h_price => token.h_price("TM"),
-        :h_volumn => token.h_volumn("TM")
+        :h_volume => token.h_volume("TM")
       }
       tm_tokens_array.push json_record
     end
@@ -658,7 +658,7 @@ class ExchangeController < ApplicationController
         "token_symbol":token.symbol,
         "token_last_price":token.last_price(base_token),
         "token_h_price":token.h_price(base_token),
-        "token_h_volumn":token.h_volumn(base_token),
+        "token_h_volume":token.h_volume(base_token),
         "base_token":base_token
       }
     else
@@ -668,7 +668,7 @@ class ExchangeController < ApplicationController
       token_name = exchangeContract.name()
       last_price = token_last_price(base_token,symbol)
       h_price = token_h_price(base_token,symbol)
-      h_volumn = token_h_volumn(base_token,symbol)
+      h_volume = token_h_volume(base_token,symbol)
       token_info = {
         "token_contract_addr":token_addr,
         "token_name":token_name,
@@ -676,7 +676,7 @@ class ExchangeController < ApplicationController
         "token_decimals":token_decimals,
         "token_last_price":last_price,
         "token_h_price":h_price,
-        "token_h_volumn":h_volumn,
+        "token_h_volume":h_volume,
         "base_token":base_token
       }
     end
@@ -1043,7 +1043,7 @@ class ExchangeController < ApplicationController
         # data_code = "0x4f150787"
         # batchfillOrders
         data_code = "0xb7b2c7d6"
-        count = $web3.eth.getTransactionCount([key.address,"pending"]).to_i(16)
+        count = ($web3.eth.getTransactionCount([key.address,"pending"]).to_i(16) + 1)
         contract_address = $exchange_contract_addr
         prefix_param[0] = 0xe
         prefix_param[1] = prefix_param[0] + 5 * 2 * order_count + 2
@@ -1414,7 +1414,7 @@ class ExchangeController < ApplicationController
         "token_decimals":token.token_decimals,
         "token_last_price":token.last_price(base_token),
         "token_h_price":token.h_price(base_token),
-        "token_h_volumn":token.h_volumn(base_token)
+        "token_h_volume":token.h_volume(base_token)
       }
       json_data = {
         "state":"ok",
@@ -1427,7 +1427,7 @@ class ExchangeController < ApplicationController
       token_name = exchangeContract.name()
       last_price = token_last_price(base_token,symbol)
       h_price = token_h_price(base_token,symbol)
-      h_volumn = token_h_volumn(base_token,symbol)
+      h_volume = token_h_volume(base_token,symbol)
       token_info = {
         "token_contract_addr":token_contract,
         "token_name":token_name,
@@ -1435,7 +1435,7 @@ class ExchangeController < ApplicationController
         "token_decimals":token_decimals,
         "token_last_price":last_price,
         "token_h_price":h_price,
-        "token_h_volumn":h_volumn
+        "token_h_volume":h_volume
       }
       json_data = {
         "state":"ok",
@@ -1453,21 +1453,21 @@ class ExchangeController < ApplicationController
     token = Token.where(:symbol => token_symbol).first
     last_price = token_last_price(base_token,token_symbol)
     h_price = token_h_price(base_token,token_symbol)
-    h_volumn = token_h_volumn(base_token,token_symbol)
+    h_volume = token_h_volume(base_token,token_symbol)
     if token
       json_data = {
         "status": "ok",
         "token": token,
         "l_price": last_price,
         "h_price": h_price,
-        "h_volumn": h_volumn
+        "h_volume": h_volume
       }
     else
       json_data = {
         "status": "no_data",
         "l_price": last_price,
         "h_price": h_price,
-        "h_volumn": h_volumn
+        "h_volume": h_volume
       }
     end
     respond_to do |format|
@@ -1495,15 +1495,15 @@ class ExchangeController < ApplicationController
       return "--"
     end
   end
-  def token_h_volumn(base_token = "ETH", token_symbol)
-    volumns = TradeHistory.where("created_at > ? AND token_symbol = ?",Time.now.midnight,token_symbol)
-    h_volumn = 0.00
-    if volumns.length > 0
-      for volumn in volumns
-        h_volumn += (volumn.amount * volumn.price)
+  def token_h_volume(base_token = "ETH", token_symbol)
+    volumes = TradeHistory.where("created_at > ? AND token_symbol = ?",Time.now.midnight,token_symbol)
+    h_volume = 0.00
+    if volumes.length > 0
+      for volume in volumes
+        h_volume += (volume.amount * volume.price)
       end
     end
-    return h_volumn.round(2)
+    return h_volume.round(2)
   end
   def get_messages
     room_id = params[:param1]
@@ -1904,8 +1904,8 @@ class ExchangeController < ApplicationController
       return ((BigDecimal.new(amount.to_s) / BigDecimal.new(max.to_s))*16.667).truncate(4)
     end    
   end
-  def volumn_pro(max, volumn)
-    return ((BigDecimal.new(volumn.to_s) / BigDecimal.new(max.to_s)) * 66.667).truncate(4)
+  def volume_pro(max, volume)
+    return ((BigDecimal.new(volume.to_s) / BigDecimal.new(max.to_s)) * 66.667).truncate(4)
   end
   def get_timeformat(t)
     format = t.to_s.split(" ")
@@ -1928,13 +1928,13 @@ class ExchangeController < ApplicationController
     else
       trades = TradeHistory.where("base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",user_wallet_address,user_wallet_address).order(created_at: :desc)
     end
-    total_volumn = 0
+    total_volume = 0
     if trades      
       trades.each_with_index do |trade, index|
-        volumn = BigDecimal.new(trade.price.to_s) * BigDecimal.new(trade.amount.to_s)        
-        total_volumn += BigDecimal.new(volumn)
+        volume = BigDecimal.new(trade.price.to_s) * BigDecimal.new(trade.amount.to_s)        
+        total_volume += BigDecimal.new(volume)
       end
-      volume = (total_volumn * $reward_ratio).to_i
+      volume = (total_volume * $reward_ratio).to_i
     end
     json_data = {
       "state":"OK",
@@ -1949,30 +1949,39 @@ class ExchangeController < ApplicationController
 
   def request_reward
     wallet_addr = params[:wallet_addr]
-    trades = TradeHistory.where("base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",wallet_addr,wallet_addr).order(created_at: :asc)
-    total_volumn = 0
+    old_reward = Reward.where("wallet_address = ?",wallet_addr).order(created_at: :asc).last
+    if old_reward
+      trades = TradeHistory.where("base_token = ? AND created_at > ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",old_reward.created_at,wallet_addr,wallet_addr).order(created_at: :asc)
+    else
+      trades = TradeHistory.where("base_token = ? AND reward_status IS NULL AND (maker_address = ? OR taker_address = ?)","WETH",wallet_addr,wallet_addr).order(created_at: :asc)
+    end
+    total_volume = 0
     if trades      
       trades.each_with_index do |trade, index|
-        volumn = BigDecimal.new(trade.price.to_s) * BigDecimal.new(trade.amount.to_s)        
-        total_volumn += BigDecimal.new(volumn)
+        volume = BigDecimal.new(trade.price.to_s) * BigDecimal.new(trade.amount.to_s)        
+        total_volume += BigDecimal.new(volume)
       end
-      tm_point = (total_volumn * $reward_ratio).to_f.truncate(2)
-    end    
-    if tm_point > 100 
-      tx = send_tm_token(tm_point) 
-      create_reward(wallet_addr, tm_point,tx)     
-      json_data = {
-        "state": "ok",
-        "tx": tx,
-        "tm_point": tm_point
-      }
+      tm_point = (total_volume * $reward_ratio).to_f.truncate(2)
+      if tm_point > 100 
+        tx = send_tm_token(tm_point) 
+        create_reward(wallet_addr, tm_point,tx)     
+        json_data = {
+          "state": "ok",
+          "tx": tx,
+          "tm_point": tm_point
+        }
+      else
+        json_data = {
+          "state": "low_tm_point",
+          "volume": total_volume
+        } 
+      end
     else
       json_data = {
         "state": "No_transaction",
-        "volume": volume
+        "volume": total_volume
       } 
-    end
-      
+    end      
     respond_to do |format|
       format.json { render :json=>json_data}
     end

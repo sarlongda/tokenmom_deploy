@@ -13,7 +13,7 @@
               
             %ul.dropdown-menu.token-link
               - @tokenlist.each do |token|
-                %li.token-link-item{:value => token.symbol,:name => token.name,:addr => token.contract_address,:price => token.last_price(token.symbol),:h_price => token.h_price(token.symbol),:h_volumn => token.h_volumn(token.symbol),:decimals => token.token_decimals}
+                %li.token-link-item{:value => token.symbol,:name => token.name,:addr => token.contract_address,:price => token.last_price(token.symbol),:h_price => token.h_price(token.symbol),:h_volume => token.h_volume(token.symbol),:decimals => token.token_decimals}
                   %a{:href => "javascript:void(0)"} #{token["symbol"]}-ETH  
               
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
@@ -58,9 +58,9 @@
         %li
           .trade-info
             .trade-info-number
-              %strong #{@zrxtoken.h_volumn(@base_token)} #{@base_token}
+              %strong #{@zrxtoken.h_volume(@base_token)} #{@base_token}
             .trade-info-label
-              %span{"data-i18n" => "24h_volumn"} 24H Volumn
+              %span{"data-i18n" => "24h_volume"} 24H Volume
       %button.btn.btn-sm.btn-info.btn-trade-by-addr
         %span{"data-i18n" => "trade_by_addr"} Trade by Address
         %i.fas.fa-file-alt

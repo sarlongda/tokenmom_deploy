@@ -27,7 +27,7 @@
                         %i.fas.fa-hand-holding-usd
                         %span{"data-i18n" => "claimed:"} Claimed:
                         %span.total-claimed-amount
-                    .box-content.flex-1
+                    .box-content.flex-1{:style => "min-height:350px;overflow-y:auto"}
                         .flex.flex-column
                             %table.table.reward-claimed
                                 %thead
@@ -73,6 +73,21 @@
             .col-md-6.flex.flex-1
                 .box.flex.flex-1.flex-column
                     .box-header
+                        %i.fas.fa-hand-holding-usd
+                        %span{"data-i18n" => "total_commission"} Total Commission :
+                        %span.total-commission-value
+                    .box-content.flex-1{:style => "min-height:350px;overflow-y:auto"}
+                        .flex.flex-column
+                            %table.table.friends-reward
+                                %thead
+                                    %tr                                        
+                                        %th{"data-i18n" => "time"} Time
+                                        %th{:style => "text-align:right","data-i18n" => "referral_id"} Referral ID
+                                        %th{:style => "text-align:right","data-i18n" => "commission"} Commission
+                                %tbody
+            .col-md-6.flex.flex-1
+                .box.flex.flex-1.flex-column
+                    .box-header
                         %i.fas.fa-users
                         %span{"data-i18n" => "total_friends"} Total friends :
                         %span.total-friends-number 
@@ -86,19 +101,5 @@
                                         %th{:style => "text-align:right","data-i18n" => "time"} Time
                                 %tbody
 
-            .col-md-6.flex.flex-1
-                .box.flex.flex-1.flex-column
-                    .box-header
-                        %i.fas.fa-hand-holding-usd
-                        %span{"data-i18n" => "total_commission"} Total Commission :
-                        %span.total-commission-value
-                    .box-content.flex-1{:style => "min-height:350px;overflow-y:auto"}
-                        .flex.flex-column
-                            %table.table.friends-reward
-                                %thead
-                                    %tr                                        
-                                        %th{"data-i18n" => "time"} Time
-                                        %th{:style => "text-align:right","data-i18n" => "referral_id"} Referral ID
-                                        %th{:style => "text-align:right","data-i18n" => "commission"} Commission
-                                %tbody
+            
     .invite-rule

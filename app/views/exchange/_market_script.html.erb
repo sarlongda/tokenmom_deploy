@@ -13,7 +13,7 @@
                 $(".buy-token-symbol").text(base_token);
                 let token_last_price = that.find(":nth-child(2)").find("strong").attr("value");
                 let token_h_price = that.find(":nth-child(3)").find("strong").attr("value");
-                let token_h_volumn = that.find(":nth-child(4)").find("strong").attr("value");
+                let token_h_volume = that.find(":nth-child(4)").find("strong").attr("value");
                 localStorage.setItem("select_token",token_symbol);                
                 data = {
                     token_contract_addr:token_contract_addr,
@@ -21,7 +21,7 @@
                     token_symbol:token_symbol,
                     token_last_price:token_last_price,
                     token_h_price:token_h_price,
-                    token_h_volumn:token_h_volumn,
+                    token_h_volume:token_h_volume,
                     token_decimals:token_decimals,
                     base_token:base_token
                 };

@@ -89,16 +89,16 @@ module API
                     high = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).maximum("price")
                     low = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).minimum("price")
                     amounts = TradeHistory.select("amount").where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol)
-                    volumn = 0.00
+                    volume = 0.00
                     for amount in amounts                    
-                      volumn += amount.amount.to_f
+                      volume += amount.amount.to_f
                     end
                     t << open.created_at.to_i
                     c << close.price.to_f
                     o << open.price.to_f
                     h << high.to_f
                     l << low.to_f
-                    v << volumn.to_f
+                    v << volume.to_f
                   end
                 end
                 if t.length > 0
@@ -127,16 +127,16 @@ module API
                     high = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).maximum("price")
                     low = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).minimum("price")
                     amounts = TradeHistory.select("amount").where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol)
-                    volumn = 0.00
+                    volume = 0.00
                     for amount in amounts                    
-                      volumn += amount.amount.to_f
+                      volume += amount.amount.to_f
                     end
                     t << open.created_at.to_i
                     c << close.price.to_f
                     o << open.price.to_f
                     h << high.to_f
                     l << low.to_f
-                    v << volumn.to_f
+                    v << volume.to_f
                   end
                 end
                 if t.length > 0
@@ -165,16 +165,16 @@ module API
                     high = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).maximum("price")
                     low = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).minimum("price")
                     amounts = TradeHistory.select("amount").where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol)
-                    volumn = 0.00
+                    volume = 0.00
                     for amount in amounts                    
-                      volumn += amount.amount.to_f
+                      volume += amount.amount.to_f
                     end
                     t << open.created_at.to_i
                     c << close.price.to_f
                     o << open.price.to_f
                     h << high.to_f
                     l << low.to_f
-                    v << volumn.to_f
+                    v << volume.to_f
                   end
                 end
                 if t.length > 0
@@ -204,16 +204,16 @@ module API
                     high = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).maximum("price")
                     low = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).minimum("price")
                     amounts = TradeHistory.select("amount").where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol)
-                    volumn = 0.00
+                    volume = 0.00
                     for amount in amounts                    
-                      volumn += amount.amount.to_f
+                      volume += amount.amount.to_f
                     end
                     t << open.created_at.to_i
                     c << close.price.to_f
                     o << open.price.to_f
                     h << high.to_f
                     l << low.to_f
-                    v << volumn.to_f
+                    v << volume.to_f
                   end
                 end
                 if t.length > 0
@@ -242,16 +242,16 @@ module API
                     high = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).maximum("price")
                     low = TradeHistory.where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol).minimum("price")
                     amounts = TradeHistory.select("amount").where("created_at > ? AND created_at < ? AND token_symbol = ?", from,to,token_symbol)
-                    volumn = 0.00
+                    volume = 0.00
                     for amount in amounts                    
-                      volumn += amount.amount.to_f
+                      volume += amount.amount.to_f
                     end
                     t << open.created_at.to_i
                     c << close.price.to_f
                     o << open.price.to_f
                     h << high.to_f
                     l << low.to_f
-                    v << volumn.to_f
+                    v << volume.to_f
                   end
                 end
                 if t.length > 0

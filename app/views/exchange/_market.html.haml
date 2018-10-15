@@ -24,8 +24,8 @@
                 %span{"data-i18n" => "last_price"} Last Price
               %th#pricechange_name.text-right
                 %span{"data-i18n" => "24h_price"} 24h Price
-              %th#volum_name.text-right.selected
-                %span{"data-i18n" => "24h_volumn"} 24h Volume
+              %th#volume_name.text-right.selected
+                %span{"data-i18n" => "24h_volume"} 24h Volume
               %th#favorite.text-right
                 %i.fas.fa-star
           %tbody            
@@ -61,7 +61,7 @@
             -#           %strong
             -#             %span #{token.h_price('WETH')}
             -#     %td.text-center
-            -#       %strong{:value =>token.h_volumn('WETH')} #{token.h_volumn('WETH')} 
+            -#       %strong{:value =>token.h_volume('WETH')} #{token.h_volume('WETH')} 
             -#     %td.text-center.favorite
             -#       %i.far.fa-star{:value => token.id, :fav => 0 }     
       .tab-pane#market_tm{'role' => 'tabpanel'}        
@@ -74,8 +74,8 @@
                 %span{"data-i18n" => "last_price"} Last Price
               %th#pricechange_name.text-right
                 %span{"data-i18n" => "24h_price"} 24h Price
-              %th#volum_name.text-right.selected
-                %span{"data-i18n" => "24h_volumn"} 24h Volume
+              %th#volume_name.text-right.selected
+                %span{"data-i18n" => "24h_volume"} 24h Volume
               %th#favorite.text-right
                 %i.fas.fa-star
           %tbody
@@ -111,7 +111,7 @@
             -#           %strong
             -#             %span #{token.h_price('TM')}
             -#     %td.text-center
-            -#       %strong{:value =>token.h_volumn('TM')} #{token.h_volumn('TM')} 
+            -#       %strong{:value =>token.h_volume('TM')} #{token.h_volume('TM')} 
             -#     %td.text-center.favorite
             -#       %i.far.fa-star{:value => token.id, :fav => 0 }  
           

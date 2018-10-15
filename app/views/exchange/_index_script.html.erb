@@ -158,7 +158,7 @@
                 e.stopPropagation();
 
             });            
-            var detect_popup_emt, name_emt,price_emt,pricechange_emt,volum_emt,detect_account_emt,metamask_login_emt,ledger_login_emt,favorite_emt, cancel_metamask_install_emt, cancel_metamask_login_emt, metamask_install_button_emt;
+            var detect_popup_emt, name_emt,price_emt,pricechange_emt,volume_emt,detect_account_emt,metamask_login_emt,ledger_login_emt,favorite_emt, cancel_metamask_install_emt, cancel_metamask_login_emt, metamask_install_button_emt;
 
             detect_account_emt = document.getElementById("detect_account");
             detect_popup_emt = document.getElementById("detect_popup");
@@ -195,15 +195,15 @@
                 that = $(this);              
                 price_sort(that);
             });
-            volum_emt = document.getElementById("volum_name");
+            volume_emt = document.getElementById("volume_name");
             //Favorite sort function event
             $(document).on('click','#favorite',function(e){            
                 that = $(this);
                 change_favorite_order(that);
             });
-            $(document).on('click','#volum_name',function(e){      
+            $(document).on('click','#volume_name',function(e){      
                 that = $(this);          
-                Trade.volum_sort(null,that);                
+                Trade.volume_sort(null,that);                
             });            
             $(document).on('click','#pricechange_name',function(e){                  
                 that = $(this);              
@@ -575,7 +575,7 @@
         let token_name = base_data.name;
         let last_price = data.l_price;
         let h_price = data.h_price;
-        let h_volumn = data.h_volumn;
+        let h_volume = data.h_volume;
         let contract_addr = normalize_string(token_address);
         let last_price_tag;
         let h_price_tag;
@@ -631,7 +631,7 @@
         token_header_tag.find(":nth-child(1)").children(".contract-address").children("a").attr("href",http_link + "token/"+token_address);
         token_header_tag.find(":nth-child(2)").children("div").children(".last-price").children("strong").html(last_price_tag);
         token_header_tag.find(":nth-child(3)").children("div").children("div").children("strong").html(h_price_tag);
-        token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(h_volumn + " " + "ETH");
+        token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(h_volume + " " + "ETH");
         if(last_price == "--"){
             $(".price-buy").val("");
             $(".price-sell").val("");

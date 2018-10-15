@@ -851,8 +851,8 @@
                     Trade.get_open_orders();
                     let base_token = $(".token-info").attr("base_token");
                     
-                    Trade.volum_sort(base_token,null); 
-                    //Trade.volum_sort();                              
+                    Trade.volume_sort(base_token,null); 
+                    //Trade.volume_sort();                              
                 },
                 error: function(error) {
                     console.log(error);
@@ -934,7 +934,7 @@
                         token_row += "</td>";
                         token_row += 
                         "<td class='text-right'>" +
-                            "<strong value='"+element.h_volumn+"'>" + element.h_volumn +                       
+                            "<strong value='"+element.h_volume+"'>" + element.h_volume +                       
                             "</strong>" +
                         "</td>";
 
@@ -957,8 +957,8 @@
                 //Trade.sort_favorite();
             });
             //let base_token = $(".token-info").attr("base_token");
-            //Trade.volum_sort(base_token, null);   
-            //Trade.volum_sort();     
+            //Trade.volume_sort(base_token, null);   
+            //Trade.volume_sort();     
         },
         change_token_list:function(tokens,symbol,base_token){
             
@@ -969,7 +969,7 @@
                     if(element.symbol == symbol){
                         change_token_list.attr("h_price",element.h_price);
                         change_token_list.attr("price",element.last_price);
-                        change_token_list.attr("h_volumn",element.h_volumn);
+                        change_token_list.attr("h_volume",element.h_volume);
                     }
                 });
             }
@@ -981,7 +981,7 @@
             let token_symbol = data.token_symbol;
             let token_last_price = data.token_last_price;
             let token_h_price = data.token_h_price;
-            let token_h_volumn = data.token_h_volumn;
+            let token_h_volume = data.token_h_volume;
             let token_header_tag = $(".token-header");
             let base_token = data.base_token;
             let contract_addr = Trade.change_contract_address(token_contract_addr);
@@ -1037,7 +1037,7 @@
             token_header_tag.find(":nth-child(1)").children(".contract-address").children("a").attr("href",http_link + "token/"+token_contract_addr);
             token_header_tag.find(":nth-child(2)").children("div").children(".last-price").children("strong").html(last_price_tag);
             token_header_tag.find(":nth-child(3)").children("div").children("div").children("strong").html(h_price_tag);
-            token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(token_h_volumn + " " + base_token);
+            token_header_tag.find(":nth-child(4)").children("div").children("div").children("strong").text(token_h_volume + " " + base_token);
             let symbol = $(".token-info").attr("token_symbol");  
             $(".sell-token-symbol").text(symbol);
             //change token list tag
@@ -1087,7 +1087,7 @@
             },4000);
 
         },
-        volum_sort:function(base_token,that){
+        volume_sort:function(base_token,that){
                    
             var table, rows, switching, i, x, y, shouldSwitch,dir,switchcount = 0;
             //base_token = $(".token-info").attr("base_token");          
