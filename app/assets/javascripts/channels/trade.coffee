@@ -9,8 +9,7 @@ jQuery(document).on 'turbolinks:load', ->
         received: (data) ->            
             trade = data.trade
             symbol = $(".token-info").attr("token_symbol") || "ZRX"
-            base_token = $(".token-info").attr("base_token") || "ETH"
-           
+            base_token = $(".token-info").attr("base_token") || "ETH"           
             # Trade.get_tokens_table() 
             if symbol == trade.token_symbol and base_token == trade.base_token
                 draw_trade trade
