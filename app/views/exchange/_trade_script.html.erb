@@ -1493,7 +1493,7 @@
                                                     let alert = "<span>" + "Max trade size is" +max_trading +" " + base_token + "</span>";
                                                     that.next().children().remove();
                                                     that.next().append(alert);
-                                                    $(".btn-buy").addClass("disabled");
+                                                    $(".btn-sell").addClass("disabled");
                                                 }else{
                                                     $(".total-sell").attr("value",real_price);                                                   
                                                     $(".btn-sell").removeClass("disabled");
