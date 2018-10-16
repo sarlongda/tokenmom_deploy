@@ -40,6 +40,7 @@ Rails.application.routes.draw do
 
   post 'user_sessions/user_login'
   get 'user_sessions/get_user'
+  get '/sitemap' => 'sitemap#index', defaults: {format:"xml"}
 
   mount API::Base, at: "/"  
   mount ActionCable.server => '/cable'
