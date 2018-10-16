@@ -851,7 +851,7 @@
         base_token = $(".token-info").attr("base_token");
         $(".sell-token-symbol").text(symbol);
         if($("#trade_workspace").length ){
-            Trade.get_tokens_table(base_token);
+            Trade.get_tokens_table(base_token,"init");
             draw_orderbook();
             if(base_token == "TM"){
                 $("#market_tab a[data-target='#market_tm']").tab("show");

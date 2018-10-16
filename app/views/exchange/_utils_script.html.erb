@@ -827,7 +827,7 @@
                 }
             }
         },
-        get_tokens_table:function (){
+        get_tokens_table:function (b_token, init){
             //let symbol = localStorage.getItem("select_token") || "ZRX"; 
             symbol = $(".token-info").attr("token_symbol");
             base_token = $(".token-info").attr("base_token"); 
@@ -844,7 +844,7 @@
                 dataType: 'json',
                 data: data,
                 success: function(data) {                          
-                    Trade.change_header_info(data.select_token);            
+                    Trade.change_header_info(data.select_token,init);            
                     Trade.draw_market_table(data.tokens,"WETH");  
                     Trade.draw_market_table(data.tm_tokens,"TM")  
                     Trade.load_trade();
@@ -864,8 +864,7 @@
                 tag = $("#market_eth").find("#market_table").children("tbody");
             }else if(base_token == "TM"){
                 tag = $("#market_tm").find("#market_table").children("tbody");
-            }
-            
+            }            
             tag.html("");
             $.each(data, function(index, element){
                 let token_row;
@@ -972,7 +971,7 @@
                 });
             }
         },
-        change_header_info:function(data){                    
+        change_header_info:function(data,init){                    
             let token_contract_addr = data.token_contract_addr;
             let token_decimals = data.token_decimals;
             let token_name = data.token_name;
@@ -1045,23 +1044,49 @@
             //$(".amount-sell").val("");
             //$(".amount-buy").trigger("change");
             //$(".amount-sell").trigger("change");
-            if(token_last_price == "--"){
-                //$("#trade .price").val("");
-                $(".price-buy").val("");
-                $(".price-sell").val("");
-                $(".price-buy").attr('data-lock','true');
-                $(".price-sell").attr('data-lock','true');
-                //$(".price-buy").trigger("change");
-                //$(".price-sell").trigger("change");
-            }else{
-                //$("#trade .price").val(real_last_price);
-                $(".price-buy").val(real_last_price);
-                $(".price-sell").val(real_last_price);
-                $(".price-buy").attr('data-lock','false');
-                $(".price-sell").attr('data-lock','false');
-                $(".price-buy").trigger("change");
-                $(".price-sell").trigger("change");
+
+            if(init == "init"){
+                if(token_last_price == "--"){
+                    //$("#trade .price").val("");
+                    $(".price-buy").val("");
+                    $(".price-sell").val("");
+                    $(".price-buy").attr('data-lock','true');
+                    $(".price-sell").attr('data-lock','true');
+                    //$(".price-buy").trigger("change");
+                    //$(".price-sell").trigger("change");
+                }else{
+                    //$("#trade .price").val(real_last_price);
+                    $(".price-buy").val(real_last_price);
+                    $(".price-sell").val(real_last_price);
+                    $(".price-buy").attr('data-lock','false');
+                    $(".price-sell").attr('data-lock','false');
+                    $(".price-buy").trigger("change");
+                    $(".price-sell").trigger("change");
+                }
+            }else if(init == "change"){
+                if(token_last_price == "--"){
+                    //$("#trade .price").val("");
+                    $(".price-buy").val("");
+                    $(".price-sell").val("");
+                    $(".price-buy").attr('data-lock','true');
+                    $(".price-sell").attr('data-lock','true');
+                    //$(".price-buy").trigger("change");
+                    //$(".price-sell").trigger("change");
+                }else{
+                    //$("#trade .price").val(real_last_price);
+                    $(".price-buy").val(real_last_price);
+                    $(".price-sell").val(real_last_price);
+                    $(".price-buy").attr('data-lock','false');
+                    $(".price-sell").attr('data-lock','false');
+                    $(".price-buy").trigger("change");
+                    $(".price-sell").trigger("change");
+                }
+                $(".amount-buy").val("");
+                $(".amount-sell").val("");
+
             }
+            
+            
             $(".btn-buy span").text("BUY "   + token_symbol  );
             $(".btn-sell span").text("SELL "   + token_symbol  );
             $(".unit.buy").text(token_symbol);

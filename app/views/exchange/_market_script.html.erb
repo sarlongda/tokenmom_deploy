@@ -25,7 +25,7 @@
                     token_decimals:token_decimals,
                     base_token:base_token
                 };
-                Trade.change_header_info(data);
+                Trade.change_header_info(data,"change");
                 Trade.get_open_orders();
                 Trade.draw_quick_balance();
                 Trade.get_token_amount(token_contract_addr,base_token);
