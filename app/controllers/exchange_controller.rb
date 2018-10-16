@@ -41,10 +41,7 @@ $token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
 $weth_contract_addr = "0xc778417e063141139fce010982780140aa0cd5ab"
 $zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
 $tm_token_addr = "0x91495D6969120fc016BB687EaD5F5cE56F135504"
-
 $tm_token_decimals = 18;
-
-
 # Contract Addresses for kovan Network
 # $exchange_contract_addr = "0x90fe2af704b34e0224bf2299c838e04d4dcf1364"
 # $token_contract_addr = "0x087eed4bc1ee3de49befbd66c662b434b15d49d4"
@@ -56,6 +53,8 @@ $set_allow_value = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 # Server Setting values
 $wallet_address = "0x7Cc2768c52DEAB5Bc304485c0Fd82Bed287372cD"
 $server_key = "6efdb4fb96870179bc6db81900b40b2dca3f1e899a4fa180da7a66a85c1edd72"
+$tm_wallet = "0x4cf8b831d3a1828fa3706d4124ee17ae224f9ddc"
+$tm_wallet_key = "A1A65EAA0A6EE4A9F666A2DE54792BCAF9449196DB9D5C8045ED2ABFABA987D2"
 $api = Web3::Eth::Etherscan.new api_key: "99MSTBF4NK8F7GT7WNG1173KCYZQNBKHKE"
 
 $exchange_abi = 
@@ -1293,11 +1292,13 @@ class ExchangeController < ApplicationController
           jj = 0
           ii += 1
         end
+        gas_price = ($web3.eth.gasPrice() * 2).to_i(16)
+        gas_limit = 210000;
         
         tx = Eth::Tx.new({
           value:0,      
-          gas_limit: 8900_00,
-          gas_price: 10000000000,
+          gas_limit: gas_limit,
+          gas_price: gas_price,
           nonce: count,
           to: contract_address,
           data:data_code,
@@ -1916,7 +1917,6 @@ class ExchangeController < ApplicationController
   end
   # Reward system
   def reward
-
     
   end
 
