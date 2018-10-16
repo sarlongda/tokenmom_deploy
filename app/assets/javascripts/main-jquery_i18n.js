@@ -170,7 +170,17 @@ jQuery(function($) {
       'commission': 'Commission ',
       'share': 'SHARE ',
       'volume' : 'Volume',
-      'tm_point' : 'TM Point',    
+      'tm_point' : 'TM Point',
+      'tokenmom_reward_system': 'TOKENMOM REWARD SYSTEM',
+      'with_referral_system': 'WITH REFERRAL SYSTEM',
+         
+      //Footer
+      'terms_and_conditions': 'Terms and Conditions',
+      'privacy_policy': 'Privacy Policy',
+      'support': 'Support',
+      'token_listing': 'Token Listing',
+      'support_center': 'Support Center',
+      'contact': 'Contact', 
       //Header
       'select_wallet': 'Select Wallet',
       'login_metamask': 'Login to MetaMask',
@@ -346,6 +356,8 @@ jQuery(function($) {
       'share': '공유 :',
       'volume': '거래량',
       'tm_point': 'TM 포인트',
+      'tokenmom_reward_system': '토큰맘 보상 체계',
+      'with_referral_system': '추천체계 포함',
 
       //Header
       'select_wallet': '지갑선택',
