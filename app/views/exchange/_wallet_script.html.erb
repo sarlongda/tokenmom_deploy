@@ -15,8 +15,7 @@
                 let wrap_amount = parseFloat($(".wrap-amount").val());
                 if(check_amount("wrap",wrap_amount)){
                     wrap_eth(wrap_amount);
-                }   
-                                       
+                }                                      
                 e.preventDefault();
             });
             //UnWrap WETH Event
@@ -24,8 +23,7 @@
                 let unwrap_amount = $(".unwrap-amount").val();
                 if(check_amount("unwrap",unwrap_amount)){
                     unwrap_weth(unwrap_amount);
-                }
-                                      
+                }                                      
                 e.preventDefault();
             });
             //Wrap input value change Event
@@ -38,7 +36,6 @@
                let unwrap_amount = $(this).val();
                check_amount("unwrap",unwrap_amount);
             });
-
             $(document).on('click', ".wallet-search-btn", function(e){
                 var search      = $(".wallet-search-input").val();
                 var prev_search = $(".wallet-prev-search").val();
@@ -48,7 +45,6 @@
                     _initPagination();
                 }
             });
-
             $(document).on('change keyup', ".wallet-search-input", function(){
                 var search      = $(".wallet-search-input").val();
                 var prev_search = $(".wallet-prev-search").val();
@@ -58,13 +54,12 @@
                     _initPagination();
                 }
             });
-
             $(document).on('change', "#wallet_my_tokens", function (e) {
                 _handlePageClick(1);
                 _initPagination();
             });
             $(document).on('change',".wal-weth-allow",function(e){
-                let element     = $(this);
+                let element = $(this);
                 
                 let parent = $(this).parent().parent();
                 parent.find("i").css("display","block");
@@ -98,7 +93,6 @@
                                 //$(".token-item-" + td_symbol.text()).data("balance", false);
                             }
                         } catch (e) {
-
                         } finally {
                             parent.find("i").css("display","none");
                             parent.find("label").css("display","block");
@@ -106,15 +100,13 @@
                     };
                     set_unallowance().catch(console.error);
                 }
-            })
-
+            });
             $(document).on('change', ".wallet-token-allow", function(e){
                 let element     = $(this);
                 let td_parent   = element.parent().parent().parent();
                 let td_addr     = td_parent.prev().prev();
                 let td_symbol   = td_addr.prev().prev();
-                let token_addr  = td_addr.text();
-               
+                let token_addr  = td_addr.text();               
                 td_parent.removeClass("wallet-allowance-loaded").addClass("wallet-allowance-loading");
                 if(this.checked){
                     $(this).prop('checked', false);
@@ -177,9 +169,7 @@
                     $(".weth-balance").find("span").css("display","block");
                     $(".weth-balance").find("span").text(weth_balance);
                 });
-
             });
-
             $(document).on('click', '.wb-sync', function (e) {                
                 let td_balance    = $(this).parent();
                 let td_address    = td_balance.prev();
@@ -198,11 +188,9 @@
                         tokenContract.balanceOf(address,(error,balance) =>{                            
                             token_balance = (balance.toNumber() / Math.pow(10,token_decimal));
                             td_balance.find(".wb-value").text(token_balance);
-                            $(".token-item-" + td_symbol.text()).data("balance", token_balance);
-                                                                         
+                            $(".token-item-" + td_symbol.text()).data("balance", token_balance);                                                                         
                         });                        
-                    });    
-                    
+                    });                  
                 } catch (e) {
                     td_balance.find(".wb-value").text(0);
                     $(".token-item-" + td_symbol.text()).data("balance", 0);
@@ -210,7 +198,6 @@
                     td_balance.removeClass("wallet-balance-loading").addClass("wallet-balance-loaded");
                 }
             });
-
             $(document).on('click', "#wallet_btn", function (e) {
                 if(currentWalletAddress !== undefined){
                     $("#overview_widget").children("aside").removeClass("is-active");
@@ -236,11 +223,57 @@
                         $("#no_wallet").css("display","none");
                     },2000);
                 }
-            });
-            
+            });            
             $(document).on('click', ".closebtn", function (e) {
                 document.getElementById("wallet_widget").children[0].classList.remove('is-active');
             });
+            $(document).on('click', ".wallet-token-symbol",function(e) {
+                
+                sort_table_by_symbol();
+            });
+            $(document).on('click', ".wallet-token-name",function(e) {
+                
+            });
+            $(document).on('click', ".wallet-token-balance",function(e) {
+                
+            });
+            function sort_table_by_symbol(){
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementsByClassName("wallet-token-list")[0];
+                switching = true;
+                dir = "asc";
+                while (switching) {
+                    switching = false;
+                    rows = table.rows;
+                    for(i = 0; i< (rows.length - 1); i ++){
+                        shouldSwitch = false;
+                        x = rows[i].getElementsByTagName("TD")[0];
+                        y = rows[i + 1].getElementsByTagName("TD")[0];
+
+                        if(dir == "asc") {
+                            if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if(dir == "desc") {
+                            if(x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        switchcount ++;
+                    } else {
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
             function wrap_eth(amount){
                 let wrap_eth = async () => {
                     $(".btn-wrap").addClass("disabled");
@@ -382,8 +415,6 @@
                             $('.wallet-weth-allow').find('label').find('input').prop('checked',true);
                             $('.wallet-weth-allow').find('i').css('display','none');
                             $('.wallet-weth-allow').find('label').css('display','block');
-
-
                         }else{
                             $('.wallet-weth-allow').find('label').find('input').prop('checked',false);
                             $('.wallet-weth-allow').find('i').css('display','none');
@@ -396,7 +427,6 @@
                 };
                 get_allowance().catch(console.error);
             }
-
             function web3_load(){
                 var contract_abi = human_standard_token_abi;
                 var provider;
@@ -414,8 +444,7 @@
                         let contractABI   = human_standard_token_abi;
                         let tokenContract = web3.eth.contract(contractABI).at(token_addr);
                         let get_balance = async () => {
-                            try {
-                                
+                            try {                                
                                 token_contract_addr = token_addr    //Token Address
                                 var contractAddress = token_contract_addr; // Token Address
                                 let address = currentWalletAddress;
@@ -434,12 +463,9 @@
                                             let tb_element = $(".wallet-balance-" + symbol);
                                             tb_element.find(".wb-value").text(parseFloat(token_balance));
                                             tb_element.removeClass("wallet-balance-loading").addClass("wallet-balance-loaded");
-                                        }
-                                                                                   
+                                        }                                                                                   
                                     });                        
-                                });    
-                                
-                                
+                                });                               
                             } catch (e) {
                                 element.data("balance", 0);
                                 if($(".wallet-balance-" + symbol) !== undefined){
@@ -449,8 +475,7 @@
                                 }
                             }
                         };
-                        get_balance().catch(console.error);
-                        
+                        get_balance().catch(console.error);                        
                         // get allowance status
                         let get_allowance = async () => {
                             try {
@@ -485,7 +510,6 @@
                     });
                 }
             }
-
             function _handlePageClick(page){
                 $(".wallet-token-list").empty();
                 var search      = $(".wallet-search-input").val();
@@ -576,7 +600,6 @@
                     }
                 });
             }
-
             function _initPagination(){
                 let search      = $(".wallet-search-input").val();
                 let count_index = 0;

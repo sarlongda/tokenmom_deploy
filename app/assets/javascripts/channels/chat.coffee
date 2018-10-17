@@ -20,7 +20,6 @@ jQuery(document).on 'turbolinks:load', ->
   if $('#trade_workspace').length
     getMessages() 
   else
-
   if $messages.length > 0
     App.chat = App.cable.subscriptions.create {
       channel: "ChatChannel"

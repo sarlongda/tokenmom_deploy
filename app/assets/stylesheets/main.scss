@@ -2338,15 +2338,15 @@ input:focus{
           margin-left: 10px;
           border-width: 1px;
           border-top-left-radius: 4px;
-					border-top-right-radius: 4px;
-					a{
-						color:#009fff;
-					}         
-
+		  border-top-right-radius: 4px;
+		  a{
+		  	color:#009fff;
+		  }
           td, th {
             text-align: center;
             padding: 10px;
-            font-size: 0.9rem;
+			font-size: 0.9rem;
+			cursor: pointer;
           }
 
           .wallet-token-symbol {

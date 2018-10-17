@@ -357,6 +357,8 @@ class ExchangeController < ApplicationController
     @messages = Message.order(updated_at: :asc)
     # ETH token table
     @tokenlist = get_token_list
+
+    @tokens_list = get_tokens_list_wallet
     # TM token table
     @tmtokenlist = Token.where("tm_field = ?", 1).order(symbol: :asc)
 

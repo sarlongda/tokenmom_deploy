@@ -57,7 +57,7 @@
                 %span{'data-i18n' => 'unwrap'} UNWRAP
         
     .hidden-token-contents
-      - @tokenlist.each do |token|
+      - @tokens_list.each do |token|
         %input{:class=>"token-item token-item-" + token.symbol, :type=>"hidden", :"data-symbol"=>token.symbol, :"data-name"=>token.name, :"data-address"=>token.contract_address}
     %table.wallet-token-table.table-striped
       %thead
