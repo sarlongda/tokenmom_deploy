@@ -487,35 +487,33 @@ class ExchangeController < ApplicationController
     refer_users = User.where("recommended_id = ?", referral_id).order(created_at: :asc)
 
     if refer_users.length > 0
-      wallet = Array.new
-      refer_users.each_with_index do |refer_user, index|       
-        wallet[index] = refer_user.wallet_address        
-      end
-      commissions = TradeHistory.where("base_token = ? AND (maker_address = ? OR taker_address = ?)","WETH",wallet[0],wallet[0]).order(created_at: :desc).first(100)     
+      # wallet = Array.new
+      # refer_users.each_with_index do |refer_user, index|       
+      #   wallet[index] = refer_user.wallet_address        
+      # end
+      # commissions = TradeHistory.where("base_token = ? AND (maker_address = ? OR taker_address = ?)","WETH",wallet[0],wallet[0]).order(created_at: :desc).first(100)     
 
-      commission_array = Array.new
-      commissions.each_with_index do |commission, index|
-        referral_id = User.where("wallet_address = ?",commission.maker_address).first.referral_id
+      # commission_array = Array.new
+      # commissions.each_with_index do |commission, index|
+      #   referral_id = User.where("wallet_address = ?",commission.maker_address).first.referral_id
 
-        json_record = {
-          "price" => commission.price,
-          "amount" => commission.amount,
-          "referral_id" => referral_id,
-          "time" => commission.created_at
-        }
-        commission_array.push json_record
-      end
+      #   json_record = {
+      #     "price" => commission.price,
+      #     "amount" => commission.amount,
+      #     "referral_id" => referral_id,
+      #     "time" => commission.created_at
+      #   }
+      #   commission_array.push json_record
+      # end
       json_data = {
         "state":"OK",
         "refer_users":refer_users,
-        "wallets":wallet,
-        "commissions":commission_array        
+            
       }
 
     else
       json_data = {
-        "state":"OK",
-                
+        "state":"OK",                
       }
 
     end
