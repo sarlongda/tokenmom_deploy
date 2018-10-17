@@ -23,6 +23,7 @@ let fee_percent = 0.05;
 let tm_fee_percent = 0.01;
 let initial_tm_fee = 50;
 let initial_fee = 0.002;
+let reward_request_amount = 5000;
 jQuery(function($) {        
     $(document).ready(function () {
         function load_js(){            

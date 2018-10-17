@@ -54,20 +54,16 @@
                         data: {                                    
                             wallet_addr: currentWalletAddress
                         },
-                        success: function (data) {
-                            
+                        success: function (data) {                            
                             if(data.state == "ok"){
                                 draw_reward_tables(currentWalletAddress); 
-                            }                              
-                            //$(this).addClass("disabled");                         
+                            }                           
                         }
                     });
-
                 }
 
             });
         });
-
         function draw_reward_tables(wallet_address){
             $.ajax({
                 url: '/exchange/get_reward',
@@ -114,12 +110,9 @@
                 element_tr += "<td style='text-align:right'>" + tm_point + "</td>";                                  
                 element_tr += "</tr>";
                 tag.append(element_tr);
-                total_volume += parseFloat(tm_point);
-                
+                total_volume += parseFloat(tm_point);                
             });
-
-            $(".total-commission-value").text(total_volume.toFixed(2) + " TM");    
-
+            $(".total-commission-value").text(total_volume.toFixed(2) + " TM");
         }
         function draw_reward_request(trades) {
             let tag = $(".reward-pending").children("tbody");
@@ -139,9 +132,9 @@
                 tag.append(element_tr);
                 total_volume += parseFloat(tm_point);
             });                                
-            let pending_text = "( " + total_volume.toFixed(2) +" " + "/" + "100" + " " + ")";
+            let pending_text = "( " + total_volume.toFixed(2) +" " + "/" + reward_request_amount + " " + ")";
             $(".pending-transaction").text(pending_text);
-            if(total_volume > 100){
+            if(total_volume > reward_request_amount){
                 $(".reward-request").removeClass("disabled");
             }
 
@@ -153,7 +146,6 @@
                 console.log("each-draw-refer users");
                 total_users += 1;
                 let each_tag = "<tr>";
-
                 let time_format = Trade.get_timeformat(element.created_at);
                 each_tag += "<td>" + element.referral_id + "</td>";
                 each_tag += "<td style='text-align:right'>" + time_format + "</td>";
@@ -162,7 +154,6 @@
             });
             $(".total-friends-number").text(total_users);
         }
-
         function draw_claimed(claimed) {
             let tag = $(".reward-claimed").children("tbody");
             tag.html("");

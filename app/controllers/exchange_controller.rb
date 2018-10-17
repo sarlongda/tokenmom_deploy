@@ -337,6 +337,7 @@ $token_abi =
     }
   ]'
 $refer_id
+$reward_request_amount = 5000;
 class ExchangeController < ApplicationController
   skip_before_action :verify_authenticity_token  
   def index
@@ -860,7 +861,7 @@ class ExchangeController < ApplicationController
   end
 
 
-  def send_tm_token value = 100
+  def send_tm_token(value = 100,wallet_addr)
 
     # token_address = '0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d' # ZRX token address
     contract_address = $tm_token_addr
@@ -871,11 +872,10 @@ class ExchangeController < ApplicationController
 
     big_value_string = big_value.to_i.to_s(16)
     big_value_param = hash32 big_value_string
-
     # get nonce count
     count = $web3.eth.getTransactionCount([key.address,"pending"]).to_i(16)
     # params
-    spender_address = $token_contract_addr    
+    spender_address = wallet_addr    
     function_name = '';
     function_name = "0xa9059cbb" # approve function name
 
@@ -1962,8 +1962,8 @@ class ExchangeController < ApplicationController
         total_volume += BigDecimal.new(volume)
       end
       tm_point = (total_volume * $reward_ratio).to_f.truncate(2)
-      if tm_point > 100 
-        tx = send_tm_token(tm_point) 
+      if tm_point > $reward_request_amount 
+        tx = send_tm_token(tm_point,wallet_addr) 
         create_reward(wallet_addr, tm_point,tx)     
         json_data = {
           "state": "ok",
