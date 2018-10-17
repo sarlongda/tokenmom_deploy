@@ -488,31 +488,35 @@ class ExchangeController < ApplicationController
 
     if refer_users.length > 0
       wallet = Array.new
-      refer_users.each_with_index do |refer_user, index|       
-        wallet[index] = refer_user.wallet_address        
-      end
-      commissions = TradeHistory.where("base_token = ? AND (maker_address = ? OR taker_address = ?)","WETH",wallet[0],wallet[0]).order(created_at: :desc).first(100)     
-
       commission_array = Array.new
+      refer_users.each_with_index do |refer_user, index|       
+        wallet[index] = refer_user.wallet_address 
+      end
+      commissions = TradeHistory.where("base_token = ? AND (maker_address IN (?) OR taker_address IN (?))","WETH",wallet,wallet).order(created_at: :desc).first(100)     
       commissions.each_with_index do |commission, index|
         referral_user = User.where("wallet_address = ?",commission.maker_address).first
         if referral_user
-          referral_id = referral_user.referral_id
+          refer_id = referral_user.referral_id
+          if refer_id == referral_id
+            refer_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
+          end          
         else
-          referral_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
+          refer_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
         end
-
         json_record = {
           "price" => commission.price,
           "amount" => commission.amount,
-          "referral_id" => referral_id,
+          "referral_id" => refer_id,
           "time" => commission.created_at
         }
         commission_array.push json_record
-      end
+      end       
+      
+      
       json_data = {
         "state":"OK",
         "refer_users":refer_users,
+        "commissions":commission_array
             
       }
 
