@@ -198,6 +198,12 @@ input:focus{
 	.box-header{
 		border-bottom: 1px solid white;
 	}
+	.alert-reward{
+		width: 300px;
+		z-index: 1000;
+		float: right;
+		display: block;
+	}
 	.header-text{
 		text-align: center;
 		h2{

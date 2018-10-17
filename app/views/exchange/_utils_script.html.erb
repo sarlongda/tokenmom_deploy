@@ -1101,14 +1101,21 @@
             window.setTimeout(function(){            
                 $(".alert-order").css("display","none");
             },4000);
-
         },
         trade_alert:function(){
             $(".alert-trade").css("display",'block')
             window.setTimeout(function(){            
                 $(".alert-trade").css("display","none");
             },4000);
-
+        },
+        reward_alert:function(){
+            let window_height = window.innerHeight - 200;
+            $(".alert-reward").css("top",window_height);
+            $(".alert-reward").css("display","block")
+            window.setTimeout(function(){
+                $(".alert-reward").css("display","none");
+                $(".alert-reward").css("top",0);
+            },3000);
         },
         volume_sort:function(base_token,that){
                    

@@ -255,6 +255,8 @@ jQuery(function($) {
       'success' : 'Success',
       'create_order': 'You have been created order in successfully!',
       'create_trade': 'Your order has been successfully completed.',
+      'request_reward': 'Your request has been successfully completed.',
+
       //trade history widget
       'trade_history' : 'TRADE HISTORY',
       'all_trades' : 'ALL TRADES',
@@ -439,6 +441,7 @@ jQuery(function($) {
       'success': '성공',
       'create_order': '성공적으로 주문을 완료하였습니다!',
       'create_trade': '성공적으로 주문이 체결되었습니다!',
+      'request_reward': '당신의 요청이 성공적으로 완료되였습니다!',
       //trade history widget
       'trade_history' : '거래 내역',
       'all_trades' : '모든 거래내역',
@@ -621,6 +624,7 @@ jQuery(function($) {
       'success' : '成功',
       'create_order': 'でオーダーが正常に作成されました.',
       'create_trade': 'ご注文は正常に完了しました.',
+      'request_reward': 'あなたのリクエストは正常に完了しました。',
       //trade history widget
       'trade_history' : '取引内訳',
       'all_trades' : 'すべての取引内訳',
@@ -803,6 +807,7 @@ jQuery(function($) {
       'success' : '成功',
       'create_order': '您已成功创建订单！',
       'create_trade': '您的订单已成功完成。',
+      'request_reward': '您的請求已成功完成。',
       //trade history widget
       'trade_history' : '交易记录',
       'all_trades' : '全部交易明细',
