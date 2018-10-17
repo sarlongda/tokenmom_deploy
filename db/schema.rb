@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_070047) do
+ActiveRecord::Schema.define(version: 2018_10_17_160444) do
 
   create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2018_09_22_070047) do
     t.text "content"
     t.integer "room_id"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "message"
+    t.boolean "visible"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +71,21 @@ ActiveRecord::Schema.define(version: 2018_09_22_070047) do
     t.datetime "updated_at", null: false
     t.float "amount"
     t.index ["token_id"], name: "index_prices_on_token_id"
+  end
+
+  create_table "referrals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "referral_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rewards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "wallet_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "amount", precision: 21, scale: 10
+    t.string "state"
+    t.string "txHash"
   end
 
   create_table "tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
