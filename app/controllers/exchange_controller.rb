@@ -56,7 +56,6 @@ $server_key = "6efdb4fb96870179bc6db81900b40b2dca3f1e899a4fa180da7a66a85c1edd72"
 $tm_wallet = "0x4cf8b831d3a1828fa3706d4124ee17ae224f9ddc"
 $tm_wallet_key = "A1A65EAA0A6EE4A9F666A2DE54792BCAF9449196DB9D5C8045ED2ABFABA987D2"
 $api = Web3::Eth::Etherscan.new api_key: "99MSTBF4NK8F7GT7WNG1173KCYZQNBKHKE"
-
 $exchange_abi = 
   '[
     {"constant":true,
@@ -348,8 +347,7 @@ class ExchangeController < ApplicationController
   end  
   def trade   
     base_token = params[:trade_pair].split("-")[1]
-    token_symbol = params[:trade_pair].split("-")[0]
-    
+    token_symbol = params[:trade_pair].split("-")[0]    
     @refer_id = $refer_id
     @base_token = base_token
     @eth_price = get_eth_price
@@ -361,6 +359,8 @@ class ExchangeController < ApplicationController
     @tokens_list = get_tokens_list_wallet
     # TM token table
     @tmtokenlist = Token.where("tm_field = ?", 1).order(symbol: :asc)
+    
+    @notifications = Notification.order(created_at: :asc)
 
     token = Token.where("symbol = ?",token_symbol).first
     if token

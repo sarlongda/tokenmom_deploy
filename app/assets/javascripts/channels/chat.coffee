@@ -37,7 +37,6 @@ jQuery(document).on 'turbolinks:load', ->
             $messages.append data['message']
             messages = $('#messages')
             $messages.scrollTop(messages.prop("scrollHeight"))
-
       send_message: (message) ->
         value = $(".dropdown-toggle.language-link").val() || 1
         user_id = $('#message_body').attr('data-user-id')

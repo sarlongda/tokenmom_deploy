@@ -19,6 +19,8 @@ Trestle.resource(:users, model: User) do
     row do
       col(xs: 6) { datetime_field :updated_at }
       col(xs: 6) { datetime_field :created_at }
+      col(xs: 6) { text_field :referral_id }
+      col(xs: 6) { text_field :recommended_id }
     end
 
     unless user.id.nil?
