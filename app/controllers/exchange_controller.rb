@@ -336,7 +336,8 @@ $token_abi =
     }
   ]'
 $refer_id
-$reward_request_amount = 5000;
+$reward_request_amount = 5000
+$reward_tm_fee = 50
 class ExchangeController < ApplicationController
   skip_before_action :verify_authenticity_token  
   def index
@@ -1972,13 +1973,14 @@ class ExchangeController < ApplicationController
         total_volume += BigDecimal.new(volume)
       end
       tm_point = (total_volume * $reward_ratio).to_f.truncate(2)
-      if tm_point > $reward_request_amount 
-        tx = send_tm_token(tm_point,wallet_addr) 
-        create_reward(wallet_addr, tm_point,tx)     
+      if tm_point > $reward_request_amount
+        amount = tm_point - $reward_tm_fee 
+        tx = send_tm_token(amount,wallet_addr) 
+        create_reward(wallet_addr, amount,tx)     
         json_data = {
           "state": "ok",
           "tx": tx,
-          "tm_point": tm_point
+          "tm_point": amount
         }
       else
         json_data = {
