@@ -483,7 +483,6 @@ class ExchangeController < ApplicationController
   def get_users
     referral_id  = params[:referral_id]
     refer_users = User.where("recommended_id = ?", referral_id).order(created_at: :asc)
-
     if refer_users.length > 0
       wallet = Array.new
       commission_array = Array.new
@@ -499,7 +498,11 @@ class ExchangeController < ApplicationController
             refer_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
           end          
         else
-          refer_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
+          referral_user = User.where("wallet_address = ?",commission.taker_address).first
+          refer_id = referral_user.referral_id
+          if refer_id == referral_id
+            refer_id = User.where("wallet_address = ?",commission.maker_address).first.referral_id
+          end
         end
         json_record = {
           "price" => commission.price,
