@@ -496,12 +496,20 @@ class ExchangeController < ApplicationController
           refer_id = referral_user.referral_id
           if refer_id == referral_id
             refer_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
+          else
+            if wallet.include? referral_user.wallet_address
+              refer_id = User.where("wallet_address = ?",commission.maker_address).first.referral_id
+            else
+              refer_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
+            end
           end          
         else
           referral_user = User.where("wallet_address = ?",commission.taker_address).first
           refer_id = referral_user.referral_id
           if refer_id == referral_id
             refer_id = User.where("wallet_address = ?",commission.maker_address).first.referral_id
+          else
+            refer_id = User.where("wallet_address = ?",commission.taker_address).first.referral_id
           end
         end
         json_record = {

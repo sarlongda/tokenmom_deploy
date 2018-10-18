@@ -838,6 +838,15 @@
                                 },
                                 error: function(error) {
                                     console.log(error);
+                                    if(trade == "buy"){
+                                        $(".btn-buy > :nth-child(2)").remove();
+                                        $(".amount-buy").val("");
+                                        $(".btn-buy").addClass("disabled");
+                                    }else if( trade == "sell"){
+                                        $(".btn-sell > :nth-child(2)").remove();
+                                        $(".amount-sell").val("");
+                                        $(".btn-sell").addClass("disabled");
+                                    }
                                 }
                             });
                         }catch(e){
