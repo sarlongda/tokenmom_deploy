@@ -150,6 +150,14 @@ input:focus{
 	margin: 0 4px 4px;
 	padding: 10px;
 }
+.server-notice{
+	border: 1px;
+	background: #2cb44b;
+	border-color: #c82333;
+	margin: 0 4px 4px;
+	padding: 10px;
+	font-size: 12px;
+}
 .usd-price{
 	visibility: hidden;
 	padding: 5px;
@@ -1395,92 +1403,91 @@ input:focus{
 			}
 		}
 	}
-  .popup {
-        position: absolute;
-        right: 153px;
-        top: 50px;
-        display: inline-block;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        .detect-popup {
-            visibility: hidden;
-            width: 210px;
-            text-align: center;
-            border-radius: 1px;
-            position: absolute;
-            z-index: 10;
-            left: 50%;
-            margin-left: -80px;
-            &.show {
-                visibility: visible;
-                -webkit-animation: fadeIn 1s;
-                animation: fadeIn 1s;
-            }
-            #nick_name {
-                width: 100%;
-                bottom: 7px;
-                margin-top: 10px;
-            }
-            .icon-wrapper {
-                width: 33px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 2px 0 0 2px;
-            }
-            .flex-button {
-                display: flex; margin-top: 25px;
-            }
-            .flex-button-text {
-                width: 100%;
-                align-self: center;
-            }
-            .grey-back {
-                padding: 20px;
-            }
-            .icon-white {
-                width: 33px;
-                filter: invert(1);
-                align-items: center;
-                justify-content: center;
-                border-radius: 2px 0 0 2px;
-                img {
-                  color: #fff;
-                  background: #fff;
-                }
-            }
-            #metamask_logined {
-                text-align: -webkit-center;
-            }
-            #metamask_install {
-                text-align: -webkit-center;
-            }
-            #metamask_logoutted {
-                text-align: -webkit-center;
-            }
-            #metamask_disconnect {
-                text-align: center;
-                width: auto;
-                margin-right: 28px;
-                margin-left: 28px;
-                padding: 5px;
-                margin-top: 15px;
-            }
-            .green-circle {
-                width: 7px;
-                height: 7px;
-                border-radius: 50%;
-                display: inline-block;
-            }
-            .text-wrapper {
-                user-select: none;
-            }
-
-        }
-  }
+  	.popup {
+  	  position: absolute;
+  	  right: 153px;
+  	  top: 50px;
+  	  display: inline-block;
+  	  cursor: pointer;
+  	  -webkit-user-select: none;
+  	  -moz-user-select: none;
+  	  -ms-user-select: none;
+  	  user-select: none;
+  	  .detect-popup {
+  	      visibility: hidden;
+  	      width: 210px;
+  	      text-align: center;
+  	      border-radius: 1px;
+  	      position: absolute;
+  	      z-index: 10;
+  	      left: 50%;
+  	      margin-left: -80px;
+  	      &.show {
+  	          visibility: visible;
+  	          -webkit-animation: fadeIn 1s;
+  	          animation: fadeIn 1s;
+  	      }
+  	      #nick_name {
+  	          width: 100%;
+  	          bottom: 7px;
+  	          margin-top: 10px;
+  	      }
+  	      .icon-wrapper {
+  	          width: 33px;
+  	          display: flex;
+  	          align-items: center;
+  	          justify-content: center;
+  	          border-radius: 2px 0 0 2px;
+  	      }
+  	      .flex-button {
+  	          display: flex; margin-top: 25px;
+  	      }
+  	      .flex-button-text {
+  	          width: 100%;
+  	          align-self: center;
+  	      }
+  	      .grey-back {
+  	          padding: 20px;
+  	      }
+  	      .icon-white {
+  	          width: 33px;
+  	          filter: invert(1);
+  	          align-items: center;
+  	          justify-content: center;
+  	          border-radius: 2px 0 0 2px;
+  	          img {
+  	            color: #fff;
+  	            background: #fff;
+  	          }
+  	      }
+  	      #metamask_logined {
+  	          text-align: -webkit-center;
+  	      }
+  	      #metamask_install {
+  	          text-align: -webkit-center;
+  	      }
+  	      #metamask_logoutted {
+  	          text-align: -webkit-center;
+  	      }
+  	      #metamask_disconnect {
+  	          text-align: center;
+  	          width: auto;
+  	          margin-right: 28px;
+  	          margin-left: 28px;
+  	          padding: 5px;
+  	          margin-top: 15px;
+  	      }
+  	      .green-circle {
+  	          width: 7px;
+  	          height: 7px;
+  	          border-radius: 50%;
+  	          display: inline-block;
+  	      }
+  	      .text-wrapper {
+  	          user-select: none;
+  	      }
+  	  }
+  	}
 	.nav-tabs {
 		width: 100%;
 		font-weight: bold;
@@ -1494,19 +1501,18 @@ input:focus{
 		.nav-item{
 			cursor: pointer;
 		}
-	}
-	
+	}	
 	.tmom-row{
 		margin: 0;
 		-webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 4px 4px;
-    min-height: 0;
-    min-width: 1100px;
+    	-ms-flex: 1;
+    	flex: 1;
+    	display: -webkit-box;
+    	display: -ms-flexbox;
+    	display: flex;
+    	margin: 0 4px 4px;
+    	min-height: 0;
+    	min-width: 1100px;
 		.tmom-grid-left {
 			padding: 0;
 			margin-left: 5px;

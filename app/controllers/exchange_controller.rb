@@ -415,8 +415,7 @@ class ExchangeController < ApplicationController
         zero_count = maker_zero(decimal)
         pro = amount_pro(token.amount,sell_max.mamount).to_s 
         volume = BigDecimal.new(token.price.to_s) * BigDecimal.new(token.amount.to_s)  
-        depth = volume_pro(total_volume,volume).to_s 
-        
+        depth = volume_pro(total_volume,volume).to_s         
         json_record = {  
           "zero_count" => zero_count, 
           "depth" => depth.to_s,
@@ -431,7 +430,6 @@ class ExchangeController < ApplicationController
       @trade_histories = Array.new
       trade_histories.each_with_index do |trade, index|
         time_format = get_timeformat(trade.created_at)
-
         json_record = {  
           "time" => time_format,       
           "price" => trade.price,
@@ -510,27 +508,20 @@ class ExchangeController < ApplicationController
           "time" => commission.created_at
         }
         commission_array.push json_record
-      end       
-      
-      
+      end     
       json_data = {
         "state":"OK",
         "refer_users":refer_users,
-        "commissions":commission_array
-            
+        "commissions":commission_array            
       }
-
     else
       json_data = {
         "state":"OK",                
       }
-
-    end
-        
+    end        
     respond_to do |format|
       format.json { render :json=>json_data}
     end
-
   end
   def get_tokens 
     base_token = params[:base_token]
@@ -623,7 +614,6 @@ class ExchangeController < ApplicationController
     #   # token_amount_unavailable = max_value(145,245)
     #   # token_amount_unavailable = min_value(145,245)
     # end   
-
     abi = $token_abi
     myContract = $web3.eth.contract(abi)
     contract_instance = myContract.at($tm_token_addr)
