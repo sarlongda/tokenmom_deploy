@@ -1,6 +1,6 @@
 Trestle.resource(:tokens, model: Token) do
   menu do
-    item :tokens, icon: "fa fa-star"
+    item :tokens, icon: "fa fa-money"
   end
 
   # Customize the table columns shown on the index view.

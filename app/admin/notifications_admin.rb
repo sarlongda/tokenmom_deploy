@@ -1,6 +1,6 @@
 Trestle.resource(:notifications) do
   menu do
-    item :notifications, icon: "fa fa-star"
+    item :notifications, icon: "fa fa-envelope"
   end
 
   # Customize the table columns shown on the index view.
