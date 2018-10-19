@@ -2054,6 +2054,19 @@ class ExchangeController < ApplicationController
     end
   end
 
+  def get_sort_token_list
+    type = params[:type]
+    dir = params[:dir]
+    tokens = Token.where("symbol != ?","WETH").order(name: :asc)
+
+    json_data = {
+      "state": "ok"
+    }
+    respond_to do |format|
+      format.json { render :json=>json_data}
+    end
+  end
+
   # Download whitepaper
   def download_whitepaper
     if params[:lang] == 'eng'

@@ -3,7 +3,7 @@
         $(document).ready(function() {
             web3_load();
             //Configure Golbal variables
-            const perPage = 5;
+            const perPage = 25;
             var defaultOpts = {
                 totalPages: $(".hidden-token-contents input").length / perPage
             };
@@ -228,8 +228,23 @@
                 document.getElementById("wallet_widget").children[0].classList.remove('is-active');
             });
             $(document).on('click', ".wallet-token-symbol",function(e) {
+                data = {
+                    type:"symbol",
+                    dir:"desc"
+                };
+                $.ajax({
+                    url: 'get_sort_token_list',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: data,
+                    success: function(data) {    
+                                                                          
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });                
                 
-                sort_table_by_symbol();
             });
             $(document).on('click', ".wallet-token-name",function(e) {
                 
