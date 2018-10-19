@@ -1303,7 +1303,7 @@
                 let token_decimal = $(".token-info").attr("decimals");
                 that.next().children().remove();
                 if(amount === ""){
-                    let alert = "<span>Amount required</span>";
+                    let alert = "<span data-i18n='amount_required'></span>";
                     that.next().children().remove();
                     that.next().append(alert);
                     if(trade === "buy"){
@@ -1315,6 +1315,7 @@
                         $(".btn-sell").addClass("disabled");
                         $(".amount-sell").attr("data-lock","true");
                     }
+                    
                 }else if(amount !== ""){
                     that.next().children().remove();
                     if(isNaN(amount)){

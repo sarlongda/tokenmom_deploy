@@ -280,7 +280,10 @@ jQuery(function($) {
       'action' : 'Action',
       'cancel_all' : 'Cancel All',
       'total:' : 'Total(Buy/Sell):',
-	    'no_more_data' : 'No more data'
+      'no_more_data' : 'No more data',
+      
+      //Alert
+      'amount_required': 'Amount Required'
 
     },
     'ko': {
@@ -465,7 +468,11 @@ jQuery(function($) {
       'action' : '취소',
       'cancel_all' : '모두취소',
       'total:' : '총합계(매수/매도):',
-	    'no_more_data' : '거래내역이 없습니다'
+      'no_more_data' : '거래내역이 없습니다',
+      
+      
+      //Alert
+      'amount_required': '수량 요구'
     },
     'ja': {
       'reward': '褒賞',
