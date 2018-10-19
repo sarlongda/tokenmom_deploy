@@ -2058,9 +2058,9 @@ class ExchangeController < ApplicationController
     type = params[:type]
     dir = params[:dir]
     tokens = Token.where("symbol != ?","WETH").order(name: :asc)
-
     json_data = {
-      "state": "ok"
+      "state": "ok",
+      "tokens":tokens
     }
     respond_to do |format|
       format.json { render :json=>json_data}

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post :get_reward
       post :request_reward
       post :get_users
+      post :get_sort_token_list
       get :get_reward
       post :get_eth_usd_price
       post :get_messages
@@ -41,6 +42,7 @@ Rails.application.routes.draw do
   post 'user_sessions/user_login'
   get 'user_sessions/get_user'
   get '/sitemap' => 'sitemap#index', defaults: {format:"xml"}
+  get '/robots.:format' => 'pages#robots'
 
   mount API::Base, at: "/"  
   mount ActionCable.server => '/cable'
