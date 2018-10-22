@@ -1,4 +1,4 @@
-!!!
+
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -29,7 +29,7 @@
     %meta{:content => "Tokenmom(토큰맘) Decentralized Exchange TM COIN", :name => "twitter:site_name"}/
     %meta{:content => "Tokenmom(토큰맘) Decentralized Exchange TM COIN", :name => "twitter:title"}/
     %meta{:content => "https://pbs.twimg.com/profile_images/1043884334170681346/U7JOetFp_400x400.jpg", :name => "twitter:image"}/
-    %meta{:content => "Tokenmom(토큰맘) Decentralized Exchange TM COIN(탈중앙화거래소)", :name => "twitter:description"}/
+    %meta{:content => "Tokenmom(토큰맘) Decentralized Exchange TM COIN", :name => "twitter:description"}/
     %meta{:content => "en_en", :name => "twitter:locale"}/
     %meta{:content => "website", :name => "twitter:type"}/
     = csrf_meta_tags
@@ -44,8 +44,8 @@
       = javascript_include_tag 'application'
       %link{:href => "https://unpkg.com/aos@next/dist/aos.css", :rel => "stylesheet"}/
       %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.3.1/css/all.css", :integrity => "sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU", :rel => "stylesheet"}/
-
-
+    
+      
     %link{:href => "/assets/favicon.ico", :rel => "shortcut icon"}/
-  %body
+  %body    
     = yield
