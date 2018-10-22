@@ -368,7 +368,7 @@ input:focus{
 				padding: 0;
 				div{
 					&.flex.flex-column{
-						min-height: 300px;
+						min-height: 300px;						
 						table{
 							thead{
 								tr{
@@ -436,6 +436,9 @@ input:focus{
 						color: #fcfcfc;
 					}
 					a {
+						&:hover{
+							color: #aaa;
+						}
 						color: #fcfcfc;
 					}
 					.contract-address{
@@ -446,9 +449,12 @@ input:focus{
 				}
 				.nightmode-item {
 					background: #141414;
-					button {
-						background-color: #242323;
+					i {
+						//background-color: #242323;
 						color: white;
+						&:hover{
+							color: #aaa;
+						}
 					}
 				}
 				#wallet_btn{
@@ -469,10 +475,16 @@ input:focus{
         background: #ffa71a;
       }
       .connected {
-        background: #28a745;
+		background: #28a745;
+		&:hover{
+			box-shadow: 0 0 6px #18ea48;
+		}
       }
       .not-connected {
-        background: #dc3545;
+		background: #dc3545;
+		&:hover{
+			box-shadow: 0 0 6px #f52e41;
+		}
       }
 		}
     .popup {
@@ -850,6 +862,9 @@ input:focus{
 						color: black;
 					}
 					a {
+						&:hover {
+							color: #aaa;
+						}
 						color: black;
 					}
 					.contract-address{
@@ -859,9 +874,12 @@ input:focus{
 					}
 				}
 				.nightmode-item {
-					button {
-						background-color: #acacac;
+					i {
+						//background-color: #acacac;
 						color: black;
+						&:hover{
+							color: #aaa;
+						}
 					}
 				}
 				#wallet_btn{
@@ -881,12 +899,18 @@ input:focus{
           background: #ffa71a;
       }
       .connected {
-          background: #28a745;
+		  background: #28a745;
+		  &:hover{
+			box-shadow: 0 0 6px #18ea48;
+		  }
       }
       .not-connected {
-          background: #dc3545;
-      }
-		}
+		  background: #dc3545;
+		  &:hover{
+			box-shadow: 0 0 6px #f52e41;
+		  }
+      	}
+	   }
     .popup {
         .detect-popup {
             background-color: #f3f3f3;
