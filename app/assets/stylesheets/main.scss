@@ -368,7 +368,8 @@ input:focus{
 				padding: 0;
 				div{
 					&.flex.flex-column{
-						min-height: 300px;						
+						min-height: 300px;
+						max-height: 300px;
 						table{
 							thead{
 								tr{
