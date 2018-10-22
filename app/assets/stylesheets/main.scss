@@ -369,7 +369,6 @@ input:focus{
 				div{
 					&.flex.flex-column{
 						min-height: 300px;
-						max-height: 300px;
 						table{
 							thead{
 								tr{
@@ -912,8 +911,8 @@ input:focus{
 		  &:hover{
 			box-shadow: 0 0 6px #f52e41;
 		  }
-      	}
-	   }
+      }
+		}
     .popup {
         .detect-popup {
             background-color: #f3f3f3;
@@ -2710,12 +2709,10 @@ input:focus{
 						}
 						.flex-1{
 							.orders{
-								min-height: 350px;
-								max-height: 350px;
+								min-height: 260px;
 							}
 							.trades{
-								min-height: 350px;
-								max-height: 350px;
+								min-height: 260px;
 							}
 							.table{
 								th{
