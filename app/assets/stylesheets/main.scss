@@ -1413,7 +1413,10 @@ input:focus{
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-left: 10px;
+		  margin-left: 10px;
+		  img{
+			  width: 20px;
+		  }
       }
       #detect_account {
           display: flex;
@@ -1583,8 +1586,8 @@ input:focus{
 				}
 				.market-status-search i{
 					font-size: 11px;
-					right: 15px;
-					top: 17px;
+					right: 10px;
+					top: 10px;
 					position: absolute;
 					pointer-events: none;
 				}

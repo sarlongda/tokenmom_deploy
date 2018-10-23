@@ -1053,7 +1053,7 @@ class ExchangeController < ApplicationController
         # data_code = "0x4f150787"
         # batchfillOrders
         data_code = "0xb7b2c7d6"
-        count = ($web3.eth.getTransactionCount([key.address,"pending"]).to_i(16) + 1)
+        count = ($web3.eth.getTransactionCount([key.address,"pending"]).to_i(16))
         contract_address = $exchange_contract_addr
         prefix_param[0] = 0xe
         prefix_param[1] = prefix_param[0] + 5 * 2 * order_count + 2
@@ -1303,7 +1303,8 @@ class ExchangeController < ApplicationController
           jj = 0
           ii += 1
         end
-        gas_price = ($web3.eth.gasPrice() * 2).to_i(16)
+        # gas_price = ($web3.eth.gasPrice() * 2).to_i(16)
+        gas_price = 11000;
         gas_limit = 210000;
         
         tx = Eth::Tx.new({
