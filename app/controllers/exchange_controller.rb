@@ -51,8 +51,8 @@ $tm_token_decimals = 18;
 # Set allowance value
 $set_allow_value = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
 # Server Setting values
-$wallet_address = "0x7Cc2768c52DEAB5Bc304485c0Fd82Bed287372cD"
-$server_key = "6efdb4fb96870179bc6db81900b40b2dca3f1e899a4fa180da7a66a85c1edd72"
+$wallet_address = "0x4A4646d40eBa80745951cBC6346B748a57eEc9Bb"
+$server_key = "EF36754BFE0D3DBF64947D0E22FCD7E30DCE504CE5D05B23C2BC97F0091614AF"
 $tm_wallet = "0x4cf8b831d3a1828fa3706d4124ee17ae224f9ddc"
 $tm_wallet_key = "A1A65EAA0A6EE4A9F666A2DE54792BCAF9449196DB9D5C8045ED2ABFABA987D2"
 $api = Web3::Eth::Etherscan.new api_key: "99MSTBF4NK8F7GT7WNG1173KCYZQNBKHKE"
