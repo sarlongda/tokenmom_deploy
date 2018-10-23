@@ -652,6 +652,8 @@ class ExchangeController < ApplicationController
       }
       tokens_array.push json_record
     end
+    
+    tokens_array = tokens_array.sort_by!{ |k| k[:h_volume]}.reverse!    
     tm_tokens_array = Array.new
     tm_tokens.each_with_index do |token, index|      
       json_record = {
@@ -666,6 +668,7 @@ class ExchangeController < ApplicationController
       }
       tm_tokens_array.push json_record
     end
+    tm_tokens_array = tm_tokens_array.sort_by!{ |k| k[:h_volume]}.reverse!
 
     # Select token info
     token = Token.where(:symbol => symbol).first

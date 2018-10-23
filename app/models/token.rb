@@ -25,12 +25,12 @@ class Token < ActiveRecord::Base
 
   def h_volume(based_token='WETH')
     volumes = TradeHistory.where("created_at > ? AND token_symbol = ? AND base_token = ?",Time.now.midnight,self.symbol,based_token)
-    h_volume = 0.00
+    h_volume = 0
     if volumes.length > 0
       for volume in volumes
         h_volume += volume.amount*volume.price
       end
     end
-    return h_volume.round(2)
+    return h_volume
   end
 end
