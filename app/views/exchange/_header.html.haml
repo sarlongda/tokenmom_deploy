@@ -171,10 +171,10 @@
           %a.nav-link{:href => "javascript:void(0)"}
             %span#detect_account
               .text-wrapper
-                #connected_wallet
-                #connected_info
+                #connected_wallet{"data-i18n" => "please_login"} Please Login
+                #connected_info{"data-i18n" => "with_your_wallet"} with your wallet
               #connection_status.connection-status.not-connected
-                = image_tag("unlock.svg")
+                = image_tag("lock.svg")
 .popup
   #detect_popup.detect-popup
     %div{ :style => "padding: 25px;" }

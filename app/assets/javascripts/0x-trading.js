@@ -163,6 +163,8 @@ jQuery(function($) {
                                     $('#connected_wallet').text($.i18n('metamask'));
                                     $('#wallet_address').attr('href',http_link+'address/'+currentWalletAddress);
                                     //$('body').i18n();
+                                    //Change login Icon image;
+                                    $("#connection_status").children("img").attr("src","/assets/wallet.svg");
                                     var connection_status_ele = document.getElementById("connection_status");
                                     connection_status_ele.classList.remove("not-connected");
                                     connection_status_ele.classList.remove("connection-issue");
@@ -184,6 +186,7 @@ jQuery(function($) {
                                         $('#connected_wallet').text($.i18n('select_wallet'));
                                         $('#connected_info').attr('data-i18n', 'no_accounts_detected');
                                         $('#connected_info').text($.i18n('no_accounts_detected'));
+                                        $("#connection_status").children("img").attr("src", "/assets/lock.svg");
                                         connection_status_ele.classList.add("not-connected");
                                         connection_status_ele.classList.remove("connection-issue");
                                         connection_status_ele.classList.remove("connected");
@@ -279,6 +282,9 @@ jQuery(function($) {
                     connection_status_ele.classList.remove("not-connected");
                     connection_status_ele.classList.remove("connection-issue");
                     connection_status_ele.classList.add("connected");
+
+                    //Change login icon to wallet image;
+                    $("#connection_status").children("img").attr("src", "/assets/wallet.svg");
                     //Get token balance and weth balance;
                     let token_addr = $(".contract-address").children("a").attr("value");
                     let base_token = $(".token-info").attr("base_token");
@@ -298,6 +304,8 @@ jQuery(function($) {
                         $('#connected_wallet').text($.i18n('select_wallet'));
                         $('#connected_info').attr('data-i18n', 'no_accounts_detected');
                         $('#connected_info').text($.i18n('no_accounts_detected'));
+                        //Change login icon to lock key icon
+                        $("#connection_status").children("img").attr("src", "/assets/lock.svg");
                         connection_status_ele.classList.add("not-connected");
                         connection_status_ele.classList.remove("connection-issue");
                         connection_status_ele.classList.remove("connected");

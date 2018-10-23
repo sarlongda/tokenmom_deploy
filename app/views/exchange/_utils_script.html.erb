@@ -1133,8 +1133,7 @@
                 }else{
                     table = document.getElementById("market_tm").children[0];
                 }
-            }         
-                       
+            }                      
             //table = document.getElementById("market_table");
             switching = true;
             dir = "asc";            
@@ -1146,12 +1145,12 @@
                     x = rows[i].getElementsByTagName("TD")[3].children[0];
                     y = rows[i + 1].getElementsByTagName("TD")[3].children[0];
                     if(dir == "asc"){
-                        if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                        if (Number(x.innerHTML) > Number(y.innerHTML)) {
                             shouldSwitch = true;
                             break;
                         }
                     } else if (dir == "desc"){
-                        if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                        if (Number(x.innerHTML) < Number(y.innerHTML)) {
                             shouldSwitch = true;
                             break;
                         }
@@ -1162,8 +1161,8 @@
                     switching = true;
                     switchcount ++;
                 } else {
-                    if (switchcount == 0 && dir == "desc") {
-                        dir = "asc";
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
                         switching = true;
                     }
                 }

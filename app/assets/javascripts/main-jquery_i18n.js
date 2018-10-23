@@ -196,6 +196,8 @@ jQuery(function($) {
       'tokenmom': 'TOKENMOM',
       'connect_wallet': 'Connect your Wallet',
       'nick_name' : 'Nick Name',
+      'please_login': 'Please Login',
+      'with_your_wallet': 'with your wallet',
       'wrong_network': 'Warning!! You are on the wrong network.Please open MetaMask and switch over to the Mainnet Ethereum Network.',
       //
       'welcome': 'Welcome!',
@@ -377,6 +379,8 @@ jQuery(function($) {
       'tokenmom': '토큰맘',
       'connect_wallet' : '지갑을 연결하세요',
       'nick_name': '닉네임을 입력해주세요.',
+      'please_login': '어서 가입',
+      'with_your_wallet': '지갑으로',
       'wrong_network': '잘못된 네트워크에 연결되었습니다.메타마스그 지갑에서 Mainnet으로 전환시켜주십시오.',
       //Footer
       'terms_and_conditions': '이용약관',
