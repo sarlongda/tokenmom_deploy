@@ -36,17 +36,25 @@ $hash_function_name = {
   "transfer" => "0xa9059cbb",
 }
 # Contract Addresses for ropsten network
-$exchange_contract_addr = "0x479cc461fecd078f766ecc58533d6f69580cf3ac"
-$token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
-$weth_contract_addr = "0xc778417e063141139fce010982780140aa0cd5ab"
-$zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
-$tm_token_addr = "0x91495D6969120fc016BB687EaD5F5cE56F135504"
-$tm_token_decimals = 18;
+# $exchange_contract_addr = "0x479cc461fecd078f766ecc58533d6f69580cf3ac"
+# $token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
+# $weth_contract_addr = "0xc778417e063141139fce010982780140aa0cd5ab"
+# $zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
+# $tm_token_addr = "0x91495D6969120fc016BB687EaD5F5cE56F135504"
+# $tm_token_decimals = 18;
 # Contract Addresses for kovan Network
 # $exchange_contract_addr = "0x90fe2af704b34e0224bf2299c838e04d4dcf1364"
 # $token_contract_addr = "0x087eed4bc1ee3de49befbd66c662b434b15d49d4"
 # $weth_contract_addr = "0xd0a1e359811322d97991e03f863a0c30c2cf029c"
 # $zrx_contract_addr = "0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570"
+
+# main net
+$exchange_contract_addr = "0x4f833a24e1f95d70f028921e27040ca56e09ab0b"
+$token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
+$weth_contract_addr = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+$zrx_contract_addr = "0xe41d2489571d322189246dafa5ebde1f4699f498"
+$tm_token_addr = "0xdAc3a0C0aebeeb13b6Eeab7Cf9FE951664C9fd7c"
+$tm_token_decimals = 18;
 
 # Set allowance value
 $set_allow_value = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
@@ -1303,8 +1311,8 @@ class ExchangeController < ApplicationController
           jj = 0
           ii += 1
         end
-        # gas_price = ($web3.eth.gasPrice() * 2).to_i(16)
-        gas_price = 11000;
+        gas_price = ($web3.eth.gasPrice() * 2).to_i(16)
+        # gas_price = 11000;
         gas_limit = 210000;
         
         tx = Eth::Tx.new({

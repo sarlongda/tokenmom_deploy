@@ -6,9 +6,9 @@ let currentWalletAddress;
 let web3Status;
 let http_link = "https://ropsten.etherscan.io/";
 // Ropsten Net
-let wethAddress = "0xc778417e063141139fce010982780140aa0cd5ab";
-const zrxAddress = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d";
-const tmAddress = "0x91495D6969120fc016BB687EaD5F5cE56F135504";
+let wethAddress = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
+const zrxAddress = "0xe41d2489571d322189246dafa5ebde1f4699f498";
+const tmAddress = "0xdAc3a0C0aebeeb13b6Eeab7Cf9FE951664C9fd7c";
 const weth_decimals = 18;
 const tm_decimals = 18;
 
