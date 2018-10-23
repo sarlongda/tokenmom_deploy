@@ -548,8 +548,8 @@
                                 count_index++;
                                 if(count_index >= from_index && count_index <= to_index){
                                     let html = '<tr>';
-                                    html += '<td><a href="/exchange/'+symbol + '-WETH'+'">' + symbol + '</a></td>';
-                                    html += '<td><a href="/exchange/'+symbol + '-WETH'+'">' + name + '</a></td>';
+                                    html += '<td><a data-turbolinks="false" href="/exchange/'+symbol + '-WETH'+'">' + symbol + '</a></td>';
+                                    html += '<td><a data-turbolinks="false" href="/exchange/'+symbol + '-WETH'+'">' + name + '</a></td>';
                                     html += '<td>' + '<a href="'+http_link+'token/' + address + '" rel="noopener noreferrer" target="_blank">' + address + '</a>' + '</td>';
                                     html += '<td class="wallet-balance-' + symbol + ' wallet-balance-loading">';
                                     html +=   '<div class="wb-loader fa fa-spinner fa-spin"></div>';
