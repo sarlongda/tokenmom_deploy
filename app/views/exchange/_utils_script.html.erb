@@ -905,21 +905,21 @@
                                     "<strong value='"+element.h_price+"'>" +
                                         "<strong class='text-success'>"+
                                             "<i aria-hidden='true' class='fa fa-caret-up'>" +"</i>" +
-                                            "<span>"+element.h_price+"%"+"</span>"+
+                                            "<span>"+parseFloat(element.h_price).toFixed(2)+"%"+"</span>"+
                                             
                                         "</strong>" +
                                     "</strong>";
                             }else if(element.h_price == 0){
                                 token_row += 
                                     "<strong value='"+element.h_price+"'>" +
-                                        "<strong ><span>"+element.h_price+"%"+"</span></strong>" +
+                                        "<strong ><span>"+parseFloat(element.h_price).toFixed(2)+"%"+"</span></strong>" +
                                     "</strong>";
                             }else{
                                 token_row += 
                                     "<strong value='"+element.h_price+"'>" +
                                         "<strong class='text-danger'>"+
                                             "<i aria-hidden='true' class='fa fa-caret-down'>" +"</i>" +
-                                            "<span>"+element.h_price+"%"+"</span>"+
+                                            "<span>"+parseFloat(element.h_price).toFixed(2)+"%"+"</span>"+
                                             
                                         "</strong>" +
                                     "</strong>";
@@ -933,7 +933,7 @@
                         token_row += "</td>";
                         token_row += 
                         "<td class='text-right'>" +
-                            "<strong value='"+element.h_volume+"'>" + element.h_volume +                       
+                            "<strong value='"+element.h_volume+"'>" + parseFloat(element.h_volume).toFixed(2) +                       
                             "</strong>" +
                         "</td>";
 
@@ -942,13 +942,11 @@
                             "<td class='text-right favorite'>" +
                                 "<i class='fas fa-star' fav= '1' value='"+element.id+"'>"+"</i>"
                             "</td>";
-
                         }else{
                             token_row += 
                             "<td class='text-right favorite'>" +
                                 "<i class='far fa-star' fav= '0' value='"+element.id+"'>"+"</i>"
                             "</td>";
-
                         }
                         
                     "</tr>";
