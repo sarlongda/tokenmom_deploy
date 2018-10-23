@@ -228,7 +228,8 @@
                 document.getElementById("wallet_widget").children[0].classList.remove('is-active');
             });
             $(document).on('click', ".wallet-token-symbol",function(e) {
-                data = {
+                sort_table_by_symbol();
+                /* data = {
                     type:"symbol",
                     dir:"desc"
                 };
@@ -237,19 +238,23 @@
                     type: 'POST',
                     dataType: 'json',
                     data: data,
-                    success: function(data) {    
+                    success: function(data) {  
+                        console.log("----");  
                                                                           
                     },
                     error: function(error) {
                         console.log(error);
                     }
-                });                
+                });  */  
+
                 
             });
             $(document).on('click', ".wallet-token-name",function(e) {
+                sort_table_by_name();
                 
             });
             $(document).on('click', ".wallet-token-balance",function(e) {
+                sort_table_by_balance();
                 
             });
             function sort_table_by_symbol(){
@@ -264,6 +269,80 @@
                         shouldSwitch = false;
                         x = rows[i].getElementsByTagName("TD")[0];
                         y = rows[i + 1].getElementsByTagName("TD")[0];
+
+                        if(dir == "asc") {
+                            if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if(dir == "desc") {
+                            if(x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        switchcount ++;
+                    } else {
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+            function sort_table_by_balance(){
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementsByClassName("wallet-token-list")[0];
+                switching = true;
+                dir = "asc";
+                while (switching) {
+                    switching = false;
+                    rows = table.rows;
+                    for(i = 0; i< (rows.length - 1); i ++){
+                        shouldSwitch = false;
+                        x = rows[i].getElementsByTagName("TD")[3].children[1].innerHTML;
+                        y = rows[i + 1].getElementsByTagName("TD")[3].children[1].innerHTML;
+
+                        if(dir == "asc") {
+                            if(Number(x) > Number(y)){
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if(dir == "desc") {
+                            if(Number(x) < Number(y)){
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        switchcount ++;
+                    } else {
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+            function sort_table_by_name(){
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementsByClassName("wallet-token-list")[0];
+                switching = true;
+                dir = "asc";
+                while (switching) {
+                    switching = false;
+                    rows = table.rows;
+                    for(i = 0; i< (rows.length - 1); i ++){
+                        shouldSwitch = false;
+                        x = rows[i].getElementsByTagName("TD")[1];
+                        y = rows[i + 1].getElementsByTagName("TD")[1];
 
                         if(dir == "asc") {
                             if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
