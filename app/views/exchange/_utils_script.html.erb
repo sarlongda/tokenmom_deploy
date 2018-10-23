@@ -877,7 +877,8 @@
                         price_zero_places += "0";
                     }
                     if(price_places == 0){
-                        price = parseInt(price).toString() + ".";
+                        price = parseInt(price).toString();
+                        price_zero_places = "." + price_zero_places;
                     }else{
                         price = price.toString();
                     }
@@ -888,9 +889,9 @@
                             "<div class='pair' name='"+element.name+"' symbol = '"+element.symbol+"'>" + element.symbol+"-" + base_token + "</div>" +
                         "</td>" + 
                         "<td class='text-right'>" +
-                            "<strong value='"+element.last_price+"'>" + 
+                            "<strong value='"+price+"'>" + 
                                 "<strong>" +
-                                    "<span>" +element.last_price +
+                                    "<span>" +price +
                                     "</span>" +
                                     "<span class='p3 opacity-color'>" + price_zero_places + "</span>" +
                                     
