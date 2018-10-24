@@ -67,6 +67,17 @@
           %th.wallet-token-etherscan{'data-i18n' => 'address'} Address
           %th.wallet-token-balance{'data-i18n' => 'balance'} Balance
           %th.wallet-token-tradable{'data-i18n' => 'tradable/untradable'} Tradable/Untradable
+          %th.wallet-token-tradable{'data-i18n' => 'transfer'} Transfer
       %tbody.wallet-token-list
     %ul.pagination#pagination
+#send_token_modal.modal.fade{:role => "dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h4.modal-title
+      .modal-body                      
+      .modal-footer      
+        %button.btn.btn-danger.btn-cancel-tradebyaddr{:type => "button","data-dismiss" => "modal"}
+          %span{"data-i18n" => "cancel"}
+        
 

@@ -284,7 +284,10 @@ jQuery(function($) {
       'total:' : 'Total(Buy/Sell):',
 	    'no_more_data' : 'No more data',
       //Alert
-      'amount_required': 'Amount Required'
+      'amount_required': 'Amount Required',
+      //Wallet Page by vilayhong;
+      'transfer': 'Transfer',
+      'send': 'Send'
     },
     'ko': {
       'reward': 'TM보상',
@@ -472,7 +475,11 @@ jQuery(function($) {
       'total:' : '총합계(매수/매도):',
 	    'no_more_data' : '거래내역이 없습니다',
       //Alert
-      'amount_required': '주문량을 입력하세요'
+      'amount_required': '주문량을 입력하세요',
+
+      //Wallet Page by vilayhong
+      'transfer': '전송',
+      'send': '보내기'
 
     },
     'ja': {

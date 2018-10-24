@@ -21,7 +21,7 @@ require "web3/eth/rpc"
 require "ethereum.rb"
 
 $reward_ratio = 40
-$web3 = Web3::Eth::Rpc.new host: 'ropsten.infura.io',
+$web3 = Web3::Eth::Rpc.new host: 'mainnet.infura.io',
   port: 443,  
   connect_options: {
     open_timeout: 20,
@@ -49,18 +49,18 @@ $hash_function_name = {
 # $zrx_contract_addr = "0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570"
 
 # main net
-$exchange_contract_addr = "0x4f833a24e1f95d70f028921e27040ca56e09ab0b"
+$exchange_contract_addr = "0x12459c951127e0c374ff9105dda097662a027093"
 $token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
 $weth_contract_addr = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
 $zrx_contract_addr = "0xe41d2489571d322189246dafa5ebde1f4699f498"
-$tm_token_addr = "0xdAc3a0C0aebeeb13b6Eeab7Cf9FE951664C9fd7c"
+$tm_token_addr = "0xdac3a0c0aebeeb13b6eeab7cf9fe951664c9fd7c"
 $tm_token_decimals = 18;
 
 # Set allowance value
 $set_allow_value = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
 # Server Setting values
-$wallet_address = "0x4A4646d40eBa80745951cBC6346B748a57eEc9Bb"
-$server_key = "EF36754BFE0D3DBF64947D0E22FCD7E30DCE504CE5D05B23C2BC97F0091614AF"
+$wallet_address = "0x9C8372F5ee2C2E22826a316Ea5B5Ff8878adc582"
+$server_key = "AD102921DD933E1EF28B721CDA6A08B1427D935A5DC5DF7E0D07D6411B179BF7"
 $tm_wallet = "0x4cf8b831d3a1828fa3706d4124ee17ae224f9ddc"
 $tm_wallet_key = "A1A65EAA0A6EE4A9F666A2DE54792BCAF9449196DB9D5C8045ED2ABFABA987D2"
 $api = Web3::Eth::Etherscan.new api_key: "99MSTBF4NK8F7GT7WNG1173KCYZQNBKHKE"
@@ -637,7 +637,7 @@ class ExchangeController < ApplicationController
     abi = $token_abi
     myContract = $web3.eth.contract(abi)
     contract_instance = myContract.at($tm_token_addr)
-    # send_link = send_tm_token 1000 
+    # send_link = send_tm_token(100,"0xD7a1B1B21d0ce84F213093a1C531BF019149667c") 
     tokens_array = Array.new
     tokens.each_with_index do |token, index|      
       json_record = {
@@ -707,7 +707,7 @@ class ExchangeController < ApplicationController
       "tokens":tokens_array,
       "tm_tokens":tm_tokens_array,
       "select_token":token_info,
-      "balance":"balance",          
+      "balance":"send_link",          
     }
     respond_to do |format|
       format.json { render :json=>json_data}
@@ -881,8 +881,6 @@ class ExchangeController < ApplicationController
     return result
     
   end
-
-
   def send_tm_token(value = 100,wallet_addr)
 
     # token_address = '0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d' # ZRX token address
@@ -907,10 +905,14 @@ class ExchangeController < ApplicationController
     function_name.insert(-1,address_param)
     function_name.insert(-1,big_value_param)
 
+    gas_price = ($web3.eth.gasPrice()).to_i(16)
+    # gas_price = 11000;
+    gas_limit = 210000;    
+
     tx = Eth::Tx.new({
       value:0,      
-      gas_limit: 1100_00,
-      gas_price: 20000000000,
+      gas_limit: gas_limit,
+      gas_price: gas_price,
       nonce: count,
       to: contract_address,
       data:function_name,
@@ -929,8 +931,6 @@ class ExchangeController < ApplicationController
     exchangeContract = $web3.eth.contract(abi).at(token_addr)
     balance = exchangeContract.allowance($wallet_address,spender_address)
     return balance
-
-
   end
   def getPartialAmount(num,denominator,target)
     amount = ((num * target) / denominator).to_i
@@ -1314,7 +1314,7 @@ class ExchangeController < ApplicationController
           jj = 0
           ii += 1
         end
-        gas_price = ($web3.eth.gasPrice() * 2).to_i(16)
+        gas_price = ($web3.eth.gasPrice()).to_i(16)
         # gas_price = 11000;
         gas_limit = 210000;
         

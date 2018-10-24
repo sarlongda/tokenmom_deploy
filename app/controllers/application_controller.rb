@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def get_token_list
-    tokens = Token.where("symbol != ?","WETH").order(name: :asc)  
+    tokens = Token.where("symbol != ?","WETH").order(symbol: :desc)  
     return tokens
   end
   def get_tokens_list_wallet

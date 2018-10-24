@@ -2395,7 +2395,11 @@ input:focus{
           }
           .wallet-token-tradable {
             width: 20%;
-          }
+		  }
+		  .token-transfer {
+			  padding-top: 3px;
+			  padding-bottom: 3px;
+		  }
         }
         .pagination {
           margin-top: 30px;
