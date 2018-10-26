@@ -26,7 +26,8 @@ $web3 = Web3::Eth::Rpc.new host: 'mainnet.infura.io',
   connect_options: {
     open_timeout: 20,
     read_timeout: 140,
-    use_ssl: true,                            
+    use_ssl: true,
+    rpc_path: '/faf0e136035347acb2da6734879befac'                            
   }
 $hash_function_name = {
   "withdraw" => "0x2e1a7d4d",
@@ -42,6 +43,7 @@ $hash_function_name = {
 # $zrx_contract_addr = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d"
 # $tm_token_addr = "0x91495D6969120fc016BB687EaD5F5cE56F135504"
 # $tm_token_decimals = 18;
+
 # Contract Addresses for kovan Network
 # $exchange_contract_addr = "0x90fe2af704b34e0224bf2299c838e04d4dcf1364"
 # $token_contract_addr = "0x087eed4bc1ee3de49befbd66c662b434b15d49d4"
@@ -50,7 +52,7 @@ $hash_function_name = {
 
 # main net
 $exchange_contract_addr = "0x12459c951127e0c374ff9105dda097662a027093"
-$token_contract_addr = "0x4e9aad8184de8833365fea970cd9149372fdf1e6"
+$token_contract_addr = "0x8da0d80f5007ef1e431dd2127178d224e32c2ef4"
 $weth_contract_addr = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
 $zrx_contract_addr = "0xe41d2489571d322189246dafa5ebde1f4699f498"
 $tm_token_addr = "0xdac3a0c0aebeeb13b6eeab7cf9fe951664c9fd7c"
@@ -59,11 +61,19 @@ $tm_token_decimals = 18;
 # Set allowance value
 $set_allow_value = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
 # Server Setting values
-$wallet_address = "0x9C8372F5ee2C2E22826a316Ea5B5Ff8878adc582"
+
+# Mainnet Server Wallet
+$wallet_address = "0x9c8372f5ee2c2e22826a316ea5b5ff8878adc582"
 $server_key = "AD102921DD933E1EF28B721CDA6A08B1427D935A5DC5DF7E0D07D6411B179BF7"
+
+# Ropsten Server wallet
+# $wallet_address = "0x7Cc2768c52DEAB5Bc304485c0Fd82Bed287372cD"
+# $server_key = "6EFDB4FB96870179BC6DB81900B40B2DCA3F1E899A4FA180DA7A66A85C1EDD72"
+
+
 $tm_wallet = "0x4cf8b831d3a1828fa3706d4124ee17ae224f9ddc"
 $tm_wallet_key = "A1A65EAA0A6EE4A9F666A2DE54792BCAF9449196DB9D5C8045ED2ABFABA987D2"
-$api = Web3::Eth::Etherscan.new api_key: "99MSTBF4NK8F7GT7WNG1173KCYZQNBKHKE"
+$api = Web3::Eth::Etherscan.new api_key: "e39ce0f3cd8c44ca947f1f121b7b1ed5"
 $exchange_abi = 
   '[
     {"constant":true,
@@ -957,7 +967,6 @@ class ExchangeController < ApplicationController
     abi = $exchange_abi
     myContract = $web3.eth.contract(abi)
     contract_instance = myContract.at($exchange_contract_addr)
-
     # get taker Order values
     create_order = Order.where("base_token = ? AND token_symbol = ? AND price = ? AND type = ?",base_token,token_symbol,price,type).last
     if create_order
@@ -1063,10 +1072,10 @@ class ExchangeController < ApplicationController
         # batchfillOrKillOrders
         # data_code = "0x4f150787"
         # batchfillOrders
-        data_code = "0xb7b2c7d6"
+        data_code = "0x4f150787"
         count = ($web3.eth.getTransactionCount([key.address,"pending"]).to_i(16))
         contract_address = $exchange_contract_addr
-        prefix_param[0] = 0xe
+        prefix_param[0] = 0xc
         prefix_param[1] = prefix_param[0] + 5 * 2 * order_count + 2
         prefix_param[2] = prefix_param[1] + 6 * 2 * order_count + 2
         prefix_param[3] = prefix_param[2] + 1 * 2 * order_count + 2
@@ -1081,7 +1090,7 @@ class ExchangeController < ApplicationController
           i += 1
         end 
         
-        prefix_params +=hash32(1.to_i.to_s(16))
+        # prefix_params += hash32(1.to_i.to_s(16))
         i = 0 
         while i < 3 do
           param = prefix_param[i+3].to_i.to_s(16)

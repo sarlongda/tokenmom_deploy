@@ -843,7 +843,8 @@
                 type: 'POST',
                 dataType: 'json',
                 data: data,
-                success: function(data) {                          
+                success: function(data) {  
+                    console.log(data.balance)                        
                     Trade.change_header_info(data.select_token,init);            
                     Trade.draw_market_table(data.tokens,"WETH");  
                     Trade.draw_market_table(data.tm_tokens,"TM")  

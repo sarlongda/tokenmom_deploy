@@ -732,17 +732,20 @@
                         TOKEN_ADDRESS = TOKEN_ADDRESS.toLowerCase();
                         console.log(TOKEN_ADDRESS);
                         let token_decimals = parseInt($(".token-info").attr("decimals"));
-                        const EXCHANGE_ADDRESS = zeroEx.exchange.getContractAddress();
+                        /* const EXCHANGE_ADDRESS = zeroEx.exchange.getContractAddress(); */
+                        const EXCHANGE_ADDRESS = exchange_address;
                         const accounts = await zeroEx.getAvailableAddressesAsync();
                         const makerAddress = accounts[0];
-                        const feeRecipient = ZeroEx.ZeroEx.NULL_ADDRESS;
-                        const takerAddress = ZeroEx.ZeroEx.NULL_ADDRESS;
+                        /* const feeRecipient = ZeroEx.ZeroEx.NULL_ADDRESS;
+                        const takerAddress = ZeroEx.ZeroEx.NULL_ADDRESS; */
+                        const feeRecipient = serverAddress;
+                        const takerAddress = serverAddress;
                         const salt = ZeroEx.ZeroEx.generatePseudoRandomSalt();
                         const expire = Math.floor(Date.now()/1000) + (60*24*60*60);
                         const fee = 0;
                         const makerFee = new BigNumber(fee);
                         const takerFee = new BigNumber(fee);
-                        const decimals = DECIMALS;
+                        const decimals = DECIMALS
                         let taker_token_addr;
                         let maker_token_addr;
                         let taker_amount;
