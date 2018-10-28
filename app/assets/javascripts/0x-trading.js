@@ -14,13 +14,15 @@ let http_link = "https://ropsten.etherscan.io/";
 let wethAddress = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
 const zrxAddress = "0xe41d2489571d322189246dafa5ebde1f4699f498";
 const tmAddress = "0xdac3a0c0aebeeb13b6eeab7cf9fe951664c9fd7c";
-
 let serverAddress = "0x9c8372f5ee2c2e22826a316ea5b5ff8878adc582";
 let exchange_address = "0x12459c951127e0c374ff9105dda097662a027093";
 // Ropsten Net
 // let wethAddress = "0xc778417e063141139fce010982780140aa0cd5ab";
 // const zrxAddress = "0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d";
 // const tmAddress = "0x91495D6969120fc016BB687EaD5F5cE56F135504";
+
+// let serverAddress = "0x7cc2768c52deab5bc304485c0fd82bed287372cd";
+// let exchange_address = "0x479cc461fecd078f766ecc58533d6f69580cf3ac";
 
 
 //Decimal Parameters;

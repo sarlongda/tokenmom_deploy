@@ -730,7 +730,6 @@
                         let TOKEN_ADDRESS = $(".contract-address").children("a").attr("value");
                         
                         TOKEN_ADDRESS = TOKEN_ADDRESS.toLowerCase();
-                        console.log(TOKEN_ADDRESS);
                         let token_decimals = parseInt($(".token-info").attr("decimals"));
                         /* const EXCHANGE_ADDRESS = zeroEx.exchange.getContractAddress(); */
                         const EXCHANGE_ADDRESS = exchange_address;
@@ -822,7 +821,7 @@
                                 trade_fee:trade_fee,
                                 signed_order:JSON.stringify(signedOrder)
                             };
-
+                            
                             $.ajax({
                                 url: 'create_order',
                                 type: 'POST',
@@ -868,24 +867,19 @@
                     gen_order_with_ETH().catch(console.error)
 
                 }else if(base_token == "TM"){
-                    const gen_order_with_TM = async () => {
-                        
+                    const gen_order_with_TM = async () => {                        
                         BigNumber.config({ EXPONENTIAL_AT:[-9,30]});                        
                         const DECIMALS = tm_decimals;
                         const TM_ADDRESS = tmAddress.toLowerCase(); // The wrapped ETH token contract
                         //const TOKEN_ADDRESS = $(".contract-address").children("a").attr("value").toLowerCase();
-                        
-
-                        let TOKEN_ADDRESS = $(".contract-address").children("a").attr("value");
-                        
+                        let TOKEN_ADDRESS = $(".contract-address").children("a").attr("value");                        
                         TOKEN_ADDRESS = TOKEN_ADDRESS.toLowerCase();
-                        console.log(TOKEN_ADDRESS);
                         let token_decimals = parseInt($(".token-info").attr("decimals"));
                         const EXCHANGE_ADDRESS = zeroEx.exchange.getContractAddress();
                         const accounts = await zeroEx.getAvailableAddressesAsync();
                         const makerAddress = currentWalletAddress;
-                        const feeRecipient = ZeroEx.ZeroEx.NULL_ADDRESS;
-                        const takerAddress = ZeroEx.ZeroEx.NULL_ADDRESS;
+                        const feeRecipient = serverAddress;
+                        const takerAddress = serverAddress;
                         const salt = ZeroEx.ZeroEx.generatePseudoRandomSalt();
                         const expire = Math.floor(Date.now()/1000) + (60*24*60*60);
                         const fee = 0;
@@ -902,9 +896,7 @@
                         let trade_fee = 0;
                         var contractABI = human_standard_token_abi;
                         //Get token balance;
-                        console.log("------------");
-                        console.log(token_decimals);
-                        console.log(DECIMALS)
+                                               
                         contractAddress = TOKEN_ADDRESS;
                         //var tokenContract = web3.eth.contract(contractABI).at(contractAddress);                        
                         if(trade == "buy"){

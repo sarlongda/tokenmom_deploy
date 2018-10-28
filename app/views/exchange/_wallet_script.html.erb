@@ -442,13 +442,11 @@
                             $(".wrap-alert").text("Insuffient Amount");
                             $(".btn-wrap").addClass("disabled");
                             return false;
-                        }else{
-                            
+                        }else{                            
                             if(parseFloat(amount) + gas_limit > wallet_amount){
                                 $(".wrap-alert").text("You have to think of gas costs");
                                 $(".btn-wrap").addClass("disabled");
                                 return false;
-
                             }else{
                                 $(".btn-wrap").removeClass("disabled");
                                 return true;

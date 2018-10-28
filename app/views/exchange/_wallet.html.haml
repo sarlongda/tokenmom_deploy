@@ -74,10 +74,20 @@
   .modal-dialog
     .modal-content
       .modal-header
-        %h4.modal-title
-      .modal-body                      
+        %h4.modal-title Send token to Address
+      .modal-body
+        %form
+          .form-group
+            %label Wallet Address:
+            %input.form-control{:type => "text"}/
+            %label.ethereum-wallet-state{:style => "display:none"} Invalid ethereum address
+          .form-group
+            %label Token Amount:
+            %input.form-control{:type => "text"}
       .modal-footer      
         %button.btn.btn-danger.btn-cancel-tradebyaddr{:type => "button","data-dismiss" => "modal"}
           %span{"data-i18n" => "cancel"}
+        %button.btn.btn-success.send-token-button.disabled{:type => "button"}
+          %span{"data-i18n" => "send"} Send
         
 

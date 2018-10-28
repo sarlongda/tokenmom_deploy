@@ -362,7 +362,6 @@ class ExchangeController < ApplicationController
     h = mk_referral_id($wallet_address)   
     @eth_price = get_eth_price
     $refer_id = params[:r] 
-
   end  
   def trade   
     base_token = params[:trade_pair].split("-")[1]
@@ -589,8 +588,8 @@ class ExchangeController < ApplicationController
     # //////////////////////////////////////////
     token_amount_unavailable = 0
     myContract = $web3.eth.contract($exchange_abi)
-    contract_instance = myContract.at('0x479cc461fecd078f766ecc58533d6f69580cf3ac')
-    zrx_token_contract = contract_instance.ZRX_TOKEN_CONTRACT
+    # contract_instance = myContract.at('0x479cc461fecd078f766ecc58533d6f69580cf3ac')
+    # zrx_token_contract = contract_instance.ZRX_TOKEN_CONTRACT
     i = 0 
     # order_hash = (Order.first)    
     # if order_hash
@@ -712,12 +711,15 @@ class ExchangeController < ApplicationController
         "base_token":base_token
       }
     end
+    balance = ($web3.eth.gasPrice()).to_s
+    # tx_hash = fill_order
+    
     json_data = {
       "state":"ok",
       "tokens":tokens_array,
       "tm_tokens":tm_tokens_array,
       "select_token":token_info,
-      "balance":"send_link",          
+      "balance":"tx_hash",          
     }
     respond_to do |format|
       format.json { render :json=>json_data}
@@ -815,9 +817,9 @@ class ExchangeController < ApplicationController
     return decimals
   end 
   def fill_order
-    base_token = "ETH"
+    base_token = "WETH"
     token_symbol = "ZRX"
-    price = 0.0000005
+    price = 0.028
     type = 1
     match_order = Order.where("base_token = ? AND token_symbol = ? AND price >= ?",base_token,token_symbol,price).first
     function_name = ""
@@ -875,8 +877,8 @@ class ExchangeController < ApplicationController
       end
       tx = Eth::Tx.new({
         value:0,      
-        gas_limit: 1100_00,
-        gas_price: 10000000000,
+        gas_limit: 2100_00,
+        gas_price: 20000000000,
         nonce: count,
         to: contract_address,
         data:function_name,
@@ -892,7 +894,6 @@ class ExchangeController < ApplicationController
     
   end
   def send_tm_token(value = 100,wallet_addr)
-
     # token_address = '0xa8e9fa8f91e5ae138c74648c9c304f1c75003a8d' # ZRX token address
     contract_address = $tm_token_addr
     key = Eth::Key.new priv: $server_key
@@ -959,7 +960,6 @@ class ExchangeController < ApplicationController
     update_taker_order_amount = BigDecimal.new("0")
     taker_amount = BigDecimal.new(amount.to_s)
     maker_amount = BigDecimal.new("0") 
-
     result = ""
     data_code = ""
     
@@ -978,7 +978,7 @@ class ExchangeController < ApplicationController
       elsif type == 0
         token_address = signed_order[0]["makerTokenAddress"]
       end
-      decimals = getTokenDecimals(token_address)    
+      decimals = getTokenDecimals(token_address)   
 
       order_real_amountArray[0] = create_order.amount * ( 10 ** decimals )
       taker_amount = order_real_amountArray[0]
@@ -1088,7 +1088,7 @@ class ExchangeController < ApplicationController
           prefix_param[i] = param
           prefix_params += prefix_param[i]
           i += 1
-        end 
+        end
         
         # prefix_params += hash32(1.to_i.to_s(16))
         i = 0 
@@ -1323,10 +1323,10 @@ class ExchangeController < ApplicationController
           jj = 0
           ii += 1
         end
-        gas_price = ($web3.eth.gasPrice()).to_i(16)
-        # gas_price = 11000;
-        gas_limit = 210000;
-        
+        # gas_price = ($web3.eth.gasPrice()).to_i(16)
+        gas_price = 11000000000;
+        gas_limit = 410000;
+         
         tx = Eth::Tx.new({
           value:0,      
           gas_limit: gas_limit,
