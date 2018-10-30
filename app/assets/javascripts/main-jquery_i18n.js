@@ -51,7 +51,7 @@ jQuery(function($) {
       toolbar_bg: toolbar_bg_dark,
       allow_symbol_change: false,
       container_id: 'tv_chart_container',
-      datafeed: new Datafeeds.UDFCompatibleDatafeed('https://tokenmom.com/api/v1/datafeeds'),
+      datafeed: new Datafeeds.UDFCompatibleDatafeed('https://test.tokenmom.com/api/v1/datafeeds'),
       library_path: '/assets/charting_library/',
       locale: getLanguageFromURL() || locale,
       overrides: override_dark,

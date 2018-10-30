@@ -132,7 +132,7 @@
                 let get_balance = async() => {
                     //get eth balance
                     web3.eth.getBalance(currentWalletAddress,(error,balance)=>{
-                        let eth_balance = parseFloat(web3.fromWei(balance.toNumber(),"ether")).toFixed(6);
+                        let eth_balance = parseFloat(web3.fromWei(balance,"ether")).toFixed(6);
                         $(".eth-balance").children("i").css("display","none");
                         $(".eth-balance").children("span").text(eth_balance);                                            
                     });

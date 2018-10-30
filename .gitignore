@@ -28,9 +28,9 @@
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-!/config/master.key
+/config/master.key
 
-!/config/database.yml
+/config/database.yml
 /config/secrets.yml
-!.idea/workspace.xml
+.idea/workspace.xml
 *.xml
