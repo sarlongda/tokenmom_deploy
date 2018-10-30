@@ -578,3 +578,108 @@ your Gemfile.lock into version control before deploying.
  DEBUG [d8c8b4a0] Command: [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ]
  DEBUG [3400a367] Finished in 0.291 seconds with exit status 1 (failed).
  ERROR linked file /home/ubuntu/tokenmom_deploy/shared/config/database.yml does not exist on 13.229.129.132
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-10-30 19:16:10 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [73ca91e4] Running [ -d $HOME/.rbenv/versions/2.4.1 ] as ubuntu@13.229.129.132
+ DEBUG [73ca91e4] Command: [ -d $HOME/.rbenv/versions/2.4.1 ]
+ DEBUG [c08987ca] Finished in 1.594 seconds with exit status 0 (successful).
+ DEBUG [973475c9] Running /usr/bin/env which passenger as ubuntu@13.229.129.132
+ DEBUG [973475c9] Command: /usr/bin/env which passenger
+ DEBUG [6ed1e291] 	/usr/bin/passenger
+ DEBUG [6ed1e291] Finished in 0.309 seconds with exit status 0 (successful).
+  INFO [8e63ddb9] Running /usr/bin/env mkdir -p /tmp as ubuntu@13.229.129.132
+ DEBUG [8e63ddb9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [e596f010] Finished in 0.295 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TokenMom-production-bond.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TokenMom-production-bond.sh 100.0%
+  INFO [e01bf292] Running /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh as ubuntu@13.229.129.132
+ DEBUG [e01bf292] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh )
+  INFO [b226643f] Finished in 0.302 seconds with exit status 0 (successful).
+  INFO [d28466cf] Running /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD as ubuntu@13.229.129.132
+ DEBUG [d28466cf] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD )
+ DEBUG [2d9340da] 	952cd453bfb95edeaa63129e4254ea4c272a15bb	HEAD
+  INFO [2d9340da] Finished in 3.614 seconds with exit status 0 (successful).
+  INFO [606cceb0] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases as ubuntu@13.229.129.132
+ DEBUG [606cceb0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases )
+  INFO [202e06f1] Finished in 0.265 seconds with exit status 0 (successful).
+  INFO [43bbb852] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets as ubuntu@13.229.129.132
+ DEBUG [43bbb852] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets )
+  INFO [4bff4a01] Finished in 0.292 seconds with exit status 0 (successful).
+  INFO [ef06325e] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config as ubuntu@13.229.129.132
+ DEBUG [ef06325e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config )
+  INFO [233e35f1] Finished in 0.290 seconds with exit status 0 (successful).
+ DEBUG [56fed80a] Running [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ] as ubuntu@13.229.129.132
+ DEBUG [56fed80a] Command: [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ]
+ DEBUG [8e0d8394] Finished in 0.297 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/tokenmom_deploy/shared/config/database.yml does not exist on 13.229.129.132
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-10-30 19:16:28 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [630b6854] Running [ -d $HOME/.rbenv/versions/2.4.1 ] as ubuntu@13.229.129.132
+ DEBUG [630b6854] Command: [ -d $HOME/.rbenv/versions/2.4.1 ]
+ DEBUG [14c53ee2] Finished in 1.602 seconds with exit status 0 (successful).
+ DEBUG [5b300665] Running /usr/bin/env which passenger as ubuntu@13.229.129.132
+ DEBUG [5b300665] Command: /usr/bin/env which passenger
+ DEBUG [433067fa] 	/usr/bin/passenger
+ DEBUG [433067fa] Finished in 0.298 seconds with exit status 0 (successful).
+  INFO [8c3b288e] Running /usr/bin/env mkdir -p /tmp as ubuntu@13.229.129.132
+ DEBUG [8c3b288e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [f2ed74db] Finished in 0.305 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TokenMom-production-bond.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TokenMom-production-bond.sh 100.0%
+  INFO [3b8b9c10] Running /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh as ubuntu@13.229.129.132
+ DEBUG [3b8b9c10] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh )
+  INFO [b072c20d] Finished in 0.304 seconds with exit status 0 (successful).
+  INFO [d3c89af2] Running /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD as ubuntu@13.229.129.132
+ DEBUG [d3c89af2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD )
+ DEBUG [94f0b242] 	952cd453bfb95edeaa63129e4254ea4c272a15bb	HEAD
+  INFO [94f0b242] Finished in 3.780 seconds with exit status 0 (successful).
+  INFO [9cddf1be] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases as ubuntu@13.229.129.132
+ DEBUG [9cddf1be] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases )
+  INFO [f23e25ac] Finished in 0.261 seconds with exit status 0 (successful).
+  INFO [831ae2f7] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets as ubuntu@13.229.129.132
+ DEBUG [831ae2f7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets )
+  INFO [7a4da5c3] Finished in 0.303 seconds with exit status 0 (successful).
+  INFO [4ecff0a5] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config as ubuntu@13.229.129.132
+ DEBUG [4ecff0a5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config )
+  INFO [d2b3eef3] Finished in 0.300 seconds with exit status 0 (successful).
+ DEBUG [87c27509] Running [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ] as ubuntu@13.229.129.132
+ DEBUG [87c27509] Command: [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ]
+ DEBUG [5d5a1ed6] Finished in 0.301 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/tokenmom_deploy/shared/config/database.yml does not exist on 13.229.129.132
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-10-30 19:17:28 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [0b145bf2] Running [ -d $HOME/.rbenv/versions/2.4.1 ] as ubuntu@13.229.129.132
+ DEBUG [0b145bf2] Command: [ -d $HOME/.rbenv/versions/2.4.1 ]
+ DEBUG [b3f5eaeb] Finished in 1.628 seconds with exit status 0 (successful).
+ DEBUG [2d47d9b5] Running /usr/bin/env which passenger as ubuntu@13.229.129.132
+ DEBUG [2d47d9b5] Command: /usr/bin/env which passenger
+ DEBUG [a4d3e8f8] 	/usr/bin/passenger
+ DEBUG [a4d3e8f8] Finished in 0.303 seconds with exit status 0 (successful).
+  INFO [ed33dddb] Running /usr/bin/env mkdir -p /tmp as ubuntu@13.229.129.132
+ DEBUG [ed33dddb] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [7de4de72] Finished in 0.306 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TokenMom-production-bond.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TokenMom-production-bond.sh 100.0%
+  INFO [7c9960cd] Running /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh as ubuntu@13.229.129.132
+ DEBUG [7c9960cd] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh )
+  INFO [89becef4] Finished in 0.306 seconds with exit status 0 (successful).
+  INFO [1806877e] Running /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD as ubuntu@13.229.129.132
+ DEBUG [1806877e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD )
+ DEBUG [9ff24778] 	952cd453bfb95edeaa63129e4254ea4c272a15bb	HEAD
+  INFO [9ff24778] Finished in 3.828 seconds with exit status 0 (successful).
+  INFO [08ca9b12] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases as ubuntu@13.229.129.132
+ DEBUG [08ca9b12] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases )
+  INFO [236a0593] Finished in 0.264 seconds with exit status 0 (successful).
+  INFO [8e98d68d] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets as ubuntu@13.229.129.132
+ DEBUG [8e98d68d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets )
+  INFO [3f0b6416] Finished in 0.295 seconds with exit status 0 (successful).
+  INFO [b64b9d92] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config as ubuntu@13.229.129.132
+ DEBUG [b64b9d92] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config )
+  INFO [540bb647] Finished in 0.302 seconds with exit status 0 (successful).
+ DEBUG [c5513498] Running [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ] as ubuntu@13.229.129.132
+ DEBUG [c5513498] Command: [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ]
+ DEBUG [883c7b57] Finished in 0.301 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/tokenmom_deploy/shared/config/database.yml does not exist on 13.229.129.132

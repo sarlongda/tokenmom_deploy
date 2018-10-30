@@ -13,8 +13,8 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-!/log/*
-!/tmp/*
+/log/*
+/tmp/*
 !/log/.keep
 !/tmp/.keep
 
@@ -24,13 +24,13 @@
 /node_modules
 /yarn-error.log
 
-!/public/assets
+/public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 !/config/master.key
 
-/config/database.yml
+!/config/database.yml
 /config/secrets.yml
 !.idea/workspace.xml
 *.xml
