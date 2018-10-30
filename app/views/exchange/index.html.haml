@@ -296,9 +296,9 @@
             .show-grid.reverse
               .contact-info
                 %div.text-center{"accept-charset" => "utf-8"}
-                  %input.form-control{:name => "name", :placeholder => "Your Name", :style => "animation-delay: 0.8s; opacity: 1;", :type => "text"}/
-                  %input.form-control{:name => "mail", :placeholder => "Your Mail", :style => "animation-delay: 0.9s; opacity: 1;", :type => "text"}/
-                  %textarea.form-control{:name => "message", :placeholder => "Your Massage", :rows => "4", :style => "animation-delay: 1s; opacity: 1;"}
+                  %input.form-control.send-message-name{:name => "name", :placeholder => "Your Name", :style => "animation-delay: 0.8s; opacity: 1;", :type => "text"}/
+                  %input.form-control.send-message-email{:name => "mail", :placeholder => "Your Mail", :style => "animation-delay: 0.9s; opacity: 1;", :type => "text"}/
+                  %textarea.form-control.send-message-contents{:name => "message", :placeholder => "Your Massage", :rows => "4", :style => "animation-delay: 1s; opacity: 1;"}
                   %button.btn.send-message-button{'data-i18n' => 'send_message', :style => "animation-delay: 1.1s; opacity: 1;"} Send Message
     .footer-wrap
       .tm-footer-wrap.theme-dark

@@ -32,6 +32,45 @@
         $(".dropdown-toggle.nav-link").next("ul").toggle();
         
     });
+    $(document).on("click",".send-message-button",function(e) {
+        console.log("send message");
+        let user_name = $(".send-message-name").val();
+        let user_email = $(".send-message-email").val();
+        let contents = $(".send-message-contents").val();
+
+        if(!checkEmail(user_email)){
+            console.log("false");
+        }else{
+            console.log("true");
+            data = {
+                name:user_name,
+                email:user_email,
+                contents:contents
+            }
+            $.ajax({
+                url: 'send_mail',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function(data) {
+                    console.log("send mail successed")                       
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    });
+    function checkEmail(email) {
+        
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(email)) {            
+            return false;
+        }else{
+            return true;
+        }
+    }
     var Trade = {
         get_token_amount:function (token_contract_addr,base_token){                         
             if(currentWalletAddress != "" && currentWalletAddress != null){
@@ -1195,11 +1234,6 @@
             return percentage;
         },     
         change_metatag(locale) {
-            
-            console.log($("meta[property='og\\:url']").attr("content"));
-            console.log($('link[rel=alternate]').attr("hreflang"));
-            console.log(locale);
-
             if(locale == "en"){   
                 $(document).attr("title", "TOKENMOM - Decentralized Ethereum Based TOKEN Exchange - TM COIN");
 

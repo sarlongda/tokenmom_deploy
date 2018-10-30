@@ -576,6 +576,21 @@ class ExchangeController < ApplicationController
       format.json { render :json=>json_data}
     end
   end
+
+  def send_mail
+    user_name = params[:name]
+    user_email = params[:email]
+    contents = params[:contents]
+    # Send mail to site
+    UserMailer.contact_mail(user_name,user_email,contents).deliver
+
+    json_data = {
+      "state":"ok",              
+    }
+    respond_to do |format|
+      format.json { render :json=>json_data}
+    end
+  end
   def get_init_data
     base_token = params[:base_token]
     symbol = params[:token_symbol]
