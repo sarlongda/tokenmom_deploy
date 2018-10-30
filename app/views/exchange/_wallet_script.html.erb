@@ -3,13 +3,12 @@
         $(document).ready(function() {
             web3_load();
             //Configure Golbal variables
-            const perPage = 25;
+            const perPage = 20;
             var defaultOpts = {
                 totalPages: $(".hidden-token-contents input").length / perPage
             };
             const DECIMALS = 18;
-            const gas_limit = 0.02;
-            
+            const gas_limit = 0.02;            
             //Wrap ETH Event
             $(document).on('click','.btn-wrap',function(e){
                 let wrap_amount = parseFloat($(".wrap-amount").val());
@@ -35,6 +34,122 @@
             $(".unwrap-amount").on("change paste keyup",function() {
                let unwrap_amount = $(this).val();
                check_amount("unwrap",unwrap_amount);
+            });
+            $(document).on('click','.send-token-button',function(e) {
+                //Set BigDecimal Settings
+                BigNumber.config({ EXPONENTIAL_AT:[-9,30]});
+                // Recipient Infomations
+                let recipient_address = $(".receive-wallet-address").val();
+                let token_amount = Number($(".receive-token-amount").val());
+                let token_decimal = Number($(".send-token-info").attr("data-decimal"));
+                let token_address = $(".send-token-info").attr("data-address");
+                let send_token = async () =>{
+                    var amount = ZeroEx.ZeroEx.toBaseUnitAmount(new BigNumber(token_amount), token_decimal)
+                    var to = recipient_address;
+                    var contractABI = human_standard_token_abi;
+                    var contractAddress = token_address;
+                    //Get token Contract from Smart contract and ABI;
+                    var tokenContract = web3.eth.contract(contractABI).at(token_address);
+                    //Get transfer code from token contract;
+                    var code = tokenContract.transfer.getData(recipient_address,amount);
+
+                    var transaction_data = {
+                        data:code,
+                        to:contractAddress,
+                    }
+                    web3.eth.sendTransaction(transaction_data,function (err, transactionHash) {
+                        if(!err){
+                            txHash = transactionHash;
+                            
+                            $(".receive-wallet-address").val("");
+                            $(".receive-token-amount").val("");
+                            $(".send-token-button").addClass("disabled");
+                            $("#send_token_modal").modal("hide");
+                            $("#send_token_modal").attr("aria-hidden","true");
+                            
+                            console.log(txHash);
+                        }else{
+                            $("#send_token_modal").modal("hide");
+                            $(".receive-wallet-address").val("");
+                            $(".receive-token-amount").val("");
+                            $(".send-token-button").addClass("disabled");
+                        }
+                    });
+                    
+
+                }
+                send_token().catch(console.error);
+
+            });
+
+            //Receive wallet address check
+            $(".receive-wallet-address").on("change paste keyup", function() {
+                address = $(this).val();
+                amount = $(".receive-token-amount").val();                
+                if(check_ethereum_address(address)){
+                    $(".ethereum-wallet-state").css("display","none");
+                    account = currentWalletAddress;                
+                    web3.eth.getBalance(account, (error, balance) => {
+                        ETH_balance = web3.fromWei(balance.toNumber(), "ether" );
+                        if(ETH_balance > initial_fee){                        
+                            total_balance = $(".send-token-info").attr("data-balance");                        
+                            if(Number(amount) < Number(total_balance) && amount != "" && amount != 0){
+                                $(".token-balance-state").css("display","none");
+                                $(".send-token-button").removeClass("disabled");                                                    
+                            }else{                               
+                                $(".send-token-button").addClass("disabled");
+                            }
+                        }else {                        
+                            
+                            $(".send-token-button").addClass("disabled");
+                        }                   
+                    });    
+                }else {
+                    $(".ethereum-wallet-state").css("display","block");
+                    $(".send-token-button").addClass("disabled");
+                }
+            });
+
+            $(".receive-token-amount").on("change paste keyup", function() {
+                amount = $(this).val();
+                address = $(".receive-wallet-address").val();                
+                account = currentWalletAddress;                
+                web3.eth.getBalance(account, (error, balance) => {
+                    ETH_balance = web3.fromWei(balance.toNumber(), "ether" );
+                    if(ETH_balance > initial_fee){                        
+                        total_balance = $(".send-token-info").attr("data-balance");                        
+                        if(Number(amount) < Number(total_balance) && amount != "" && amount != 0){
+                            $(".token-balance-state").css("display","none");
+                            if(check_ethereum_address(address)) {
+                                $(".send-token-button").removeClass("disabled");
+                            } else {
+                                $(".send-token-button").addClass("disabled");
+                            }                           
+                        }else{                            
+                            $(".token-balance-state").css("display","block");
+                            $(".send-token-button").addClass("disabled");
+                        }
+
+                    }else {                        
+                        $(".token-balance-state").css("display","block");
+                        $(".send-token-button").addClass("disabled");
+                    }                   
+                });                
+ 
+            });
+            $(document).on('click',".token-transfer",function(e) {
+                console.log("click token transfer");
+                let token_address = $(this).parent().prev().prev().prev().children("a").text();                
+                let token_decimal = $(this).data("decimal");                
+                let token_balance = $(this).parent().prev().prev().children(".wb-value").text();
+                let token_symbol = $(this).parent().prev().prev().prev().prev().prev().children("a").text();
+                
+                $(".send-token-info").attr("data-decimal",token_decimal);
+                $(".send-token-info").attr("data-address",token_address);
+                $(".send-token-info").attr("data-balance",token_balance);
+                $(".send-token-info").attr("data-symbol",token_symbol);
+                $(".send-token-symbol").text(token_symbol);
+                
             });
             $(document).on('click', ".wallet-search-btn", function(e){
                 var search      = $(".wallet-search-input").val();
@@ -250,12 +365,10 @@
                 
             });
             $(document).on('click', ".wallet-token-name",function(e) {
-                sort_table_by_name();
-                
+                sort_table_by_name();                
             });
             $(document).on('click', ".wallet-token-balance",function(e) {
-                sort_table_by_balance();
-                
+                sort_table_by_balance();                
             });
             function sort_table_by_symbol(){
                 var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -530,6 +643,7 @@
                         let symbol      = $(this).data("symbol");
                         let name        = $(this).data("name");
                         let token_addr  = $(this).data("address");
+                        let decimals = $(this).data("decimal");
                         $(this).data("balance", undefined);
                         $(this).data("allowance", false);
                         // get balance
@@ -618,6 +732,7 @@
                     let address   = $(this).data("address");
                     let balance   = $(this).data("balance");
                     let allowance = $(this).data("allowance");
+                    let decimal = $(this).data("decimal");
                     if(search === "" || symbol.toLowerCase().indexOf(search.toLowerCase()) != -1 || name.toLowerCase().indexOf(search.toLowerCase()) != -1){
                         if(balance === undefined){
                             if(lower_limit === 0){
@@ -649,7 +764,7 @@
                                     html +=       '<span class="slider round"></span>';
                                     html +=     '</label>';
                                     html +=   '</div>';
-                                    html += '<td><button class="token-transfer btn btn-success" data-i18n="send" data-toggle="modal" data-target="#send_token_modal">Send</button></td>';                     
+                                    html += '<td><button class="token-transfer btn btn-success" data-i18n="send" data-toggle="modal" data-target="#send_token_modal" data-decimal = "'+decimal+'">Send</button></td>';                     
                                     
                                     html += '</td>';
                                     html += '</tr>';
@@ -718,6 +833,19 @@
                         _handlePageClick(page);
                     }
                 }));
+            }
+            function send_token(address,decimal,amount) {
+                
+            }
+            function check_ethereum_address(address) {
+                if(web3.isAddress(address)) {
+                    return true;
+                } else {                    
+                    return false;
+                }
+            }
+            function check_amount_available(amount) {               
+
             }
         });
     });

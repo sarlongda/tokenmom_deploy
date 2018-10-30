@@ -295,11 +295,11 @@
               %p{'data-i18n' => 'contact_us_with_question'} Contact us with any questions regarding TokenMom exchange.
             .show-grid.reverse
               .contact-info
-                %form.text-center{"accept-charset" => "utf-8", :action => "#", :method => "post"}
+                %div.text-center{"accept-charset" => "utf-8"}
                   %input.form-control{:name => "name", :placeholder => "Your Name", :style => "animation-delay: 0.8s; opacity: 1;", :type => "text"}/
                   %input.form-control{:name => "mail", :placeholder => "Your Mail", :style => "animation-delay: 0.9s; opacity: 1;", :type => "text"}/
                   %textarea.form-control{:name => "message", :placeholder => "Your Massage", :rows => "4", :style => "animation-delay: 1s; opacity: 1;"}
-                  %button.btn{'data-i18n' => 'send_message', :style => "animation-delay: 1.1s; opacity: 1;", :type => "submit"} Send Message
+                  %button.btn.send-message-button{'data-i18n' => 'send_message', :style => "animation-delay: 1.1s; opacity: 1;"} Send Message
     .footer-wrap
       .tm-footer-wrap.theme-dark
         .container

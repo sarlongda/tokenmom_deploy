@@ -58,7 +58,7 @@
         
     .hidden-token-contents
       - @tokens_list.each do |token|
-        %input{:class=>"token-item token-item-" + token.symbol, :type=>"hidden", :"data-symbol"=>token.symbol, :"data-name"=>token.name, :"data-address"=>token.contract_address}
+        %input{:class=>"token-item token-item-" + token.symbol, :type=>"hidden", :"data-symbol"=>token.symbol, :"data-name"=>token.name, :"data-address"=>token.contract_address, :"data-decimal"=>token.token_decimals}
     %table.wallet-token-table.table-striped
       %thead
         %tr
@@ -78,16 +78,21 @@
       .modal-body
         %form
           .form-group
-            %label Wallet Address:
-            %input.form-control{:type => "text"}/
-            %label.ethereum-wallet-state{:style => "display:none"} Invalid ethereum address
+            %input.form-control.send-token-info{:type => "hidden","data-address" =>"","data-decimal" => "","data-balance" => ""}/
+            %label Recipient Address:
+            %input.form-control.receive-wallet-address{:type => "text"}/
+            %label.ethereum-wallet-state{:style => "display:none"} Invalid ethereum address.
           .form-group
-            %label Token Amount:
-            %input.form-control{:type => "text"}
+            %label Amount to send:
+            .btn-group.float-right{"data-toggle" => "buttons"}
+              %a.send-max-amount{:href => "javascript:void(0)", :tabindex => "-1"} Availabel Amount
+            %span.send-token-symbol 
+            %input.form-control.receive-token-amount{:type => "text"}
+            %label.token-balance-state{:style => "display:none"} Insufficient balance.
       .modal-footer      
         %button.btn.btn-danger.btn-cancel-tradebyaddr{:type => "button","data-dismiss" => "modal"}
           %span{"data-i18n" => "cancel"}
-        %button.btn.btn-success.send-token-button.disabled{:type => "button"}
+        %button.btn.btn-success.send-token-button.disabled{:type => "button","data-dismiss" => "modal"}
           %span{"data-i18n" => "send"} Send
         
 
