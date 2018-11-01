@@ -2902,3 +2902,282 @@ You have added to the Gemfile:
   INFO [981117cc] Running /usr/bin/env echo "Branch master (at 89b9c4940b49bd1d3e77ba47b9f6fe594dd7df84) deployed as release 20181030201554 by bond" >> /home/ubuntu/tokenmom_deploy/revisions.log as ubuntu@13.229.129.132
  DEBUG [981117cc] Command: cd /home/ubuntu/tokenmom_deploy/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 89b9c4940b49bd1d3e77ba47b9f6fe594dd7df84) deployed as release 20181030201554 by bond" >> /home/ubuntu/tokenmom_deploy/revisions.log )
   INFO [830281cb] Finished in 0.295 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-11-01 11:55:46 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [927b0605] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as ubuntu@13.229.129.132
+ DEBUG [927b0605] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [2770b438] Finished in 2.723 seconds with exit status 0 (successful).
+ DEBUG [7fe4cd7d] Running /usr/bin/env which passenger as ubuntu@13.229.129.132
+ DEBUG [7fe4cd7d] Command: /usr/bin/env which passenger
+ DEBUG [1648b4e2] 	/usr/bin/passenger
+ DEBUG [1648b4e2] Finished in 0.486 seconds with exit status 0 (successful).
+  INFO [ad0598c0] Running /usr/bin/env mkdir -p /tmp as ubuntu@13.229.129.132
+ DEBUG [ad0598c0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [c592b9cd] Finished in 0.516 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TokenMom-production-bond.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TokenMom-production-bond.sh 100.0%
+  INFO [9afdb789] Running /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh as ubuntu@13.229.129.132
+ DEBUG [9afdb789] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-TokenMom-production-bond.sh )
+  INFO [cf838c27] Finished in 0.538 seconds with exit status 0 (successful).
+  INFO [94a3752e] Running /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD as ubuntu@13.229.129.132
+ DEBUG [94a3752e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git ls-remote git@github.com:sarlongda/tokenmom_deploy.git HEAD )
+ DEBUG [a015233e] 	79226730cc652d520d2dcbd046c3de45b388ef29	HEAD
+  INFO [a015233e] Finished in 4.274 seconds with exit status 0 (successful).
+  INFO [41c183d9] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases as ubuntu@13.229.129.132
+ DEBUG [41c183d9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared /home/ubuntu/tokenmom_deploy/releases )
+  INFO [7de3ba85] Finished in 0.514 seconds with exit status 0 (successful).
+  INFO [a9e31e70] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets as ubuntu@13.229.129.132
+ DEBUG [a9e31e70] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/shared/public/assets )
+  INFO [be034b83] Finished in 0.517 seconds with exit status 0 (successful).
+  INFO [00bd183d] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config as ubuntu@13.229.129.132
+ DEBUG [00bd183d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/shared/config )
+  INFO [cab740dd] Finished in 0.512 seconds with exit status 0 (successful).
+ DEBUG [9e7dac4f] Running [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ] as ubuntu@13.229.129.132
+ DEBUG [9e7dac4f] Command: [ -f /home/ubuntu/tokenmom_deploy/shared/config/database.yml ]
+ DEBUG [82096973] Finished in 0.459 seconds with exit status 0 (successful).
+ DEBUG [8fb2a44b] Running [ -f /home/ubuntu/tokenmom_deploy/shared/config/secrets.yml ] as ubuntu@13.229.129.132
+ DEBUG [8fb2a44b] Command: [ -f /home/ubuntu/tokenmom_deploy/shared/config/secrets.yml ]
+ DEBUG [86e3e47a] Finished in 0.524 seconds with exit status 0 (successful).
+ DEBUG [b7333d6a] Running [ -f /home/ubuntu/tokenmom_deploy/current/REVISION ] as ubuntu@13.229.129.132
+ DEBUG [b7333d6a] Command: [ -f /home/ubuntu/tokenmom_deploy/current/REVISION ]
+ DEBUG [a0d0ed2e] Finished in 0.493 seconds with exit status 0 (successful).
+ DEBUG [32b08f18] Running /usr/bin/env cat /home/ubuntu/tokenmom_deploy/current/REVISION 2>/dev/null as ubuntu@13.229.129.132
+ DEBUG [32b08f18] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env cat /home/ubuntu/tokenmom_deploy/current/REVISION 2>/dev/null )
+ DEBUG [d2295925] 	89b9c4940b49bd1d3e77ba47b9f6fe594dd7df84
+ DEBUG [d2295925] Finished in 0.548 seconds with exit status 0 (successful).
+ DEBUG [451215f3] Running [ -f /home/ubuntu/tokenmom_deploy/repo/HEAD ] as ubuntu@13.229.129.132
+ DEBUG [451215f3] Command: [ -f /home/ubuntu/tokenmom_deploy/repo/HEAD ]
+ DEBUG [956605b5] Finished in 0.562 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/tokenmom_deploy/repo
+ DEBUG [b848b3f1] Running if test ! -d /home/ubuntu/tokenmom_deploy/repo; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/repo'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [b848b3f1] Command: if test ! -d /home/ubuntu/tokenmom_deploy/repo; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/repo'" 1>&2; false; fi
+ DEBUG [a8b4e5a1] Finished in 0.558 seconds with exit status 0 (successful).
+  INFO [f36a8430] Running /usr/bin/env git remote set-url origin git@github.com:sarlongda/tokenmom_deploy.git as ubuntu@13.229.129.132
+ DEBUG [f36a8430] Command: cd /home/ubuntu/tokenmom_deploy/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git remote set-url origin git@github.com:sarlongda/tokenmom_deploy.git )
+  INFO [5f296348] Finished in 0.487 seconds with exit status 0 (successful).
+  INFO [d9d7c68d] Running /usr/bin/env git remote update --prune as ubuntu@13.229.129.132
+ DEBUG [d9d7c68d] Command: cd /home/ubuntu/tokenmom_deploy/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0d56c33f] 	Fetching origin
+ DEBUG [0d56c33f] 	From github.com:sarlongda/tokenmom_deploy
+   89b9c494..79226730  master     -> master
+  INFO [0d56c33f] Finished in 7.490 seconds with exit status 0 (successful).
+ DEBUG [6de7b31d] Running if test ! -d /home/ubuntu/tokenmom_deploy/repo; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/repo'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [6de7b31d] Command: if test ! -d /home/ubuntu/tokenmom_deploy/repo; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/repo'" 1>&2; false; fi
+ DEBUG [81111c4a] Finished in 0.345 seconds with exit status 0 (successful).
+  INFO [529790e4] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559 as ubuntu@13.229.129.132
+ DEBUG [529790e4] Command: cd /home/ubuntu/tokenmom_deploy/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559 )
+  INFO [6b8e6dcd] Finished in 0.368 seconds with exit status 0 (successful).
+  INFO [dc1f6494] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/tokenmom_deploy/releases/20181101045559 as ubuntu@13.229.129.132
+ DEBUG [dc1f6494] Command: cd /home/ubuntu/tokenmom_deploy/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/tokenmom_deploy/releases/20181101045559 )
+  INFO [88368ee0] Finished in 0.732 seconds with exit status 0 (successful).
+ DEBUG [743b6c69] Running if test ! -d /home/ubuntu/tokenmom_deploy/repo; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/repo'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [743b6c69] Command: if test ! -d /home/ubuntu/tokenmom_deploy/repo; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/repo'" 1>&2; false; fi
+ DEBUG [45e15abb] Finished in 0.388 seconds with exit status 0 (successful).
+ DEBUG [e748c306] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@13.229.129.132
+ DEBUG [e748c306] Command: cd /home/ubuntu/tokenmom_deploy/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TokenMom-production-bond.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [4f721c48] 	79226730cc652d520d2dcbd046c3de45b388ef29
+ DEBUG [4f721c48] Finished in 0.344 seconds with exit status 0 (successful).
+ DEBUG [a87af476] Running if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [a87af476] Command: if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi
+ DEBUG [03fad9be] Finished in 0.384 seconds with exit status 0 (successful).
+  INFO [a4c212a2] Running /usr/bin/env echo "79226730cc652d520d2dcbd046c3de45b388ef29" > REVISION as ubuntu@13.229.129.132
+ DEBUG [a4c212a2] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "79226730cc652d520d2dcbd046c3de45b388ef29" > REVISION )
+  INFO [3ad8a7c1] Finished in 0.393 seconds with exit status 0 (successful).
+  INFO [7a7dc5f7] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559/config as ubuntu@13.229.129.132
+ DEBUG [7a7dc5f7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559/config )
+  INFO [ac70808b] Finished in 0.392 seconds with exit status 0 (successful).
+ DEBUG [ef38d57e] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml ] as ubuntu@13.229.129.132
+ DEBUG [ef38d57e] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml ]
+ DEBUG [57791ce9] Finished in 0.395 seconds with exit status 1 (failed).
+ DEBUG [d280bae4] Running [ -f /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml ] as ubuntu@13.229.129.132
+ DEBUG [d280bae4] Command: [ -f /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml ]
+ DEBUG [ce354041] Finished in 0.393 seconds with exit status 0 (successful).
+  INFO [a31ed984] Running /usr/bin/env rm /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml as ubuntu@13.229.129.132
+ DEBUG [a31ed984] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml )
+  INFO [ec8c7b50] Finished in 0.340 seconds with exit status 0 (successful).
+  INFO [242e00e4] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/config/database.yml /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml as ubuntu@13.229.129.132
+ DEBUG [242e00e4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/config/database.yml /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/database.yml )
+  INFO [4a1434f2] Finished in 0.336 seconds with exit status 0 (successful).
+ DEBUG [40921729] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/secrets.yml ] as ubuntu@13.229.129.132
+ DEBUG [40921729] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/secrets.yml ]
+ DEBUG [9a2dc44f] Finished in 0.358 seconds with exit status 1 (failed).
+ DEBUG [2735e11c] Running [ -f /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/secrets.yml ] as ubuntu@13.229.129.132
+ DEBUG [2735e11c] Command: [ -f /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/secrets.yml ]
+ DEBUG [6622bc07] Finished in 0.348 seconds with exit status 1 (failed).
+  INFO [ff87b491] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/config/secrets.yml /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/secrets.yml as ubuntu@13.229.129.132
+ DEBUG [ff87b491] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/config/secrets.yml /home/ubuntu/tokenmom_deploy/releases/20181101045559/config/secrets.yml )
+  INFO [d3249ca0] Finished in 0.420 seconds with exit status 0 (successful).
+  INFO [336b4f8f] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559 /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor /home/ubuntu/tokenmom_deploy/releases/20181101045559/public as ubuntu@13.229.129.132
+ DEBUG [336b4f8f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559 /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor /home/ubuntu/tokenmom_deploy/releases/20181101045559/public )
+  INFO [fbd39a58] Finished in 0.399 seconds with exit status 0 (successful).
+ DEBUG [f96e92d7] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/log ] as ubuntu@13.229.129.132
+ DEBUG [f96e92d7] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/log ]
+ DEBUG [ce9fe233] Finished in 0.369 seconds with exit status 1 (failed).
+ DEBUG [ab4fc079] Running [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/log ] as ubuntu@13.229.129.132
+ DEBUG [ab4fc079] Command: [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/log ]
+ DEBUG [f055e93a] Finished in 0.389 seconds with exit status 0 (successful).
+  INFO [a05b0f3c] Running /usr/bin/env rm -rf /home/ubuntu/tokenmom_deploy/releases/20181101045559/log as ubuntu@13.229.129.132
+ DEBUG [a05b0f3c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /home/ubuntu/tokenmom_deploy/releases/20181101045559/log )
+  INFO [73e056ad] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [eef7d422] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/releases/20181101045559/log as ubuntu@13.229.129.132
+ DEBUG [eef7d422] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/log /home/ubuntu/tokenmom_deploy/releases/20181101045559/log )
+  INFO [8d6bb07d] Finished in 0.389 seconds with exit status 0 (successful).
+ DEBUG [3c0ef3ee] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/pids ] as ubuntu@13.229.129.132
+ DEBUG [3c0ef3ee] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/pids ]
+ DEBUG [c279251d] Finished in 0.421 seconds with exit status 1 (failed).
+ DEBUG [ac80c376] Running [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/pids ] as ubuntu@13.229.129.132
+ DEBUG [ac80c376] Command: [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/pids ]
+ DEBUG [56046733] Finished in 0.393 seconds with exit status 1 (failed).
+  INFO [03a14c3f] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/pids as ubuntu@13.229.129.132
+ DEBUG [03a14c3f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/tmp/pids /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/pids )
+  INFO [0d440d48] Finished in 0.397 seconds with exit status 0 (successful).
+ DEBUG [4f7071bc] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/cache ] as ubuntu@13.229.129.132
+ DEBUG [4f7071bc] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/cache ]
+ DEBUG [fbd000ee] Finished in 0.395 seconds with exit status 1 (failed).
+ DEBUG [e4814ad8] Running [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/cache ] as ubuntu@13.229.129.132
+ DEBUG [e4814ad8] Command: [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/cache ]
+ DEBUG [66399f29] Finished in 0.444 seconds with exit status 1 (failed).
+  INFO [d5519327] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/cache as ubuntu@13.229.129.132
+ DEBUG [d5519327] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/tmp/cache /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/cache )
+  INFO [00f829c8] Finished in 0.389 seconds with exit status 0 (successful).
+ DEBUG [cc52453e] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/sockets ] as ubuntu@13.229.129.132
+ DEBUG [cc52453e] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/sockets ]
+ DEBUG [a37f0328] Finished in 0.339 seconds with exit status 1 (failed).
+ DEBUG [c3becd45] Running [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/sockets ] as ubuntu@13.229.129.132
+ DEBUG [c3becd45] Command: [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/sockets ]
+ DEBUG [c95b3864] Finished in 0.333 seconds with exit status 1 (failed).
+  INFO [250b1a8f] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/sockets as ubuntu@13.229.129.132
+ DEBUG [250b1a8f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/tmp/sockets /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/sockets )
+  INFO [0a294846] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [64984fda] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor/bundle ] as ubuntu@13.229.129.132
+ DEBUG [64984fda] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor/bundle ]
+ DEBUG [c017ba7c] Finished in 0.346 seconds with exit status 1 (failed).
+ DEBUG [9175a162] Running [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor/bundle ] as ubuntu@13.229.129.132
+ DEBUG [9175a162] Command: [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor/bundle ]
+ DEBUG [a5aaeacf] Finished in 0.355 seconds with exit status 1 (failed).
+  INFO [04a3b0e8] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor/bundle as ubuntu@13.229.129.132
+ DEBUG [04a3b0e8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/vendor/bundle /home/ubuntu/tokenmom_deploy/releases/20181101045559/vendor/bundle )
+  INFO [6b1e32d2] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG [3c36b047] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/system ] as ubuntu@13.229.129.132
+ DEBUG [3c36b047] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/system ]
+ DEBUG [f335f0e1] Finished in 0.375 seconds with exit status 1 (failed).
+ DEBUG [1f5e12ae] Running [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/system ] as ubuntu@13.229.129.132
+ DEBUG [1f5e12ae] Command: [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/system ]
+ DEBUG [75c06811] Finished in 0.392 seconds with exit status 1 (failed).
+  INFO [da2f455c] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/system as ubuntu@13.229.129.132
+ DEBUG [da2f455c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/public/system /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/system )
+  INFO [aaebf9b5] Finished in 0.385 seconds with exit status 0 (successful).
+ DEBUG [f61cdab9] Running [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets ] as ubuntu@13.229.129.132
+ DEBUG [f61cdab9] Command: [ -L /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets ]
+ DEBUG [64e08ae7] Finished in 0.367 seconds with exit status 1 (failed).
+ DEBUG [ddf4679c] Running [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets ] as ubuntu@13.229.129.132
+ DEBUG [ddf4679c] Command: [ -d /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets ]
+ DEBUG [e2dea080] Finished in 0.390 seconds with exit status 1 (failed).
+  INFO [09dff420] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/public/assets /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets as ubuntu@13.229.129.132
+ DEBUG [09dff420] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/shared/public/assets /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets )
+  INFO [338192ba] Finished in 0.395 seconds with exit status 0 (successful).
+ DEBUG [dc6cc60f] Running if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [dc6cc60f] Command: if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi
+ DEBUG [01e05d88] Finished in 0.412 seconds with exit status 0 (successful).
+ DEBUG [163a1527] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /home/ubuntu/tokenmom_deploy/shared/bundle as ubuntu@13.229.129.132
+ DEBUG [163a1527] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /home/ubuntu/tokenmom_deploy/shared/bundle )
+ DEBUG [0379effd] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [0379effd] 	The following gems are missing
+ DEBUG [0379effd] 	 * public_suffix (3.0.3)
+ DEBUG [0379effd] 	 * addressable (2.5.2)
+ DEBUG [0379effd] 	 * net-ssh (5.0.2)
+ DEBUG [0379effd] 	 * net-scp (1.2.1)
+ DEBUG [0379effd] 	 * sshkit (1.18.0)
+ DEBUG [0379effd] 	 * airbrussh (1.3.0)
+ DEBUG [0379effd] 	 * io-like (0.3.0)
+ DEBUG [0379effd] 	 * archive-zip (0.11.0)
+ DEBUG [0379effd] 	 * bindex (0.5.0)
+ DEBUG [0379effd] 	 * byebug (10.0.2)
+ DEBUG [0379effd] 	 * capistrano (3.11.0)
+ DEBUG [0379effd] 	 * capistrano-bundler (1.4.0)
+ DEBUG [0379effd] 	 * capistrano-passenger (0.2.0)
+ DEBUG [0379effd] 	 * capistrano-rails (1.4.0)
+ DEBUG [0379effd] 	 * capistrano-rbenv (2.1.4)
+ DEBUG [0379effd] 	 * regexp_parser (1.2.0)
+ DEBUG [0379effd] 	 * xpath (3.2.0)
+ DEBUG [0379effd] 	 * capybara (3.10.0)
+ DEBUG [0379effd] 	 * childprocess (0.9.0)
+ DEBUG [0379effd] 	 * chromedriver-helper (2.1.0)
+ DEBUG [0379effd] 	 * rubyzip (1.2.2)
+ DEBUG [0379effd] 	 * selenium-webdriver (3.14.1)
+ DEBUG [0379effd] 	 * spring (2.0.2)
+ DEBUG [0379effd] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [0379effd] 	 * web-console (3.7.0)
+ DEBUG [0379effd] 	Install missing gems with `bundle install`
+ DEBUG [0379effd] Finished in 0.783 seconds with exit status 1 (failed).
+  INFO [29b89a3d] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /home/ubuntu/tokenmom_deploy/shared/bundle --without development test --deployment --quiet as ubuntu@13.229.129.132
+ DEBUG [29b89a3d] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /home/ubuntu/tokenmom_deploy/shared/bundle --without development test --deployment --quiet )
+  INFO [35b25b20] Finished in 0.782 seconds with exit status 0 (successful).
+ DEBUG [cfb46d30] Running if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [cfb46d30] Command: if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi
+ DEBUG [158da7a4] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [a0122102] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as ubuntu@13.229.129.132
+ DEBUG [a0122102] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+  INFO [85d00b95] Finished in 2.200 seconds with exit status 0 (successful).
+ DEBUG [933d4021] Running if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [933d4021] Command: if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi
+ DEBUG [294f3f08] Finished in 0.410 seconds with exit status 0 (successful).
+  INFO [2836a559] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559/assets_manifest_backup as ubuntu@13.229.129.132
+ DEBUG [2836a559] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559/assets_manifest_backup )
+  INFO [349ce28f] Finished in 0.426 seconds with exit status 0 (successful).
+ DEBUG [1eb9f8e5] Running /usr/bin/env ls /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest* as ubuntu@13.229.129.132
+ DEBUG [1eb9f8e5] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest* )
+ DEBUG [82f75ab9] 	/home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest-bd93464ba05dc8b4dbbe47417c73c2f2.json
+ DEBUG [82f75ab9] Finished in 0.441 seconds with exit status 0 (successful).
+ DEBUG [17042e6f] Running /usr/bin/env ls /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest* as ubuntu@13.229.129.132
+ DEBUG [17042e6f] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest* )
+ DEBUG [fa3f96ee] 	/home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest-bd93464ba05dc8b4dbbe47417c73c2f2.json
+ DEBUG [fa3f96ee] Finished in 0.472 seconds with exit status 0 (successful).
+  INFO [529fd914] Running /usr/bin/env cp /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest-bd93464ba05dc8b4dbbe47417c73c2f2.json /home/ubuntu/tokenmom_deploy/releases/20181101045559/assets_manifest_backup as ubuntu@13.229.129.132
+ DEBUG [529fd914] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env cp /home/ubuntu/tokenmom_deploy/releases/20181101045559/public/assets/.sprockets-manifest-bd93464ba05dc8b4dbbe47417c73c2f2.json /home/ubuntu/tokenmom_deploy/releases/20181101045559/assets_manifest_backup )
+  INFO [ebc11f4d] Finished in 0.469 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [3f27e012] Running if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [3f27e012] Command: if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi
+ DEBUG [d40cac86] Finished in 0.475 seconds with exit status 0 (successful).
+  INFO [b2c91c18] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as ubuntu@13.229.129.132
+ DEBUG [b2c91c18] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+  INFO [d5343387] Finished in 1.763 seconds with exit status 0 (successful).
+  INFO [435540d8] Running /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/releases/20181101045559 /home/ubuntu/tokenmom_deploy/releases/current as ubuntu@13.229.129.132
+ DEBUG [435540d8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/ubuntu/tokenmom_deploy/releases/20181101045559 /home/ubuntu/tokenmom_deploy/releases/current )
+  INFO [457393e4] Finished in 0.450 seconds with exit status 0 (successful).
+  INFO [51df32be] Running /usr/bin/env mv /home/ubuntu/tokenmom_deploy/releases/current /home/ubuntu/tokenmom_deploy as ubuntu@13.229.129.132
+ DEBUG [51df32be] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mv /home/ubuntu/tokenmom_deploy/releases/current /home/ubuntu/tokenmom_deploy )
+  INFO [4d553de1] Finished in 0.486 seconds with exit status 0 (successful).
+ DEBUG [809083fe] Running if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [809083fe] Command: if test ! -d /home/ubuntu/tokenmom_deploy/releases/20181101045559; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases/20181101045559'" 1>&2; false; fi
+ DEBUG [456441dc] Finished in 0.523 seconds with exit status 0 (successful).
+  INFO [ea5be96f] Running /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp as ubuntu@13.229.129.132
+ DEBUG [ea5be96f] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp )
+  INFO [f3dac5e5] Finished in 0.545 seconds with exit status 0 (successful).
+  INFO [f9267b97] Running /usr/bin/env touch /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/restart.txt as ubuntu@13.229.129.132
+ DEBUG [f9267b97] Command: cd /home/ubuntu/tokenmom_deploy/releases/20181101045559 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env touch /home/ubuntu/tokenmom_deploy/releases/20181101045559/tmp/restart.txt )
+  INFO [c82ff6a5] Finished in 0.505 seconds with exit status 0 (successful).
+ DEBUG [2238df75] Running /usr/bin/env ls -x /home/ubuntu/tokenmom_deploy/releases as ubuntu@13.229.129.132
+ DEBUG [2238df75] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls -x /home/ubuntu/tokenmom_deploy/releases )
+ DEBUG [72aa8f84] 	20181030124946	20181030125514	20181030130115	20181030152809	20181030201554
+20181101045559
+ DEBUG [72aa8f84] Finished in 0.579 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 13.229.129.132
+ DEBUG [29ad7d39] Running [ -d /home/ubuntu/tokenmom_deploy/current ] as ubuntu@13.229.129.132
+ DEBUG [29ad7d39] Command: [ -d /home/ubuntu/tokenmom_deploy/current ]
+ DEBUG [74753cb5] Finished in 0.595 seconds with exit status 0 (successful).
+ DEBUG [311083c1] Running /usr/bin/env readlink /home/ubuntu/tokenmom_deploy/current as ubuntu@13.229.129.132
+ DEBUG [311083c1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env readlink /home/ubuntu/tokenmom_deploy/current )
+ DEBUG [b007c4a4] 	/home/ubuntu/tokenmom_deploy/releases/20181101045559
+ DEBUG [b007c4a4] Finished in 0.562 seconds with exit status 0 (successful).
+  INFO [13fb89e1] Running /usr/bin/env rm -rf /home/ubuntu/tokenmom_deploy/releases/20181030124946 as ubuntu@13.229.129.132
+ DEBUG [13fb89e1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /home/ubuntu/tokenmom_deploy/releases/20181030124946 )
+  INFO [92771ea0] Finished in 0.499 seconds with exit status 0 (successful).
+ DEBUG [43882623] Running if test ! -d /home/ubuntu/tokenmom_deploy/releases; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases'" 1>&2; false; fi as ubuntu@13.229.129.132
+ DEBUG [43882623] Command: if test ! -d /home/ubuntu/tokenmom_deploy/releases; then echo "Directory does not exist '/home/ubuntu/tokenmom_deploy/releases'" 1>&2; false; fi
+ DEBUG [6315df07] Finished in 0.483 seconds with exit status 0 (successful).
+  INFO [f0003fa7] Running /usr/bin/env echo "Branch master (at 79226730cc652d520d2dcbd046c3de45b388ef29) deployed as release 20181101045559 by bond" >> /home/ubuntu/tokenmom_deploy/revisions.log as ubuntu@13.229.129.132
+ DEBUG [f0003fa7] Command: cd /home/ubuntu/tokenmom_deploy/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 79226730cc652d520d2dcbd046c3de45b388ef29) deployed as release 20181101045559 by bond" >> /home/ubuntu/tokenmom_deploy/revisions.log )
+  INFO [41c7dbed] Finished in 0.522 seconds with exit status 0 (successful).
