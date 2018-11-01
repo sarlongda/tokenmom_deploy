@@ -497,7 +497,8 @@
         input = document.getElementById("symbol_input");
         filter = input.value.toUpperCase();
         let base_token = "TM";
-        let market_name = $("#market_tab").find(".active").attr("data-target");
+        let market_name = $("#market_tab").find("a.active").attr("data-target"); 
+        //console.log(market_name);      
         
         if(market_name == "#market_eth"){
             table = document.getElementById("market_eth").children[0];
